@@ -179,6 +179,7 @@
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Quickstart &amp; Installation</span></p>
 <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="https://open-catalyst.metademolab.com/">OCP Demo (no install required!)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="INSTALL.html">Installation</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Quickstart simulation using pre-trained models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="LICENSE.html">License</a></li>
@@ -582,7 +583,9 @@ document.write(`
 <ol class="arabic simple" start="4">
 <li><p>Finally, use this checkpoint in an ASE calculator for a simple relaxation!</p></li>
 </ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ocpmodels.common.relaxation.ase_utils</span> <span class="kn">import</span> <span class="n">OCPCalculator</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ocpmodels.common.relaxation.ase_utils</span> <span class="kn">import</span> <span class="n">OCPCalculator</span>
 <span class="kn">from</span> <span class="nn">ase.build</span> <span class="kn">import</span> <span class="n">fcc111</span><span class="p">,</span> <span class="n">add_adsorbate</span>
 <span class="kn">from</span> <span class="nn">ase.optimize</span> <span class="kn">import</span> <span class="n">BFGS</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -608,6 +611,9 @@ document.write(`
 <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_axis_off</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+</div>
+<p>To learn more about what this simulation means and how it fits into catalysis, see the <a class="reference internal" href="#tutorials/intro"><span class="xref myst">catalysis tutorial</span></a>!</p>
 </section>
 
     <script type="text/x-thebe-config">
