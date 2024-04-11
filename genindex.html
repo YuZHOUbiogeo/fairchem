@@ -176,9 +176,10 @@
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Installation &amp; License</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Quickstart &amp; Installation</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="core/INSTALL.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="core/QUICKSTART.html">Quickstart simulation using pre-trained models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="core/LICENSE.html">License</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Released Datasets &amp; Models</span></p>
@@ -205,6 +206,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Catalysis Tutorials</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="tutorials/intro.html">Intro and background on OCP and DFT</a></li>
+
 
 
 
@@ -290,7 +292,6 @@
 <li class="toctree-l4"><a class="reference internal" href="autoapi/ocpmodels/common/gp_utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.common.gp_utils</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/ocpmodels/common/hpo_utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.common.hpo_utils</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/ocpmodels/common/logger/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.common.logger</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="autoapi/ocpmodels/common/model_registry/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.common.model_registry</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/ocpmodels/common/registry/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.common.registry</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/ocpmodels/common/transforms/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.common.transforms</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/ocpmodels/common/tutorial_utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.common.tutorial_utils</span></code></a></li>
@@ -319,6 +320,7 @@
 <li class="toctree-l4"><a class="reference internal" href="autoapi/ocpmodels/models/utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.models.utils</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/ocpmodels/models/base/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.models.base</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/ocpmodels/models/dimenet_plus_plus/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.models.dimenet_plus_plus</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="autoapi/ocpmodels/models/model_registry/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.models.model_registry</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="autoapi/ocpmodels/models/schnet/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.models.schnet</span></code></a></li>
 </ul>
 </li>
@@ -913,10 +915,10 @@ document.write(`
         <li><a href="autoapi/ocpmodels/datasets/ase_datasets/index.html#ocpmodels.datasets.ase_datasets.AseReadMultiStructureDataset">(class in ocpmodels.datasets.ase_datasets)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="autoapi/ocpmodels/common/typing/index.html#ocpmodels.common.typing.assert_is_instance">assert_is_instance() (in module ocpmodels.common.typing)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="autoapi/ocpmodels/models/gemnet/layers/basis_utils/index.html#ocpmodels.models.gemnet.layers.basis_utils.associated_legendre_polynomials">associated_legendre_polynomials() (in module ocpmodels.models.gemnet.layers.basis_utils)</a>
 
       <ul>
@@ -955,6 +957,12 @@ document.write(`
       </ul></li>
       <li><a href="autoapi/ocpmodels/modules/loss/index.html#ocpmodels.modules.loss.AtomwiseL2Loss">AtomwiseL2Loss (class in ocpmodels.modules.loss)</a>
 </li>
+      <li><a href="autoapi/ocpmodels/models/index.html#ocpmodels.models.available_pretrained_models">available_pretrained_models (in module ocpmodels.models)</a>
+
+      <ul>
+        <li><a href="autoapi/ocpmodels/models/model_registry/index.html#ocpmodels.models.model_registry.available_pretrained_models">(in module ocpmodels.models.model_registry)</a>
+</li>
+      </ul></li>
       <li><a href="autoapi/ocpmodels/modules/evaluator/index.html#ocpmodels.modules.evaluator.average_distance_within_threshold">average_distance_within_threshold() (in module ocpmodels.modules.evaluator)</a>
 </li>
   </ul></td>
@@ -2219,9 +2227,13 @@ document.write(`
 </li>
       <li><a href="autoapi/ocpmodels/common/relaxation/ml_relaxation/index.html#ocpmodels.common.relaxation.ml_relaxation.ml_relax">ml_relax() (in module ocpmodels.common.relaxation.ml_relaxation)</a>
 </li>
-      <li><a href="autoapi/ocpmodels/common/model_registry/index.html#ocpmodels.common.model_registry.model_name_to_local_file">model_name_to_local_file() (in module ocpmodels.common.model_registry)</a>
+      <li><a href="autoapi/ocpmodels/models/index.html#ocpmodels.models.model_name_to_local_file">model_name_to_local_file() (in module ocpmodels.models)</a>
+
+      <ul>
+        <li><a href="autoapi/ocpmodels/models/model_registry/index.html#ocpmodels.models.model_registry.model_name_to_local_file">(in module ocpmodels.models.model_registry)</a>
 </li>
-      <li><a href="autoapi/ocpmodels/common/model_registry/index.html#ocpmodels.common.model_registry.MODEL_REGISTRY">MODEL_REGISTRY (in module ocpmodels.common.model_registry)</a>
+      </ul></li>
+      <li><a href="autoapi/ocpmodels/models/model_registry/index.html#ocpmodels.models.model_registry.MODEL_REGISTRY">MODEL_REGISTRY (in module ocpmodels.models.model_registry)</a>
 </li>
       <li>
     module
@@ -2242,8 +2254,6 @@ document.write(`
         <li><a href="autoapi/ocpmodels/common/hpo_utils/index.html#module-ocpmodels.common.hpo_utils">ocpmodels.common.hpo_utils</a>
 </li>
         <li><a href="autoapi/ocpmodels/common/logger/index.html#module-ocpmodels.common.logger">ocpmodels.common.logger</a>
-</li>
-        <li><a href="autoapi/ocpmodels/common/model_registry/index.html#module-ocpmodels.common.model_registry">ocpmodels.common.model_registry</a>
 </li>
         <li><a href="autoapi/ocpmodels/common/registry/index.html#module-ocpmodels.common.registry">ocpmodels.common.registry</a>
 </li>
@@ -2418,6 +2428,8 @@ document.write(`
         <li><a href="autoapi/ocpmodels/models/gemnet_oc/layers/spherical_basis/index.html#module-ocpmodels.models.gemnet_oc.layers.spherical_basis">ocpmodels.models.gemnet_oc.layers.spherical_basis</a>
 </li>
         <li><a href="autoapi/ocpmodels/models/gemnet_oc/utils/index.html#module-ocpmodels.models.gemnet_oc.utils">ocpmodels.models.gemnet_oc.utils</a>
+</li>
+        <li><a href="autoapi/ocpmodels/models/model_registry/index.html#module-ocpmodels.models.model_registry">ocpmodels.models.model_registry</a>
 </li>
         <li><a href="autoapi/ocpmodels/models/painn/index.html#module-ocpmodels.models.painn">ocpmodels.models.painn</a>
 </li>
@@ -2630,13 +2642,6 @@ document.write(`
 
       <ul>
         <li><a href="autoapi/ocpmodels/common/logger/index.html#module-ocpmodels.common.logger">module</a>
-</li>
-      </ul></li>
-      <li>
-    ocpmodels.common.model_registry
-
-      <ul>
-        <li><a href="autoapi/ocpmodels/common/model_registry/index.html#module-ocpmodels.common.model_registry">module</a>
 </li>
       </ul></li>
       <li>
@@ -3024,8 +3029,6 @@ document.write(`
         <li><a href="autoapi/ocpmodels/models/gemnet/layers/embedding_block/index.html#module-ocpmodels.models.gemnet.layers.embedding_block">module</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     ocpmodels.models.gemnet.layers.interaction_block
 
@@ -3033,6 +3036,8 @@ document.write(`
         <li><a href="autoapi/ocpmodels/models/gemnet/layers/interaction_block/index.html#module-ocpmodels.models.gemnet.layers.interaction_block">module</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     ocpmodels.models.gemnet.layers.radial_basis
 
@@ -3248,6 +3253,13 @@ document.write(`
 
       <ul>
         <li><a href="autoapi/ocpmodels/models/gemnet_oc/utils/index.html#module-ocpmodels.models.gemnet_oc.utils">module</a>
+</li>
+      </ul></li>
+      <li>
+    ocpmodels.models.model_registry
+
+      <ul>
+        <li><a href="autoapi/ocpmodels/models/model_registry/index.html#module-ocpmodels.models.model_registry">module</a>
 </li>
       </ul></li>
       <li>

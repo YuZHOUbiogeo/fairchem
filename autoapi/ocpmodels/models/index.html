@@ -177,9 +177,10 @@
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Installation &amp; License</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Quickstart &amp; Installation</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../../core/INSTALL.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../core/QUICKSTART.html">Quickstart simulation using pre-trained models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../core/LICENSE.html">License</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Released Datasets &amp; Models</span></p>
@@ -206,6 +207,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Catalysis Tutorials</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../../tutorials/intro.html">Intro and background on OCP and DFT</a></li>
+
 
 
 
@@ -291,7 +293,6 @@
 <li class="toctree-l4"><a class="reference internal" href="../common/gp_utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.common.gp_utils</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../common/hpo_utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.common.hpo_utils</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../common/logger/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.common.logger</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../common/model_registry/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.common.model_registry</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../common/registry/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.common.registry</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../common/transforms/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.common.transforms</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../common/tutorial_utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.common.tutorial_utils</span></code></a></li>
@@ -320,6 +321,7 @@
 <li class="toctree-l4"><a class="reference internal" href="utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.models.utils</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="base/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.models.base</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="dimenet_plus_plus/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.models.dimenet_plus_plus</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model_registry/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.models.model_registry</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="schnet/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.models.schnet</span></code></a></li>
 </ul>
 </li>
@@ -551,6 +553,15 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subpackages">Subpackages</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#package-contents">Package Contents</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attributes">Attributes</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.models.available_pretrained_models"><code class="docutils literal notranslate"><span class="pre">available_pretrained_models</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.models.model_name_to_local_file"><code class="docutils literal notranslate"><span class="pre">model_name_to_local_file()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -674,9 +685,53 @@ document.write(`
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="base/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.models.base</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="dimenet_plus_plus/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.models.dimenet_plus_plus</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="model_registry/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.models.model_registry</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="schnet/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.models.schnet</span></code></a></li>
 </ul>
 </div>
+</section>
+<section id="package-contents">
+<h2>Package Contents<a class="headerlink" href="#package-contents" title="Link to this heading">#</a></h2>
+<section id="functions">
+<h3>Functions<a class="headerlink" href="#functions" title="Link to this heading">#</a></h3>
+<table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ocpmodels.models.model_name_to_local_file" title="ocpmodels.models.model_name_to_local_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">model_name_to_local_file</span></code></a>(→ str)</p></td>
+<td><p>Download a pretrained checkpoint if it does not exist already</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="attributes">
+<h3>Attributes<a class="headerlink" href="#attributes" title="Link to this heading">#</a></h3>
+<table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ocpmodels.models.available_pretrained_models" title="ocpmodels.models.available_pretrained_models"><code class="xref py py-obj docutils literal notranslate"><span class="pre">available_pretrained_models</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py data">
+<dt class="sig sig-object py" id="ocpmodels.models.available_pretrained_models">
+<span class="sig-prename descclassname"><span class="pre">ocpmodels.models.</span></span><span class="sig-name descname"><span class="pre">available_pretrained_models</span></span><a class="headerlink" href="#ocpmodels.models.available_pretrained_models" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ocpmodels.models.model_name_to_local_file">
+<span class="sig-prename descclassname"><span class="pre">ocpmodels.models.</span></span><span class="sig-name descname"><span class="pre">model_name_to_local_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">local_cache</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">pathlib.Path</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#ocpmodels.models.model_name_to_local_file" title="Link to this definition">#</a></dt>
+<dd><p>Download a pretrained checkpoint if it does not exist already</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model_name</strong> (<em>str</em>) – the model name. See available_pretrained_checkpoints.</p></li>
+<li><p><strong>local_cache</strong> (<em>str</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+<p>Returns:</p>
+</dd></dl>
+
+</section>
 </section>
 </section>
 
@@ -746,6 +801,15 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subpackages">Subpackages</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#package-contents">Package Contents</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attributes">Attributes</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.models.available_pretrained_models"><code class="docutils literal notranslate"><span class="pre">available_pretrained_models</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.models.model_name_to_local_file"><code class="docutils literal notranslate"><span class="pre">model_name_to_local_file()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

@@ -177,9 +177,10 @@
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Installation &amp; License</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Quickstart &amp; Installation</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../core/INSTALL.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../core/QUICKSTART.html">Quickstart simulation using pre-trained models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../core/LICENSE.html">License</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Released Datasets &amp; Models</span></p>
@@ -206,6 +207,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Catalysis Tutorials</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Intro and background on OCP and DFT</a></li>
+
 
 
 
@@ -291,7 +293,6 @@
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/ocpmodels/common/gp_utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.common.gp_utils</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/ocpmodels/common/hpo_utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.common.hpo_utils</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/ocpmodels/common/logger/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.common.logger</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../autoapi/ocpmodels/common/model_registry/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.common.model_registry</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/ocpmodels/common/registry/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.common.registry</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/ocpmodels/common/transforms/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.common.transforms</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/ocpmodels/common/tutorial_utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.common.tutorial_utils</span></code></a></li>
@@ -320,6 +321,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/ocpmodels/models/utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.models.utils</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/ocpmodels/models/base/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.models.base</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/ocpmodels/models/dimenet_plus_plus/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.models.dimenet_plus_plus</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/ocpmodels/models/model_registry/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.models.model_registry</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/ocpmodels/models/schnet/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.models.schnet</span></code></a></li>
 </ul>
 </li>
@@ -620,7 +622,7 @@ H2O + * -&gt; O* + H2  re2  # Get from OCP as a direct calculation
 <p>The different models have different compute requirements. If you find your kernel is crashing, it probably means you have exceeded the allowed amount of memory. This checkpoint works fine in this example, but it may crash your kernel if you use it in the NRR example.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ocpmodels.common.model_registry</span> <span class="kn">import</span> <span class="n">model_name_to_local_file</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ocpmodels.models.model_registry</span> <span class="kn">import</span> <span class="n">model_name_to_local_file</span>
 
 <span class="n">checkpoint_path</span> <span class="o">=</span> <span class="n">model_name_to_local_file</span><span class="p">(</span><span class="s1">&#39;eSCN-L6-M3-Lay20All+MD&#39;</span><span class="p">,</span> <span class="n">local_cache</span><span class="o">=</span><span class="s1">&#39;/tmp/ocp_checkpoints/&#39;</span><span class="p">)</span>
 </pre></div>

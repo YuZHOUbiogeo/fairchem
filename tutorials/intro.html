@@ -177,9 +177,10 @@
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Installation &amp; License</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Quickstart &amp; Installation</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../core/INSTALL.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../core/QUICKSTART.html">Quickstart simulation using pre-trained models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../core/LICENSE.html">License</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Released Datasets &amp; Models</span></p>
@@ -206,6 +207,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Catalysis Tutorials</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Intro and background on OCP and DFT</a></li>
+
 
 
 
@@ -291,7 +293,6 @@
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/ocpmodels/common/gp_utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.common.gp_utils</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/ocpmodels/common/hpo_utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.common.hpo_utils</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/ocpmodels/common/logger/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.common.logger</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../autoapi/ocpmodels/common/model_registry/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.common.model_registry</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/ocpmodels/common/registry/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.common.registry</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/ocpmodels/common/transforms/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.common.transforms</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/ocpmodels/common/tutorial_utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.common.tutorial_utils</span></code></a></li>
@@ -320,6 +321,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/ocpmodels/models/utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.models.utils</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/ocpmodels/models/base/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.models.base</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/ocpmodels/models/dimenet_plus_plus/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.models.dimenet_plus_plus</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../autoapi/ocpmodels/models/model_registry/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.models.model_registry</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../autoapi/ocpmodels/models/schnet/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.models.schnet</span></code></a></li>
 </ul>
 </li>
@@ -550,10 +552,8 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Intro and background on OCP and DFT</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#abstract">Abstract</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#walkthrough-video">Walkthrough video</a></li>
-</ul>
-</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#abstract">Abstract</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#walkthrough-video">Walkthrough video</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#models">Models</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datasets-tasks">Datasets / Tasks</a></li>
@@ -577,14 +577,14 @@ document.write(`
   <section id="intro-and-background-on-ocp-and-dft">
 <h1>Intro and background on OCP and DFT<a class="headerlink" href="#intro-and-background-on-ocp-and-dft" title="Link to this heading">#</a></h1>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="abstract">
+<section id="abstract">
 <h1>Abstract<a class="headerlink" href="#abstract" title="Link to this heading">#</a></h1>
 <p>The most recent, state of the art machine learned potentials in atomistic simulations are based on graph models that are trained on large (1M+) datasets. These models can be downloaded and used in a wide array of applications ranging from catalysis to materials properties. These pre-trained models can be used on their own, to accelerate DFT calculation, and they can also be used as a starting point to fine-tune new models for specific tasks. In this workshop we will focus on large, graph-based, pre-trained  machine learned models from the Open Catalyst Project (OCP) to showcase how they can be used for these purposes. OCP provides several pre-trained models for a variety of tasks related to atomistic simulations. We will explain what these models are, how they differ, and details of the datasets they are trained from.  We will introduce an Atomic Simulation Environment (ase) calculator that leverages an OCP pre-trained model for typical simulation tasks including adsorbate geometry relaxation, adsorption energy calculations, and reaction energies. We will show how pre-trained models can be fine-tuned on new data sets for new tasks. We will also discuss current limitations of the models and opportunities for future research. Participants will need a laptop with internet capability.</p>
-<section id="walkthrough-video">
-<h2>Walkthrough video<a class="headerlink" href="#walkthrough-video" title="Link to this heading">#</a></h2>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/0wb0FTa7SV0?si=6gPgj0Pv9jfNT8Go" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></section>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="introduction">
+<section id="walkthrough-video">
+<h1>Walkthrough video<a class="headerlink" href="#walkthrough-video" title="Link to this heading">#</a></h1>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0wb0FTa7SV0?si=6gPgj0Pv9jfNT8Go" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></section>
+<section id="introduction">
 <h1>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h1>
 <p>Density functional theory (DFT) has been a mainstay in molecular simulation, but its high computational cost limits the number and size of simulations that are practical. Over the past two decades machine learning has increasingly been used to build surrogate models to supplement DFT. We call these models machine learned potentials (MLP) In the early days, neural networks were trained using the cartesian coordinates of atomistic systems as features with some success. These features lack important physical properties, notably they lack invariance to rotations, translations and permutations, and they are extensive features, which limit them to the specific system being investigated. About 15 years ago, a new set of features called symmetry functions were developed that were intensive, and which had these invariances. These functions enabled substantial progress in MLP, but they had a few important limitations. First, the size of the feature vector scaled quadratically with the number of elements, practically limiting the MLP to 4-5 elements. Second, composition was usually implicit in the functions, which limited the transferrability of the MLP to new systems. Finally, these functions were “hand-crafted”, with limited or no adaptability to the systems being explored, thus one needed to use judgement and experience to select them. While progess has been made in mitigating these limitations, a new approach has overtaken these methods.</p>
 <p>Today, the state of the art in machine learned potentials uses graph convolutions to generate the feature vectors. In this approach, atomistic systems are represented as graphs where each node is an atom, and the edges connect the nodes (atoms) and roughly represent interactions or bonds between atoms. Then, there are machine learnable convolution functions that operate on the graph to generate feature vectors. These operators can work on pairs, triplets and quadruplets of nodes to compute “messages” that are passed to the central node (atom) and accumulated into the feature vector. This feature generate method can be constructed with all the desired invariances, the functions are machine learnable, and adapt to the systems being studied, and it scales well to high numbers of elements (the current models handle 50+ elements). These kind of MLPs began appearing regularly in the literature around 2016.</p>
@@ -609,8 +609,8 @@ document.write(`
 <p>We will focus on the ASE compatible calculator here. To facilitate using the checkpoints, there is a set of <a class="reference internal" href="#./ocp-tutorial"><span class="xref myst">utilities</span></a> for this tutorial. You can list the checkpoints that are readily available here:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ocpmodels.common.model_registry</span> <span class="kn">import</span> <span class="n">MODEL_REGISTRY</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">MODEL_REGISTRY</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ocpmodels.models.model_registry</span> <span class="kn">import</span> <span class="n">available_pretrained_models</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">available_pretrained_models</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -618,7 +618,7 @@ document.write(`
 <p>You can get a checkpoint file with one of the keys listed above like this. The resulting string is the name of the file downloaded, and you use that when creating an OCP calculator later.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ocpmodels.common.model_registry</span> <span class="kn">import</span> <span class="n">model_name_to_local_file</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ocpmodels.models.model_registry</span> <span class="kn">import</span> <span class="n">model_name_to_local_file</span>
 
 <span class="n">checkpoint_path</span> <span class="o">=</span> <span class="n">model_name_to_local_file</span><span class="p">(</span><span class="s1">&#39;GemNet-OC OC20+OC22&#39;</span><span class="p">,</span> <span class="n">local_cache</span><span class="o">=</span><span class="s1">&#39;/tmp/ocp_checkpoints/&#39;</span><span class="p">)</span>
 <span class="n">checkpoint_path</span>
@@ -628,11 +628,11 @@ document.write(`
 </div>
 </section>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="goals-for-this-tutorial">
+<section id="goals-for-this-tutorial">
 <h1>Goals for this tutorial<a class="headerlink" href="#goals-for-this-tutorial" title="Link to this heading">#</a></h1>
 <p>This tutorial will start by using OCP in a Jupyter notebook to setup some simple calculations that use OCP to compute energy and forces, for structure optimization, and then an example of fine-tuning a model with new data.</p>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="about-the-compute-environment">
+<section id="about-the-compute-environment">
 <h1>About the compute environment<a class="headerlink" href="#about-the-compute-environment" title="Link to this heading">#</a></h1>
 <p><a class="reference internal" href="#./ocp_tutorial_helper.py"><span class="xref myst">ocp-tutorial.ipynb</span></a> provides <code class="docutils literal notranslate"><span class="pre">describe_ocp</span></code> to output information that might be helpful in debugging.</p>
 <div class="cell docutils container">
@@ -711,10 +711,8 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Intro and background on OCP and DFT</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#abstract">Abstract</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#walkthrough-video">Walkthrough video</a></li>
-</ul>
-</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#abstract">Abstract</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#walkthrough-video">Walkthrough video</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#models">Models</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datasets-tasks">Datasets / Tasks</a></li>
