@@ -181,7 +181,7 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference external" href="https://open-catalyst.metademolab.com/">OCP Demo (no install required!)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../core/INSTALL.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../core/QUICKSTART.html">Quickstart simulation using pre-trained models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../core/QUICKSTART.html">Hello World with OCP models!</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../core/LICENSE.html">License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../tutorials/gotchas.html">Common gotchas with OCP</a></li>
 
@@ -232,13 +232,6 @@
 
 
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../../../../tutorials/NRR/NRR_toc.html">Screening catalysts with OCP</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../tutorials/NRR/NRR_example.html">Using OCP to enumerate adsorbates on catalyst surfaces</a></li>
-
-
-
-
-
-
 <li class="toctree-l2"><a class="reference internal" href="../../../../../tutorials/NRR/NRR_example-gemnet.html">Using OCP to enumerate adsorbates on alloy catalyst surfaces</a></li>
 
 
@@ -603,7 +596,7 @@ document.write(`
 </table>
 <dl class="py class">
 <dt class="sig sig-object py" id="ocpmodels.models.equiformer_v2.input_block.EdgeDegreeEmbedding">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ocpmodels.models.equiformer_v2.input_block.</span></span><span class="sig-name descname"><span class="pre">EdgeDegreeEmbedding</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sphere_channels</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lmax_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mmax_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">SO3_rotation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mappingReduced</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_num_elements</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_channels_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_atom_edge_embedding</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rescale_factor</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ocpmodels.models.equiformer_v2.input_block.EdgeDegreeEmbedding" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ocpmodels.models.equiformer_v2.input_block.</span></span><span class="sig-name descname"><span class="pre">EdgeDegreeEmbedding</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sphere_channels</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lmax_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mmax_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">SO3_rotation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mappingReduced</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_num_elements</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_channels_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_atom_edge_embedding</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rescale_factor</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ocpmodels.models.equiformer_v2.input_block.EdgeDegreeEmbedding" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">torch.nn.Module</span></code></p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>

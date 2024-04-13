@@ -181,7 +181,7 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference external" href="https://open-catalyst.metademolab.com/">OCP Demo (no install required!)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../core/INSTALL.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../core/QUICKSTART.html">Quickstart simulation using pre-trained models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../core/QUICKSTART.html">Hello World with OCP models!</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../core/LICENSE.html">License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gotchas.html">Common gotchas with OCP</a></li>
 
@@ -232,13 +232,6 @@
 
 
 <li class="toctree-l1 has-children"><a class="reference internal" href="NRR/NRR_toc.html">Screening catalysts with OCP</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="NRR/NRR_example.html">Using OCP to enumerate adsorbates on catalyst surfaces</a></li>
-
-
-
-
-
-
 <li class="toctree-l2"><a class="reference internal" href="NRR/NRR_example-gemnet.html">Using OCP to enumerate adsorbates on alloy catalyst surfaces</a></li>
 
 
@@ -620,8 +613,13 @@ document.write(`
 <p>We will focus on the ASE compatible calculator here. To facilitate using the checkpoints, there is a set of <a class="reference internal" href="#./ocp-tutorial"><span class="xref myst">utilities</span></a> for this tutorial. You can list the checkpoints that are readily available here:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ocpmodels.models.model_registry</span> <span class="kn">import</span> <span class="n">available_pretrained_models</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ocpmodels.models.model_registry</span> <span class="kn">import</span> <span class="n">available_pretrained_models</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">available_pretrained_models</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;CGCNN 200k&#39;, &#39;CGCNN 2M&#39;, &#39;CGCNN 20M&#39;, &#39;CGCNN All&#39;, &#39;DimeNet 200k&#39;, &#39;DimeNet 2M&#39;, &#39;SchNet 200k&#39;, &#39;SchNet 2M&#39;, &#39;SchNet 20M&#39;, &#39;SchNet All&#39;, &#39;DimeNet++ 200k&#39;, &#39;DimeNet++ 2M&#39;, &#39;DimeNet++ 20M&#39;, &#39;DimeNet++ All&#39;, &#39;SpinConv 2M&#39;, &#39;SpinConv All&#39;, &#39;GemNet-dT 2M&#39;, &#39;GemNet-dT All&#39;, &#39;PaiNN All&#39;, &#39;GemNet-OC 2M&#39;, &#39;GemNet-OC All&#39;, &#39;GemNet-OC All+MD&#39;, &#39;GemNet-OC-Large All+MD&#39;, &#39;SCN 2M&#39;, &#39;SCN-t4-b2 2M&#39;, &#39;SCN All+MD&#39;, &#39;eSCN-L4-M2-Lay12 2M&#39;, &#39;eSCN-L6-M2-Lay12 2M&#39;, &#39;eSCN-L6-M2-Lay12All+MD&#39;, &#39;eSCN-L6-M3-Lay20All+MD&#39;, &#39;EquiformerV2 (83M) 2M&#39;, &#39;EquiformerV2 (31M) All+MD&#39;, &#39;EquiformerV2 (153M) All+MD&#39;, &#39;SchNet All forceonly&#39;, &#39;DimeNet++ All forceonly&#39;, &#39;DimeNet++-Large All&#39;, &#39;DimeNet++ 20M+Rattled&#39;, &#39;DimeNet++ 20M+MD&#39;, &#39;CGCNN 10k is2re&#39;, &#39;CGCNN 100k is2re&#39;, &#39;CGCNN All is2re&#39;, &#39;DimeNet 10k is2re&#39;, &#39;DimeNet 100k is2re&#39;, &#39;DimeNet All is2re&#39;, &#39;SchNet 10k is2re&#39;, &#39;SchNet 100k is2re&#39;, &#39;SchNet All is2re&#39;, &#39;DimeNet++ 10k is2re&#39;, &#39;DimeNet++ 100k is2re&#39;, &#39;DimeNet++ All is2re&#39;, &#39;PaiNNAll&#39;, &#39;GemNet-dTOC22&#39;, &#39;GemNet-OCOC22&#39;, &#39;GemNet-OCOC20+OC22&#39;, &#39;GemNet-OC enforce_max_neighbors_strictly=False&#39;, &#39;GemNet-OCOC20-&gt;OC22&#39;, &#39;EquiformerV2 lambda_E$=4 lambda_F$=100 OC22&#39;, &#39;SchNet&#39;, &#39;DimeNet++&#39;, &#39;PaiNN&#39;, &#39;GemNet-OC&#39;, &#39;eSCN&#39;, &#39;EquiformerV2&#39;, &#39;EquiformerV2 (Large)&#39;, &#39;Gemnet-OC (Direct)&#39;, &#39;eSCN (Direct)&#39;, &#39;EquiformerV2 (Direct)&#39;)
 </pre></div>
 </div>
 </div>
@@ -629,10 +627,15 @@ document.write(`
 <p>You can get a checkpoint file with one of the keys listed above like this. The resulting string is the name of the file downloaded, and you use that when creating an OCP calculator later.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ocpmodels.models.model_registry</span> <span class="kn">import</span> <span class="n">model_name_to_local_file</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ocpmodels.models.model_registry</span> <span class="kn">import</span> <span class="n">model_name_to_local_file</span>
 
-<span class="n">checkpoint_path</span> <span class="o">=</span> <span class="n">model_name_to_local_file</span><span class="p">(</span><span class="s1">&#39;GemNet-OC OC20+OC22&#39;</span><span class="p">,</span> <span class="n">local_cache</span><span class="o">=</span><span class="s1">&#39;/tmp/ocp_checkpoints/&#39;</span><span class="p">)</span>
+<span class="n">checkpoint_path</span> <span class="o">=</span> <span class="n">model_name_to_local_file</span><span class="p">(</span><span class="s1">&#39;GemNet-OCOC20+OC22&#39;</span><span class="p">,</span> <span class="n">local_cache</span><span class="o">=</span><span class="s1">&#39;/tmp/ocp_checkpoints/&#39;</span><span class="p">)</span>
 <span class="n">checkpoint_path</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/tmp/ocp_checkpoints/gnoc_oc22_oc20_all_s2ef.pt&#39;
 </pre></div>
 </div>
 </div>
@@ -648,8 +651,30 @@ document.write(`
 <p><code class="docutils literal notranslate"><span class="pre">ocpmodels.common.tutorial_utils</span></code>  provides <code class="docutils literal notranslate"><span class="pre">describe_ocp</span></code> to output information that might be helpful in debugging.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ocpmodels.common.tutorial_utils</span> <span class="kn">import</span> <span class="n">describe_ocp</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ocpmodels.common.tutorial_utils</span> <span class="kn">import</span> <span class="n">describe_ocp</span>
 <span class="n">describe_ocp</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/bin/python 3.11.9 (main, Apr  2 2024, 15:19:53) [GCC 11.4.0]
+ocp is installed at /home/runner/work/ocp/ocp
+ocp repo is at git commit: 6193b4d
+numba: 0.59.1
+numpy: 1.23.5
+ase: 3.22.1
+e3nn: 0.5.1
+pymatgen: 2023.9.25
+torch: 2.2.0+cu121
+torch.version.cuda: 12.1
+torch.cuda: is_available: False
+torch geometric: 2.3.0
+
+Platform: Linux-6.5.0-1017-azure-x86_64-with-glibc2.35
+  Processor: x86_64
+  Virtual memory: svmem(total=16757350400, available=14627491840, percent=12.7, used=1740910592, free=11143077888, active=1849991168, inactive=3205390336, buffers=71176192, cached=3802185728, shared=25735168, slab=360226816)
+  Swap memory: sswap(total=4294963200, used=274432, free=4294688768, percent=0.0, sin=0, sout=20480)
+  Disk usage: sdiskusage(total=77851254784, used=67848376320, free=9986101248, percent=87.2)
 </pre></div>
 </div>
 </div>

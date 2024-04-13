@@ -181,7 +181,7 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference external" href="https://open-catalyst.metademolab.com/">OCP Demo (no install required!)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../core/INSTALL.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../core/QUICKSTART.html">Quickstart simulation using pre-trained models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../core/QUICKSTART.html">Hello World with OCP models!</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../core/LICENSE.html">License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../gotchas.html">Common gotchas with OCP</a></li>
 
@@ -232,13 +232,6 @@
 
 
 <li class="toctree-l1 has-children"><a class="reference internal" href="../NRR/NRR_toc.html">Screening catalysts with OCP</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../NRR/NRR_example.html">Using OCP to enumerate adsorbates on catalyst surfaces</a></li>
-
-
-
-
-
-
 <li class="toctree-l2"><a class="reference internal" href="../NRR/NRR_example-gemnet.html">Using OCP to enumerate adsorbates on alloy catalyst surfaces</a></li>
 
 
@@ -585,14 +578,101 @@ document.write(`
 <p>You can retrieve the dataset below. In this notebook we learn how to do “mass inference” without an ASE calculator. You do this by creating a config.yml file, and running the <code class="docutils literal notranslate"><span class="pre">main.py</span></code> command line utility.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="err">!</span> <span class="p">[</span> <span class="err">!</span> <span class="o">-</span><span class="n">f</span> <span class="n">data</span><span class="o">.</span><span class="n">db</span> <span class="p">]</span>  <span class="o">&amp;&amp;</span> <span class="n">wget</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">figshare</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ndownloader</span><span class="o">/</span><span class="n">files</span><span class="o">/</span><span class="mi">11948267</span> <span class="o">-</span><span class="n">O</span> <span class="n">data</span><span class="o">.</span><span class="n">db</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>!<span class="w"> </span>-f<span class="w"> </span>data.db<span class="w"> </span><span class="o">]</span><span class="w">  </span><span class="o">&amp;&amp;</span><span class="w"> </span>wget<span class="w"> </span>https://figshare.com/ndownloader/files/11948267<span class="w"> </span>-O<span class="w"> </span>data.db<span class="w"> </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2024-04-13 03:22:33--  https://figshare.com/ndownloader/files/11948267
+Resolving figshare.com (figshare.com)... 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>34.253.100.243, 52.215.154.10, 2a05:d018:1f4:d000:72fd:1603:379a:8ec3, ...
+Connecting to figshare.com (figshare.com)|34.253.100.243|:443... 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>connected.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>HTTP request sent, awaiting response... 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>302 Found
+Location: https://s3-eu-west-1.amazonaws.com/pstorage-cmu-348901238291901/11948267/data.db?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAI266R7V6O36O5JUA/20240413/eu-west-1/s3/aws4_request&amp;X-Amz-Date=20240413T032234Z&amp;X-Amz-Expires=10&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=7102b107d5aa9e47df9f05cefd722568d759f46511b9fba6e981de8f33af446a [following]
+--2024-04-13 03:22:34--  https://s3-eu-west-1.amazonaws.com/pstorage-cmu-348901238291901/11948267/data.db?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAI266R7V6O36O5JUA/20240413/eu-west-1/s3/aws4_request&amp;X-Amz-Date=20240413T032234Z&amp;X-Amz-Expires=10&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=7102b107d5aa9e47df9f05cefd722568d759f46511b9fba6e981de8f33af446a
+Resolving s3-eu-west-1.amazonaws.com (s3-eu-west-1.amazonaws.com)... 52.218.96.10, 52.218.40.195, 52.218.45.96, ...
+Connecting to s3-eu-west-1.amazonaws.com (s3-eu-west-1.amazonaws.com)|52.218.96.10|:443... 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>connected.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>HTTP request sent, awaiting response... 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>200 OK
+Length: 43125760 (41M) [binary/octet-stream]
+Saving to: ‘data.db’
+
+
+data.db               0%[                    ]       0  --.-KB/s               
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db               0%[                    ] 117.88K   556KB/s               
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db               2%[                    ]   1.06M  2.50MB/s               
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              17%[==&gt;                 ]   7.28M  11.4MB/s               
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              39%[======&gt;             ]  16.13M  19.0MB/s               
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              60%[===========&gt;        ]  24.78M  23.3MB/s               
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              80%[===============&gt;    ]  33.28M  26.1MB/s               
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db             100%[===================&gt;]  41.13M  28.1MB/s    in 1.5s    
+
+2024-04-13 03:22:36 (28.1 MB/s) - ‘data.db’ saved [43125760/43125760]
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="err">!</span> <span class="n">ase</span> <span class="n">db</span> <span class="n">data</span><span class="o">.</span><span class="n">db</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>ase<span class="w"> </span>db<span class="w"> </span>data.db
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>id|age|user |formula|calculator|  energy|natoms| fmax|pbc|  volume|charge|     mass
+ 1| 9y|jboes|Au55   |vasp      |-170.717|    55|0.164|TTT|3304.114| 0.000|10833.161
+ 2| 9y|jboes|Au55   |vasp      |-170.717|    55|0.165|TTT|3304.114| 0.000|10833.161
+ 3| 9y|jboes|Au55   |vasp      |-170.718|    55|0.167|TTT|3304.114| 0.000|10833.161
+ 4| 9y|jboes|Au55   |vasp      |-170.721|    55|0.170|TTT|3304.114| 0.000|10833.161
+ 5| 9y|jboes|Au55   |vasp      |-170.732|    55|0.207|TTT|3304.114| 0.000|10833.161
+ 6| 9y|jboes|Au55   |vasp      |-170.762|    55|0.310|TTT|3304.114| 0.000|10833.161
+ 7| 9y|jboes|Au55   |vasp      |-170.816|    55|0.507|TTT|3304.114| 0.000|10833.161
+ 8| 9y|jboes|Au55   |vasp      |-170.905|    55|0.664|TTT|3304.114| 0.000|10833.161
+ 9| 9y|jboes|Au55   |vasp      |-171.034|    55|0.640|TTT|3304.114| 0.000|10833.161
+10| 9y|jboes|Au55   |vasp      |-171.149|    55|0.522|TTT|3304.114| 0.000|10833.161
+11| 9y|jboes|Au55   |vasp      |-171.270|    55|0.177|TTT|3304.114| 0.000|10833.161
+12| 9y|jboes|Au55   |vasp      |-171.282|    55|0.154|TTT|3304.114| 0.000|10833.161
+13| 9y|jboes|Au55   |vasp      |-171.279|    55|0.163|TTT|3304.114| 0.000|10833.161
+14| 9y|jboes|Au55   |vasp      |-171.268|    55|0.189|TTT|3304.114| 0.000|10833.161
+15| 9y|jboes|Au55   |vasp      |-171.243|    55|0.329|TTT|3304.114| 0.000|10833.161
+16| 9y|jboes|Au55   |vasp      |-170.717|    55|0.172|TTT|3304.114| 0.000|10833.161
+17| 9y|jboes|Au55   |vasp      |-170.717|    55|0.172|TTT|3304.114| 0.000|10833.161
+18| 9y|jboes|Au55   |vasp      |-170.717|    55|0.172|TTT|3304.114| 0.000|10833.161
+19| 9y|jboes|Au55   |vasp      |-170.167|    55|0.182|TTT|3304.114| 0.000|10833.161
+20| 9y|jboes|Au55   |vasp      |-170.167|    55|0.182|TTT|3304.114| 0.000|10833.161
+Rows: 9972 (showing first 20)
+Keys: config, group, identity, neural_energy, reax_energy, structure, surf, tag, train_set, volume
 </pre></div>
 </div>
 </div>
@@ -600,18 +680,28 @@ document.write(`
 <p>You have to choose a checkpoint to start with. The newer checkpoints may require too much memory for this environment.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ocpmodels.models.model_registry</span> <span class="kn">import</span> <span class="n">available_pretrained_models</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ocpmodels.models.model_registry</span> <span class="kn">import</span> <span class="n">available_pretrained_models</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">available_pretrained_models</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;CGCNN 200k&#39;, &#39;CGCNN 2M&#39;, &#39;CGCNN 20M&#39;, &#39;CGCNN All&#39;, &#39;DimeNet 200k&#39;, &#39;DimeNet 2M&#39;, &#39;SchNet 200k&#39;, &#39;SchNet 2M&#39;, &#39;SchNet 20M&#39;, &#39;SchNet All&#39;, &#39;DimeNet++ 200k&#39;, &#39;DimeNet++ 2M&#39;, &#39;DimeNet++ 20M&#39;, &#39;DimeNet++ All&#39;, &#39;SpinConv 2M&#39;, &#39;SpinConv All&#39;, &#39;GemNet-dT 2M&#39;, &#39;GemNet-dT All&#39;, &#39;PaiNN All&#39;, &#39;GemNet-OC 2M&#39;, &#39;GemNet-OC All&#39;, &#39;GemNet-OC All+MD&#39;, &#39;GemNet-OC-Large All+MD&#39;, &#39;SCN 2M&#39;, &#39;SCN-t4-b2 2M&#39;, &#39;SCN All+MD&#39;, &#39;eSCN-L4-M2-Lay12 2M&#39;, &#39;eSCN-L6-M2-Lay12 2M&#39;, &#39;eSCN-L6-M2-Lay12All+MD&#39;, &#39;eSCN-L6-M3-Lay20All+MD&#39;, &#39;EquiformerV2 (83M) 2M&#39;, &#39;EquiformerV2 (31M) All+MD&#39;, &#39;EquiformerV2 (153M) All+MD&#39;, &#39;SchNet All forceonly&#39;, &#39;DimeNet++ All forceonly&#39;, &#39;DimeNet++-Large All&#39;, &#39;DimeNet++ 20M+Rattled&#39;, &#39;DimeNet++ 20M+MD&#39;, &#39;CGCNN 10k is2re&#39;, &#39;CGCNN 100k is2re&#39;, &#39;CGCNN All is2re&#39;, &#39;DimeNet 10k is2re&#39;, &#39;DimeNet 100k is2re&#39;, &#39;DimeNet All is2re&#39;, &#39;SchNet 10k is2re&#39;, &#39;SchNet 100k is2re&#39;, &#39;SchNet All is2re&#39;, &#39;DimeNet++ 10k is2re&#39;, &#39;DimeNet++ 100k is2re&#39;, &#39;DimeNet++ All is2re&#39;, &#39;PaiNNAll&#39;, &#39;GemNet-dTOC22&#39;, &#39;GemNet-OCOC22&#39;, &#39;GemNet-OCOC20+OC22&#39;, &#39;GemNet-OC enforce_max_neighbors_strictly=False&#39;, &#39;GemNet-OCOC20-&gt;OC22&#39;, &#39;EquiformerV2 lambda_E$=4 lambda_F$=100 OC22&#39;, &#39;SchNet&#39;, &#39;DimeNet++&#39;, &#39;PaiNN&#39;, &#39;GemNet-OC&#39;, &#39;eSCN&#39;, &#39;EquiformerV2&#39;, &#39;EquiformerV2 (Large)&#39;, &#39;Gemnet-OC (Direct)&#39;, &#39;eSCN (Direct)&#39;, &#39;EquiformerV2 (Direct)&#39;)
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ocpmodels.models.model_registry</span> <span class="kn">import</span> <span class="n">model_name_to_local_file</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ocpmodels.models.model_registry</span> <span class="kn">import</span> <span class="n">model_name_to_local_file</span>
 
-<span class="n">checkpoint_path</span> <span class="o">=</span> <span class="n">model_name_to_local_file</span><span class="p">(</span><span class="s1">&#39;GemNet-dT OC22&#39;</span><span class="p">,</span> <span class="n">local_cache</span><span class="o">=</span><span class="s1">&#39;/tmp/ocp_checkpoints/&#39;</span><span class="p">)</span>
+<span class="n">checkpoint_path</span> <span class="o">=</span> <span class="n">model_name_to_local_file</span><span class="p">(</span><span class="s1">&#39;GemNet-dTOC22&#39;</span><span class="p">,</span> <span class="n">local_cache</span><span class="o">=</span><span class="s1">&#39;/tmp/ocp_checkpoints/&#39;</span><span class="p">)</span>
 <span class="n">checkpoint_path</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/tmp/ocp_checkpoints/gndt_oc22_all_s2ef.pt&#39;
 </pre></div>
 </div>
 </div>
@@ -619,7 +709,7 @@ document.write(`
 <p>We have to update our configuration yml file with the dataset. It is necessary to specify the train and test set for some reason.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ocpmodels.common.tutorial_utils</span> <span class="kn">import</span> <span class="n">generate_yml_config</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ocpmodels.common.tutorial_utils</span> <span class="kn">import</span> <span class="n">generate_yml_config</span>
 <span class="n">yml</span> <span class="o">=</span> <span class="n">generate_yml_config</span><span class="p">(</span><span class="n">checkpoint_path</span><span class="p">,</span> <span class="s1">&#39;config.yml&#39;</span><span class="p">,</span>
                    <span class="n">delete</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;cmd&#39;</span><span class="p">,</span> <span class="s1">&#39;logger&#39;</span><span class="p">,</span> <span class="s1">&#39;task&#39;</span><span class="p">,</span> <span class="s1">&#39;model_attributes&#39;</span><span class="p">,</span>
                            <span class="s1">&#39;dataset&#39;</span><span class="p">,</span> <span class="s1">&#39;slurm&#39;</span><span class="p">],</span>
@@ -644,12 +734,29 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/cuda/amp/grad_scaler.py:126: UserWarning: torch.cuda.amp.GradScaler is enabled, but CUDA is not available.  Disabling.
+  warnings.warn(
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Scale factor comment not found in model
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:No seed has been set in modelcheckpoint or OCPCalculator! Results may not be reproducible on re-run
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PosixPath(&#39;/home/runner/work/ocp/ocp/docs/tutorials/advanced/config.yml&#39;)
+</pre></div>
+</div>
+</div>
 </div>
 <p>It is a good idea to redirect the output to a file. If the output gets too large here, the notebook may fail to save. Normally I would use a redirect like <code class="docutils literal notranslate"><span class="pre">2&amp;&gt;1</span></code>, but this does not work with the main.py method. An alternative here is to open a terminal and run it there.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">capture</span> <span class="n">inference</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%capture</span> inference
 <span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">ocpmodels.common.tutorial_utils</span> <span class="kn">import</span> <span class="n">ocp_main</span>
+
 <span class="n">t0</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
 <span class="err">!</span> <span class="n">python</span> <span class="p">{</span><span class="n">ocp_main</span><span class="p">()}</span> <span class="o">--</span><span class="n">mode</span> <span class="n">predict</span> <span class="o">--</span><span class="n">config</span><span class="o">-</span><span class="n">yml</span> <span class="p">{</span><span class="n">yml</span><span class="p">}</span> <span class="o">--</span><span class="n">checkpoint</span> <span class="p">{</span><span class="n">checkpoint_path</span><span class="p">}</span> <span class="o">--</span><span class="n">amp</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Elapsed time = </span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">t0</span><span class="si">:</span><span class="s1">1.1f</span><span class="si">}</span><span class="s1"> seconds&#39;</span><span class="p">)</span>
@@ -659,15 +766,15 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="err">!</span> <span class="n">grep</span> <span class="s2">&quot;Total time taken:&quot;</span> <span class="s1">&#39;mass-inference.txt&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;mass-inference.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">inference</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span> 
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;mass-inference.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">inference</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>grep<span class="w"> </span><span class="s2">&quot;Total time taken:&quot;</span><span class="w"> </span><span class="s1">&#39;mass-inference.txt&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -675,7 +782,7 @@ document.write(`
 <p>The mass inference approach takes 1-2 minutes to run. See the output <a class="reference internal" href="#./mass-inference.txt"><span class="xref myst">here</span></a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">results</span> <span class="o">=</span> <span class="err">!</span> <span class="n">grep</span> <span class="s2">&quot;  results_dir:&quot;</span> <span class="n">mass</span><span class="o">-</span><span class="n">inference</span><span class="o">.</span><span class="n">txt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span> <span class="o">=</span> <span class="o">!</span><span class="w"> </span>grep<span class="w"> </span><span class="s2">&quot;  results_dir:&quot;</span><span class="w"> </span>mass-inference.txt
 <span class="n">d</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -683,7 +790,7 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="n">results</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">d</span><span class="si">}</span><span class="s1">/s2ef_predictions.npz&#39;</span><span class="p">,</span> <span class="n">allow_pickle</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">results</span><span class="o">.</span><span class="n">files</span>
 </pre></div>
@@ -693,7 +800,7 @@ document.write(`
 <p>It is not obvious, but the data from mass inference is not in the same order. We have to get an id from the mass inference, and then “resort” the results so they are in the same order.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">inds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="nb">int</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">results</span><span class="p">[</span><span class="s1">&#39;ids&#39;</span><span class="p">]])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">inds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="nb">int</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">results</span><span class="p">[</span><span class="s1">&#39;ids&#39;</span><span class="p">]])</span>
 <span class="n">sind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">inds</span><span class="p">)</span>
 <span class="n">inds</span><span class="p">[</span><span class="n">sind</span><span class="p">]</span>
 </pre></div>
@@ -703,7 +810,7 @@ document.write(`
 <p>To compare this with the results, we need to get the energy data from the ase db.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ase.db</span> <span class="kn">import</span> <span class="n">connect</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ase.db</span> <span class="kn">import</span> <span class="n">connect</span>
 <span class="n">db</span> <span class="o">=</span> <span class="n">connect</span><span class="p">(</span><span class="s1">&#39;data.db&#39;</span><span class="p">)</span>
 
 <span class="n">energies</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">row</span><span class="o">.</span><span class="n">energy</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">db</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s1">&#39;natoms&gt;5,xc=PBE&#39;</span><span class="p">)])</span>
@@ -715,7 +822,7 @@ document.write(`
 <p>Now, we can see the predictions. The are only ok here; that is not surprising, the data set has lots of Au configurations that have never been seen by this model. Fine-tuning would certainly help improve this.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">energies</span> <span class="o">/</span> <span class="n">natoms</span><span class="p">,</span> <span class="n">results</span><span class="p">[</span><span class="s1">&#39;energy&#39;</span><span class="p">][</span><span class="n">sind</span><span class="p">]</span> <span class="o">/</span> <span class="n">natoms</span><span class="p">,</span> <span class="s1">&#39;b.&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;DFT&#39;</span><span class="p">)</span>
@@ -734,15 +841,15 @@ document.write(`
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ocpmodels.common.relaxation.ase_utils</span> <span class="kn">import</span> <span class="n">OCPCalculator</span>
-<span class="n">calc</span> <span class="o">=</span> <span class="n">OCPCalculator</span><span class="p">(</span><span class="n">checkpoint</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="n">checkpoint_path</span><span class="p">),</span> <span class="n">cpu</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ocpmodels.common.relaxation.ase_utils</span> <span class="kn">import</span> <span class="n">OCPCalculator</span>
+<span class="n">calc</span> <span class="o">=</span> <span class="n">OCPCalculator</span><span class="p">(</span><span class="n">checkpoint_path</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="n">checkpoint_path</span><span class="p">),</span> <span class="n">cpu</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
 <span class="n">t0</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
 <span class="n">OCP</span><span class="p">,</span> <span class="n">DFT</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
@@ -759,7 +866,7 @@ document.write(`
 <p>This takes at least twice as long as the mass-inference approach above. It is conceptually simpler though, and does not require resorting.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">DFT</span><span class="p">,</span> <span class="n">OCP</span><span class="p">,</span> <span class="s1">&#39;b.&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">DFT</span><span class="p">,</span> <span class="n">OCP</span><span class="p">,</span> <span class="s1">&#39;b.&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;DFT (eV/atom)&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;OCP (eV/atom)&#39;</span><span class="p">);</span>
 </pre></div>
@@ -774,21 +881,21 @@ document.write(`
 <p>As noted above (see also <a class="reference external" href="https://github.com/Open-Catalyst-Project/ocp/issues/542">Issue 542</a>), the ASE calculator and main.py use different precisions by default, which can lead to small differences.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="s1">&#39;energy&#39;</span><span class="p">][</span><span class="n">sind</span><span class="p">]</span> <span class="o">-</span> <span class="n">OCP</span> <span class="o">*</span> <span class="n">natoms</span><span class="p">))</span>  <span class="c1"># MAE</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="s1">&#39;energy&#39;</span><span class="p">][</span><span class="n">sind</span><span class="p">]</span> <span class="o">-</span> <span class="n">OCP</span> <span class="o">*</span> <span class="n">natoms</span><span class="p">))</span>  <span class="c1"># MAE</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="s1">&#39;energy&#39;</span><span class="p">][</span><span class="n">sind</span><span class="p">]</span> <span class="o">-</span> <span class="n">OCP</span> <span class="o">*</span> <span class="n">natoms</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="s1">&#39;energy&#39;</span><span class="p">][</span><span class="n">sind</span><span class="p">]</span> <span class="o">-</span> <span class="n">OCP</span> <span class="o">*</span> <span class="n">natoms</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="s1">&#39;energy&#39;</span><span class="p">][</span><span class="n">sind</span><span class="p">]</span> <span class="o">-</span> <span class="n">OCP</span> <span class="o">*</span> <span class="n">natoms</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="s1">&#39;energy&#39;</span><span class="p">][</span><span class="n">sind</span><span class="p">]</span> <span class="o">-</span> <span class="n">OCP</span> <span class="o">*</span> <span class="n">natoms</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="s1">&#39;energy&#39;</span><span class="p">][</span><span class="n">sind</span><span class="p">]</span> <span class="o">-</span> <span class="n">OCP</span> <span class="o">*</span> <span class="n">natoms</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">);</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="s1">&#39;energy&#39;</span><span class="p">][</span><span class="n">sind</span><span class="p">]</span> <span class="o">-</span> <span class="n">OCP</span> <span class="o">*</span> <span class="n">natoms</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -796,7 +903,7 @@ document.write(`
 <p>Here we see many of the differences are very small. 0.0078125 = 1 / 128, and these errors strongly suggest some kind of mixed precision is responsible for these differences. It is an open issue to remove them and identify where the cause is.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="s1">&#39;energy&#39;</span><span class="p">][</span><span class="n">sind</span><span class="p">]</span> <span class="o">-</span> <span class="n">OCP</span> <span class="o">*</span> <span class="n">natoms</span><span class="p">)[</span><span class="mi">0</span><span class="p">:</span><span class="mi">400</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="s1">&#39;energy&#39;</span><span class="p">][</span><span class="n">sind</span><span class="p">]</span> <span class="o">-</span> <span class="n">OCP</span> <span class="o">*</span> <span class="n">natoms</span><span class="p">)[</span><span class="mi">0</span><span class="p">:</span><span class="mi">400</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>

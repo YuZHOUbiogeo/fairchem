@@ -61,7 +61,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'core/INSTALL';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Quickstart simulation using pre-trained models" href="QUICKSTART.html" />
+    <link rel="next" title="Hello World with OCP models!" href="QUICKSTART.html" />
     <link rel="prev" title="ocp by Open Catalyst Project" href="../index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -181,7 +181,7 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference external" href="https://open-catalyst.metademolab.com/">OCP Demo (no install required!)</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="QUICKSTART.html">Quickstart simulation using pre-trained models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="QUICKSTART.html">Hello World with OCP models!</a></li>
 <li class="toctree-l1"><a class="reference internal" href="LICENSE.html">License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/gotchas.html">Common gotchas with OCP</a></li>
 
@@ -232,13 +232,6 @@
 
 
 <li class="toctree-l1 has-children"><a class="reference internal" href="../tutorials/NRR/NRR_toc.html">Screening catalysts with OCP</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../tutorials/NRR/NRR_example.html">Using OCP to enumerate adsorbates on catalyst surfaces</a></li>
-
-
-
-
-
-
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/NRR/NRR_example-gemnet.html">Using OCP to enumerate adsorbates on alloy catalyst surfaces</a></li>
 
 
@@ -562,7 +555,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pip-fast-easy-to-get-started">pip (fast, easy to get started)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pip-fast-easy-to-get-started">pip (fast, easy to get started)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gpu-enabled-machines">GPU enabled machines</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cpu-only-install-slower-training-inference">CPU-only install (slower training/inference!)</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conda-preferred-for-model-training-development">Conda (preferred for model training &amp; development)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gpu-machines">GPU machines</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cpu-only-machines">CPU-only machines</a></li>
@@ -584,18 +581,23 @@ document.write(`
 <section id="pip-fast-easy-to-get-started">
 <h2>pip (fast, easy to get started)<a class="headerlink" href="#pip-fast-easy-to-get-started" title="Link to this heading">#</a></h2>
 <p>Installing the OCP package and necessary dependencies is now as easy as:</p>
-<p>(GPU)</p>
+<section id="gpu-enabled-machines">
+<h3>GPU enabled machines<a class="headerlink" href="#gpu-enabled-machines" title="Link to this heading">#</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">torch</span><span class="o">==</span><span class="mf">1.13.1</span><span class="o">+</span><span class="n">cu117</span> <span class="n">torchvision</span><span class="o">==</span><span class="mf">0.14.1</span><span class="o">+</span><span class="n">cu117</span> <span class="n">torchaudio</span><span class="o">==</span><span class="mf">0.13.1</span> <span class="o">--</span><span class="n">extra</span><span class="o">-</span><span class="n">index</span><span class="o">-</span><span class="n">url</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">download</span><span class="o">.</span><span class="n">pytorch</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">whl</span><span class="o">/</span><span class="n">cu117</span>
-<span class="n">pip</span> <span class="n">install</span> <span class="n">pyg_lib</span> <span class="n">torch_scatter</span> <span class="n">torch_sparse</span> <span class="o">-</span><span class="n">f</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">data</span><span class="o">.</span><span class="n">pyg</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">whl</span><span class="o">/</span><span class="n">torch</span><span class="o">-</span><span class="mf">1.13.1</span><span class="o">+</span><span class="n">cu117</span><span class="o">.</span><span class="n">html</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">pyg_lib</span> <span class="n">torch_scatter</span> <span class="n">torch_sparse</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">index</span> <span class="o">-</span><span class="n">f</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">data</span><span class="o">.</span><span class="n">pyg</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">whl</span><span class="o">/</span><span class="n">torch</span><span class="o">-</span><span class="mf">1.13.1</span><span class="o">+</span><span class="n">cu117</span><span class="o">.</span><span class="n">html</span>
 <span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">i</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">test</span><span class="o">.</span><span class="n">pypi</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">simple</span><span class="o">/</span> <span class="n">ocp</span><span class="o">-</span><span class="n">models</span>
 </pre></div>
 </div>
-<p>or if you want the CPU-only install (no cuda/etc):</p>
+<p>Note the <code class="docutils literal notranslate"><span class="pre">--no-index</span></code> in the second line - it seems unnecessary, but is important to make sure the versions come from that file and not the main pip index!</p>
+</section>
+<section id="cpu-only-install-slower-training-inference">
+<h3>CPU-only install (slower training/inference!)<a class="headerlink" href="#cpu-only-install-slower-training-inference" title="Link to this heading">#</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">torch</span><span class="o">==</span><span class="mf">1.13.1</span> <span class="n">torchvision</span> <span class="n">torchaudio</span> <span class="o">--</span><span class="n">index</span><span class="o">-</span><span class="n">url</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">download</span><span class="o">.</span><span class="n">pytorch</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">whl</span><span class="o">/</span><span class="n">cpu</span> <span class="c1"># install CPU torch</span>
 <span class="n">pip</span> <span class="n">install</span> <span class="n">pyg_lib</span> <span class="n">torch_scatter</span> <span class="n">torch_sparse</span> <span class="o">-</span><span class="n">f</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">data</span><span class="o">.</span><span class="n">pyg</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">whl</span><span class="o">/</span><span class="n">torch</span><span class="o">-</span><span class="mf">1.13.1</span><span class="o">+</span><span class="n">cpu</span><span class="o">.</span><span class="n">html</span>
 <span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">i</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">test</span><span class="o">.</span><span class="n">pypi</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">simple</span><span class="o">/</span> <span class="n">ocp</span><span class="o">-</span><span class="n">models</span>
 </pre></div>
 </div>
+</section>
 </section>
 <section id="conda-preferred-for-model-training-development">
 <h2>Conda (preferred for model training &amp; development)<a class="headerlink" href="#conda-preferred-for-model-training-development" title="Link to this heading">#</a></h2>
@@ -701,7 +703,7 @@ pre-commit<span class="w"> </span>install
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Quickstart simulation using pre-trained models</p>
+        <p class="prev-next-title">Hello World with OCP models!</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -721,7 +723,11 @@ pre-commit<span class="w"> </span>install
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pip-fast-easy-to-get-started">pip (fast, easy to get started)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pip-fast-easy-to-get-started">pip (fast, easy to get started)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gpu-enabled-machines">GPU enabled machines</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cpu-only-install-slower-training-inference">CPU-only install (slower training/inference!)</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conda-preferred-for-model-training-development">Conda (preferred for model training &amp; development)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gpu-machines">GPU machines</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cpu-only-machines">CPU-only machines</a></li>

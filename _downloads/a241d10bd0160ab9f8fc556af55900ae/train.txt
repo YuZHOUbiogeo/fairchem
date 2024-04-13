@@ -1,0 +1,178 @@
+2024-04-13 03:34:05 (INFO): Project root: /home/runner/work/ocp/ocp
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/cuda/amp/grad_scaler.py:126: UserWarning: torch.cuda.amp.GradScaler is enabled, but CUDA is not available.  Disabling.
+  warnings.warn(
+2024-04-13 03:34:06 (WARNING): Detected old config, converting to new format. Consider updating to avoid potential incompatibilities.
+2024-04-13 03:34:06 (INFO): amp: true
+cmd:
+  checkpoint_dir: fine-tuning/checkpoints/2024-04-13-03-33-20-ft-oxides
+  commit: 6193b4d
+  identifier: ft-oxides
+  logs_dir: fine-tuning/logs/wandb/2024-04-13-03-33-20-ft-oxides
+  print_every: 10
+  results_dir: fine-tuning/results/2024-04-13-03-33-20-ft-oxides
+  seed: 0
+  timestamp_id: 2024-04-13-03-33-20-ft-oxides
+dataset:
+  a2g_args:
+    r_energy: true
+    r_forces: true
+  format: ase_db
+  key_mapping:
+    force: forces
+    y: energy
+  src: train.db
+eval_metrics:
+  metrics:
+    energy:
+    - mae
+    forces:
+    - forcesx_mae
+    - forcesy_mae
+    - forcesz_mae
+    - mae
+    - cosine_similarity
+    - magnitude_error
+    misc:
+    - energy_forces_within_threshold
+gpus: 0
+logger: wandb
+loss_fns:
+- energy:
+    coefficient: 1
+    fn: mae
+- forces:
+    coefficient: 1
+    fn: l2mae
+model: gemnet_oc
+model_attributes:
+  activation: silu
+  atom_edge_interaction: true
+  atom_interaction: true
+  cbf:
+    name: spherical_harmonics
+  cutoff: 12.0
+  cutoff_aeaint: 12.0
+  cutoff_aint: 12.0
+  cutoff_qint: 12.0
+  direct_forces: true
+  edge_atom_interaction: true
+  emb_size_aint_in: 64
+  emb_size_aint_out: 64
+  emb_size_atom: 256
+  emb_size_cbf: 16
+  emb_size_edge: 512
+  emb_size_quad_in: 32
+  emb_size_quad_out: 32
+  emb_size_rbf: 16
+  emb_size_sbf: 32
+  emb_size_trip_in: 64
+  emb_size_trip_out: 64
+  envelope:
+    exponent: 5
+    name: polynomial
+  extensive: true
+  forces_coupled: false
+  max_neighbors: 30
+  max_neighbors_aeaint: 20
+  max_neighbors_aint: 1000
+  max_neighbors_qint: 8
+  num_after_skip: 2
+  num_atom: 3
+  num_atom_emb_layers: 2
+  num_before_skip: 2
+  num_blocks: 4
+  num_concat: 1
+  num_global_out_layers: 2
+  num_output_afteratom: 3
+  num_radial: 128
+  num_spherical: 7
+  otf_graph: true
+  output_init: HeOrthogonal
+  qint_tags:
+  - 1
+  - 2
+  quad_interaction: true
+  rbf:
+    name: gaussian
+  regress_forces: true
+  sbf:
+    name: legendre_outer
+  symmetric_edge_symmetrization: false
+noddp: false
+optim:
+  batch_size: 16
+  clip_grad_norm: 10
+  ema_decay: 0.999
+  energy_coefficient: 1
+  eval_batch_size: 16
+  eval_every: 1
+  factor: 0.8
+  force_coefficient: 1
+  load_balancing: atoms
+  loss_energy: mae
+  lr_initial: 0.0005
+  max_epochs: 10
+  mode: min
+  num_workers: 2
+  optimizer: AdamW
+  optimizer_params:
+    amsgrad: true
+  patience: 3
+  scheduler: ReduceLROnPlateau
+  weight_decay: 0
+outputs:
+  energy:
+    level: system
+  forces:
+    eval_on_free_atoms: true
+    level: atom
+    train_on_free_atoms: false
+slurm: {}
+task:
+  dataset: ase_db
+test_dataset:
+  a2g_args:
+    r_energy: false
+    r_forces: false
+  src: test.db
+trainer: ocp
+val_dataset:
+  a2g_args:
+    r_energy: true
+    r_forces: true
+  src: val.db
+
+wandb: ERROR api_key not configured (no-tty). call wandb.login(key=[your_api_key])
+Traceback (most recent call last):
+  File "/home/runner/work/ocp/ocp/main.py", line 89, in <module>
+    Runner()(config)
+  File "/home/runner/work/ocp/ocp/main.py", line 34, in __call__
+    with new_trainer_context(args=args, config=config) as ctx:
+  File "/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/home/runner/work/ocp/ocp/ocpmodels/common/utils.py", line 977, in new_trainer_context
+    trainer = trainer_cls(
+              ^^^^^^^^^^^^
+  File "/home/runner/work/ocp/ocp/ocpmodels/trainers/ocp_trainer.py", line 95, in __init__
+    super().__init__(
+  File "/home/runner/work/ocp/ocp/ocpmodels/trainers/base_trainer.py", line 176, in __init__
+    self.load()
+  File "/home/runner/work/ocp/ocp/ocpmodels/trainers/base_trainer.py", line 197, in load
+    self.load_logger()
+  File "/home/runner/work/ocp/ocp/ocpmodels/trainers/base_trainer.py", line 229, in load_logger
+    self.logger = registry.get_logger_class(logger_name)(self.config)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/ocp/ocp/ocpmodels/common/logger.py", line 65, in __init__
+    wandb.init(
+  File "/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/wandb/sdk/wandb_init.py", line 1200, in init
+    raise e
+  File "/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/wandb/sdk/wandb_init.py", line 1177, in init
+    wi.setup(kwargs)
+  File "/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/wandb/sdk/wandb_init.py", line 301, in setup
+    wandb_login._login(
+  File "/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/wandb/sdk/wandb_login.py", line 334, in _login
+    wlogin.prompt_api_key()
+  File "/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/wandb/sdk/wandb_login.py", line 263, in prompt_api_key
+    raise UsageError("api_key not configured (no-tty). call " + directive)
+wandb.errors.UsageError: api_key not configured (no-tty). call wandb.login(key=[your_api_key])

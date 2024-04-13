@@ -181,7 +181,7 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference external" href="https://open-catalyst.metademolab.com/">OCP Demo (no install required!)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../core/INSTALL.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../core/QUICKSTART.html">Quickstart simulation using pre-trained models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../core/QUICKSTART.html">Hello World with OCP models!</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../core/LICENSE.html">License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../tutorials/gotchas.html">Common gotchas with OCP</a></li>
 
@@ -232,13 +232,6 @@
 
 
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../../../tutorials/NRR/NRR_toc.html">Screening catalysts with OCP</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../../tutorials/NRR/NRR_example.html">Using OCP to enumerate adsorbates on catalyst surfaces</a></li>
-
-
-
-
-
-
 <li class="toctree-l2"><a class="reference internal" href="../../../../tutorials/NRR/NRR_example-gemnet.html">Using OCP to enumerate adsorbates on alloy catalyst surfaces</a></li>
 
 
@@ -609,6 +602,18 @@ document.write(`
 <p>Copyright (c) Facebook, Inc. and its affiliates.</p>
 <p>This source code is licensed under the MIT license found in the
 LICENSE file in the root directory of this source tree.</p>
+<p># Copyright (c) Facebook, Inc. and its affiliates.
+# Borrowed from <a class="github reference external" href="https://github.com/facebookresearch/pythia/blob/master/pythia/common/registry.py">facebookresearch/pythia</a>.</p>
+<p>Registry is central source of truth. Inspired from Redux’s concept of
+global store, Registry maintains mappings of various information to unique
+keys. Special functions in registry can be used as decorators to register
+different kind of classes.</p>
+<p>Import the global registry object using</p>
+<p><code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">ocpmodels.common.registry</span> <span class="pre">import</span> <span class="pre">registry</span></code></p>
+<p>Various decorators for registry different kind of classes with unique keys</p>
+<ul class="simple">
+<li><p>Register a model: <code class="docutils literal notranslate"><span class="pre">&#64;registry.register_model</span></code></p></li>
+</ul>
 <section id="module-contents">
 <h2>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading">#</a></h2>
 <section id="classes">
@@ -667,7 +672,7 @@ LICENSE file in the root directory of this source tree.</p>
 <dd><p>Class for registry object which acts as central source of truth.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="ocpmodels.common.registry.Registry.mapping">
-<span class="sig-name descname"><span class="pre">mapping</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">NestedDict</span></em><a class="headerlink" href="#ocpmodels.common.registry.Registry.mapping" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">mapping</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">NestedDict</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#ocpmodels.common.registry.Registry.mapping" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">

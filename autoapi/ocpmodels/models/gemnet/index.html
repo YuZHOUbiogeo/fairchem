@@ -181,7 +181,7 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference external" href="https://open-catalyst.metademolab.com/">OCP Demo (no install required!)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../core/INSTALL.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../core/QUICKSTART.html">Quickstart simulation using pre-trained models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../core/QUICKSTART.html">Hello World with OCP models!</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../core/LICENSE.html">License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../tutorials/gotchas.html">Common gotchas with OCP</a></li>
 
@@ -232,13 +232,6 @@
 
 
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../../../tutorials/NRR/NRR_toc.html">Screening catalysts with OCP</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../../tutorials/NRR/NRR_example.html">Using OCP to enumerate adsorbates on catalyst surfaces</a></li>
-
-
-
-
-
-
 <li class="toctree-l2"><a class="reference internal" href="../../../../tutorials/NRR/NRR_example-gemnet.html">Using OCP to enumerate adsorbates on alloy catalyst surfaces</a></li>
 
 
@@ -564,6 +557,22 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subpackages">Subpackages</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#package-contents">Package Contents</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.models.gemnet.GemNetT"><code class="docutils literal notranslate"><span class="pre">GemNetT</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.models.gemnet.GemNetT.num_params"><code class="docutils literal notranslate"><span class="pre">GemNetT.num_params</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.models.gemnet.GemNetT.get_triplets"><code class="docutils literal notranslate"><span class="pre">GemNetT.get_triplets()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.models.gemnet.GemNetT.select_symmetric_edges"><code class="docutils literal notranslate"><span class="pre">GemNetT.select_symmetric_edges()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.models.gemnet.GemNetT.reorder_symmetric_edges"><code class="docutils literal notranslate"><span class="pre">GemNetT.reorder_symmetric_edges()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.models.gemnet.GemNetT.select_edges"><code class="docutils literal notranslate"><span class="pre">GemNetT.select_edges()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.models.gemnet.GemNetT.generate_interaction_graph"><code class="docutils literal notranslate"><span class="pre">GemNetT.generate_interaction_graph()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.models.gemnet.GemNetT.forward"><code class="docutils literal notranslate"><span class="pre">GemNetT.forward()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -604,6 +613,114 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.models.gemnet.utils</span></code></a></li>
 </ul>
 </div>
+</section>
+<section id="package-contents">
+<h2>Package Contents<a class="headerlink" href="#package-contents" title="Link to this heading">#</a></h2>
+<section id="classes">
+<h3>Classes<a class="headerlink" href="#classes" title="Link to this heading">#</a></h3>
+<table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ocpmodels.models.gemnet.GemNetT" title="ocpmodels.models.gemnet.GemNetT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GemNetT</span></code></a></p></td>
+<td><p>GemNet-T, triplets-only variant of GemNet</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py class">
+<dt class="sig sig-object py" id="ocpmodels.models.gemnet.GemNetT">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ocpmodels.models.gemnet.</span></span><span class="sig-name descname"><span class="pre">GemNetT</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_atoms</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bond_feat_dim</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_targets</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_spherical</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_radial</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_blocks</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">emb_size_atom</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">emb_size_edge</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">emb_size_trip</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">emb_size_rbf</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">emb_size_cbf</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">emb_size_bil_trip</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_before_skip</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_after_skip</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_concat</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_atom</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">regress_forces</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">direct_forces</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cutoff</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">6.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_neighbors</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">50</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rbf</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">envelope</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cbf</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extensive</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">otf_graph</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_pbc</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_init</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'HeOrthogonal'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">activation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'swish'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_elements</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">83</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ocpmodels.models.gemnet.GemNetT" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../base/index.html#ocpmodels.models.base.BaseModel" title="ocpmodels.models.base.BaseModel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ocpmodels.models.base.BaseModel</span></code></a></p>
+<p>GemNet-T, triplets-only variant of GemNet</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>(</strong><strong>int</strong><strong>)</strong> (<em>bond_feat_dim</em>) – </p></li>
+<li><p><strong>(</strong><strong>int</strong><strong>)</strong> – </p></li>
+<li><p><strong>num_targets</strong> (<em>int</em>) – Number of prediction targets.</p></li>
+<li><p><strong>num_spherical</strong> (<em>int</em>) – Controls maximum frequency.</p></li>
+<li><p><strong>num_radial</strong> (<em>int</em>) – Controls maximum frequency.</p></li>
+<li><p><strong>num_blocks</strong> (<em>int</em>) – Number of building blocks to be stacked.</p></li>
+<li><p><strong>emb_size_atom</strong> (<em>int</em>) – Embedding size of the atoms.</p></li>
+<li><p><strong>emb_size_edge</strong> (<em>int</em>) – Embedding size of the edges.</p></li>
+<li><p><strong>emb_size_trip</strong> (<em>int</em>) – (Down-projected) Embedding size in the triplet message passing block.</p></li>
+<li><p><strong>emb_size_rbf</strong> (<em>int</em>) – Embedding size of the radial basis transformation.</p></li>
+<li><p><strong>emb_size_cbf</strong> (<em>int</em>) – Embedding size of the circular basis transformation (one angle).</p></li>
+<li><p><strong>emb_size_bil_trip</strong> (<em>int</em>) – Embedding size of the edge embeddings in the triplet-based message passing block after the bilinear layer.</p></li>
+<li><p><strong>num_before_skip</strong> (<em>int</em>) – Number of residual blocks before the first skip connection.</p></li>
+<li><p><strong>num_after_skip</strong> (<em>int</em>) – Number of residual blocks after the first skip connection.</p></li>
+<li><p><strong>num_concat</strong> (<em>int</em>) – Number of residual blocks after the concatenation.</p></li>
+<li><p><strong>num_atom</strong> (<em>int</em>) – Number of residual blocks in the atom embedding blocks.</p></li>
+<li><p><strong>regress_forces</strong> (<em>bool</em>) – Whether to predict forces. Default: True</p></li>
+<li><p><strong>direct_forces</strong> (<em>bool</em>) – If True predict forces based on aggregation of interatomic directions.
+If False predict forces based on negative gradient of energy potential.</p></li>
+<li><p><strong>cutoff</strong> (<em>float</em>) – Embedding cutoff for interactomic directions in Angstrom.</p></li>
+<li><p><strong>rbf</strong> (<em>dict</em>) – Name and hyperparameters of the radial basis function.</p></li>
+<li><p><strong>envelope</strong> (<em>dict</em>) – Name and hyperparameters of the envelope function.</p></li>
+<li><p><strong>cbf</strong> (<em>dict</em>) – Name and hyperparameters of the cosine basis function.</p></li>
+<li><p><strong>extensive</strong> (<em>bool</em>) – Whether the output should be extensive (proportional to the number of atoms)</p></li>
+<li><p><strong>output_init</strong> (<em>str</em>) – Initialization method for the final dense layer.</p></li>
+<li><p><strong>activation</strong> (<em>str</em>) – Name of the activation function.</p></li>
+<li><p><strong>scale_file</strong> (<em>str</em>) – Path to the json file containing the scaling factors.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="ocpmodels.models.gemnet.GemNetT.num_params">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">num_params</span></span><a class="headerlink" href="#ocpmodels.models.gemnet.GemNetT.num_params" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ocpmodels.models.gemnet.GemNetT.get_triplets">
+<span class="sig-name descname"><span class="pre">get_triplets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">edge_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_atoms</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ocpmodels.models.gemnet.GemNetT.get_triplets" title="Link to this definition">#</a></dt>
+<dd><p>Get all b-&gt;a for each edge c-&gt;a.
+It is possible that b=c, as long as the edges are distinct.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p><strong>id3_ba</strong> (<em>torch.Tensor, shape (num_triplets,)</em>) – Indices of input edge b-&gt;a of each triplet b-&gt;a&lt;-c</p></li>
+<li><p><strong>id3_ca</strong> (<em>torch.Tensor, shape (num_triplets,)</em>) – Indices of output edge c-&gt;a of each triplet b-&gt;a&lt;-c</p></li>
+<li><p><strong>id3_ragged_idx</strong> (<em>torch.Tensor, shape (num_triplets,)</em>) – Indices enumerating the copies of id3_ca for creating a padded matrix</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ocpmodels.models.gemnet.GemNetT.select_symmetric_edges">
+<span class="sig-name descname"><span class="pre">select_symmetric_edges</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tensor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">torch.Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">torch.Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reorder_idx</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">torch.Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inverse_neg</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">torch.Tensor</span></span></span><a class="headerlink" href="#ocpmodels.models.gemnet.GemNetT.select_symmetric_edges" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ocpmodels.models.gemnet.GemNetT.reorder_symmetric_edges">
+<span class="sig-name descname"><span class="pre">reorder_symmetric_edges</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">edge_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cell_offsets</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">neighbors</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_dist</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_vector</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ocpmodels.models.gemnet.GemNetT.reorder_symmetric_edges" title="Link to this definition">#</a></dt>
+<dd><p>Reorder edges to make finding counter-directional edges easier.</p>
+<p>Some edges are only present in one direction in the data,
+since every atom has a maximum number of neighbors. Since we only use i-&gt;j
+edges here, we lose some j-&gt;i edges and add others by
+making it symmetric.
+We could fix this by merging edge_index with its counter-edges,
+including the cell_offsets, and then running torch.unique.
+But this does not seem worth it.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ocpmodels.models.gemnet.GemNetT.select_edges">
+<span class="sig-name descname"><span class="pre">select_edges</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cell_offsets</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">neighbors</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_dist</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_vector</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cutoff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ocpmodels.models.gemnet.GemNetT.select_edges" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ocpmodels.models.gemnet.GemNetT.generate_interaction_graph">
+<span class="sig-name descname"><span class="pre">generate_interaction_graph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ocpmodels.models.gemnet.GemNetT.generate_interaction_graph" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ocpmodels.models.gemnet.GemNetT.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ocpmodels.models.gemnet.GemNetT.forward" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
 </section>
 </section>
 
@@ -673,6 +790,22 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subpackages">Subpackages</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#package-contents">Package Contents</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.models.gemnet.GemNetT"><code class="docutils literal notranslate"><span class="pre">GemNetT</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.models.gemnet.GemNetT.num_params"><code class="docutils literal notranslate"><span class="pre">GemNetT.num_params</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.models.gemnet.GemNetT.get_triplets"><code class="docutils literal notranslate"><span class="pre">GemNetT.get_triplets()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.models.gemnet.GemNetT.select_symmetric_edges"><code class="docutils literal notranslate"><span class="pre">GemNetT.select_symmetric_edges()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.models.gemnet.GemNetT.reorder_symmetric_edges"><code class="docutils literal notranslate"><span class="pre">GemNetT.reorder_symmetric_edges()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.models.gemnet.GemNetT.select_edges"><code class="docutils literal notranslate"><span class="pre">GemNetT.select_edges()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.models.gemnet.GemNetT.generate_interaction_graph"><code class="docutils literal notranslate"><span class="pre">GemNetT.generate_interaction_graph()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.models.gemnet.GemNetT.forward"><code class="docutils literal notranslate"><span class="pre">GemNetT.forward()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

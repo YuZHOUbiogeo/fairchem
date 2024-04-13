@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Quickstart simulation using pre-trained models &#8212; Open Catalyst Project Documentation</title>
+    <title>Hello World with OCP models! &#8212; Open Catalyst Project Documentation</title>
   
   
   
@@ -181,7 +181,7 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference external" href="https://open-catalyst.metademolab.com/">OCP Demo (no install required!)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="INSTALL.html">Installation</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Quickstart simulation using pre-trained models</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Hello World with OCP models!</a></li>
 <li class="toctree-l1"><a class="reference internal" href="LICENSE.html">License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/gotchas.html">Common gotchas with OCP</a></li>
 
@@ -232,13 +232,6 @@
 
 
 <li class="toctree-l1 has-children"><a class="reference internal" href="../tutorials/NRR/NRR_toc.html">Screening catalysts with OCP</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../tutorials/NRR/NRR_example.html">Using OCP to enumerate adsorbates on catalyst surfaces</a></li>
-
-
-
-
-
-
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/NRR/NRR_example-gemnet.html">Using OCP to enumerate adsorbates on alloy catalyst surfaces</a></li>
 
 
@@ -550,7 +543,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Quickstart simulation using pre-trained models</h1>
+    <h1>Hello World with OCP models!</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -564,16 +557,21 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="quickstart-simulation-using-pre-trained-models">
-<h1>Quickstart simulation using pre-trained models<a class="headerlink" href="#quickstart-simulation-using-pre-trained-models" title="Link to this heading">#</a></h1>
+  <section id="hello-world-with-ocp-models">
+<h1>Hello World with OCP models!<a class="headerlink" href="#hello-world-with-ocp-models" title="Link to this heading">#</a></h1>
 <ol class="arabic simple">
 <li><p>First, install OCP in a fresh python environment using one of the approaches in <a class="reference internal" href="INSTALL.html"><span class="doc std std-doc">installation documentation</span></a>.</p></li>
 <li><p>See what pre-trained potentials are available</p></li>
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ocpmodels.models.model_registry</span> <span class="kn">import</span> <span class="n">available_pretrained_models</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ocpmodels.models.model_registry</span> <span class="kn">import</span> <span class="n">available_pretrained_models</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">available_pretrained_models</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;CGCNN 200k&#39;, &#39;CGCNN 2M&#39;, &#39;CGCNN 20M&#39;, &#39;CGCNN All&#39;, &#39;DimeNet 200k&#39;, &#39;DimeNet 2M&#39;, &#39;SchNet 200k&#39;, &#39;SchNet 2M&#39;, &#39;SchNet 20M&#39;, &#39;SchNet All&#39;, &#39;DimeNet++ 200k&#39;, &#39;DimeNet++ 2M&#39;, &#39;DimeNet++ 20M&#39;, &#39;DimeNet++ All&#39;, &#39;SpinConv 2M&#39;, &#39;SpinConv All&#39;, &#39;GemNet-dT 2M&#39;, &#39;GemNet-dT All&#39;, &#39;PaiNN All&#39;, &#39;GemNet-OC 2M&#39;, &#39;GemNet-OC All&#39;, &#39;GemNet-OC All+MD&#39;, &#39;GemNet-OC-Large All+MD&#39;, &#39;SCN 2M&#39;, &#39;SCN-t4-b2 2M&#39;, &#39;SCN All+MD&#39;, &#39;eSCN-L4-M2-Lay12 2M&#39;, &#39;eSCN-L6-M2-Lay12 2M&#39;, &#39;eSCN-L6-M2-Lay12All+MD&#39;, &#39;eSCN-L6-M3-Lay20All+MD&#39;, &#39;EquiformerV2 (83M) 2M&#39;, &#39;EquiformerV2 (31M) All+MD&#39;, &#39;EquiformerV2 (153M) All+MD&#39;, &#39;SchNet All forceonly&#39;, &#39;DimeNet++ All forceonly&#39;, &#39;DimeNet++-Large All&#39;, &#39;DimeNet++ 20M+Rattled&#39;, &#39;DimeNet++ 20M+MD&#39;, &#39;CGCNN 10k is2re&#39;, &#39;CGCNN 100k is2re&#39;, &#39;CGCNN All is2re&#39;, &#39;DimeNet 10k is2re&#39;, &#39;DimeNet 100k is2re&#39;, &#39;DimeNet All is2re&#39;, &#39;SchNet 10k is2re&#39;, &#39;SchNet 100k is2re&#39;, &#39;SchNet All is2re&#39;, &#39;DimeNet++ 10k is2re&#39;, &#39;DimeNet++ 100k is2re&#39;, &#39;DimeNet++ All is2re&#39;, &#39;PaiNNAll&#39;, &#39;GemNet-dTOC22&#39;, &#39;GemNet-OCOC22&#39;, &#39;GemNet-OCOC20+OC22&#39;, &#39;GemNet-OC enforce_max_neighbors_strictly=False&#39;, &#39;GemNet-OCOC20-&gt;OC22&#39;, &#39;EquiformerV2 lambda_E$=4 lambda_F$=100 OC22&#39;, &#39;SchNet&#39;, &#39;DimeNet++&#39;, &#39;PaiNN&#39;, &#39;GemNet-OC&#39;, &#39;eSCN&#39;, &#39;EquiformerV2&#39;, &#39;EquiformerV2 (Large)&#39;, &#39;Gemnet-OC (Direct)&#39;, &#39;eSCN (Direct)&#39;, &#39;EquiformerV2 (Direct)&#39;)
 </pre></div>
 </div>
 </div>
@@ -583,9 +581,14 @@ document.write(`
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ocpmodels.models.model_registry</span> <span class="kn">import</span> <span class="n">model_name_to_local_file</span>
-<span class="n">checkpoint_path</span> <span class="o">=</span> <span class="n">model_name_to_local_file</span><span class="p">(</span><span class="s1">&#39;GemNet-OC OC20+OC22&#39;</span><span class="p">,</span> <span class="n">local_cache</span><span class="o">=</span><span class="s1">&#39;/tmp/ocp_checkpoints/&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ocpmodels.models.model_registry</span> <span class="kn">import</span> <span class="n">model_name_to_local_file</span>
+<span class="n">checkpoint_path</span> <span class="o">=</span> <span class="n">model_name_to_local_file</span><span class="p">(</span><span class="s1">&#39;GemNet-OCOC20+OC22&#39;</span><span class="p">,</span> <span class="n">local_cache</span><span class="o">=</span><span class="s1">&#39;/tmp/ocp_checkpoints/&#39;</span><span class="p">)</span>
 <span class="n">checkpoint_path</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/tmp/ocp_checkpoints/gnoc_oc22_oc20_all_s2ef.pt&#39;
 </pre></div>
 </div>
 </div>
@@ -595,7 +598,7 @@ document.write(`
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ocpmodels.common.relaxation.ase_utils</span> <span class="kn">import</span> <span class="n">OCPCalculator</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ocpmodels.common.relaxation.ase_utils</span> <span class="kn">import</span> <span class="n">OCPCalculator</span>
 <span class="kn">from</span> <span class="nn">ase.build</span> <span class="kn">import</span> <span class="n">fcc111</span><span class="p">,</span> <span class="n">add_adsorbate</span>
 <span class="kn">from</span> <span class="nn">ase.optimize</span> <span class="kn">import</span> <span class="n">BFGS</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -622,8 +625,78 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/cuda/amp/grad_scaler.py:126: UserWarning: torch.cuda.amp.GradScaler is enabled, but CUDA is not available.  Disabling.
+  warnings.warn(
+WARNING:root:Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
+</pre></div>
 </div>
-<p>To learn more about what this simulation means and how it fits into catalysis, see the <a class="reference internal" href="#tutorials/intro"><span class="xref myst">catalysis tutorial</span></a>!</p>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Using `weight_decay` from `optim` instead of `optim.optimizer_params`.Please update your config to use `optim.optimizer_params.weight_decay`.`optim.weight_decay` will soon be deprecated.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:No seed has been set in modelcheckpoint or OCPCalculator! Results may not be reproducible on re-run
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/amp/autocast_mode.py:250: UserWarning: User provided device_type of &#39;cuda&#39;, but CUDA is not available. Disabling
+  warnings.warn(
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      Step     Time          Energy         fmax
+BFGS:    0 03:04:56     -110.398659        1.6307
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    1 03:04:57     -110.545036        0.9250
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    2 03:04:57     -110.622719        0.5629
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    3 03:04:58     -110.613007        0.5830
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    4 03:04:58     -110.641937        0.4612
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    5 03:04:59     -110.691620        0.3621
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    6 03:04:59     -110.723862        0.5928
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    7 03:05:00     -110.764206        0.7120
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    8 03:05:00     -110.869545        0.5228
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    9 03:05:01     -110.938713        0.1706
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   10 03:05:01     -110.977699        0.0839
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   11 03:05:02     -110.992668        0.0717
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   12 03:05:02     -110.999657        0.0612
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   13 03:05:02     -110.995178        0.0595
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   14 03:05:03     -111.005981        0.0603
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   15 03:05:03     -111.007721        0.0621
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   16 03:05:04     -111.010895        0.0351
+</pre></div>
+</div>
+<img alt="../_images/46af7bb4be5c461aa6cf96d4a533467296c7c1ce5ddb6c0e7daffc68d22cf2f8.png" src="../_images/46af7bb4be5c461aa6cf96d4a533467296c7c1ce5ddb6c0e7daffc68d22cf2f8.png" />
+</div>
+</div>
+<p>To learn more about what this simulation means and how it fits into catalysis, see the <a class="reference internal" href="../tutorials/intro.html"><span class="doc std std-doc">catalysis tutorial</span></a>!</p>
 </section>
 
     <script type="text/x-thebe-config">

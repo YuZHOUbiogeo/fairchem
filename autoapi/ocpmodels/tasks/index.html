@@ -181,7 +181,7 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference external" href="https://open-catalyst.metademolab.com/">OCP Demo (no install required!)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../core/INSTALL.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../core/QUICKSTART.html">Quickstart simulation using pre-trained models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../core/QUICKSTART.html">Hello World with OCP models!</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../core/LICENSE.html">License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../tutorials/gotchas.html">Common gotchas with OCP</a></li>
 
@@ -232,13 +232,6 @@
 
 
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../../tutorials/NRR/NRR_toc.html">Screening catalysts with OCP</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../tutorials/NRR/NRR_example.html">Using OCP to enumerate adsorbates on catalyst surfaces</a></li>
-
-
-
-
-
-
 <li class="toctree-l2"><a class="reference internal" href="../../../tutorials/NRR/NRR_example-gemnet.html">Using OCP to enumerate adsorbates on alloy catalyst surfaces</a></li>
 
 
@@ -569,8 +562,8 @@ document.write(`
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.tasks.PredictTask.run"><code class="docutils literal notranslate"><span class="pre">PredictTask.run()</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.tasks.RelxationTask"><code class="docutils literal notranslate"><span class="pre">RelxationTask</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.tasks.RelxationTask.run"><code class="docutils literal notranslate"><span class="pre">RelxationTask.run()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.tasks.RelaxationTask"><code class="docutils literal notranslate"><span class="pre">RelaxationTask</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.tasks.RelaxationTask.run"><code class="docutils literal notranslate"><span class="pre">RelaxationTask.run()</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.tasks.TrainTask"><code class="docutils literal notranslate"><span class="pre">TrainTask</span></code></a><ul class="nav section-nav flex-column">
@@ -616,7 +609,7 @@ document.write(`
 <tr class="row-odd"><td><p><a class="reference internal" href="#ocpmodels.tasks.PredictTask" title="ocpmodels.tasks.PredictTask"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PredictTask</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#ocpmodels.tasks.RelxationTask" title="ocpmodels.tasks.RelxationTask"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RelxationTask</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#ocpmodels.tasks.RelaxationTask" title="ocpmodels.tasks.RelaxationTask"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RelaxationTask</span></code></a></p></td>
 <td><p></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#ocpmodels.tasks.TrainTask" title="ocpmodels.tasks.TrainTask"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TrainTask</span></code></a></p></td>
@@ -639,12 +632,12 @@ document.write(`
 </dd></dl>
 
 <dl class="py class">
-<dt class="sig sig-object py" id="ocpmodels.tasks.RelxationTask">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ocpmodels.tasks.</span></span><span class="sig-name descname"><span class="pre">RelxationTask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ocpmodels.tasks.RelxationTask" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="ocpmodels.tasks.RelaxationTask">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ocpmodels.tasks.</span></span><span class="sig-name descname"><span class="pre">RelaxationTask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ocpmodels.tasks.RelaxationTask" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">BaseTask</span></code></p>
 <dl class="py method">
-<dt class="sig sig-object py" id="ocpmodels.tasks.RelxationTask.run">
-<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#ocpmodels.tasks.RelxationTask.run" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="ocpmodels.tasks.RelaxationTask.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#ocpmodels.tasks.RelaxationTask.run" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -751,8 +744,8 @@ document.write(`
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.tasks.PredictTask.run"><code class="docutils literal notranslate"><span class="pre">PredictTask.run()</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.tasks.RelxationTask"><code class="docutils literal notranslate"><span class="pre">RelxationTask</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.tasks.RelxationTask.run"><code class="docutils literal notranslate"><span class="pre">RelxationTask.run()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.tasks.RelaxationTask"><code class="docutils literal notranslate"><span class="pre">RelaxationTask</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.tasks.RelaxationTask.run"><code class="docutils literal notranslate"><span class="pre">RelaxationTask.run()</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.tasks.TrainTask"><code class="docutils literal notranslate"><span class="pre">TrainTask</span></code></a><ul class="nav section-nav flex-column">
