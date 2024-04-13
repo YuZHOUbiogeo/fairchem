@@ -244,7 +244,7 @@
 
 
 <li class="toctree-l1 has-children"><a class="reference internal" href="NRR/NRR_toc.html">Screening catalysts with OCP</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="NRR/NRR_example-gemnet.html">Using OCP to enumerate adsorbates on alloy catalyst surfaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NRR/NRR_example.html">Using OCP to enumerate adsorbates on alloy catalyst surfaces</a></li>
 
 
 
@@ -598,18 +598,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">16</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="kn">from</span> <span class="nn">dscribe.descriptors</span> <span class="kn">import</span> <span class="n">SOAP</span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="kn">from</span> <span class="nn">scipy.spatial.distance</span> <span class="kn">import</span> <span class="n">pdist</span><span class="p">,</span> <span class="n">squareform</span>
-<span class="ne">---&gt; </span><span class="mi">16</span> <span class="kn">from</span> <span class="nn">x3dase.visualize</span> <span class="kn">import</span> <span class="n">view_x3d_n</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;x3dase&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <section id="enumerate-the-adsorbate-slab-configurations-to-run-relaxations-on">
 <h2>Enumerate the adsorbate-slab configurations to run relaxations on<a class="headerlink" href="#enumerate-the-adsorbate-slab-configurations-to-run-relaxations-on" title="Link to this heading">#</a></h2>
@@ -626,6 +614,31 @@ document.write(`
 <span class="c1"># There may be multiple slabs with this miller index.</span>
 <span class="c1"># For demonstrative purposes we will take the first entry.</span>
 <span class="n">slab</span> <span class="o">=</span> <span class="n">slabs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">bulk_src_id</span> <span class="o">=</span> <span class="s2">&quot;mp-30&quot;</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">adsorbate_smiles</span> <span class="o">=</span> <span class="s2">&quot;*CO&quot;</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">bulk</span> <span class="o">=</span> <span class="n">Bulk</span><span class="p">(</span><span class="n">bulk_src_id_from_db</span> <span class="o">=</span> <span class="n">bulk_src_id</span><span class="p">,</span> <span class="n">bulk_db_path</span> <span class="o">=</span> <span class="s2">&quot;your-path-here.pkl&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">adsorbate</span> <span class="o">=</span> <span class="n">Adsorbate</span><span class="p">(</span><span class="n">adsorbate_smiles_from_db</span><span class="o">=</span><span class="n">adsorbate_smiles</span><span class="p">,</span> <span class="n">adsorbate_db_path</span> <span class="o">=</span> <span class="s2">&quot;your-path-here.pkl&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">slabs</span> <span class="o">=</span> <span class="n">Slab</span><span class="o">.</span><span class="n">from_bulk_get_specific_millers</span><span class="p">(</span><span class="n">bulk</span> <span class="o">=</span> <span class="n">bulk</span><span class="p">,</span> <span class="n">specific_millers</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/ocdata/core/bulk.py:54,</span> in <span class="ni">Bulk.__init__</span><span class="nt">(self, bulk_atoms, bulk_id_from_db, bulk_src_id_from_db, bulk_db_path, bulk_db)</span>
+<span class="g g-Whitespace">     </span><span class="mi">52</span>     <span class="bp">self</span><span class="o">.</span><span class="n">atoms</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">src_id</span> <span class="o">=</span> <span class="n">bulk_obj</span><span class="p">[</span><span class="s2">&quot;atoms&quot;</span><span class="p">],</span> <span class="n">bulk_obj</span><span class="p">[</span><span class="s2">&quot;src_id&quot;</span><span class="p">]</span>
+<span class="g g-Whitespace">     </span><span class="mi">53</span> <span class="k">elif</span> <span class="n">bulk_src_id_from_db</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">54</span>     <span class="n">bulk_db</span> <span class="o">=</span> <span class="n">bulk_db</span> <span class="ow">or</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">bulk_db_path</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">))</span>
+<span class="g g-Whitespace">     </span><span class="mi">55</span>     <span class="n">bulk_obj_tuple</span> <span class="o">=</span> <span class="p">[</span>
+<span class="g g-Whitespace">     </span><span class="mi">56</span>         <span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="n">bulk</span><span class="p">)</span>
+<span class="nn">     57         for idx, bulk</span> in <span class="ni">enumerate</span><span class="nt">(bulk_db)</span>
+<span class="g g-Whitespace">     </span><span class="mi">58</span>         <span class="k">if</span> <span class="n">bulk</span><span class="p">[</span><span class="s2">&quot;src_id&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">bulk_src_id_from_db</span>
+<span class="g g-Whitespace">     </span><span class="mi">59</span>     <span class="p">]</span>
+<span class="g g-Whitespace">     </span><span class="mi">60</span>     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">bulk_obj_tuple</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;your-path-here.pkl&#39;
 </pre></div>
 </div>
 </div>
