@@ -590,7 +590,6 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="ocpapi">
 <h1>ocpapi<a class="headerlink" href="#ocpapi" title="Link to this heading">#</a></h1>
-<p><a class="reference external" href="https://dl.circleci.com/status-badge/redirect/gh/Open-Catalyst-Project/ocpapi/tree/main"><img alt="CircleCI" src="https://dl.circleci.com/status-badge/img/gh/Open-Catalyst-Project/ocpapi/tree/main.svg?style=shield" /></a> <a class="reference external" href="https://codecov.io/gh/Open-Catalyst-Project/ocpapi"><img alt="codecov" src="https://codecov.io/gh/Open-Catalyst-Project/ocpapi/graph/badge.svg?token=66Z7Y7QUUW" /></a></p>
 <p>Python library for programmatic use of the <a class="reference external" href="https://open-catalyst.metademolab.com/">Open Catalyst Demo</a>. Users unfamiliar with the Open Catalyst Demo are encouraged to read more about it before continuing.</p>
 <section id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h2>
@@ -684,51 +683,16 @@ pip install ocpapi
 <section id="note-about-async-methods">
 <h3>Note about async methods<a class="headerlink" href="#note-about-async-methods" title="Link to this heading">#</a></h3>
 <p>This package relies heavily on <a class="reference external" href="https://docs.python.org/3/library/asyncio.html">asyncio</a>. The examples throughout this document can be copied to a python repl launched with:</p>
-<div class="cell docutils container">
+<div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">sh</span>
 $ python -m asyncio
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sh: 1: $: not found
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">CalledProcessError</span><span class="g g-Whitespace">                        </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_cell_magic</span><span class="p">(</span><span class="s1">&#39;sh&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;$ python -m asyncio</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/IPython/core/interactiveshell.py:2541,</span> in <span class="ni">InteractiveShell.run_cell_magic</span><span class="nt">(self, magic_name, line, cell)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2539</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">builtin_trap</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">2540</span>     <span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="n">magic_arg_s</span><span class="p">,</span> <span class="n">cell</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">2541</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2543</span> <span class="c1"># The code below prevents the output from being displayed</span>
-<span class="g g-Whitespace">   </span><span class="mi">2544</span> <span class="c1"># when using magics with decorator @output_can_be_silenced</span>
-<span class="g g-Whitespace">   </span><span class="mi">2545</span> <span class="c1"># when the last Python token in the expression is a &#39;;&#39;.</span>
-<span class="g g-Whitespace">   </span><span class="mi">2546</span> <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">magic</span><span class="o">.</span><span class="n">MAGIC_OUTPUT_CAN_BE_SILENCED</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/IPython/core/magics/script.py:155,</span> in <span class="ni">ScriptMagics._make_script_magic.&lt;locals&gt;.named_script_magic</span><span class="nt">(line, cell)</span>
-<span class="g g-Whitespace">    </span><span class="mi">153</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">154</span>     <span class="n">line</span> <span class="o">=</span> <span class="n">script</span>
-<span class="ne">--&gt; </span><span class="mi">155</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">shebang</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">cell</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/IPython/core/magics/script.py:315,</span> in <span class="ni">ScriptMagics.shebang</span><span class="nt">(self, line, cell)</span>
-<span class="g g-Whitespace">    </span><span class="mi">310</span> <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">raise_error</span> <span class="ow">and</span> <span class="n">p</span><span class="o">.</span><span class="n">returncode</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">311</span>     <span class="c1"># If we get here and p.returncode is still None, we must have</span>
-<span class="g g-Whitespace">    </span><span class="mi">312</span>     <span class="c1"># killed it but not yet seen its return code. We don&#39;t wait for it,</span>
-<span class="g g-Whitespace">    </span><span class="mi">313</span>     <span class="c1"># in case it&#39;s stuck in uninterruptible sleep. -9 = SIGKILL</span>
-<span class="g g-Whitespace">    </span><span class="mi">314</span>     <span class="n">rc</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">returncode</span> <span class="ow">or</span> <span class="o">-</span><span class="mi">9</span>
-<span class="ne">--&gt; </span><span class="mi">315</span>     <span class="k">raise</span> <span class="n">CalledProcessError</span><span class="p">(</span><span class="n">rc</span><span class="p">,</span> <span class="n">cell</span><span class="p">)</span>
-
-<span class="ne">CalledProcessError</span>: Command &#39;b&#39;$ python -m asyncio\n&#39;&#39; returned non-zero exit status 127.
-</pre></div>
-</div>
-</div>
 </div>
 <p>Alternatively, an async function can be run in a script by wrapping it with <a class="reference external" href="https://docs.python.org/3/library/asyncio-runner.html#asyncio.run">asyncio.run()</a>:</p>
-<div class="cell docutils container">
+<div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">asyncio</span>
 <span class="kn">from</span> <span class="nn">ocpapi</span> <span class="kn">import</span> <span class="n">find_adsorbate_binding_sites</span>
@@ -738,6 +702,7 @@ $ python -m asyncio
 </div>
 </div>
 </div>
+<p>Since this is being evaluated as a jupyter notebook, ipython will handle this for you automatically!</p>
 </section>
 <section id="search-over-all-surfaces">
 <h3>Search over all surfaces<a class="headerlink" href="#search-over-all-surfaces" title="Link to this heading">#</a></h3>
@@ -749,6 +714,132 @@ $ python -m asyncio
     <span class="n">adsorbate</span><span class="o">=</span><span class="s2">&quot;*OH&quot;</span><span class="p">,</span>
     <span class="n">bulk</span><span class="o">=</span><span class="s2">&quot;mp-126&quot;</span><span class="p">,</span>
 <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/tqdm/auto.py:21: TqdmWarning: IProgress not found. Please update jupyter and ipywidgets. See https://ipywidgets.readthedocs.io/en/stable/user_install.html
+  from .autonotebook import tqdm as notebook_tqdm
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[?] Choose surfaces to relax (up/down arrows to move, space to select, ente...: 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> &gt; [ ] (1, 0, 0) top surface shifted by 0.25; 57 unique adsorbate placements to relax
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   [ ] (1, 1, 0) top surface shifted by 0.125; 57 unique adsorbate placements to relax
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   [ ] (1, 1, 1) top surface shifted by 0.167; 54 unique adsorbate placements to relax
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   [ ] (2, 1, 0) top surface shifted by 0.083; 66 unique adsorbate placements to relax
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   [ ] (2, 1, 1) top surface shifted by 0.062; 64 unique adsorbate placements to relax
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   [ ] (2, 2, 1) top surface shifted by 0.05; 70 unique adsorbate placements to relax
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">error</span><span class="g g-Whitespace">                                     </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">ocpapi</span> <span class="kn">import</span> <span class="n">find_adsorbate_binding_sites</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">results</span> <span class="o">=</span> <span class="k">await</span> <span class="n">find_adsorbate_binding_sites</span><span class="p">(</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="n">adsorbate</span><span class="o">=</span><span class="s2">&quot;*OH&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">bulk</span><span class="o">=</span><span class="s2">&quot;mp-126&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/ocpapi/workflows/adsorbates.py:905,</span> in <span class="ni">find_adsorbate_binding_sites</span><span class="nt">(adsorbate, bulk, model, adslab_filter, client, lifetime)</span>
+<span class="g g-Whitespace">    </span><span class="mi">898</span> <span class="n">adslabs</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">AdsorbateSlabConfigs</span><span class="p">]</span> <span class="o">=</span> <span class="k">await</span> <span class="n">_get_adsorbate_configs_on_slabs</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">899</span>     <span class="n">client</span><span class="o">=</span><span class="n">client</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">900</span>     <span class="n">adsorbate</span><span class="o">=</span><span class="n">adsorbate</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">901</span>     <span class="n">slabs</span><span class="o">=</span><span class="n">slabs</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">902</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">904</span> <span class="c1"># Filter the adslabs</span>
+<span class="ne">--&gt; </span><span class="mi">905</span> <span class="n">adslabs</span> <span class="o">=</span> <span class="k">await</span> <span class="n">adslab_filter</span><span class="p">(</span><span class="n">adslabs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">907</span> <span class="c1"># Find binding sites on all slabs</span>
+<span class="g g-Whitespace">    </span><span class="mi">908</span> <span class="k">return</span> <span class="k">await</span> <span class="n">_relax_binding_sites_on_slabs</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">909</span>     <span class="n">client</span><span class="o">=</span><span class="n">client</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">910</span>     <span class="n">adsorbate</span><span class="o">=</span><span class="n">adsorbate</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">914</span>     <span class="n">lifetime</span><span class="o">=</span><span class="n">lifetime</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">915</span> <span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/ocpapi/workflows/filter.py:101,</span> in <span class="ni">prompt_for_slabs_to_keep.__call__</span><span class="nt">(self, adslabs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">79</span> <span class="n">choices</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[</span>
+<span class="g g-Whitespace">     </span><span class="mi">80</span>     <span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">81</span>         <span class="p">(</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="nn">     91     for idx, adslab</span> in <span class="ni">enumerate</span><span class="nt">(adslabs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">92</span> <span class="p">]</span>
+<span class="g g-Whitespace">     </span><span class="mi">93</span> <span class="n">checkbox</span><span class="p">:</span> <span class="n">Checkbox</span> <span class="o">=</span> <span class="n">Checkbox</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">94</span>     <span class="s2">&quot;adslabs&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">95</span>     <span class="n">message</span><span class="o">=</span><span class="p">(</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">99</span>     <span class="n">choices</span><span class="o">=</span><span class="n">choices</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">100</span> <span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">101</span> <span class="n">selected_indices</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="n">prompt</span><span class="p">([</span><span class="n">checkbox</span><span class="p">])[</span><span class="s2">&quot;adslabs&quot;</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">103</span> <span class="c1"># Return the adslabs that were chosen</span>
+<span class="g g-Whitespace">    </span><span class="mi">104</span> <span class="k">return</span> <span class="p">[</span><span class="n">adslabs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">selected_indices</span><span class="p">]</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/inquirer/prompt.py:11,</span> in <span class="ni">prompt</span><span class="nt">(questions, render, answers, theme, raise_keyboard_interrupt)</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span>     <span class="k">for</span> <span class="n">question</span> <span class="ow">in</span> <span class="n">questions</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">11</span>         <span class="n">answers</span><span class="p">[</span><span class="n">question</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">render</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">question</span><span class="p">,</span> <span class="n">answers</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span>     <span class="k">return</span> <span class="n">answers</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/inquirer/render/console/__init__.py:38,</span> in <span class="ni">ConsoleRender.render</span><span class="nt">(self, question, answers)</span>
+<span class="g g-Whitespace">     </span><span class="mi">35</span> <span class="bp">self</span><span class="o">.</span><span class="n">clear_eos</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">37</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">38</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_event_loop</span><span class="p">(</span><span class="n">render</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">39</span> <span class="k">finally</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">40</span>     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/inquirer/render/console/__init__.py:51,</span> in <span class="ni">ConsoleRender._event_loop</span><span class="nt">(self, render)</span>
+<span class="g g-Whitespace">     </span><span class="mi">48</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_print_header</span><span class="p">(</span><span class="n">render</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">49</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_print_options</span><span class="p">(</span><span class="n">render</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">51</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_process_input</span><span class="p">(</span><span class="n">render</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">52</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_force_initial_column</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">53</span> <span class="k">except</span> <span class="n">errors</span><span class="o">.</span><span class="n">EndOfInput</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/inquirer/render/console/__init__.py:95,</span> in <span class="ni">ConsoleRender._process_input</span><span class="nt">(self, render)</span>
+<span class="g g-Whitespace">     </span><span class="mi">93</span> <span class="k">def</span> <span class="nf">_process_input</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">render</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">94</span>     <span class="k">try</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">95</span>         <span class="n">ev</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_event_gen</span><span class="o">.</span><span class="n">next</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">96</span>         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">ev</span><span class="p">,</span> <span class="n">events</span><span class="o">.</span><span class="n">KeyPressed</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">97</span>             <span class="n">render</span><span class="o">.</span><span class="n">process_input</span><span class="p">(</span><span class="n">ev</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/inquirer/events.py:22,</span> in <span class="ni">KeyEventGenerator.next</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="k">def</span> <span class="nf">next</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">22</span>     <span class="k">return</span> <span class="n">KeyPressed</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_key_gen</span><span class="p">())</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/readchar/_posix_read.py:34,</span> in <span class="ni">readkey</span><span class="nt">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">30</span> <span class="k">def</span> <span class="nf">readkey</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">31</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Get a keypress. If an escaped key is pressed, the full sequence is</span>
+<span class="g g-Whitespace">     </span><span class="mi">32</span><span class="sd">     read and returned as noted in `_posix_key.py`.&quot;&quot;&quot;</span>
+<span class="ne">---&gt; </span><span class="mi">34</span>     <span class="n">c1</span> <span class="o">=</span> <span class="n">readchar</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">36</span>     <span class="k">if</span> <span class="n">c1</span> <span class="ow">in</span> <span class="n">config</span><span class="o">.</span><span class="n">INTERRUPT_KEYS</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">37</span>         <span class="k">raise</span> <span class="ne">KeyboardInterrupt</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/readchar/_posix_read.py:18,</span> in <span class="ni">readchar</span><span class="nt">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Reads a single character from the input stream.</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span><span class="sd"> Blocks until a character is available.&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="n">fd</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">fileno</span><span class="p">()</span>
+<span class="ne">---&gt; </span><span class="mi">18</span> <span class="n">old_settings</span> <span class="o">=</span> <span class="n">termios</span><span class="o">.</span><span class="n">tcgetattr</span><span class="p">(</span><span class="n">fd</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">19</span> <span class="n">term</span> <span class="o">=</span> <span class="n">termios</span><span class="o">.</span><span class="n">tcgetattr</span><span class="p">(</span><span class="n">fd</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">20</span> <span class="k">try</span><span class="p">:</span>
+
+<span class="ne">error</span>: (25, &#39;Inappropriate ioctl for device&#39;)
 </pre></div>
 </div>
 </div>
