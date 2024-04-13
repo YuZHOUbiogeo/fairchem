@@ -62,7 +62,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Simple simulations using the OCP ASE calculator" href="OCP-introduction.html" />
-    <link rel="prev" title="Technical presentations" href="../videos/technical_talks.html" />
+    <link rel="prev" title="Studies that have leveraged OCP models" href="../core/papers_using_models.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -179,20 +179,24 @@
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Quickstart &amp; Installation</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../core/install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../core/quickstart.html">Using pre-trained models in ASE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../core/gotchas.html">Common gotchas with OCP</a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../core/license.html">License</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">OCP API &amp; Demo</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference external" href="https://open-catalyst.metademolab.com/">OCP Demo (no install required!)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../core/INSTALL.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../core/QUICKSTART.html">Hello World with OCP models!</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../core/LICENSE.html">License</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gotchas.html">Common gotchas with OCP</a></li>
-
-
-
-
-
-
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="../core/ocpapi.html">ocpapi</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Released Datasets &amp; Models</span></p>
 <ul class="nav bd-sidenav">
@@ -200,23 +204,34 @@
 
 <li class="toctree-l1"><a class="reference internal" href="../core/datasets/oc22.html">Open Catalyst 2022 (OC22)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../core/datasets/odac.html">Open Direct Air Capture 2023 (ODAC23)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../core/MODELS.html">Pretrained OCP model checkpoints</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Training your own models</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Making your own datasets</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../core/TRAIN.html">Training and evaluating models on OCP datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../core/ase_dataset_creation.html">Making and using ASE datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../core/lmdb_dataset_creation.html">Making LMDB Datasets (original format)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Model development, training, inference, finetuning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../core/model_training.html">Training and evaluating custom models on OCP datasets</a></li>
 
 
+<li class="toctree-l1"><a class="reference internal" href="../core/inference.html">Mass inference</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="../core/FAQ.html">Frequently Asked Questions</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../core/fine-tuning/fine-tuning-oxides.html">Fine tuning a model</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../core/model_faq.html">Model FAQ</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Videos and Talks</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../videos/intro_series.html">Open Catalyst Intro Series</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../videos/technical_talks.html">Technical presentations</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Catalysis Tutorials</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Case Studies &amp; Tutorials</span></p>
 <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="adsorbml_walkthrough.html">AdsorbML tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../core/papers_using_models.html">Studies that have leveraged OCP models</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Intro and background on OCP and DFT</a></li>
 
 
@@ -226,9 +241,6 @@
 <li class="toctree-l1"><a class="reference internal" href="OCP-introduction.html">Simple simulations using the OCP ASE calculator</a></li>
 
 
-
-
-<li class="toctree-l1"><a class="reference internal" href="fine-tuning/fine-tuning-oxides.html">Fine tuning a model</a></li>
 
 
 <li class="toctree-l1 has-children"><a class="reference internal" href="NRR/NRR_toc.html">Screening catalysts with OCP</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -249,9 +261,6 @@
 
 <li class="toctree-l2"><a class="reference internal" href="advanced/embeddings.html">Working with embeddings</a></li>
 
-
-
-<li class="toctree-l2"><a class="reference internal" href="advanced/mass-inference.html">Mass inference</a></li>
 
 
 </ul>
@@ -276,11 +285,6 @@
 
 
 <li class="toctree-l2"><a class="reference internal" href="../legacy_tutorials/data_visualization.html">OCP Data Visualization</a></li>
-
-<li class="toctree-l2"><a class="reference internal" href="../legacy_tutorials/lmdb_dataset_creation.html">OCP LMDB Dataset Tutorial</a></li>
-
-
-
 
 </ul>
 </li>
@@ -601,7 +605,7 @@ document.write(`
 <p>The <a class="reference external" href="https://github.com/Open-Catalyst-Project">Open Catalyst Project (OCP)</a> is an umbrella for these machine learned potential models, data sets, and checkpoints from training.</p>
 <section id="models">
 <h2>Models<a class="headerlink" href="#models" title="Link to this heading">#</a></h2>
-<p>OCP provides several <a class="reference internal" href="../core/MODELS.html"><span class="doc std std-doc">models</span></a>. Each model represents a different approach to featurization, and a different machine learning architecture. The models can be used for different tasks, and you will find different checkpoints associated with different datasets and tasks.</p>
+<p>OCP provides several <a class="reference internal" href="#../core/models"><span class="xref myst">models</span></a>. Each model represents a different approach to featurization, and a different machine learning architecture. The models can be used for different tasks, and you will find different checkpoints associated with different datasets and tasks.</p>
 </section>
 <section id="datasets-tasks">
 <h2>Datasets / Tasks<a class="headerlink" href="#datasets-tasks" title="Link to this heading">#</a></h2>
@@ -659,7 +663,7 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/bin/python 3.11.9 (main, Apr  2 2024, 15:19:53) [GCC 11.4.0]
 ocp is installed at /home/runner/work/ocp/ocp
-ocp repo is at git commit: 6193b4d
+ocp repo is at git commit: aa085b3
 numba: 0.59.1
 numpy: 1.23.5
 ase: 3.22.1
@@ -672,9 +676,9 @@ torch geometric: 2.3.0
 
 Platform: Linux-6.5.0-1017-azure-x86_64-with-glibc2.35
   Processor: x86_64
-  Virtual memory: svmem(total=16757350400, available=14627491840, percent=12.7, used=1740910592, free=11143077888, active=1849991168, inactive=3205390336, buffers=71176192, cached=3802185728, shared=25735168, slab=360226816)
-  Swap memory: sswap(total=4294963200, used=274432, free=4294688768, percent=0.0, sin=0, sout=20480)
-  Disk usage: sdiskusage(total=77851254784, used=67848376320, free=9986101248, percent=87.2)
+  Virtual memory: svmem(total=16757350400, available=14769422336, percent=11.9, used=1573322752, free=12927021056, active=1691435008, inactive=1660272640, buffers=30748672, cached=2226257920, shared=22327296, slab=280522752)
+  Swap memory: sswap(total=4294963200, used=588087296, free=3706875904, percent=13.7, sin=790409216, sout=1776922624)
+  Disk usage: sdiskusage(total=77851254784, used=67764924416, free=10069553152, percent=87.1)
 </pre></div>
 </div>
 </div>
@@ -713,12 +717,12 @@ Platform: Linux-6.5.0-1017-azure-x86_64-with-glibc2.35
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../videos/technical_talks.html"
+       href="../core/papers_using_models.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Technical presentations</p>
+        <p class="prev-next-title">Studies that have leveraged OCP models</p>
       </div>
     </a>
     <a class="right-next"

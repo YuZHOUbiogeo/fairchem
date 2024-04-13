@@ -58,11 +58,11 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/fine-tuning/fine-tuning-oxides';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'core/fine-tuning/fine-tuning-oxides';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Screening catalysts with OCP" href="../NRR/NRR_toc.html" />
-    <link rel="prev" title="Simple simulations using the OCP ASE calculator" href="../OCP-introduction.html" />
+    <link rel="next" title="Model FAQ" href="../model_faq.html" />
+    <link rel="prev" title="Mass inference" href="../inference.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -179,10 +179,8 @@
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Quickstart &amp; Installation</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference external" href="https://open-catalyst.metademolab.com/">OCP Demo (no install required!)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../core/INSTALL.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../core/QUICKSTART.html">Hello World with OCP models!</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../core/LICENSE.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Using pre-trained models in ASE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../gotchas.html">Common gotchas with OCP</a></li>
 
 
@@ -193,46 +191,60 @@
 
 
 
+<li class="toctree-l1"><a class="reference internal" href="../license.html">License</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">OCP API &amp; Demo</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="https://open-catalyst.metademolab.com/">OCP Demo (no install required!)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ocpapi.html">ocpapi</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Released Datasets &amp; Models</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../core/datasets/oc20.html">Open Catalyst 2020 (OC20)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../datasets/oc20.html">Open Catalyst 2020 (OC20)</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="../../core/datasets/oc22.html">Open Catalyst 2022 (OC22)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../core/datasets/odac.html">Open Direct Air Capture 2023 (ODAC23)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../core/MODELS.html">Pretrained OCP model checkpoints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../datasets/oc22.html">Open Catalyst 2022 (OC22)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../datasets/odac.html">Open Direct Air Capture 2023 (ODAC23)</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Training your own models</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Making your own datasets</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../core/TRAIN.html">Training and evaluating models on OCP datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ase_dataset_creation.html">Making and using ASE datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lmdb_dataset_creation.html">Making LMDB Datasets (original format)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Model development, training, inference, finetuning</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../model_training.html">Training and evaluating custom models on OCP datasets</a></li>
 
 
+<li class="toctree-l1"><a class="reference internal" href="../inference.html">Mass inference</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="../../core/FAQ.html">Frequently Asked Questions</a></li>
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Fine tuning a model</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../model_faq.html">Model FAQ</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Videos and Talks</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../videos/intro_series.html">Open Catalyst Intro Series</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../videos/technical_talks.html">Technical presentations</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Catalysis Tutorials</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../intro.html">Intro and background on OCP and DFT</a></li>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Case Studies &amp; Tutorials</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/adsorbml_walkthrough.html">AdsorbML tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../papers_using_models.html">Studies that have leveraged OCP models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/intro.html">Intro and background on OCP and DFT</a></li>
 
 
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="../OCP-introduction.html">Simple simulations using the OCP ASE calculator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/OCP-introduction.html">Simple simulations using the OCP ASE calculator</a></li>
 
 
 
 
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Fine tuning a model</a></li>
-
-
-<li class="toctree-l1 has-children"><a class="reference internal" href="../NRR/NRR_toc.html">Screening catalysts with OCP</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../NRR/NRR_example-gemnet.html">Using OCP to enumerate adsorbates on alloy catalyst surfaces</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../tutorials/NRR/NRR_toc.html">Screening catalysts with OCP</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/NRR/NRR_example-gemnet.html">Using OCP to enumerate adsorbates on alloy catalyst surfaces</a></li>
 
 
 
@@ -242,16 +254,13 @@
 
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../advanced/fine-tuning-toc.html">Advanced example: Fine-tuning</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../advanced/fine-tuning-in-python.html">Fine-tuning with Python</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../tutorials/advanced/fine-tuning-toc.html">Advanced example: Fine-tuning</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/advanced/fine-tuning-in-python.html">Fine-tuning with Python</a></li>
 
 
 
-<li class="toctree-l2"><a class="reference internal" href="../advanced/embeddings.html">Working with embeddings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/advanced/embeddings.html">Working with embeddings</a></li>
 
-
-
-<li class="toctree-l2"><a class="reference internal" href="../advanced/mass-inference.html">Mass inference</a></li>
 
 
 </ul>
@@ -276,11 +285,6 @@
 
 
 <li class="toctree-l2"><a class="reference internal" href="../../legacy_tutorials/data_visualization.html">OCP Data Visualization</a></li>
-
-<li class="toctree-l2"><a class="reference internal" href="../../legacy_tutorials/lmdb_dataset_creation.html">OCP LMDB Dataset Tutorial</a></li>
-
-
-
 
 </ul>
 </li>
@@ -431,7 +435,7 @@
       
       
       
-      <li><a href="https://github.com/Open-Catalyst-Project/ocp/issues/new?title=Issue%20on%20page%20%2Ftutorials/fine-tuning/fine-tuning-oxides.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/Open-Catalyst-Project/ocp/issues/new?title=Issue%20on%20page%20%2Fcore/fine-tuning/fine-tuning-oxides.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -461,7 +465,7 @@
       
       
       
-      <li><a href="../../_sources/tutorials/fine-tuning/fine-tuning-oxides.md" target="_blank"
+      <li><a href="../../_sources/core/fine-tuning/fine-tuning-oxides.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -581,7 +585,7 @@ document.write(`
 <p>Identifying Potential BO<sub>2</sub> Oxide Polymorphs for Epitaxial Growth Candidates
 Mehta, P., Salvador, P. A., &amp; Kitchin, J. R. (2015). Identifying potential BO2 oxide polymorphs for epitaxial growth candidates. ACS Appl. Mater. Interfaces, 6(5), 3630–3639. http://dx.doi.org/10.1021/am4059149.</p>
 <p>This data set shows equations of state for several oxide/polymorph combinations. I use this dataset to compare with predictions from OCP</p>
-<p>First we get the checkpoint that we want. According to the <a class="reference internal" href="../../core/MODELS.html"><span class="std std-doc">MODELS</span></a> the GemNet-OC	OC20+OC22 combination has an energy MAE of 0.483 which seems like a good place to start. This model was trained on oxides.</p>
+<p>First we get the checkpoint that we want. According to the <a class="reference internal" href="#../../core/models"><span class="xref myst">MODELS</span></a> the GemNet-OC	OC20+OC22 combination has an energy MAE of 0.483 which seems like a good place to start. This model was trained on oxides.</p>
 <p>We get this checkpoint here.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -768,7 +772,7 @@ WARNING:root:Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
   warnings.warn(
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Elapsed time 67.0 seconds.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Elapsed time 67.8 seconds.
 </pre></div>
 </div>
 <img alt="../../_images/92bd7f94dd548c8cfc2744eb5890cd23fada1ff98e8dc907657e2eb109af0402.png" src="../../_images/92bd7f94dd548c8cfc2744eb5890cd23fada1ff98e8dc907657e2eb109af0402.png" />
@@ -898,9 +902,9 @@ Rows: 295 (showing first 20)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(PosixPath(&#39;/home/runner/work/ocp/ocp/docs/tutorials/fine-tuning/train.db&#39;),
- PosixPath(&#39;/home/runner/work/ocp/ocp/docs/tutorials/fine-tuning/test.db&#39;),
- PosixPath(&#39;/home/runner/work/ocp/ocp/docs/tutorials/fine-tuning/val.db&#39;))
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(PosixPath(&#39;/home/runner/work/ocp/ocp/docs/core/fine-tuning/train.db&#39;),
+ PosixPath(&#39;/home/runner/work/ocp/ocp/docs/core/fine-tuning/test.db&#39;),
+ PosixPath(&#39;/home/runner/work/ocp/ocp/docs/core/fine-tuning/val.db&#39;))
 </pre></div>
 </div>
 </div>
@@ -951,7 +955,7 @@ WARNING:root:Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:No seed has been set in modelcheckpoint or OCPCalculator! Results may not be reproducible on re-run
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PosixPath(&#39;/home/runner/work/ocp/ocp/docs/tutorials/fine-tuning/config.yml&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PosixPath(&#39;/home/runner/work/ocp/ocp/docs/core/fine-tuning/config.yml&#39;)
 </pre></div>
 </div>
 </div>
@@ -1108,7 +1112,7 @@ trainer: ocp
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>tail -f train.txt
 </pre></div>
 </div>
-<p>You can also visit it in a browser at <a class="reference download internal" download="" href="../../_downloads/a241d10bd0160ab9f8fc556af55900ae/train.txt"><span class="xref download myst">train.txt</span></a>. You have to periodically refresh the view to see updates though.</p>
+<p>You can also visit it in a browser at <a class="reference download internal" download="" href="../../_downloads/5fdddbed2260616231dbf7b0d94bb665/train.txt"><span class="xref download myst">train.txt</span></a>. You have to periodically refresh the view to see updates though.</p>
 <p>This can take up to 30 minutes for 80 epochs, so we only do a few here to see what happens.</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input above-output-prompt docutils container">
@@ -1127,13 +1131,13 @@ trainer: ocp
 <span class="expanded">Hide code cell output</span>
 </summary>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Elapsed time = 4.7 seconds
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Elapsed time = 4.8 seconds
 </pre></div>
 </div>
 </div>
 </details>
 </div>
-<p>Now since we have a file, we can find the training results in it. See <a class="reference download internal" download="" href="../../_downloads/a241d10bd0160ab9f8fc556af55900ae/train.txt"><span class="xref download myst">train.txt</span></a>. At the top, the config is printed, so we can get the checkpoint directory. I use shell commands and Python to get the line, split and strip it here.</p>
+<p>Now since we have a file, we can find the training results in it. See <a class="reference download internal" download="" href="../../_downloads/5fdddbed2260616231dbf7b0d94bb665/train.txt"><span class="xref download myst">train.txt</span></a>. At the top, the config is printed, so we can get the checkpoint directory. I use shell commands and Python to get the line, split and strip it here.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cpline</span> <span class="o">=</span> <span class="o">!</span>grep<span class="w"> </span><span class="s2">&quot;checkpoint_dir:&quot;</span><span class="w"> </span>train.txt
@@ -1143,7 +1147,7 @@ trainer: ocp
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;fine-tuning/checkpoints/2024-04-13-03-33-20-ft-oxides&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;fine-tuning/checkpoints/2024-04-13-15-38-40-ft-oxides&#39;
 </pre></div>
 </div>
 </div>
@@ -1193,7 +1197,7 @@ trainer: ocp
 <span class="g g-Whitespace">    </span><span class="mi">425</span> <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">mode</span><span class="p">):</span>
 <span class="ne">--&gt; </span><span class="mi">426</span>     <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">mode</span><span class="p">))</span>
 
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;fine-tuning/checkpoints/2024-04-13-03-33-20-ft-oxides/checkpoint.pt&#39;
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;fine-tuning/checkpoints/2024-04-13-15-38-40-ft-oxides/checkpoint.pt&#39;
 </pre></div>
 </div>
 </div>
@@ -1263,9 +1267,9 @@ trainer: ocp
 <p>You might want to check out the <a class="reference internal" href="../gotchas.html"><span class="doc std std-doc">gotchas</span></a> notebook. It has some examples of things we have seen go wrong before.</p>
 <p>The <a class="reference internal" href="#../advanced"><span class="xref myst">advanced</span></a> folder contains several concepts that are more advanced. These include:</p>
 <ol class="arabic simple">
-<li><p><a class="reference internal" href="../advanced/mass-inference.html"><span class="doc std std-doc">Mass inference</span></a> which is more efficient than the ASE calculator</p></li>
-<li><p><a class="reference internal" href="../advanced/embeddings.html"><span class="doc std std-doc">Working with embeddings</span></a> which shows some ways to use the embeddings from OCP</p></li>
-<li><p><a class="reference internal" href="../advanced/fine-tuning-in-python.html"><span class="doc std std-doc">Fine-tuning in python</span></a></p></li>
+<li><p><a class="reference internal" href="#../advanced/mass-inference"><span class="xref myst">Mass inference</span></a> which is more efficient than the ASE calculator</p></li>
+<li><p><a class="reference internal" href="#../advanced/embeddings"><span class="xref myst">Working with embeddings</span></a> which shows some ways to use the embeddings from OCP</p></li>
+<li><p><a class="reference internal" href="#../advanced/fine-tuning-in-python"><span class="xref myst">Fine-tuning in python</span></a></p></li>
 </ol>
 </section>
 
@@ -1282,7 +1286,7 @@ trainer: ocp
         },
         kernelOptions: {
             name: "python3",
-            path: "./tutorials/fine-tuning"
+            path: "./core/fine-tuning"
         },
         predefinedOutput: true
     }
@@ -1300,20 +1304,20 @@ trainer: ocp
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../OCP-introduction.html"
+       href="../inference.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Simple simulations using the OCP ASE calculator</p>
+        <p class="prev-next-title">Mass inference</p>
       </div>
     </a>
     <a class="right-next"
-       href="../NRR/NRR_toc.html"
+       href="../model_faq.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Screening catalysts with OCP</p>
+        <p class="prev-next-title">Model FAQ</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
