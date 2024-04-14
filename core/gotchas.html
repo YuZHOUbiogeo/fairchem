@@ -216,7 +216,7 @@
 <li class="toctree-l1"><a class="reference internal" href="model_training.html">Training and evaluating custom models on OCP datasets</a></li>
 
 
-<li class="toctree-l1"><a class="reference internal" href="inference.html">Mass inference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inference.html">Fast batched inference</a></li>
 
 
 <li class="toctree-l1"><a class="reference internal" href="fine-tuning/fine-tuning-oxides.html">Fine tuning a model</a></li>
@@ -225,7 +225,6 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Videos and Talks</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../videos/intro_series.html">Open Catalyst Intro Series</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../videos/technical_talks.html">Technical presentations</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Case Studies &amp; Tutorials</span></p>
@@ -930,7 +929,7 @@ WARNING:root:Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
   warnings.warn(
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.6857233047485352
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.6722240447998047
 </pre></div>
 </div>
 </div>
@@ -1434,7 +1433,7 @@ WARNING:root:Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
   warnings.warn(
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.4297371208667755
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.42973750829696655
 </pre></div>
 </div>
 </div>
@@ -1484,17 +1483,17 @@ WARNING:root:Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
   warnings.warn(
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.213986611366272 1.452006337984573e-06
-1.2139859199523926
-1.2139863967895508
-1.213989019393921
-1.2139863967895508
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.213987445831299 1.0936112347774234e-06
+1.2139878273010254
 1.2139873504638672
-1.2139852046966553
+1.2139878273010254
 1.2139873504638672
+1.2139885425567627
+1.2139897346496582
+1.213987112045288
 1.213986873626709
-1.2139835357666016
-1.2139880657196045
+1.2139856815338135
+1.2139861583709717
 </pre></div>
 </div>
 </div>
@@ -1537,7 +1536,7 @@ WARNING:root:Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
   warnings.warn(
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.00847958,  0.01409577, -0.05882812], dtype=float32)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.00847837,  0.01409242, -0.05882645], dtype=float32)
 </pre></div>
 </div>
 </div>
@@ -1550,7 +1549,7 @@ WARNING:root:Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 1.7927960e-08, -5.4948032e-08, -1.1920929e-07], dtype=float32)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-6.1525498e-08,  1.7229468e-08, -3.5762787e-07], dtype=float32)
 </pre></div>
 </div>
 </div>
