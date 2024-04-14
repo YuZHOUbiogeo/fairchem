@@ -204,6 +204,7 @@
 
 <li class="toctree-l1"><a class="reference internal" href="../core/datasets/oc22.html">Open Catalyst 2022 (OC22)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../core/datasets/odac.html">Open Direct Air Capture 2023 (ODAC23)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../core/model_checkpoints.html">Pretrained model checkpoints</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Making your own datasets</span></p>
 <ul class="nav bd-sidenav">
@@ -219,7 +220,6 @@
 
 
 <li class="toctree-l1"><a class="reference internal" href="../core/fine-tuning/fine-tuning-oxides.html">Fine tuning a model</a></li>
-
 
 <li class="toctree-l1"><a class="reference internal" href="../core/model_faq.html">Model FAQ</a></li>
 </ul>
@@ -254,7 +254,7 @@
 
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="advanced/fine-tuning-toc.html">Advanced example: Fine-tuning</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="advanced/advanced_toc.html">Advanced OCP usage</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="advanced/fine-tuning-in-python.html">Fine-tuning with Python</a></li>
 
 
@@ -601,44 +601,19 @@ document.write(`
 </div>
 <section id="enumerate-the-adsorbate-slab-configurations-to-run-relaxations-on">
 <h2>Enumerate the adsorbate-slab configurations to run relaxations on<a class="headerlink" href="#enumerate-the-adsorbate-slab-configurations-to-run-relaxations-on" title="Link to this heading">#</a></h2>
-<p>Be sure to set the path to the bulk and adsorbate pickle files in <code class="docutils literal notranslate"><span class="pre">ocdata/configs/paths.py</span></code> or pass the paths as an argument. The database pickles can be found in <code class="docutils literal notranslate"><span class="pre">ocdata/databases/pkls</span></code>. AdsorbML incorporates random placement, which is especially useful for more complicated adsorbates which may have many degrees of freedom. I have opted sample a few random placements and a few heuristic. Here I am using *CO on copper (1,1,1) as an example.</p>
+<p>AdsorbML incorporates random placement, which is especially useful for more complicated adsorbates which may have many degrees of freedom. I have opted sample a few random placements and a few heuristic. Here I am using *CO on copper (1,1,1) as an example.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bulk_src_id</span> <span class="o">=</span> <span class="s2">&quot;mp-30&quot;</span>
 <span class="n">adsorbate_smiles</span> <span class="o">=</span> <span class="s2">&quot;*CO&quot;</span>
 
-<span class="n">bulk</span> <span class="o">=</span> <span class="n">Bulk</span><span class="p">(</span><span class="n">bulk_src_id_from_db</span> <span class="o">=</span> <span class="n">bulk_src_id</span><span class="p">,</span> <span class="n">bulk_db_path</span> <span class="o">=</span> <span class="s2">&quot;your-path-here.pkl&quot;</span><span class="p">)</span>
-<span class="n">adsorbate</span> <span class="o">=</span> <span class="n">Adsorbate</span><span class="p">(</span><span class="n">adsorbate_smiles_from_db</span><span class="o">=</span><span class="n">adsorbate_smiles</span><span class="p">,</span> <span class="n">adsorbate_db_path</span> <span class="o">=</span> <span class="s2">&quot;your-path-here.pkl&quot;</span><span class="p">)</span>
+<span class="n">bulk</span> <span class="o">=</span> <span class="n">Bulk</span><span class="p">(</span><span class="n">bulk_src_id_from_db</span> <span class="o">=</span> <span class="n">bulk_src_id</span><span class="p">)</span>
+<span class="n">adsorbate</span> <span class="o">=</span> <span class="n">Adsorbate</span><span class="p">(</span><span class="n">adsorbate_smiles_from_db</span><span class="o">=</span><span class="n">adsorbate_smiles</span><span class="p">)</span>
 <span class="n">slabs</span> <span class="o">=</span> <span class="n">Slab</span><span class="o">.</span><span class="n">from_bulk_get_specific_millers</span><span class="p">(</span><span class="n">bulk</span> <span class="o">=</span> <span class="n">bulk</span><span class="p">,</span> <span class="n">specific_millers</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
 
 <span class="c1"># There may be multiple slabs with this miller index.</span>
 <span class="c1"># For demonstrative purposes we will take the first entry.</span>
 <span class="n">slab</span> <span class="o">=</span> <span class="n">slabs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">bulk_src_id</span> <span class="o">=</span> <span class="s2">&quot;mp-30&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">adsorbate_smiles</span> <span class="o">=</span> <span class="s2">&quot;*CO&quot;</span>
-<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">bulk</span> <span class="o">=</span> <span class="n">Bulk</span><span class="p">(</span><span class="n">bulk_src_id_from_db</span> <span class="o">=</span> <span class="n">bulk_src_id</span><span class="p">,</span> <span class="n">bulk_db_path</span> <span class="o">=</span> <span class="s2">&quot;your-path-here.pkl&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">adsorbate</span> <span class="o">=</span> <span class="n">Adsorbate</span><span class="p">(</span><span class="n">adsorbate_smiles_from_db</span><span class="o">=</span><span class="n">adsorbate_smiles</span><span class="p">,</span> <span class="n">adsorbate_db_path</span> <span class="o">=</span> <span class="s2">&quot;your-path-here.pkl&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">slabs</span> <span class="o">=</span> <span class="n">Slab</span><span class="o">.</span><span class="n">from_bulk_get_specific_millers</span><span class="p">(</span><span class="n">bulk</span> <span class="o">=</span> <span class="n">bulk</span><span class="p">,</span> <span class="n">specific_millers</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/ocdata/core/bulk.py:54,</span> in <span class="ni">Bulk.__init__</span><span class="nt">(self, bulk_atoms, bulk_id_from_db, bulk_src_id_from_db, bulk_db_path, bulk_db)</span>
-<span class="g g-Whitespace">     </span><span class="mi">52</span>     <span class="bp">self</span><span class="o">.</span><span class="n">atoms</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">src_id</span> <span class="o">=</span> <span class="n">bulk_obj</span><span class="p">[</span><span class="s2">&quot;atoms&quot;</span><span class="p">],</span> <span class="n">bulk_obj</span><span class="p">[</span><span class="s2">&quot;src_id&quot;</span><span class="p">]</span>
-<span class="g g-Whitespace">     </span><span class="mi">53</span> <span class="k">elif</span> <span class="n">bulk_src_id_from_db</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">54</span>     <span class="n">bulk_db</span> <span class="o">=</span> <span class="n">bulk_db</span> <span class="ow">or</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">bulk_db_path</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">))</span>
-<span class="g g-Whitespace">     </span><span class="mi">55</span>     <span class="n">bulk_obj_tuple</span> <span class="o">=</span> <span class="p">[</span>
-<span class="g g-Whitespace">     </span><span class="mi">56</span>         <span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="n">bulk</span><span class="p">)</span>
-<span class="nn">     57         for idx, bulk</span> in <span class="ni">enumerate</span><span class="nt">(bulk_db)</span>
-<span class="g g-Whitespace">     </span><span class="mi">58</span>         <span class="k">if</span> <span class="n">bulk</span><span class="p">[</span><span class="s2">&quot;src_id&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">bulk_src_id_from_db</span>
-<span class="g g-Whitespace">     </span><span class="mi">59</span>     <span class="p">]</span>
-<span class="g g-Whitespace">     </span><span class="mi">60</span>     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">bulk_obj_tuple</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
-
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;your-path-here.pkl&#39;
 </pre></div>
 </div>
 </div>
@@ -667,7 +642,12 @@ document.write(`
 <p>You need to provide the calculator with a path to a model checkpoint file. That can be downloaded <a class="reference external" href="https://github.com/Open-Catalyst-Project/ocp/blob/main/MODELS.md">here</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">checkpoint_path</span> <span class="o">=</span> <span class="s2">&quot;your-path-here.pt&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ocpmodels.common.relaxation.ase_utils</span> <span class="kn">import</span> <span class="n">OCPCalculator</span>
+<span class="kn">from</span> <span class="nn">ocpmodels.models.model_registry</span> <span class="kn">import</span> <span class="n">model_name_to_local_file</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">checkpoint_path</span> <span class="o">=</span> <span class="n">model_name_to_local_file</span><span class="p">(</span><span class="s1">&#39;EquiformerV2 (31M) All+MD&#39;</span><span class="p">,</span> <span class="n">local_cache</span><span class="o">=</span><span class="s1">&#39;/tmp/ocp_checkpoints/&#39;</span><span class="p">)</span>
+
 <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;data/</span><span class="si">{</span><span class="n">bulk</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">adsorbate</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="c1"># Define the calculator</span>
@@ -679,6 +659,20 @@ document.write(`
     <span class="n">adslab</span><span class="o">.</span><span class="n">calc</span> <span class="o">=</span> <span class="n">calc</span>
     <span class="n">opt</span> <span class="o">=</span> <span class="n">BFGS</span><span class="p">(</span><span class="n">adslab</span><span class="p">,</span> <span class="n">trajectory</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;data/</span><span class="si">{</span><span class="n">bulk</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">adsorbate</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">idx</span><span class="si">}</span><span class="s2">.traj&quot;</span><span class="p">)</span>
     <span class="n">opt</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">fmax</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">steps</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span> <span class="c1"># For the AdsorbML results we used fmax = 0.02 and steps = 300, but we will use less strict values for brevity.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">10</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;data/</span><span class="si">{</span><span class="n">bulk</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">adsorbate</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="c1"># Define the calculator</span>
+<span class="ne">---&gt; </span><span class="mi">10</span> <span class="n">calc</span> <span class="o">=</span> <span class="n">OCPCalculator</span><span class="p">(</span><span class="n">checkpoint</span><span class="o">=</span><span class="n">checkpoint_path</span><span class="p">)</span> <span class="c1"># if you have a gpu, add `cpu=False` to speed up calculations</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="n">adslabs</span> <span class="o">=</span> <span class="p">[</span><span class="o">*</span><span class="n">heuristic_adslabs</span><span class="o">.</span><span class="n">atoms_list</span><span class="p">,</span> <span class="o">*</span><span class="n">random_adslabs</span><span class="o">.</span><span class="n">atoms_list</span><span class="p">]</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="c1"># Set up the calculator</span>
+
+<span class="ne">TypeError</span>: OCPCalculator.__init__() got an unexpected keyword argument &#39;checkpoint&#39;
 </pre></div>
 </div>
 </div>

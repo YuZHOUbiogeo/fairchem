@@ -61,7 +61,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/NRR/NRR_example';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Advanced example: Fine-tuning" href="../advanced/fine-tuning-toc.html" />
+    <link rel="next" title="Advanced OCP usage" href="../advanced/advanced_toc.html" />
     <link rel="prev" title="Screening catalysts with OCP" href="NRR_toc.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -204,6 +204,7 @@
 
 <li class="toctree-l1"><a class="reference internal" href="../../core/datasets/oc22.html">Open Catalyst 2022 (OC22)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../core/datasets/odac.html">Open Direct Air Capture 2023 (ODAC23)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../core/model_checkpoints.html">Pretrained model checkpoints</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Making your own datasets</span></p>
 <ul class="nav bd-sidenav">
@@ -219,7 +220,6 @@
 
 
 <li class="toctree-l1"><a class="reference internal" href="../../core/fine-tuning/fine-tuning-oxides.html">Fine tuning a model</a></li>
-
 
 <li class="toctree-l1"><a class="reference internal" href="../../core/model_faq.html">Model FAQ</a></li>
 </ul>
@@ -254,7 +254,7 @@
 
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../advanced/fine-tuning-toc.html">Advanced example: Fine-tuning</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../advanced/advanced_toc.html">Advanced OCP usage</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../advanced/fine-tuning-in-python.html">Fine-tuning with Python</a></li>
 
 
@@ -712,7 +712,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/90ccc93c731155f73fae1bc08a804c17a5d0aa8dd80b88176036dcbe7a9f73d1.png" src="../../_images/90ccc93c731155f73fae1bc08a804c17a5d0aa8dd80b88176036dcbe7a9f73d1.png" />
+<img alt="../../_images/8652427e853d5fa48007b1b22af830d9dbabaeeefa050df9587a676506228424.png" src="../../_images/8652427e853d5fa48007b1b22af830d9dbabaeeefa050df9587a676506228424.png" />
 </div>
 </div>
 <section id="run-an-ml-relaxation">
@@ -762,124 +762,124 @@ document.write(`
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      Step     Time          Energy         fmax
-BFGS:    0 22:32:46        0.210235        0.7989
+BFGS:    0 00:25:48        0.210235        0.7989
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    1 22:32:47        0.190037        0.7560
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    1 00:25:50        0.190037        0.7560
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    2 22:32:48        0.146750        1.4812
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    2 00:25:51        0.146750        1.4812
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    3 22:32:50        0.095554        0.2782
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    3 00:25:52        0.095554        0.2782
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    4 22:32:51        0.085119        0.2368
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    4 00:25:54        0.085119        0.2368
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    5 22:32:53        0.073005        0.3909
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    5 00:25:55        0.073005        0.3909
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    6 22:32:54        0.063279        0.3906
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    6 00:25:56        0.063279        0.3906
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    7 22:32:55        0.055789        0.2083
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    7 00:25:58        0.055789        0.2083
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    8 22:32:57        0.056875        0.0951
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    8 00:25:59        0.056875        0.0951
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    9 22:32:58        0.057871        0.0917
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    9 00:26:00        0.057871        0.0917
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   10 22:32:59        0.058078        0.1136
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   10 00:26:02        0.058078        0.1136
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   11 22:33:01        0.057118        0.1206
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   11 00:26:03        0.057118        0.1206
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   12 22:33:02        0.054675        0.0951
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   12 00:26:05        0.054675        0.0951
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   13 22:33:03        0.052687        0.0699
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   13 00:26:06        0.052687        0.0699
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   14 22:33:05        0.051849        0.0605
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   14 00:26:07        0.051849        0.0605
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   15 22:33:06        0.049674        0.0652
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   15 00:26:09        0.049672        0.0652
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   16 22:33:07        0.048051        0.0834
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   16 00:26:10        0.048052        0.0834
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   17 22:33:09        0.047011        0.0933
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   17 00:26:11        0.047010        0.0933
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   18 22:33:10        0.046433        0.0863
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   18 00:26:13        0.046432        0.0863
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   19 22:33:11        0.047366        0.0826
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   19 00:26:14        0.047368        0.0826
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   20 22:33:13        0.046725        0.0716
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   20 00:26:15        0.046724        0.0716
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   21 22:33:14        0.046285        0.0668
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   21 00:26:17        0.046285        0.0668
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   22 22:33:15        0.046044        0.0722
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   22 00:26:18        0.046037        0.0722
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   23 22:33:17        0.049826        0.1834
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   23 00:26:20        0.049822        0.1838
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   24 22:33:18        0.043545        0.1631
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   24 00:26:21        0.043529        0.1632
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   25 22:33:20        0.024300        0.2085
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   25 00:26:22        0.024267        0.2083
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   26 22:33:21        0.013474        0.2296
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   26 00:26:24        0.013443        0.2292
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   27 22:33:22        0.007479        0.1283
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   27 00:26:25        0.007405        0.1282
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   28 22:33:24        0.004820        0.1453
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   28 00:26:26        0.004741        0.1450
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   29 22:33:25        0.001512        0.1503
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   29 00:26:28        0.001390        0.1498
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   30 22:33:26       -0.002668        0.1288
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   30 00:26:29       -0.002817        0.1280
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   31 22:33:28       -0.010629        0.1105
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   31 00:26:31       -0.010758        0.1103
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   32 22:33:29       -0.014368        0.0887
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   32 00:26:32       -0.014460        0.0880
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   33 22:33:30       -0.016617        0.0567
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   33 00:26:33       -0.016665        0.0569
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   34 22:33:32       -0.017533        0.0536
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   34 00:26:35       -0.017578        0.0534
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   35 22:33:33       -0.019754        0.0701
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   35 00:26:36       -0.019737        0.0709
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   36 22:33:35       -0.021028        0.0731
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   36 00:26:37       -0.021102        0.0740
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   37 22:33:36       -0.022321        0.0501
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   37 00:26:39       -0.022237        0.0505
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   38 22:33:37       -0.022322        0.0249
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   38 00:26:40       -0.022211        0.0253
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Elapsed time 52.9 seconds
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Elapsed time 53.4 seconds
 </pre></div>
 </div>
 </div>
@@ -1007,47 +1007,47 @@ BFGS:    0 22:32:46        0.210235        0.7989
 Running data/oqmd-345911_H/0
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 13.2 seconds for data/oqmd-345911_H/0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 24.2 seconds for data/oqmd-345911_H/0
 Running data/oqmd-345911_H/1
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 54.4 seconds for data/oqmd-345911_H/1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 56.2 seconds for data/oqmd-345911_H/1
 Running data/oqmd-345911_H/2
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 15.4 seconds for data/oqmd-345911_H/2
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 56.1 seconds for data/oqmd-345911_H/2
 Running data/oqmd-345911_H/3
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 33.6 seconds for data/oqmd-345911_H/3
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 15.9 seconds for data/oqmd-345911_H/3
 Running data/oqmd-345911_H/4
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 23.1 seconds for data/oqmd-345911_H/4
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 40.1 seconds for data/oqmd-345911_H/4
 Running data/oqmd-345911_H/5
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 54.4 seconds for data/oqmd-345911_H/5
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 31.9 seconds for data/oqmd-345911_H/5
 Running data/oqmd-345911_H/6
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 54.3 seconds for data/oqmd-345911_H/6
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 56.2 seconds for data/oqmd-345911_H/6
 Running data/oqmd-345911_H/7
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 31.1 seconds for data/oqmd-345911_H/7
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 13.2 seconds for data/oqmd-345911_H/7
 Running data/oqmd-345911_H/8
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 38.7 seconds for data/oqmd-345911_H/8
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 32.2 seconds for data/oqmd-345911_H/8
 Running data/oqmd-345911_NNH/0
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 135.0 seconds for data/oqmd-345911_NNH/0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 138.0 seconds for data/oqmd-345911_NNH/0
 Running data/oqmd-345911_NNH/1
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 120.8 seconds for data/oqmd-345911_NNH/1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 98.5 seconds for data/oqmd-345911_NNH/1
 Running data/oqmd-345911_NNH/2
 </pre></div>
 </div>
@@ -1235,12 +1235,20 @@ Running data/oqmd-345911_NNH/2
 <span class="g g-Whitespace">   </span><span class="mi">1522</span> <span class="k">try</span><span class="p">:</span>
 <span class="g g-Whitespace">   </span><span class="mi">1523</span>     <span class="n">result</span> <span class="o">=</span> <span class="kc">None</span>
 
-<span class="nn">File ~/work/ocp/ocp/ocpmodels/models/equiformer_v2/transformer_block.py:280,</span> in <span class="ni">SO2EquivariantGraphAttention.forward</span><span class="nt">(self, x, atomic_numbers, edge_distance, edge_index)</span>
-<span class="g g-Whitespace">    </span><span class="mi">278</span>     <span class="n">x_message</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">so2_conv_1</span><span class="p">(</span><span class="n">x_message</span><span class="p">,</span> <span class="n">x_edge</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">279</span> <span class="k">else</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">280</span>     <span class="n">x_message</span><span class="p">,</span> <span class="n">x_0_extra</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">so2_conv_1</span><span class="p">(</span><span class="n">x_message</span><span class="p">,</span> <span class="n">x_edge</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">282</span> <span class="c1"># Activation</span>
-<span class="g g-Whitespace">    </span><span class="mi">283</span> <span class="n">x_alpha_num_channels</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_heads</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">attn_alpha_channels</span>
+<span class="nn">File ~/work/ocp/ocp/ocpmodels/models/equiformer_v2/transformer_block.py:305,</span> in <span class="ni">SO2EquivariantGraphAttention.forward</span><span class="nt">(self, x, atomic_numbers, edge_distance, edge_index)</span>
+<span class="g g-Whitespace">    </span><span class="mi">297</span>     <span class="n">x_0_gating</span> <span class="o">=</span> <span class="n">x_0_extra</span><span class="o">.</span><span class="n">narrow</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">298</span>         <span class="mi">1</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">299</span>         <span class="n">x_alpha_num_channels</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">300</span>         <span class="n">x_0_extra</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">x_alpha_num_channels</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">301</span>     <span class="p">)</span>  <span class="c1"># for activation</span>
+<span class="g g-Whitespace">    </span><span class="mi">302</span>     <span class="n">x_0_alpha</span> <span class="o">=</span> <span class="n">x_0_extra</span><span class="o">.</span><span class="n">narrow</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">303</span>         <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">x_alpha_num_channels</span>
+<span class="g g-Whitespace">    </span><span class="mi">304</span>     <span class="p">)</span>  <span class="c1"># for attention weights</span>
+<span class="ne">--&gt; </span><span class="mi">305</span>     <span class="n">x_message</span><span class="o">.</span><span class="n">embedding</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">s2_act</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">306</span>         <span class="n">x_0_gating</span><span class="p">,</span> <span class="n">x_message</span><span class="o">.</span><span class="n">embedding</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">SO3_grid</span>
+<span class="g g-Whitespace">    </span><span class="mi">307</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">308</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">309</span>     <span class="n">x_0_alpha</span> <span class="o">=</span> <span class="n">x_0_extra</span>
 
 <span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/nn/modules/module.py:1511,</span> in <span class="ni">Module._wrapped_call_impl</span><span class="nt">(self, *args, **kwargs)</span>
 <span class="g g-Whitespace">   </span><span class="mi">1509</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compiled_call_impl</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>  <span class="c1"># type: ignore[misc]</span>
@@ -1257,14 +1265,18 @@ Running data/oqmd-345911_NNH/2
 <span class="g g-Whitespace">   </span><span class="mi">1522</span> <span class="k">try</span><span class="p">:</span>
 <span class="g g-Whitespace">   </span><span class="mi">1523</span>     <span class="n">result</span> <span class="o">=</span> <span class="kc">None</span>
 
-<span class="nn">File ~/work/ocp/ocp/ocpmodels/models/equiformer_v2/so2_ops.py:192,</span> in <span class="ni">SO2_Convolution.forward</span><span class="nt">(self, x, x_edge)</span>
-<span class="g g-Whitespace">    </span><span class="mi">188</span>     <span class="n">x_edge_m</span> <span class="o">=</span> <span class="n">x_edge_m</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">189</span>         <span class="n">num_edges</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">so2_m_conv</span><span class="p">[</span><span class="n">m</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">fc</span><span class="o">.</span><span class="n">in_features</span>
-<span class="g g-Whitespace">    </span><span class="mi">190</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">191</span>     <span class="n">x_m</span> <span class="o">=</span> <span class="n">x_m</span> <span class="o">*</span> <span class="n">x_edge_m</span>
-<span class="ne">--&gt; </span><span class="mi">192</span> <span class="n">x_m</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">so2_m_conv</span><span class="p">[</span><span class="n">m</span> <span class="o">-</span> <span class="mi">1</span><span class="p">](</span><span class="n">x_m</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">193</span> <span class="n">x_m</span> <span class="o">=</span> <span class="n">x_m</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">num_edges</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">m_output_channels</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">194</span> <span class="c1"># x.embedding[:, offset : offset + 2 * self.mappingReduced.m_size[m]] = x_m</span>
+<span class="nn">File ~/work/ocp/ocp/ocpmodels/models/equiformer_v2/activation.py:179,</span> in <span class="ni">SeparableS2Activation.forward</span><span class="nt">(self, input_scalars, input_tensors, SO3_grid)</span>
+<span class="g g-Whitespace">    </span><span class="mi">175</span> <span class="n">output_scalars</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">scalar_act</span><span class="p">(</span><span class="n">input_scalars</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">176</span> <span class="n">output_scalars</span> <span class="o">=</span> <span class="n">output_scalars</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">177</span>     <span class="n">output_scalars</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">1</span><span class="p">,</span> <span class="n">output_scalars</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">178</span> <span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">179</span> <span class="n">output_tensors</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">s2_act</span><span class="p">(</span><span class="n">input_tensors</span><span class="p">,</span> <span class="n">SO3_grid</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">180</span> <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">181</span>     <span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">182</span>         <span class="n">output_scalars</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">185</span>     <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">186</span> <span class="p">)</span>
 
 <span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/nn/modules/module.py:1511,</span> in <span class="ni">Module._wrapped_call_impl</span><span class="nt">(self, *args, **kwargs)</span>
 <span class="g g-Whitespace">   </span><span class="mi">1509</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compiled_call_impl</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>  <span class="c1"># type: ignore[misc]</span>
@@ -1281,30 +1293,19 @@ Running data/oqmd-345911_NNH/2
 <span class="g g-Whitespace">   </span><span class="mi">1522</span> <span class="k">try</span><span class="p">:</span>
 <span class="g g-Whitespace">   </span><span class="mi">1523</span>     <span class="n">result</span> <span class="o">=</span> <span class="kc">None</span>
 
-<span class="nn">File ~/work/ocp/ocp/ocpmodels/models/equiformer_v2/so2_ops.py:59,</span> in <span class="ni">SO2_m_Convolution.forward</span><span class="nt">(self, x_m)</span>
-<span class="g g-Whitespace">     </span><span class="mi">58</span> <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x_m</span><span class="p">):</span>
-<span class="ne">---&gt; </span><span class="mi">59</span>     <span class="n">x_m</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fc</span><span class="p">(</span><span class="n">x_m</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">60</span>     <span class="n">x_r</span> <span class="o">=</span> <span class="n">x_m</span><span class="o">.</span><span class="n">narrow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">fc</span><span class="o">.</span><span class="n">out_features</span> <span class="o">//</span> <span class="mi">2</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">61</span>     <span class="n">x_i</span> <span class="o">=</span> <span class="n">x_m</span><span class="o">.</span><span class="n">narrow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">fc</span><span class="o">.</span><span class="n">out_features</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">fc</span><span class="o">.</span><span class="n">out_features</span> <span class="o">//</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nn">File ~/work/ocp/ocp/ocpmodels/models/equiformer_v2/activation.py:161,</span> in <span class="ni">S2Activation.forward</span><span class="nt">(self, inputs, SO3_grid)</span>
+<span class="g g-Whitespace">    </span><span class="mi">159</span> <span class="n">x_grid</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">einsum</span><span class="p">(</span><span class="s2">&quot;bai, zic -&gt; zbac&quot;</span><span class="p">,</span> <span class="n">to_grid_mat</span><span class="p">,</span> <span class="n">inputs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">160</span> <span class="n">x_grid</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">act</span><span class="p">(</span><span class="n">x_grid</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">161</span> <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">einsum</span><span class="p">(</span><span class="s2">&quot;bai, zbac -&gt; zic&quot;</span><span class="p">,</span> <span class="n">from_grid_mat</span><span class="p">,</span> <span class="n">x_grid</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/nn/modules/module.py:1511,</span> in <span class="ni">Module._wrapped_call_impl</span><span class="nt">(self, *args, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1509</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compiled_call_impl</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>  <span class="c1"># type: ignore[misc]</span>
-<span class="g g-Whitespace">   </span><span class="mi">1510</span> <span class="k">else</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1511</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call_impl</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/nn/modules/module.py:1520,</span> in <span class="ni">Module._call_impl</span><span class="nt">(self, *args, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1515</span> <span class="c1"># If we don&#39;t have any hooks, we want to skip the rest of the logic in</span>
-<span class="g g-Whitespace">   </span><span class="mi">1516</span> <span class="c1"># this function, and just call forward.</span>
-<span class="g g-Whitespace">   </span><span class="mi">1517</span> <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_backward_hooks</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backward_pre_hooks</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_forward_hooks</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_forward_pre_hooks</span>
-<span class="g g-Whitespace">   </span><span class="mi">1518</span>         <span class="ow">or</span> <span class="n">_global_backward_pre_hooks</span> <span class="ow">or</span> <span class="n">_global_backward_hooks</span>
-<span class="g g-Whitespace">   </span><span class="mi">1519</span>         <span class="ow">or</span> <span class="n">_global_forward_hooks</span> <span class="ow">or</span> <span class="n">_global_forward_pre_hooks</span><span class="p">):</span>
-<span class="ne">-&gt; </span><span class="mi">1520</span>     <span class="k">return</span> <span class="n">forward_call</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1522</span> <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1523</span>     <span class="n">result</span> <span class="o">=</span> <span class="kc">None</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/nn/modules/linear.py:116,</span> in <span class="ni">Linear.forward</span><span class="nt">(self, input)</span>
-<span class="g g-Whitespace">    </span><span class="mi">115</span> <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">input</span><span class="p">:</span> <span class="n">Tensor</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tensor</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">116</span>     <span class="k">return</span> <span class="n">F</span><span class="o">.</span><span class="n">linear</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">weight</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">bias</span><span class="p">)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/functional.py:380,</span> in <span class="ni">einsum</span><span class="nt">(*args)</span>
+<span class="g g-Whitespace">    </span><span class="mi">375</span>     <span class="k">return</span> <span class="n">einsum</span><span class="p">(</span><span class="n">equation</span><span class="p">,</span> <span class="o">*</span><span class="n">_operands</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">377</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">operands</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">2</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">opt_einsum</span><span class="o">.</span><span class="n">enabled</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">378</span>     <span class="c1"># the path for contracting 0 or 1 time(s) is already optimized</span>
+<span class="g g-Whitespace">    </span><span class="mi">379</span>     <span class="c1"># or the user has disabled using opt_einsum</span>
+<span class="ne">--&gt; </span><span class="mi">380</span>     <span class="k">return</span> <span class="n">_VF</span><span class="o">.</span><span class="n">einsum</span><span class="p">(</span><span class="n">equation</span><span class="p">,</span> <span class="n">operands</span><span class="p">)</span>  <span class="c1"># type: ignore[attr-defined]</span>
+<span class="g g-Whitespace">    </span><span class="mi">382</span> <span class="n">path</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">383</span> <span class="k">if</span> <span class="n">opt_einsum</span><span class="o">.</span><span class="n">is_available</span><span class="p">():</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
@@ -1583,11 +1584,11 @@ Running data/oqmd-345911_NNH/2
       </div>
     </a>
     <a class="right-next"
-       href="../advanced/fine-tuning-toc.html"
+       href="../advanced/advanced_toc.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Advanced example: Fine-tuning</p>
+        <p class="prev-next-title">Advanced OCP usage</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

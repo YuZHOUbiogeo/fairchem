@@ -204,6 +204,7 @@
 
 <li class="toctree-l1"><a class="reference internal" href="datasets/oc22.html">Open Catalyst 2022 (OC22)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="datasets/odac.html">Open Direct Air Capture 2023 (ODAC23)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="model_checkpoints.html">Pretrained model checkpoints</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Making your own datasets</span></p>
 <ul class="nav bd-sidenav">
@@ -219,7 +220,6 @@
 
 
 <li class="toctree-l1"><a class="reference internal" href="fine-tuning/fine-tuning-oxides.html">Fine tuning a model</a></li>
-
 
 <li class="toctree-l1"><a class="reference internal" href="model_faq.html">Model FAQ</a></li>
 </ul>
@@ -254,7 +254,7 @@
 
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../tutorials/advanced/fine-tuning-toc.html">Advanced example: Fine-tuning</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tutorials/advanced/advanced_toc.html">Advanced OCP usage</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/advanced/fine-tuning-in-python.html">Fine-tuning with Python</a></li>
 
 
@@ -564,7 +564,7 @@ document.write(`
   <section id="using-pre-trained-models-in-ase">
 <h1>Using pre-trained models in ASE<a class="headerlink" href="#using-pre-trained-models-in-ase" title="Link to this heading">#</a></h1>
 <ol class="arabic simple">
-<li><p>First, install OCP in a fresh python environment using one of the approaches in <a class="reference internal" href="#INSTALL"><span class="xref myst">installation documentation</span></a>.</p></li>
+<li><p>First, install OCP in a fresh python environment using one of the approaches in <a class="reference internal" href="install.html"><span class="doc std std-doc">installation documentation</span></a>.</p></li>
 <li><p>See what pre-trained potentials are available</p></li>
 </ol>
 <div class="cell docutils container">
@@ -646,55 +646,55 @@ WARNING:root:Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      Step     Time          Energy         fmax
-BFGS:    0 22:16:16     -110.398659        1.6307
+BFGS:    0 00:09:23     -110.398659        1.6307
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    1 22:16:17     -110.545036        0.9250
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    1 00:09:23     -110.545036        0.9250
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    2 22:16:17     -110.622719        0.5629
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    2 00:09:24     -110.622719        0.5629
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    3 22:16:18     -110.613007        0.5830
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    3 00:09:24     -110.613007        0.5830
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    4 22:16:18     -110.641937        0.4612
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    4 00:09:24     -110.641937        0.4612
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    5 22:16:19     -110.691620        0.3621
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    5 00:09:25     -110.691620        0.3621
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    6 22:16:19     -110.723862        0.5928
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    6 00:09:25     -110.723862        0.5928
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    7 22:16:20     -110.764206        0.7120
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    7 00:09:26     -110.764206        0.7120
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    8 22:16:20     -110.869545        0.5228
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    8 00:09:26     -110.869545        0.5228
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    9 22:16:21     -110.938713        0.1706
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    9 00:09:27     -110.938713        0.1706
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   10 22:16:21     -110.977699        0.0839
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   10 00:09:27     -110.977699        0.0839
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   11 22:16:21     -110.992668        0.0717
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   11 00:09:28     -110.992668        0.0717
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   12 22:16:22     -110.999657        0.0612
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   12 00:09:28     -110.999657        0.0612
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   13 22:16:22     -110.995178        0.0595
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   13 00:09:28     -110.995178        0.0595
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   14 22:16:23     -111.005981        0.0603
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   14 00:09:29     -111.005981        0.0603
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   15 22:16:23     -111.007721        0.0621
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   15 00:09:29     -111.007721        0.0621
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   16 22:16:24     -111.010895        0.0351
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   16 00:09:30     -111.010895        0.0351
 </pre></div>
 </div>
 <img alt="../_images/46af7bb4be5c461aa6cf96d4a533467296c7c1ce5ddb6c0e7daffc68d22cf2f8.png" src="../_images/46af7bb4be5c461aa6cf96d4a533467296c7c1ce5ddb6c0e7daffc68d22cf2f8.png" />

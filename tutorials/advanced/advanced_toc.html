@@ -61,6 +61,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/advanced/advanced_toc';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Fine-tuning with Python" href="fine-tuning-in-python.html" />
+    <link rel="prev" title="Using OCP to enumerate adsorbates on alloy catalyst surfaces" href="../NRR/NRR_example.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -121,8 +123,6 @@
     <div class="bd-container__inner bd-page-width">
       
       
-      
-        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -204,6 +204,7 @@
 
 <li class="toctree-l1"><a class="reference internal" href="../../core/datasets/oc22.html">Open Catalyst 2022 (OC22)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../core/datasets/odac.html">Open Direct Air Capture 2023 (ODAC23)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../core/model_checkpoints.html">Pretrained model checkpoints</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Making your own datasets</span></p>
 <ul class="nav bd-sidenav">
@@ -220,7 +221,6 @@
 
 <li class="toctree-l1"><a class="reference internal" href="../../core/fine-tuning/fine-tuning-oxides.html">Fine tuning a model</a></li>
 
-
 <li class="toctree-l1"><a class="reference internal" href="../../core/model_faq.html">Model FAQ</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Videos and Talks</span></p>
@@ -229,7 +229,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../videos/technical_talks.html">Technical presentations</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Case Studies &amp; Tutorials</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../adsorbml_walkthrough.html">AdsorbML tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../core/papers_using_models.html">Studies that have leveraged OCP models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../intro.html">Intro and background on OCP and DFT</a></li>
@@ -254,7 +254,7 @@
 
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="fine-tuning-toc.html">Advanced example: Fine-tuning</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Advanced OCP usage</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="fine-tuning-in-python.html">Fine-tuning with Python</a></li>
 
 
@@ -564,6 +564,18 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="advanced-ocp-usage">
 <h1>Advanced OCP usage<a class="headerlink" href="#advanced-ocp-usage" title="Link to this heading">#</a></h1>
 <p>See the sections of this tutorial to the left to get started!</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="fine-tuning-in-python.html">Fine-tuning with Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fine-tuning-in-python.html#split-the-data-into-train-test-val-sets">Split the data into train, test, val sets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fine-tuning-in-python.html#setup-the-training-code">Setup the training code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fine-tuning-in-python.html#run-the-training-task">Run the training task</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embeddings.html">Working with embeddings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embeddings.html#a-diagnostic-example">A diagnostic example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embeddings.html#a-clustering-example">A clustering example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embeddings.html#a-simple-vector-search-example">A simple vector search example</a></li>
+</ul>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -596,6 +608,24 @@ document.write(`
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="../NRR/NRR_example.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Using OCP to enumerate adsorbates on alloy catalyst surfaces</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="fine-tuning-in-python.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Fine-tuning with Python</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
