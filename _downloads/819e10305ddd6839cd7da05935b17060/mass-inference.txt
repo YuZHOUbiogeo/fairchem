@@ -1,0 +1,148 @@
+2024-04-14 21:28:11 (INFO): Project root: /home/runner/work/ocp/ocp
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/cuda/amp/grad_scaler.py:126: UserWarning: torch.cuda.amp.GradScaler is enabled, but CUDA is not available.  Disabling.
+  warnings.warn(
+2024-04-14 21:28:13 (WARNING): Detected old config, converting to new format. Consider updating to avoid potential incompatibilities.
+2024-04-14 21:28:13 (INFO): amp: true
+cmd:
+  checkpoint_dir: ./checkpoints/2024-04-14-21-28-32
+  commit: dda32e7
+  identifier: ''
+  logs_dir: ./logs/tensorboard/2024-04-14-21-28-32
+  print_every: 10
+  results_dir: ./results/2024-04-14-21-28-32
+  seed: 0
+  timestamp_id: 2024-04-14-21-28-32
+dataset:
+  a2g_args:
+    r_energy: false
+    r_forces: false
+  format: ase_db
+  key_mapping:
+    force: forces
+    y: energy
+  select_args:
+    selection: natoms>5,xc=PBE
+  src: data.db
+eval_metrics:
+  metrics:
+    energy:
+    - mae
+    forces:
+    - forcesx_mae
+    - forcesy_mae
+    - forcesz_mae
+    - mae
+    - cosine_similarity
+    - magnitude_error
+    misc:
+    - energy_forces_within_threshold
+gpus: 0
+logger: tensorboard
+loss_fns:
+- energy:
+    coefficient: 1
+    fn: mae
+- forces:
+    coefficient: 1
+    fn: l2mae
+model: gemnet_t
+model_attributes:
+  activation: silu
+  cbf:
+    name: spherical_harmonics
+  cutoff: 6.0
+  direct_forces: true
+  emb_size_atom: 512
+  emb_size_bil_trip: 64
+  emb_size_cbf: 16
+  emb_size_edge: 512
+  emb_size_rbf: 16
+  emb_size_trip: 64
+  envelope:
+    exponent: 5
+    name: polynomial
+  extensive: true
+  max_neighbors: 50
+  num_after_skip: 2
+  num_atom: 3
+  num_before_skip: 1
+  num_blocks: 3
+  num_concat: 1
+  num_radial: 128
+  num_spherical: 7
+  otf_graph: true
+  output_init: HeOrthogonal
+  rbf:
+    name: gaussian
+  regress_forces: true
+noddp: false
+optim:
+  batch_size: 16
+  clip_grad_norm: 10
+  ema_decay: 0.999
+  energy_coefficient: 1
+  eval_batch_size: 16
+  eval_every: 5000
+  force_coefficient: 1
+  loss_energy: mae
+  loss_force: atomwisel2
+  lr_gamma: 0.8
+  lr_initial: 0.0005
+  lr_milestones:
+  - 64000
+  - 96000
+  - 128000
+  - 160000
+  - 192000
+  max_epochs: 80
+  num_workers: 2
+  optimizer: AdamW
+  optimizer_params:
+    amsgrad: true
+  warmup_steps: -1
+outputs:
+  energy:
+    level: system
+  forces:
+    eval_on_free_atoms: true
+    level: atom
+    train_on_free_atoms: false
+slurm: {}
+task:
+  dataset: ase_db
+  prediction_dtype: float32
+test_dataset:
+  a2g_args:
+    r_energy: false
+    r_forces: false
+  select_args:
+    selection: natoms>5,xc=PBE
+  src: data.db
+trainer: ocp
+val_dataset: null
+
+2024-04-14 21:28:13 (INFO): Loading dataset: ase_db
+Traceback (most recent call last):
+  File "/home/runner/work/ocp/ocp/main.py", line 89, in <module>
+    Runner()(config)
+  File "/home/runner/work/ocp/ocp/main.py", line 34, in __call__
+    with new_trainer_context(args=args, config=config) as ctx:
+  File "/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/home/runner/work/ocp/ocp/ocpmodels/common/utils.py", line 977, in new_trainer_context
+    trainer = trainer_cls(
+              ^^^^^^^^^^^^
+  File "/home/runner/work/ocp/ocp/ocpmodels/trainers/ocp_trainer.py", line 95, in __init__
+    super().__init__(
+  File "/home/runner/work/ocp/ocp/ocpmodels/trainers/base_trainer.py", line 176, in __init__
+    self.load()
+  File "/home/runner/work/ocp/ocp/ocpmodels/trainers/base_trainer.py", line 198, in load
+    self.load_datasets()
+  File "/home/runner/work/ocp/ocp/ocpmodels/trainers/base_trainer.py", line 281, in load_datasets
+    self.train_dataset = registry.get_dataset_class(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/ocp/ocp/ocpmodels/datasets/ase_datasets.py", line 114, in __init__
+    raise ValueError(
+ValueError: No valid ase data found!Double check that the src path and/or glob search pattern gives ASE compatible data: data.db
+Elapsed time = 3.8 seconds

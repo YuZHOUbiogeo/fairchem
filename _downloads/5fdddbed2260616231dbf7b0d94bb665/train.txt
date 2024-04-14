@@ -1,17 +1,17 @@
-2024-04-14 19:19:53 (INFO): Project root: /home/runner/work/ocp/ocp
+2024-04-14 21:25:50 (INFO): Project root: /home/runner/work/ocp/ocp
 /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/cuda/amp/grad_scaler.py:126: UserWarning: torch.cuda.amp.GradScaler is enabled, but CUDA is not available.  Disabling.
   warnings.warn(
-2024-04-14 19:19:54 (WARNING): Detected old config, converting to new format. Consider updating to avoid potential incompatibilities.
-2024-04-14 19:19:54 (INFO): amp: true
+2024-04-14 21:25:51 (WARNING): Detected old config, converting to new format. Consider updating to avoid potential incompatibilities.
+2024-04-14 21:25:51 (INFO): amp: true
 cmd:
-  checkpoint_dir: fine-tuning/checkpoints/2024-04-14-19-20-32-ft-oxides
-  commit: 87e111f
+  checkpoint_dir: fine-tuning/checkpoints/2024-04-14-21-26-24-ft-oxides
+  commit: dda32e7
   identifier: ft-oxides
-  logs_dir: fine-tuning/logs/wandb/2024-04-14-19-20-32-ft-oxides
+  logs_dir: fine-tuning/logs/tensorboard/2024-04-14-21-26-24-ft-oxides
   print_every: 10
-  results_dir: fine-tuning/results/2024-04-14-19-20-32-ft-oxides
+  results_dir: fine-tuning/results/2024-04-14-21-26-24-ft-oxides
   seed: 0
-  timestamp_id: 2024-04-14-19-20-32-ft-oxides
+  timestamp_id: 2024-04-14-21-26-24-ft-oxides
 dataset:
   a2g_args:
     r_energy: true
@@ -35,7 +35,7 @@ eval_metrics:
     misc:
     - energy_forces_within_threshold
 gpus: 0
-logger: wandb
+logger: tensorboard
 loss_fns:
 - energy:
     coefficient: 1
@@ -142,37 +142,42 @@ val_dataset:
     r_forces: true
   src: val.db
 
-wandb: ERROR api_key not configured (no-tty). call wandb.login(key=[your_api_key])
+2024-04-14 21:25:51 (INFO): Loading dataset: ase_db
+2024-04-14 21:25:51 (INFO): rank: 0: Sampler created...
+2024-04-14 21:25:51 (INFO): Batch balancing is disabled for single GPU training.
+2024-04-14 21:25:51 (INFO): rank: 0: Sampler created...
+2024-04-14 21:25:51 (INFO): Batch balancing is disabled for single GPU training.
+2024-04-14 21:25:51 (INFO): rank: 0: Sampler created...
+2024-04-14 21:25:51 (INFO): Batch balancing is disabled for single GPU training.
+2024-04-14 21:25:51 (INFO): Loading model: gemnet_oc
+2024-04-14 21:25:51 (WARNING): Unrecognized arguments: ['symmetric_edge_symmetrization']
+2024-04-14 21:25:54 (INFO): Loaded GemNetOC with 38864438 parameters.
+2024-04-14 21:25:54 (WARNING): Model gradient logging to tensorboard not yet supported.
+2024-04-14 21:25:54 (WARNING): Using `weight_decay` from `optim` instead of `optim.optimizer_params`.Please update your config to use `optim.optimizer_params.weight_decay`.`optim.weight_decay` will soon be deprecated.
+2024-04-14 21:25:54 (INFO): Loading checkpoint from: /tmp/ocp_checkpoints/gnoc_oc22_oc20_all_s2ef.pt
+2024-04-14 21:25:54 (INFO): Overwriting scaling factors with those loaded from checkpoint. If you're generating predictions with a pretrained checkpoint, this is the correct behavior. To disable this, delete `scale_dict` from the checkpoint. 
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch_geometric/data/collate.py:145: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  storage = elem.storage()._new_shared(numel)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch_geometric/data/collate.py:145: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  storage = elem.storage()._new_shared(numel)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/amp/autocast_mode.py:250: UserWarning: User provided device_type of 'cuda', but CUDA is not available. Disabling
+  warnings.warn(
+2024-04-14 21:26:06 (INFO): Evaluating on val.
+device 0:   0%|          | 0/2 [00:00<?, ?it/s]/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch_geometric/data/collate.py:145: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  storage = elem.storage()._new_shared(numel)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch_geometric/data/collate.py:145: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  storage = elem.storage()._new_shared(numel)
+device 0:  50%|█████     | 1/2 [00:04<00:04,  4.27s/it]device 0: 100%|██████████| 2/2 [00:06<00:00,  3.21s/it]device 0: 100%|██████████| 2/2 [00:06<00:00,  3.43s/it]
+2024-04-14 21:26:13 (INFO): energy_forces_within_threshold: 0.0000, energy_mae: 2.8244, forcesx_mae: 0.0080, forcesy_mae: 0.0105, forcesz_mae: 0.0081, forces_mae: 0.0089, forces_cosine_similarity: 0.1907, forces_magnitude_error: 0.0127, loss: 2.8302, epoch: 0.0667
 Traceback (most recent call last):
   File "/home/runner/work/ocp/ocp/main.py", line 89, in <module>
     Runner()(config)
-  File "/home/runner/work/ocp/ocp/main.py", line 34, in __call__
-    with new_trainer_context(args=args, config=config) as ctx:
-  File "/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/contextlib.py", line 137, in __enter__
-    return next(self.gen)
-           ^^^^^^^^^^^^^^
-  File "/home/runner/work/ocp/ocp/ocpmodels/common/utils.py", line 977, in new_trainer_context
-    trainer = trainer_cls(
-              ^^^^^^^^^^^^
-  File "/home/runner/work/ocp/ocp/ocpmodels/trainers/ocp_trainer.py", line 95, in __init__
-    super().__init__(
-  File "/home/runner/work/ocp/ocp/ocpmodels/trainers/base_trainer.py", line 176, in __init__
-    self.load()
-  File "/home/runner/work/ocp/ocp/ocpmodels/trainers/base_trainer.py", line 197, in load
-    self.load_logger()
-  File "/home/runner/work/ocp/ocp/ocpmodels/trainers/base_trainer.py", line 229, in load_logger
-    self.logger = registry.get_logger_class(logger_name)(self.config)
-                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/ocp/ocp/ocpmodels/common/logger.py", line 65, in __init__
-    wandb.init(
-  File "/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/wandb/sdk/wandb_init.py", line 1200, in init
-    raise e
-  File "/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/wandb/sdk/wandb_init.py", line 1177, in init
-    wi.setup(kwargs)
-  File "/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/wandb/sdk/wandb_init.py", line 301, in setup
-    wandb_login._login(
-  File "/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/wandb/sdk/wandb_login.py", line 334, in _login
-    wlogin.prompt_api_key()
-  File "/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/wandb/sdk/wandb_login.py", line 263, in prompt_api_key
-    raise UsageError("api_key not configured (no-tty). call " + directive)
-wandb.errors.UsageError: api_key not configured (no-tty). call wandb.login(key=[your_api_key])
+  File "/home/runner/work/ocp/ocp/main.py", line 40, in __call__
+    self.task.run()
+  File "/home/runner/work/ocp/ocp/ocpmodels/tasks/task.py", line 51, in run
+    self.trainer.train(
+  File "/home/runner/work/ocp/ocp/ocpmodels/trainers/ocp_trainer.py", line 200, in train
+    self.update_best(
+  File "/home/runner/work/ocp/ocp/ocpmodels/trainers/base_trainer.py", line 667, in update_best
+    "mae" in primary_metric
+TypeError: argument of type 'NoneType' is not iterable
