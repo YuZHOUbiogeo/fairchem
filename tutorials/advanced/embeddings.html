@@ -251,7 +251,6 @@
 
 
 
-
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="advanced_toc.html">Advanced OCP usage</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
@@ -620,6 +619,7 @@ document.write(`
 <span class="n">checkpoint_path</span> <span class="o">=</span> <span class="n">model_name_to_local_file</span><span class="p">(</span><span class="s1">&#39;GemNet-OCOC20+OC22&#39;</span><span class="p">,</span> <span class="n">local_cache</span><span class="o">=</span><span class="s1">&#39;/tmp/ocp_checkpoints/&#39;</span><span class="p">)</span>
 
 <span class="n">calc</span> <span class="o">=</span> <span class="n">OCPCalculator</span><span class="p">(</span><span class="n">checkpoint_path</span><span class="o">=</span><span class="n">checkpoint_path</span><span class="p">)</span>
+<span class="n">calc</span><span class="o">.</span><span class="n">trainer</span><span class="o">.</span><span class="n">_unwrapped_model</span><span class="o">.</span><span class="n">return_embedding</span> <span class="o">=</span> <span class="kc">True</span>
 </pre></div>
 </div>
 </div>
@@ -629,8 +629,7 @@ document.write(`
 <p>Here we simply compute an equation of state by varying the lattice constant. You will see a small unphysical feature near 3.7 angstroms. We will investigate why that happens.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#calc.trainer._unwrapped_model.return_embedding = False</span>
-<span class="n">a0</span> <span class="o">=</span> <span class="mf">3.63</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a0</span> <span class="o">=</span> <span class="mf">3.63</span>
 <span class="n">E</span> <span class="o">=</span> <span class="p">[]</span>
 
 <span class="n">LC</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.95</span> <span class="o">*</span> <span class="n">a0</span><span class="p">,</span> <span class="mf">1.05</span> <span class="o">*</span> <span class="n">a0</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
@@ -660,7 +659,7 @@ document.write(`
 <img alt="../../_images/8842bf65e339013ac7f54f0200a1e20f60472ed1fbcf8520c41ee4e842a0fb07.png" src="../../_images/8842bf65e339013ac7f54f0200a1e20f60472ed1fbcf8520c41ee4e842a0fb07.png" />
 </div>
 </div>
-<p>Something is a little off in this equation of state, there is an unphysical bump in it. We now rerun this and get the embeddings. You simply call the <code class="docutils literal notranslate"><span class="pre">calc.embed</span></code> method. We need a reference configuration to compare too. We choose a lattice constant of 3.63 angstroms and compute three different embeddings.</p>
+<p>Something is a little off in this equation of state, there is an unphysical bump in it. We now rerun this and get the embeddings. You simply set <code class="docutils literal notranslate"><span class="pre">calc.trainer._unwrapped_model.return_embedding</span> <span class="pre">=</span> <span class="pre">True</span></code>  and the calculator will return useful embeddings if possible (e.g. for GemNet-OC). We need a reference configuration to compare too. We choose a lattice constant of 3.63 angstroms and compute three different embeddings.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a0</span> <span class="o">=</span> <span class="mf">3.63</span>
@@ -673,22 +672,21 @@ document.write(`
 <span class="n">atoms</span><span class="o">.</span><span class="n">set_tags</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">atoms</span><span class="p">)))</span>
 <span class="n">atoms</span><span class="o">.</span><span class="n">calc</span> <span class="o">=</span> <span class="n">calc</span>
 
-<span class="n">out</span> <span class="o">=</span> <span class="n">calc</span><span class="o">.</span><span class="n">embed</span><span class="p">(</span><span class="n">atoms</span><span class="p">)</span>
+<span class="n">atoms</span><span class="o">.</span><span class="n">get_potential_energy</span><span class="p">()</span>
 
-<span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">x3</span> <span class="o">=</span> <span class="n">out</span><span class="p">[</span><span class="s1">&#39;h sum&#39;</span><span class="p">],</span> <span class="n">out</span><span class="p">[</span><span class="s1">&#39;x_E sum&#39;</span><span class="p">],</span> <span class="n">out</span><span class="p">[</span><span class="s1">&#39;x_F sum&#39;</span><span class="p">]</span>
+<span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">x3</span> <span class="o">=</span> <span class="n">atoms</span><span class="o">.</span><span class="n">calc</span><span class="o">.</span><span class="n">results</span><span class="p">[</span><span class="s1">&#39;h sum&#39;</span><span class="p">],</span> <span class="n">atoms</span><span class="o">.</span><span class="n">calc</span><span class="o">.</span><span class="n">results</span><span class="p">[</span><span class="s1">&#39;x_E sum&#39;</span><span class="p">],</span> <span class="n">atoms</span><span class="o">.</span><span class="n">calc</span><span class="o">.</span><span class="n">results</span><span class="p">[</span><span class="s1">&#39;x_F sum&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">11</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">atoms</span><span class="o">.</span><span class="n">set_tags</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">atoms</span><span class="p">)))</span>
+<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">13</span>
 <span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">atoms</span><span class="o">.</span><span class="n">calc</span> <span class="o">=</span> <span class="n">calc</span>
-<span class="ne">---&gt; </span><span class="mi">11</span> <span class="n">out</span> <span class="o">=</span> <span class="n">calc</span><span class="o">.</span><span class="n">embed</span><span class="p">(</span><span class="n">atoms</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">x3</span> <span class="o">=</span> <span class="n">out</span><span class="p">[</span><span class="s1">&#39;h sum&#39;</span><span class="p">],</span> <span class="n">out</span><span class="p">[</span><span class="s1">&#39;x_E sum&#39;</span><span class="p">],</span> <span class="n">out</span><span class="p">[</span><span class="s1">&#39;x_F sum&#39;</span><span class="p">]</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="n">atoms</span><span class="o">.</span><span class="n">get_potential_energy</span><span class="p">()</span>
+<span class="ne">---&gt; </span><span class="mi">13</span> <span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">x3</span> <span class="o">=</span> <span class="n">atoms</span><span class="o">.</span><span class="n">calc</span><span class="o">.</span><span class="n">results</span><span class="p">[</span><span class="s1">&#39;h sum&#39;</span><span class="p">],</span> <span class="n">atoms</span><span class="o">.</span><span class="n">calc</span><span class="o">.</span><span class="n">results</span><span class="p">[</span><span class="s1">&#39;x_E sum&#39;</span><span class="p">],</span> <span class="n">atoms</span><span class="o">.</span><span class="n">calc</span><span class="o">.</span><span class="n">results</span><span class="p">[</span><span class="s1">&#39;x_F sum&#39;</span><span class="p">]</span>
 
-<span class="ne">AttributeError</span>: &#39;OCPCalculator&#39; object has no attribute &#39;embed&#39;
+<span class="ne">KeyError</span>: &#39;h sum&#39;
 </pre></div>
 </div>
 </div>
@@ -708,12 +706,12 @@ document.write(`
                  <span class="n">pbc</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="n">atoms</span> <span class="o">=</span> <span class="n">atoms</span><span class="o">.</span><span class="n">repeat</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
     <span class="n">atoms</span><span class="o">.</span><span class="n">set_tags</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">atoms</span><span class="p">)))</span>
+    <span class="n">atoms</span><span class="o">.</span><span class="n">get_potential_energy</span><span class="p">()</span>
 
-    <span class="n">out</span> <span class="o">=</span> <span class="n">calc</span><span class="o">.</span><span class="n">embed</span><span class="p">(</span><span class="n">atoms</span><span class="p">)</span>
     
-    <span class="n">cossim1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">cosine_similarity</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">out</span><span class="p">[</span><span class="s2">&quot;h sum&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">item</span><span class="p">())</span>
-    <span class="n">cossim2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">cosine_similarity</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span> <span class="n">out</span><span class="p">[</span><span class="s2">&quot;x_E sum&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">item</span><span class="p">())</span>
-    <span class="n">cossim3</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">cosine_similarity</span><span class="p">(</span><span class="n">x3</span><span class="p">,</span> <span class="n">out</span><span class="p">[</span><span class="s2">&quot;x_F sum&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">item</span><span class="p">())</span>
+    <span class="n">cossim1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">cosine_similarity</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">atoms</span><span class="o">.</span><span class="n">calc</span><span class="o">.</span><span class="n">results</span><span class="p">[</span><span class="s2">&quot;h sum&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">item</span><span class="p">())</span>
+    <span class="n">cossim2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">cosine_similarity</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span> <span class="n">atoms</span><span class="o">.</span><span class="n">calc</span><span class="o">.</span><span class="n">results</span><span class="p">[</span><span class="s2">&quot;x_E sum&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">item</span><span class="p">())</span>
+    <span class="n">cossim3</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">cosine_similarity</span><span class="p">(</span><span class="n">x3</span><span class="p">,</span> <span class="n">atoms</span><span class="o">.</span><span class="n">calc</span><span class="o">.</span><span class="n">results</span><span class="p">[</span><span class="s2">&quot;x_F sum&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">item</span><span class="p">())</span>
     <span class="n">E</span> <span class="o">+=</span> <span class="p">[</span><span class="n">out</span><span class="p">[</span><span class="s1">&#39;energy&#39;</span><span class="p">]]</span>
 </pre></div>
 </div>
@@ -752,17 +750,17 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ase.build</span> <span class="kn">import</span> <span class="n">bulk</span>
 <span class="kn">from</span> <span class="nn">ase.cluster</span> <span class="kn">import</span> <span class="n">Octahedron</span>
 
-<span class="n">calc</span><span class="o">.</span><span class="n">trainer</span><span class="o">.</span><span class="n">_unwrapped_model</span><span class="o">.</span><span class="n">return_embedding</span> <span class="o">=</span> <span class="kc">True</span>
-
 <span class="n">embeddings</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">labels</span> <span class="o">=</span> <span class="p">[]</span>
 
 <span class="nb">oct</span> <span class="o">=</span> <span class="n">Octahedron</span><span class="p">(</span><span class="s1">&#39;Cu&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="nb">oct</span><span class="o">.</span><span class="n">set_tags</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="nb">oct</span><span class="p">)))</span>
+<span class="nb">oct</span><span class="o">.</span><span class="n">calc</span> <span class="o">=</span> <span class="n">calc</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">):</span>
     <span class="nb">oct</span><span class="o">.</span><span class="n">rattle</span><span class="p">(</span><span class="mf">0.01</span><span class="p">)</span>
-    <span class="n">embeddings</span> <span class="o">+=</span> <span class="p">[</span><span class="n">calc</span><span class="o">.</span><span class="n">embed</span><span class="p">(</span><span class="nb">oct</span><span class="p">)[</span><span class="s1">&#39;x_E sum&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">numpy</span><span class="p">()]</span>
+    <span class="nb">oct</span><span class="o">.</span><span class="n">get_potential_energy</span><span class="p">()</span>
+    <span class="n">embeddings</span> <span class="o">+=</span> <span class="p">[</span><span class="nb">oct</span><span class="o">.</span><span class="n">calc</span><span class="o">.</span><span class="n">results</span><span class="p">[</span><span class="s1">&#39;x_E sum&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">numpy</span><span class="p">()]</span>
     <span class="n">labels</span> <span class="o">+=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -773,10 +771,11 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">bulk</span><span class="p">(</span><span class="s1">&#39;Cu&#39;</span><span class="p">)</span>
 <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">repeat</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
 <span class="n">b</span><span class="o">.</span><span class="n">set_tags</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">b</span><span class="p">)))</span>
+<span class="n">b</span><span class="o">.</span><span class="n">calc</span> <span class="o">=</span> <span class="n">calc</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">40</span><span class="p">):</span>
     <span class="n">b</span><span class="o">.</span><span class="n">rattle</span><span class="p">(</span><span class="mf">0.01</span><span class="p">)</span>
-    <span class="n">embeddings</span> <span class="o">+=</span> <span class="p">[</span><span class="n">calc</span><span class="o">.</span><span class="n">embed</span><span class="p">(</span><span class="n">b</span><span class="p">)[</span><span class="s1">&#39;x_E sum&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">numpy</span><span class="p">()]</span>
+    <span class="n">embeddings</span> <span class="o">+=</span> <span class="p">[</span><span class="n">b</span><span class="o">.</span><span class="n">calc</span><span class="o">.</span><span class="n">results</span><span class="p">[</span><span class="s1">&#39;x_E sum&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">numpy</span><span class="p">()]</span>
     <span class="n">labels</span> <span class="o">+=</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -827,14 +826,15 @@ document.write(`
 
 <span class="nb">oct</span> <span class="o">=</span> <span class="n">Octahedron</span><span class="p">(</span><span class="s1">&#39;Cu&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="nb">oct</span><span class="o">.</span><span class="n">set_tags</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="nb">oct</span><span class="p">)))</span>
-
+<span class="nb">oct</span><span class="o">.</span><span class="n">calc</span> <span class="o">=</span> <span class="n">calc</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">):</span>
     <span class="nb">oct</span><span class="o">.</span><span class="n">rattle</span><span class="p">(</span><span class="mf">0.01</span><span class="p">)</span>
-    <span class="n">out</span> <span class="o">=</span> <span class="n">calc</span><span class="o">.</span><span class="n">embed</span><span class="p">(</span><span class="nb">oct</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">out</span><span class="p">[</span><span class="s1">&#39;h&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]:</span>
+    <span class="nb">oct</span><span class="o">.</span><span class="n">get_potential_energy</span><span class="p">()</span>
+
+    <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">oct</span><span class="o">.</span><span class="n">calc</span><span class="o">.</span><span class="n">results</span><span class="p">[</span><span class="s1">&#39;h&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]:</span>
         <span class="n">embeddings</span> <span class="o">+=</span> <span class="p">[</span><span class="n">a</span><span class="o">.</span><span class="n">numpy</span><span class="p">()]</span>
         <span class="n">labels</span> <span class="o">+=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="n">energies</span> <span class="o">+=</span> <span class="p">[</span><span class="n">out</span><span class="p">[</span><span class="s1">&#39;energy&#39;</span><span class="p">]]</span>
+        <span class="n">energies</span> <span class="o">+=</span> <span class="p">[</span><span class="nb">oct</span><span class="o">.</span><span class="n">calc</span><span class="o">.</span><span class="n">results</span><span class="p">[</span><span class="s1">&#39;energy&#39;</span><span class="p">]]</span>
 
 <span class="n">b</span> <span class="o">=</span> <span class="n">bulk</span><span class="p">(</span><span class="s1">&#39;Cu&#39;</span><span class="p">)</span>
 <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">repeat</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
@@ -842,11 +842,12 @@ document.write(`
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">):</span>
     <span class="n">b</span><span class="o">.</span><span class="n">rattle</span><span class="p">(</span><span class="mf">0.01</span><span class="p">)</span>
-    <span class="n">out</span> <span class="o">=</span> <span class="n">calc</span><span class="o">.</span><span class="n">embed</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">out</span><span class="p">[</span><span class="s1">&#39;h&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]:</span>
+    <span class="n">b</span><span class="o">.</span><span class="n">get_potential_energy</span><span class="p">()</span>
+
+    <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">b</span><span class="o">.</span><span class="n">calc</span><span class="o">.</span><span class="n">results</span><span class="p">[</span><span class="s1">&#39;h&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]:</span>
         <span class="n">embeddings</span> <span class="o">+=</span> <span class="p">[</span><span class="n">a</span><span class="o">.</span><span class="n">numpy</span><span class="p">()]</span>
         <span class="n">labels</span> <span class="o">+=</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-        <span class="n">energies</span> <span class="o">+=</span> <span class="p">[</span><span class="n">out</span><span class="p">[</span><span class="s1">&#39;energy&#39;</span><span class="p">]]</span>
+        <span class="n">energies</span> <span class="o">+=</span> <span class="p">[</span><span class="n">b</span><span class="o">.</span><span class="n">calc</span><span class="o">.</span><span class="n">results</span><span class="p">[</span><span class="s1">&#39;energy&#39;</span><span class="p">]]</span>
         
 <span class="n">embeddings</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">embeddings</span><span class="p">)</span>
 
@@ -883,17 +884,20 @@ document.write(`
 
 <span class="n">ethanol</span> <span class="o">=</span> <span class="n">molecule</span><span class="p">(</span><span class="s1">&#39;CH3CH2OH&#39;</span><span class="p">)</span>
 <span class="n">ethanol</span><span class="o">.</span><span class="n">set_tags</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ethanol</span><span class="p">)))</span>
-<span class="n">ethanol_emb</span> <span class="o">=</span> <span class="n">calc</span><span class="o">.</span><span class="n">embed</span><span class="p">(</span><span class="n">ethanol</span><span class="p">)</span>
+<span class="n">ethanol</span><span class="o">.</span><span class="n">calc</span> <span class="o">=</span> <span class="n">calc</span>
+<span class="n">ethanol</span><span class="o">.</span><span class="n">get_potential_energy</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">atom</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">ethanol</span><span class="p">):</span>
+    <span class="n">data</span><span class="p">[</span><span class="n">ethanol</span><span class="o">.</span><span class="n">calc</span><span class="o">.</span><span class="n">results</span><span class="p">[</span><span class="s1">&#39;x_E&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">numpy</span><span class="p">()]</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">ethanol</span><span class="p">]</span>
+    
 
 <span class="n">methane</span> <span class="o">=</span> <span class="n">molecule</span><span class="p">(</span><span class="s1">&#39;C2H6&#39;</span><span class="p">)</span>
 <span class="n">methane</span><span class="o">.</span><span class="n">set_tags</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">methane</span><span class="p">)))</span>
-<span class="n">methane_emb</span> <span class="o">=</span> <span class="n">calc</span><span class="o">.</span><span class="n">embed</span><span class="p">(</span><span class="n">methane</span><span class="p">)</span>
+<span class="n">methane</span><span class="o">.</span><span class="n">calc</span> <span class="o">=</span> <span class="n">calc</span>
+<span class="n">methane</span><span class="o">.</span><span class="n">get_potential_energy</span><span class="p">()</span>
 
-<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">atom</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">ethanol</span><span class="p">):</span>
-    <span class="n">data</span><span class="p">[</span><span class="n">ethanol_emb</span><span class="p">[</span><span class="s1">&#39;x_E&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">numpy</span><span class="p">()]</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">ethanol</span><span class="p">]</span>
-    
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">atom</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">methane</span><span class="p">):</span>
-    <span class="n">data</span><span class="p">[</span><span class="n">methane_emb</span><span class="p">[</span><span class="s1">&#39;x_E&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">numpy</span><span class="p">()]</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">methane</span><span class="p">]</span>
+    <span class="n">data</span><span class="p">[</span><span class="n">methane</span><span class="o">.</span><span class="n">calc</span><span class="o">.</span><span class="n">results</span><span class="p">[</span><span class="s1">&#39;x_E&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">numpy</span><span class="p">()]</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">methane</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -903,7 +907,9 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">methanol</span> <span class="o">=</span> <span class="n">molecule</span><span class="p">(</span><span class="s1">&#39;CH3OH&#39;</span><span class="p">)</span>
 <span class="n">methanol</span><span class="o">.</span><span class="n">set_tags</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">methanol</span><span class="p">)))</span>
-<span class="n">methanol_emb</span> <span class="o">=</span> <span class="n">calc</span><span class="o">.</span><span class="n">embed</span><span class="p">(</span><span class="n">methanol</span><span class="p">)</span>
+<span class="n">methanol</span><span class="o">.</span><span class="n">calc</span> <span class="o">=</span> <span class="n">calc</span>
+<span class="n">methanol</span><span class="o">.</span><span class="n">get_potential_energy</span><span class="p">()</span>
+
 <span class="n">methanol</span>
 </pre></div>
 </div>
@@ -911,7 +917,7 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">query</span> <span class="o">=</span> <span class="n">methanol_emb</span><span class="p">[</span><span class="s1">&#39;x_E&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">query</span> <span class="o">=</span> <span class="n">methanol</span><span class="o">.</span><span class="n">calc</span><span class="o">.</span><span class="n">results</span><span class="p">[</span><span class="s1">&#39;x_E&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
