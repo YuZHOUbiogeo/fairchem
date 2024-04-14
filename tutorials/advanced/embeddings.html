@@ -596,8 +596,7 @@ document.write(`
 <li><p>‘x_E sum’ - summed over atoms</p></li>
 <li><p>‘x_F sum’ - This is related to the forces</p></li>
 </ol>
-<p>In principle other models could be adapted in a similar way. See <a class="reference internal" href="#./embedding-monkeypatch.py"><span class="xref myst">embedding-monkeypatch.py</span></a> for details on the patch. We simply run this notebook below to load it.</p>
-<p>The OCP project is still under active development, and it is not yet clear what the best way to access these embeddings are, so this code is not yet part of the main development branch. This code was adapted from a branch at https://github.com/Open-Catalyst-Project/ocp/blob/gnoc-embeddings.</p>
+<p>In principle other models could be adapted in a similar way. See <a class="reference internal" href="#./embedding-monkeypatch.py"><span class="xref myst">embedding-monkeypatch.py</span></a> for details on the patch. We simply load the module to monkeypatch GemNet-OC.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">embedding_monkeypatch</span>
@@ -605,6 +604,7 @@ document.write(`
 </div>
 </div>
 </div>
+<p>The OCP project is still under active development, and it is not yet clear what the best way to access these embeddings are, so this code is not yet part of the main development branch. This code was adapted from a branch at https://github.com/Open-Catalyst-Project/ocp/blob/gnoc-embeddings.</p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="a-diagnostic-example">
 <h1>A diagnostic example<a class="headerlink" href="#a-diagnostic-example" title="Link to this heading">#</a></h1>
@@ -687,58 +687,13 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">11</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">atoms</span><span class="o">.</span><span class="n">set_tags</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">atoms</span><span class="p">)))</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">atoms</span><span class="o">.</span><span class="n">calc</span> <span class="o">=</span> <span class="n">calc</span>
-<span class="ne">---&gt; </span><span class="mi">11</span> <span class="n">out</span> <span class="o">=</span> <span class="n">calc</span><span class="o">.</span><span class="n">embed</span><span class="p">(</span><span class="n">atoms</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">x3</span> <span class="o">=</span> <span class="n">out</span><span class="p">[</span><span class="s1">&#39;h sum&#39;</span><span class="p">],</span> <span class="n">out</span><span class="p">[</span><span class="s1">&#39;x_E sum&#39;</span><span class="p">],</span> <span class="n">out</span><span class="p">[</span><span class="s1">&#39;x_F sum&#39;</span><span class="p">]</span>
-
-<span class="nn">File ~/work/ocp/ocp/docs/tutorials/advanced/embedding_monkeypatch.py:188,</span> in <span class="ni">embed</span><span class="nt">(self, atoms)</span>
-<span class="g g-Whitespace">    </span><span class="mi">186</span> <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">amp</span><span class="o">.</span><span class="n">autocast</span><span class="p">(</span><span class="n">enabled</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">trainer</span><span class="o">.</span><span class="n">scaler</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">187</span>     <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
-<span class="ne">--&gt; </span><span class="mi">188</span>         <span class="n">out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">trainer</span><span class="o">.</span><span class="n">model</span><span class="p">([</span><span class="n">batch_list</span><span class="p">])</span>
-<span class="g g-Whitespace">    </span><span class="mi">190</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">trainer</span><span class="o">.</span><span class="n">normalizers</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="s2">&quot;target&quot;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">trainer</span><span class="o">.</span><span class="n">normalizers</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">191</span>     <span class="n">out</span><span class="p">[</span><span class="s2">&quot;energy&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">trainer</span><span class="o">.</span><span class="n">normalizers</span><span class="p">[</span><span class="s2">&quot;target&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">denorm</span><span class="p">(</span><span class="n">out</span><span class="p">[</span><span class="s2">&quot;energy&quot;</span><span class="p">])</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/nn/modules/module.py:1511,</span> in <span class="ni">Module._wrapped_call_impl</span><span class="nt">(self, *args, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1509</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compiled_call_impl</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>  <span class="c1"># type: ignore[misc]</span>
-<span class="g g-Whitespace">   </span><span class="mi">1510</span> <span class="k">else</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1511</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call_impl</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/nn/modules/module.py:1520,</span> in <span class="ni">Module._call_impl</span><span class="nt">(self, *args, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1515</span> <span class="c1"># If we don&#39;t have any hooks, we want to skip the rest of the logic in</span>
-<span class="g g-Whitespace">   </span><span class="mi">1516</span> <span class="c1"># this function, and just call forward.</span>
-<span class="g g-Whitespace">   </span><span class="mi">1517</span> <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_backward_hooks</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backward_pre_hooks</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_forward_hooks</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_forward_pre_hooks</span>
-<span class="g g-Whitespace">   </span><span class="mi">1518</span>         <span class="ow">or</span> <span class="n">_global_backward_pre_hooks</span> <span class="ow">or</span> <span class="n">_global_backward_hooks</span>
-<span class="g g-Whitespace">   </span><span class="mi">1519</span>         <span class="ow">or</span> <span class="n">_global_forward_hooks</span> <span class="ow">or</span> <span class="n">_global_forward_pre_hooks</span><span class="p">):</span>
-<span class="ne">-&gt; </span><span class="mi">1520</span>     <span class="k">return</span> <span class="n">forward_call</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1522</span> <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1523</span>     <span class="n">result</span> <span class="o">=</span> <span class="kc">None</span>
-
-<span class="nn">File ~/work/ocp/ocp/ocpmodels/common/utils.py:141,</span> in <span class="ni">conditional_grad.&lt;locals&gt;.decorator.&lt;locals&gt;.cls_method</span><span class="nt">(self, *args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">139</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">regress_forces</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;direct_forces&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">140</span>     <span class="n">f</span> <span class="o">=</span> <span class="n">dec</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">141</span> <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File ~/work/ocp/ocp/docs/tutorials/advanced/embedding_monkeypatch.py:10,</span> in <span class="ni">newforward</span><span class="nt">(self, data)</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="nd">@conditional_grad</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">enable_grad</span><span class="p">())</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="k">def</span> <span class="nf">newforward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
-<span class="ne">---&gt; </span><span class="mi">10</span>     <span class="n">pos</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">pos</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span>     <span class="n">batch</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">batch</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span>     <span class="n">atomic_numbers</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">atomic_numbers</span><span class="o">.</span><span class="n">long</span><span class="p">()</span>
-
-<span class="ne">AttributeError</span>: &#39;list&#39; object has no attribute &#39;pos&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <p>Next, we loop over a grid of lattice constants, and we compare the cosine similarity of the embeddings for each one to the reference embeddings above. A similarity of 1 means they are the same, and as the similarity decreases it means the embbedings are more and more different (and so is the energy).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">E</span> <span class="o">=</span> <span class="p">[]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
+
+<span class="n">E</span> <span class="o">=</span> <span class="p">[]</span>
 
 <span class="n">LC</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.95</span> <span class="o">*</span> <span class="n">a0</span><span class="p">,</span> <span class="mf">1.05</span> <span class="o">*</span> <span class="n">a0</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
 <span class="n">cossim1</span><span class="p">,</span> <span class="n">cossim2</span><span class="p">,</span> <span class="n">cossim3</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[]</span>
@@ -781,6 +736,15 @@ document.write(`
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/core/shape_base.py:65: FutureWarning: The input object of type &#39;Tensor&#39; is an array-like implementing one of the corresponding protocols (`__array__`, `__array_interface__` or `__array_struct__`); but not a sequence (or 0-D). In the future, this object will be coerced as if it was first converted using `np.array(obj)`. To retain the old behaviour, you have to either modify the type &#39;Tensor&#39;, or assign to an empty array created with `np.empty(correct_shape, dtype=object)`.
+  ary = asanyarray(ary)
+/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/numpy/core/shape_base.py:65: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify &#39;dtype=object&#39; when creating the ndarray.
+  ary = asanyarray(ary)
+</pre></div>
+</div>
+<img alt="../../_images/ba7c5f946d30982463f593371433aa9a969d3fcfd9d5e00eb523ba2ea9c48a32.png" src="../../_images/ba7c5f946d30982463f593371433aa9a969d3fcfd9d5e00eb523ba2ea9c48a32.png" />
 </div>
 </div>
 <p>We can see that near the minimum the different embeddings are all quite similar. But, near the unphysical peak, the x_E embedding shows a significant deviation. The atomic energy is linear in this embedding, which is why we see the peak. This means the embedding is not sufficiently trained in this region, and fine-tuning should be considered with data in that region.</p>
@@ -831,11 +795,8 @@ document.write(`
 </pre></div>
 </div>
 </div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%capture</span>
-<span class="err">!</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">umap</span><span class="o">-</span><span class="n">learn</span>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(60, 256)
 </pre></div>
 </div>
 </div>
@@ -849,6 +810,16 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/tqdm/auto.py:21: TqdmWarning: IProgress not found. Please update jupyter and ipywidgets. See https://ipywidgets.readthedocs.io/en/stable/user_install.html
+  from .autonotebook import tqdm as notebook_tqdm
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/umap/umap_.py:1945: UserWarning: n_jobs value 1 overridden to 1 by setting random_state. Use no seed for parallelism.
+  warn(f&quot;n_jobs value {self.n_jobs} overridden to 1 by setting random_state. Use no seed for parallelism.&quot;)
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -856,6 +827,9 @@ document.write(`
 <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">();</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/140d4a5aab829080d320b5d6fdd6181d9b7dc0330f894982e3e7d5fc1e1c14e2.png" src="../../_images/140d4a5aab829080d320b5d6fdd6181d9b7dc0330f894982e3e7d5fc1e1c14e2.png" />
 </div>
 </div>
 <section id="clustering-individual-atoms">
@@ -898,6 +872,21 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/amp/autocast_mode.py:250: UserWarning: User provided device_type of &#39;cuda&#39;, but CUDA is not available. Disabling
+  warnings.warn(
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/umap/umap_.py:1945: UserWarning: n_jobs value 1 overridden to 1 by setting random_state. Use no seed for parallelism.
+  warn(f&quot;n_jobs value {self.n_jobs} overridden to 1 by setting random_state. Use no seed for parallelism.&quot;)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/matplotlib/axes/_axes.py:4458: FutureWarning: The input object of type &#39;Tensor&#39; is an array-like implementing one of the corresponding protocols (`__array__`, `__array_interface__` or `__array_struct__`); but not a sequence (or 0-D). In the future, this object will be coerced as if it was first converted using `np.array(obj)`. To retain the old behaviour, you have to either modify the type &#39;Tensor&#39;, or assign to an empty array created with `np.empty(correct_shape, dtype=object)`.
+  c = np.asanyarray(c, dtype=float)
+</pre></div>
+</div>
+<img alt="../../_images/1b7fb09ce1e5ac100f517699cdb471c5b3bdd07e6e86f649611890e40bb8eb54.png" src="../../_images/1b7fb09ce1e5ac100f517699cdb471c5b3bdd07e6e86f649611890e40bb8eb54.png" />
+</div>
 </div>
 <p>You can see from this there are roughly three kinds of atoms. One is bulk like, with the lowest energy (the dark red points), the second is also lower in energy (the reddish-orange points), and the others are surface atoms, with higher energies (the bluish points).</p>
 </section>
@@ -907,13 +896,6 @@ document.write(`
 <p>In this example we perform a simple vector search in the embedding space. We use <a class="reference external" href="https://github.com/whitead/vdict">vdict</a> for the vector database here.</p>
 <p>Our database is very small, it only contains embeddings for ethanol and ethane. After we make it, we search the database to find the atom that is closest to the C atom in methanol.</p>
 <p>Note in this example, we have to tag all the atoms with 1 for GemnetOC to work.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>vdict<span class="w"> </span><span class="m">2</span><span class="p">&amp;</span>&gt;1<span class="w"> </span>/devnull
-</pre></div>
-</div>
-</div>
-</div>
 <p>Here we set up the simple database. Each row, or entry, is the actual embedding vector for an atom. That is the key that points to the atom index and the atoms object. I use cosine similarity here. If you use the default (l2) then you may not find anything close enough.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -939,6 +921,12 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/amp/autocast_mode.py:250: UserWarning: User provided device_type of &#39;cuda&#39;, but CUDA is not available. Disabling
+  warnings.warn(
+</pre></div>
+</div>
+</div>
 </div>
 <p>Now we construct our “query”. We inspect the Atoms object, see that the C atom is the first one, and then extract the embedding for that atom and save it in a variable.</p>
 <div class="cell docutils container">
@@ -947,6 +935,11 @@ document.write(`
 <span class="n">methanol</span><span class="o">.</span><span class="n">set_tags</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">methanol</span><span class="p">)))</span>
 <span class="n">methanol_emb</span> <span class="o">=</span> <span class="n">calc</span><span class="o">.</span><span class="n">embed</span><span class="p">(</span><span class="n">methanol</span><span class="p">)</span>
 <span class="n">methanol</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Atoms(symbols=&#39;COH4&#39;, pbc=False, tags=...)
 </pre></div>
 </div>
 </div>
@@ -966,11 +959,29 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1, Atom(&#39;C&#39;, [0.0, 0.559462, 0.0], tag=1, index=1))
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">ind</span><span class="p">,</span> <span class="n">atom</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">found</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">ind</span><span class="p">,</span> <span class="n">atom</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 Atom(&#39;C&#39;, [1.168181, -0.400382, 0.0], tag=1, index=0)
+1 Atom(&#39;C&#39;, [0.0, 0.559462, 0.0], tag=1, index=1)
+2 Atom(&#39;O&#39;, [-1.190083, -0.227669, 0.0], tag=1, index=2)
+3 Atom(&#39;H&#39;, [-1.946623, 0.381525, 0.0], tag=1, index=3)
+4 Atom(&#39;H&#39;, [0.042557, 1.207508, 0.886933], tag=1, index=4)
+5 Atom(&#39;H&#39;, [0.042557, 1.207508, -0.886933], tag=1, index=5)
+6 Atom(&#39;H&#39;, [2.115891, 0.1448, 0.0], tag=1, index=6)
+7 Atom(&#39;H&#39;, [1.128599, -1.037234, 0.885881], tag=1, index=7)
+8 Atom(&#39;H&#39;, [1.128599, -1.037234, -0.885881], tag=1, index=8)
 </pre></div>
 </div>
 </div>
@@ -983,6 +994,11 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2.364580062942467, 1.426840130515679)
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -990,6 +1006,9 @@ document.write(`
 <span class="n">plot_atoms</span><span class="p">(</span><span class="n">found</span><span class="p">);</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/e4720a012318fa20cc620fafb196909771b53c44a5d2aff0c98237d9fa037636.png" src="../../_images/e4720a012318fa20cc620fafb196909771b53c44a5d2aff0c98237d9fa037636.png" />
 </div>
 </div>
 </section>

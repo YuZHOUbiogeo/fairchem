@@ -1,17 +1,17 @@
-2024-04-14 18:46:02 (INFO): Project root: /home/runner/work/ocp/ocp
+2024-04-14 19:19:53 (INFO): Project root: /home/runner/work/ocp/ocp
 /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/cuda/amp/grad_scaler.py:126: UserWarning: torch.cuda.amp.GradScaler is enabled, but CUDA is not available.  Disabling.
   warnings.warn(
-2024-04-14 18:46:03 (WARNING): Detected old config, converting to new format. Consider updating to avoid potential incompatibilities.
-2024-04-14 18:46:03 (INFO): amp: true
+2024-04-14 19:19:54 (WARNING): Detected old config, converting to new format. Consider updating to avoid potential incompatibilities.
+2024-04-14 19:19:54 (INFO): amp: true
 cmd:
-  checkpoint_dir: fine-tuning/checkpoints/2024-04-14-18-46-24-ft-oxides
-  commit: 962bffa
+  checkpoint_dir: fine-tuning/checkpoints/2024-04-14-19-20-32-ft-oxides
+  commit: 87e111f
   identifier: ft-oxides
-  logs_dir: fine-tuning/logs/wandb/2024-04-14-18-46-24-ft-oxides
+  logs_dir: fine-tuning/logs/wandb/2024-04-14-19-20-32-ft-oxides
   print_every: 10
-  results_dir: fine-tuning/results/2024-04-14-18-46-24-ft-oxides
+  results_dir: fine-tuning/results/2024-04-14-19-20-32-ft-oxides
   seed: 0
-  timestamp_id: 2024-04-14-18-46-24-ft-oxides
+  timestamp_id: 2024-04-14-19-20-32-ft-oxides
 dataset:
   a2g_args:
     r_energy: true
