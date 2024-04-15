@@ -1,17 +1,17 @@
-2024-04-15 00:36:16 (INFO): Project root: /home/runner/work/ocp/ocp
+2024-04-15 02:37:54 (INFO): Project root: /home/runner/work/ocp/ocp
 /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/cuda/amp/grad_scaler.py:126: UserWarning: torch.cuda.amp.GradScaler is enabled, but CUDA is not available.  Disabling.
   warnings.warn(
-2024-04-15 00:36:17 (WARNING): Detected old config, converting to new format. Consider updating to avoid potential incompatibilities.
-2024-04-15 00:36:17 (INFO): amp: true
+2024-04-15 02:37:56 (WARNING): Detected old config, converting to new format. Consider updating to avoid potential incompatibilities.
+2024-04-15 02:37:56 (INFO): amp: true
 cmd:
-  checkpoint_dir: fine-tuning/checkpoints/2024-04-15-00-36-16-ft-oxides
-  commit: 548b302
+  checkpoint_dir: fine-tuning/checkpoints/2024-04-15-02-37-52-ft-oxides
+  commit: 7dca78f
   identifier: ft-oxides
-  logs_dir: fine-tuning/logs/tensorboard/2024-04-15-00-36-16-ft-oxides
+  logs_dir: fine-tuning/logs/tensorboard/2024-04-15-02-37-52-ft-oxides
   print_every: 10
-  results_dir: fine-tuning/results/2024-04-15-00-36-16-ft-oxides
+  results_dir: fine-tuning/results/2024-04-15-02-37-52-ft-oxides
   seed: 0
-  timestamp_id: 2024-04-15-00-36-16-ft-oxides
+  timestamp_id: 2024-04-15-02-37-52-ft-oxides
 dataset:
   a2g_args:
     r_energy: true
@@ -111,7 +111,7 @@ optim:
   load_balancing: atoms
   loss_energy: mae
   lr_initial: 0.0005
-  max_epochs: 10
+  max_epochs: 50
   mode: min
   num_workers: 2
   optimizer: AdamW
@@ -142,33 +142,33 @@ val_dataset:
     r_forces: true
   src: val.db
 
-2024-04-15 00:36:17 (INFO): Loading dataset: ase_db
-2024-04-15 00:36:17 (INFO): rank: 0: Sampler created...
-2024-04-15 00:36:17 (INFO): Batch balancing is disabled for single GPU training.
-2024-04-15 00:36:17 (INFO): rank: 0: Sampler created...
-2024-04-15 00:36:17 (INFO): Batch balancing is disabled for single GPU training.
-2024-04-15 00:36:17 (INFO): rank: 0: Sampler created...
-2024-04-15 00:36:17 (INFO): Batch balancing is disabled for single GPU training.
-2024-04-15 00:36:17 (INFO): Loading model: gemnet_oc
-2024-04-15 00:36:17 (WARNING): Unrecognized arguments: ['symmetric_edge_symmetrization']
-2024-04-15 00:36:20 (INFO): Loaded GemNetOC with 38864438 parameters.
-2024-04-15 00:36:20 (WARNING): Model gradient logging to tensorboard not yet supported.
-2024-04-15 00:36:20 (WARNING): Using `weight_decay` from `optim` instead of `optim.optimizer_params`.Please update your config to use `optim.optimizer_params.weight_decay`.`optim.weight_decay` will soon be deprecated.
-2024-04-15 00:36:20 (INFO): Loading checkpoint from: /tmp/ocp_checkpoints/gnoc_oc22_oc20_all_s2ef.pt
-2024-04-15 00:36:20 (INFO): Overwriting scaling factors with those loaded from checkpoint. If you're generating predictions with a pretrained checkpoint, this is the correct behavior. To disable this, delete `scale_dict` from the checkpoint. 
+2024-04-15 02:37:56 (INFO): Loading dataset: ase_db
+2024-04-15 02:37:56 (INFO): rank: 0: Sampler created...
+2024-04-15 02:37:56 (INFO): Batch balancing is disabled for single GPU training.
+2024-04-15 02:37:56 (INFO): rank: 0: Sampler created...
+2024-04-15 02:37:56 (INFO): Batch balancing is disabled for single GPU training.
+2024-04-15 02:37:56 (INFO): rank: 0: Sampler created...
+2024-04-15 02:37:56 (INFO): Batch balancing is disabled for single GPU training.
+2024-04-15 02:37:56 (INFO): Loading model: gemnet_oc
+2024-04-15 02:37:56 (WARNING): Unrecognized arguments: ['symmetric_edge_symmetrization']
+2024-04-15 02:37:58 (INFO): Loaded GemNetOC with 38864438 parameters.
+2024-04-15 02:37:58 (WARNING): Model gradient logging to tensorboard not yet supported.
+2024-04-15 02:37:58 (WARNING): Using `weight_decay` from `optim` instead of `optim.optimizer_params`.Please update your config to use `optim.optimizer_params.weight_decay`.`optim.weight_decay` will soon be deprecated.
+2024-04-15 02:37:59 (INFO): Loading checkpoint from: /tmp/ocp_checkpoints/gnoc_oc22_oc20_all_s2ef.pt
+2024-04-15 02:37:59 (INFO): Overwriting scaling factors with those loaded from checkpoint. If you're generating predictions with a pretrained checkpoint, this is the correct behavior. To disable this, delete `scale_dict` from the checkpoint. 
 /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch_geometric/data/collate.py:145: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
   storage = elem.storage()._new_shared(numel)
 /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch_geometric/data/collate.py:145: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
   storage = elem.storage()._new_shared(numel)
 /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/amp/autocast_mode.py:250: UserWarning: User provided device_type of 'cuda', but CUDA is not available. Disabling
   warnings.warn(
-2024-04-15 00:36:32 (INFO): Evaluating on val.
+2024-04-15 02:38:11 (INFO): Evaluating on val.
 device 0:   0%|          | 0/2 [00:00<?, ?it/s]/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch_geometric/data/collate.py:145: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
   storage = elem.storage()._new_shared(numel)
 /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch_geometric/data/collate.py:145: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
   storage = elem.storage()._new_shared(numel)
-device 0:  50%|█████     | 1/2 [00:04<00:04,  4.08s/it]device 0: 100%|██████████| 2/2 [00:06<00:00,  3.21s/it]device 0: 100%|██████████| 2/2 [00:06<00:00,  3.39s/it]
-2024-04-15 00:36:39 (INFO): energy_forces_within_threshold: 0.0000, energy_mae: 2.8244, forcesx_mae: 0.0080, forcesy_mae: 0.0105, forcesz_mae: 0.0081, forces_mae: 0.0089, forces_cosine_similarity: 0.1907, forces_magnitude_error: 0.0127, loss: 2.8302, epoch: 0.0667
+device 0:  50%|█████     | 1/2 [00:04<00:04,  4.21s/it]device 0: 100%|██████████| 2/2 [00:06<00:00,  3.22s/it]device 0: 100%|██████████| 2/2 [00:06<00:00,  3.42s/it]
+2024-04-15 02:38:18 (INFO): energy_forces_within_threshold: 0.0000, energy_mae: 2.8244, forcesx_mae: 0.0080, forcesy_mae: 0.0105, forcesz_mae: 0.0081, forces_mae: 0.0089, forces_cosine_similarity: 0.1907, forces_magnitude_error: 0.0127, loss: 2.8302, epoch: 0.0667
 Traceback (most recent call last):
   File "/home/runner/work/ocp/ocp/main.py", line 89, in <module>
     Runner()(config)
