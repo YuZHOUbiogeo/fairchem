@@ -580,13 +580,16 @@ document.write(`
 <p>You can retrieve the dataset below. In this notebook we learn how to do “mass inference” without an ASE calculator. You do this by creating a config.yml file, and running the <code class="docutils literal notranslate"><span class="pre">main.py</span></code> command line utility.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>!<span class="w"> </span>-f<span class="w"> </span>data.db<span class="w"> </span><span class="o">]</span><span class="w">  </span><span class="o">&amp;&amp;</span><span class="w"> </span>wget<span class="w"> </span>https://figshare.com/ndownloader/files/11948267<span class="w"> </span>-O<span class="w"> </span>data.db<span class="w"> </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>wget<span class="w"> </span>https://figshare.com/ndownloader/files/11948267<span class="w"> </span>-O<span class="w"> </span>data.db<span class="w"> </span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2024-04-15 17:18:11--  https://figshare.com/ndownloader/files/11948267
-Resolving figshare.com (figshare.com)... 54.77.168.55, 52.31.33.34, 54.195.42.64, ...
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2024-04-15 21:17:06--  https://figshare.com/ndownloader/files/11948267
+Resolving figshare.com (figshare.com)... 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>54.77.168.55, 54.195.42.64, 34.241.219.103, ...
 Connecting to figshare.com (figshare.com)|54.77.168.55|:443... 
 </pre></div>
 </div>
@@ -597,10 +600,13 @@ Connecting to figshare.com (figshare.com)|54.77.168.55|:443...
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>302 Found
-Location: https://s3-eu-west-1.amazonaws.com/pstorage-cmu-348901238291901/11948267/data.db?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAI266R7V6O36O5JUA/20240415/eu-west-1/s3/aws4_request&amp;X-Amz-Date=20240415T171812Z&amp;X-Amz-Expires=10&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=19e877e1a8f67973535db45410914b804919f716bea6f1976ab6bae92ff5e632 [following]
---2024-04-15 17:18:12--  https://s3-eu-west-1.amazonaws.com/pstorage-cmu-348901238291901/11948267/data.db?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAI266R7V6O36O5JUA/20240415/eu-west-1/s3/aws4_request&amp;X-Amz-Date=20240415T171812Z&amp;X-Amz-Expires=10&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=19e877e1a8f67973535db45410914b804919f716bea6f1976ab6bae92ff5e632
-Resolving s3-eu-west-1.amazonaws.com (s3-eu-west-1.amazonaws.com)... 52.218.40.27, 52.92.34.80, 52.92.1.40, ...
-Connecting to s3-eu-west-1.amazonaws.com (s3-eu-west-1.amazonaws.com)|52.218.40.27|:443... 
+Location: https://s3-eu-west-1.amazonaws.com/pstorage-cmu-348901238291901/11948267/data.db?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAI266R7V6O36O5JUA/20240415/eu-west-1/s3/aws4_request&amp;X-Amz-Date=20240415T211707Z&amp;X-Amz-Expires=10&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=9969e5de4088083bddc3ebc570d8b6225ebce137bb618dc2edc4dc395c5d9ff6 [following]
+--2024-04-15 21:17:07--  https://s3-eu-west-1.amazonaws.com/pstorage-cmu-348901238291901/11948267/data.db?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAI266R7V6O36O5JUA/20240415/eu-west-1/s3/aws4_request&amp;X-Amz-Date=20240415T211707Z&amp;X-Amz-Expires=10&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=9969e5de4088083bddc3ebc570d8b6225ebce137bb618dc2edc4dc395c5d9ff6
+Resolving s3-eu-west-1.amazonaws.com (s3-eu-west-1.amazonaws.com)... 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>52.92.32.192, 52.218.90.203, 52.218.28.115, ...
+Connecting to s3-eu-west-1.amazonaws.com (s3-eu-west-1.amazonaws.com)|52.92.32.192|:443... 
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>connected.
@@ -617,28 +623,27 @@ Saving to: ‘data.db’
 data.db               0%[                    ]       0  --.-KB/s               
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db               0%[                    ] 103.38K   490KB/s               
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db               0%[                    ] 130.38K   621KB/s               
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db               2%[                    ] 859.38K  1.99MB/s               
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db               2%[                    ]   1.02M  2.43MB/s               
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              15%[==&gt;                 ]   6.20M  9.77MB/s               
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              17%[==&gt;                 ]   7.04M  11.1MB/s               
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              35%[======&gt;             ]  14.68M  17.3MB/s               
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              38%[======&gt;             ]  15.80M  18.8MB/s               
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              56%[==========&gt;         ]  23.41M  22.1MB/s               
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              59%[==========&gt;         ]  24.55M  23.3MB/s               
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              78%[==============&gt;     ]  32.23M  25.4MB/s               
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              81%[===============&gt;    ]  33.47M  26.7MB/s               
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              99%[==================&gt; ]  40.95M  27.6MB/s               
-data.db             100%[===================&gt;]  41.13M  27.7MB/s    in 1.5s    
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db             100%[===================&gt;]  41.13M  28.4MB/s    in 1.4s    
 
-2024-04-15 17:18:14 (27.7 MB/s) - ‘data.db’ saved [43125760/43125760]
+2024-04-15 21:17:09 (28.4 MB/s) - ‘data.db’ saved [43125760/43125760]
 </pre></div>
 </div>
 </div>
@@ -668,27 +673,27 @@ Comment or skip this block to use the whole dataset!</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>id|age|user  |formula|calculator|  energy|natoms| fmax|pbc|  volume|charge|    mass
- 1| 0s|runner|Au12   |unknown   | -28.064|    12|0.207|TTT|5639.752| 0.000|2363.599
- 2| 0s|runner|Au38   |unknown   | -98.539|    38|0.180|TTT|5846.048| 0.000|7484.730
- 3| 0s|runner|Au4    |unknown   | -12.085|     4|0.328|TTT| 143.096| 0.000| 787.866
- 4| 0s|runner|Au7    |unknown   | -13.797|     7|0.365|TTT|2498.476| 0.000|1378.766
- 5| 0s|runner|Au35   |unknown   | -89.971|    35|0.417|TTT|5504.869| 0.000|6893.830
- 6| 0s|runner|Au46   |unknown   |-121.694|    46|0.209|TTT|6322.757| 0.000|9060.462
- 7| 0s|runner|Au35   |unknown   | -89.345|    35|0.144|TTT|5504.869| 0.000|6893.830
- 8| 0s|runner|Au35   |unknown   | -89.354|    35|0.236|TTT|5504.869| 0.000|6893.830
- 9| 0s|runner|Au28   |unknown   | -53.693|    28|1.254|TTT| 921.988| 0.000|5515.064
-10| 0s|runner|Au7    |unknown   | -13.223|     7|0.292|TTT|3511.808| 0.000|1378.766
-11| 0s|runner|Au34   |unknown   | -88.199|    34|0.238|TTT|5583.053| 0.000|6696.863
-12| 0s|runner|Au44   |unknown   |-100.870|    44|1.566|TTT|6257.369| 0.000|8666.529
-13| 0s|runner|Au27   |unknown   | -67.939|    27|0.538|TTT|4914.709| 0.000|5318.097
-14| 0s|runner|Au12   |unknown   | -26.417|    12|0.799|TTT|3571.095| 0.000|2363.599
-15| 0s|runner|Au13   |unknown   | -29.424|    13|0.741|TTT|3635.026| 0.000|2560.565
-16| 0s|runner|Au10   |unknown   | -21.321|    10|0.209|TTT|4112.512| 0.000|1969.666
-17| 0s|runner|Au38   |unknown   | -98.567|    38|0.128|TTT|5846.048| 0.000|7484.730
-18| 0s|runner|Au45   |unknown   |-117.927|    45|0.279|TTT|6185.400| 0.000|8863.496
-19| 0s|runner|Au41   |unknown   |-100.159|    41|0.996|TTT|6012.425| 0.000|8075.629
-20| 0s|runner|Au33   |unknown   |-102.236|    33|0.131|TTT| 619.239| 0.000|6499.897
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>id|age|user  |formula|calculator|  energy|natoms| fmax|pbc|   volume|charge|     mass
+ 1| 0s|runner|Au26   |unknown   | -83.105|    26|0.590|TTT|  475.934| 0.000| 5121.131
+ 2| 0s|runner|Au29   |unknown   | -71.268|    29|0.624|TTT| 5184.740| 0.000| 5712.031
+ 3| 0s|runner|Au4    |unknown   | -11.212|     4|1.568|TTT|  156.940| 0.000|  787.866
+ 4| 0s|runner|Au48   |unknown   |-123.163|    48|0.449|TTT| 6440.631| 0.000| 9454.395
+ 5| 0s|runner|Au11   |unknown   | -35.373|    11|0.034|TTT|  196.528| 0.000| 2166.632
+ 6| 0s|runner|Au36   |unknown   | -93.698|    36|0.060|TTT| 5663.627| 0.000| 7090.796
+ 7| 0s|runner|Au25   |unknown   | -60.671|    25|0.314|TTT| 4771.343| 0.000| 4924.164
+ 8| 0s|runner|Au16   |unknown   | -35.970|    16|0.270|TTT| 3923.762| 0.000| 3151.465
+ 9| 0s|runner|Au54   |unknown   |-144.911|    54|0.704|TTT|10661.023| 0.000|10636.195
+10| 0s|runner|Au19   |unknown   | -45.732|    19|0.222|TTT| 5988.906| 0.000| 3742.365
+11| 0s|runner|Au20   |unknown   | -48.796|    20|0.454|TTT| 4413.396| 0.000| 3939.331
+12| 0s|runner|Au26   |unknown   | -64.740|    26|0.370|TTT| 4932.626| 0.000| 5121.131
+13| 0s|runner|Au54   |unknown   |-144.950|    54|0.903|TTT|10661.023| 0.000|10636.195
+14| 0s|runner|Au25   |unknown   | -61.683|    25|0.175|TTT| 4771.343| 0.000| 4924.164
+15| 0s|runner|Au32   |unknown   | -77.744|    32|0.726|TTT| 5385.186| 0.000| 6302.930
+16| 0s|runner|Au6    |unknown   | -10.713|     6|0.558|TTT| 2459.786| 0.000| 1181.799
+17| 0s|runner|Au51   |unknown   |-133.047|    51|0.430|TTT| 6691.718| 0.000|10045.295
+18| 0s|runner|Au101  |unknown   |-282.516|   101|0.467|TTT|11967.598| 0.000|19893.623
+19| 0s|runner|Au51   |unknown   |-134.138|    51|0.883|TTT| 7480.442| 0.000|10045.295
+20| 0s|runner|Au6    |unknown   | -12.653|     6|0.450|TTT| 2252.912| 0.000| 1181.799
 Rows: 50 (showing first 20)
 </pre></div>
 </div>
@@ -828,7 +833,7 @@ Rows: 50 (showing first 20)
 <span class="g g-Whitespace">    </span><span class="mi">406</span>     <span class="n">own_fid</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="g g-Whitespace">    </span><span class="mi">408</span> <span class="c1"># Code to distinguish from NumPy binary files and pickles.</span>
 
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;./results/2024-04-15-17-18-56/s2ef_predictions.npz&#39;
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;./results/2024-04-15-21-17-52/s2ef_predictions.npz&#39;
 </pre></div>
 </div>
 </div>
