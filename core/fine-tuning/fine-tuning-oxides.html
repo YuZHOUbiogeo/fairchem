@@ -769,7 +769,7 @@ WARNING:root:Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
   warnings.warn(
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Elapsed time 67.6 seconds.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Elapsed time 68.6 seconds.
 </pre></div>
 </div>
 <img alt="../../_images/92bd7f94dd548c8cfc2744eb5890cd23fada1ff98e8dc907657e2eb109af0402.png" src="../../_images/92bd7f94dd548c8cfc2744eb5890cd23fada1ff98e8dc907657e2eb109af0402.png" />
@@ -922,6 +922,7 @@ Rows: 295 (showing first 20)
                            <span class="s1">&#39;task.dataset&#39;</span><span class="p">:</span> <span class="s1">&#39;ase_db&#39;</span><span class="p">,</span>
                            <span class="s1">&#39;optim.eval_every&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
                            <span class="s1">&#39;optim.max_epochs&#39;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+                           <span class="s1">&#39;optim.batch_size&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
                             <span class="s1">&#39;logger&#39;</span><span class="p">:</span><span class="s1">&#39;tensorboard&#39;</span><span class="p">,</span> <span class="c1"># don&#39;t use wandb!</span>
                            <span class="c1"># Train data</span>
                            <span class="s1">&#39;dataset.train.src&#39;</span><span class="p">:</span> <span class="s1">&#39;train.db&#39;</span><span class="p">,</span>
@@ -1063,7 +1064,7 @@ model:
   symmetric_edge_symmetrization: false
 noddp: false
 optim:
-  batch_size: 16
+  batch_size: 4
   clip_grad_norm: 10
   ema_decay: 0.999
   energy_coefficient: 1
@@ -1130,7 +1131,10 @@ trainer: ocp
 <span class="expanded">Hide code cell output</span>
 </summary>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Elapsed time = 27.6 seconds
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>^C
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Elapsed time = 1200.5 seconds
 </pre></div>
 </div>
 </div>
@@ -1145,11 +1149,6 @@ trainer: ocp
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;fine-tuning/checkpoints/2024-04-15-13-47-44-ft-oxides&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <p>There will be two files in there: <code class="docutils literal notranslate"><span class="pre">checkpoint.pt</span></code> and <code class="docutils literal notranslate"><span class="pre">best_checkpoint.pt</span></code>.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">best_checkpoint.pt</span></code> is the one that performs best on the validation dataset. The <code class="docutils literal notranslate"><span class="pre">checkpoint.pt</span></code> is the most recently saved one. Probably it has the lowest loss in training, but this could be an indication of overfitting. You have to use some judgement in determining which one to use, and if it is sufficiently accurate for your needs. It may need additional training to further improve it.</p>
@@ -1157,19 +1156,6 @@ trainer: ocp
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">newckpt</span> <span class="o">=</span> <span class="n">cpdir</span> <span class="o">+</span> <span class="s1">&#39;/checkpoint.pt&#39;</span>
 <span class="n">newcalc</span> <span class="o">=</span> <span class="n">OCPCalculator</span><span class="p">(</span><span class="n">checkpoint_path</span><span class="o">=</span><span class="n">newckpt</span><span class="p">,</span> <span class="n">cpu</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/cuda/amp/grad_scaler.py:126: UserWarning: torch.cuda.amp.GradScaler is enabled, but CUDA is not available.  Disabling.
-  warnings.warn(
-WARNING:root:Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Using `weight_decay` from `optim` instead of `optim.optimizer_params`.Please update your config to use `optim.optimizer_params.weight_decay`.`optim.weight_decay` will soon be deprecated.
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:No seed has been set in modelcheckpoint or OCPCalculator! Results may not be reproducible on re-run
 </pre></div>
 </div>
 </div>
@@ -1206,23 +1192,11 @@ WARNING:root:Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/amp/autocast_mode.py:250: UserWarning: User provided device_type of &#39;cuda&#39;, but CUDA is not available. Disabling
-  warnings.warn(
-</pre></div>
-</div>
-<img alt="../../_images/c366a22efd82a38dd69319abff2229d069780450e3b93036ad16cf0d03d30436.png" src="../../_images/c366a22efd82a38dd69319abff2229d069780450e3b93036ad16cf0d03d30436.png" />
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mae</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">dft</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ocp</span><span class="p">)))</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;New MAE = </span><span class="si">{</span><span class="n">mae</span><span class="si">:</span><span class="s1">1.3f</span><span class="si">}</span><span class="s1"> eV/atom&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>New MAE = 1.016 eV/atom
 </pre></div>
 </div>
 </div>
@@ -1239,9 +1213,6 @@ WARNING:root:Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/6fbfddea93b00ab62c0af54adff01077570842b4e90542f142723a52d6384f2d.png" src="../../_images/6fbfddea93b00ab62c0af54adff01077570842b4e90542f142723a52d6384f2d.png" />
 </div>
 </div>
 <p>It is possible to continue refining the fit. The simple things to do are to use more epochs of training. Eventually the MAE will stabilize, and then it may be necessary to adjust other optimization parameters like the learning rate (usually you decrease it).</p>
