@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=eafc0fe6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=fd3f3429" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -43,7 +43,7 @@
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
     <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=f281be69"></script>
@@ -715,6 +715,9 @@ Mehta, P., Salvador, P. A., &amp; Kitchin, J. R. (2015). Identifying potential B
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Detected old config, converting to new format. Consider updating to avoid potential incompatibilities.
+</pre></div>
+</div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/cuda/amp/grad_scaler.py:126: UserWarning: torch.cuda.amp.GradScaler is enabled, but CUDA is not available.  Disabling.
   warnings.warn(
 WARNING:root:Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
@@ -770,7 +773,7 @@ WARNING:root:Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
   warnings.warn(
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Elapsed time 69.3 seconds.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Elapsed time 68.6 seconds.
 </pre></div>
 </div>
 <img alt="../../_images/92bd7f94dd548c8cfc2744eb5890cd23fada1ff98e8dc907657e2eb109af0402.png" src="../../_images/92bd7f94dd548c8cfc2744eb5890cd23fada1ff98e8dc907657e2eb109af0402.png" />
@@ -921,8 +924,8 @@ Rows: 295 (showing first 20)
                            <span class="s1">&#39;dataset&#39;</span><span class="p">,</span> <span class="s1">&#39;test_dataset&#39;</span><span class="p">,</span> <span class="s1">&#39;val_dataset&#39;</span><span class="p">],</span>
                    <span class="n">update</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;gpus&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
                            <span class="s1">&#39;task.dataset&#39;</span><span class="p">:</span> <span class="s1">&#39;ase_db&#39;</span><span class="p">,</span>
-                           <span class="s1">&#39;optim.eval_every&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-                           <span class="s1">&#39;optim.max_epochs&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+                           <span class="s1">&#39;optim.eval_every&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+                           <span class="s1">&#39;optim.max_epochs&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
                            <span class="s1">&#39;optim.batch_size&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
                             <span class="s1">&#39;logger&#39;</span><span class="p">:</span><span class="s1">&#39;tensorboard&#39;</span><span class="p">,</span> <span class="c1"># don&#39;t use wandb!</span>
                            <span class="c1"># Train data</span>
@@ -944,6 +947,9 @@ Rows: 295 (showing first 20)
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Detected old config, converting to new format. Consider updating to avoid potential incompatibilities.
+</pre></div>
+</div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/cuda/amp/grad_scaler.py:126: UserWarning: torch.cuda.amp.GradScaler is enabled, but CUDA is not available.  Disabling.
   warnings.warn(
 WARNING:root:Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
@@ -1070,13 +1076,13 @@ optim:
   ema_decay: 0.999
   energy_coefficient: 1
   eval_batch_size: 16
-  eval_every: 1
+  eval_every: 10
   factor: 0.8
   force_coefficient: 1
   load_balancing: atoms
   loss_energy: mae
   lr_initial: 0.0005
-  max_epochs: 4
+  max_epochs: 1
   mode: min
   num_workers: 2
   optimizer: AdamW
@@ -1132,13 +1138,7 @@ trainer: ocp
 <span class="expanded">Hide code cell output</span>
 </summary>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>^C
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Elapsed time = 1800.5 seconds
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Elapsed time = 39.2 seconds
 </pre></div>
 </div>
 </div>
@@ -1153,6 +1153,11 @@ trainer: ocp
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;fine-tuning/checkpoints/2024-04-17-16-29-52-ft-oxides&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <p>There will be two files in there: <code class="docutils literal notranslate"><span class="pre">checkpoint.pt</span></code> and <code class="docutils literal notranslate"><span class="pre">best_checkpoint.pt</span></code>.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">best_checkpoint.pt</span></code> is the one that performs best on the validation dataset. The <code class="docutils literal notranslate"><span class="pre">checkpoint.pt</span></code> is the most recently saved one. Probably it has the lowest loss in training, but this could be an indication of overfitting. You have to use some judgement in determining which one to use, and if it is sufficiently accurate for your needs. It may need additional training to further improve it.</p>
@@ -1160,6 +1165,19 @@ trainer: ocp
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">newckpt</span> <span class="o">=</span> <span class="n">cpdir</span> <span class="o">+</span> <span class="s1">&#39;/checkpoint.pt&#39;</span>
 <span class="n">newcalc</span> <span class="o">=</span> <span class="n">OCPCalculator</span><span class="p">(</span><span class="n">checkpoint_path</span><span class="o">=</span><span class="n">newckpt</span><span class="p">,</span> <span class="n">cpu</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/cuda/amp/grad_scaler.py:126: UserWarning: torch.cuda.amp.GradScaler is enabled, but CUDA is not available.  Disabling.
+  warnings.warn(
+WARNING:root:Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Using `weight_decay` from `optim` instead of `optim.optimizer_params`.Please update your config to use `optim.optimizer_params.weight_decay`.`optim.weight_decay` will soon be deprecated.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:No seed has been set in modelcheckpoint or OCPCalculator! Results may not be reproducible on re-run
 </pre></div>
 </div>
 </div>
@@ -1196,11 +1214,23 @@ trainer: ocp
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/amp/autocast_mode.py:250: UserWarning: User provided device_type of &#39;cuda&#39;, but CUDA is not available. Disabling
+  warnings.warn(
+</pre></div>
+</div>
+<img alt="../../_images/bed8167be37c92b5d71e2ae9cae3439eec937bceb84ba422addd9d9d5974ed8d.png" src="../../_images/bed8167be37c92b5d71e2ae9cae3439eec937bceb84ba422addd9d9d5974ed8d.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mae</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">dft</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ocp</span><span class="p">)))</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;New MAE = </span><span class="si">{</span><span class="n">mae</span><span class="si">:</span><span class="s1">1.3f</span><span class="si">}</span><span class="s1"> eV/atom&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>New MAE = 0.686 eV/atom
 </pre></div>
 </div>
 </div>
@@ -1217,6 +1247,9 @@ trainer: ocp
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/1109562e7d207b01d4bbaec75065a7373c812846544444edb8782cf62a3bbac7.png" src="../../_images/1109562e7d207b01d4bbaec75065a7373c812846544444edb8782cf62a3bbac7.png" />
 </div>
 </div>
 <p>It is possible to continue refining the fit. The simple things to do are to use more epochs of training. Eventually the MAE will stabilize, and then it may be necessary to adjust other optimization parameters like the learning rate (usually you decrease it).</p>

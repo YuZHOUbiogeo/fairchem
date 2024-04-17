@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=eafc0fe6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=fd3f3429" />
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -43,7 +43,7 @@
   <script src="../../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
     <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../../_static/copybutton.js?v=f281be69"></script>
@@ -635,18 +635,18 @@ are put into a PyTorch geometric data object for use with PyTorch.</p>
 <li><p><strong>r_forces</strong> (<em>bool</em>) – Return the forces with other properties. Default is False, so the forces will not be returned.</p></li>
 <li><p><strong>r_stress</strong> (<em>bool</em>) – Return the stress with other properties. Default is False, so the stress will not be returned.</p></li>
 <li><p><strong>r_distances</strong> (<em>bool</em>) – Return the distances with other properties.</p></li>
-<li><p><strong>False</strong> (<em>Default is</em>) – </p></li>
-<li><p><strong>returned.</strong> (<em>so the periodic boundary conditions will not be</em>) – </p></li>
+<li><p><strong>False</strong> (<em>Default is</em>)</p></li>
+<li><p><strong>returned.</strong> (<em>so the periodic boundary conditions will not be</em>)</p></li>
 <li><p><strong>r_edges</strong> (<em>bool</em>) – Return interatomic edges with other properties. Default is True, so edges will be returned.</p></li>
 <li><p><strong>r_fixed</strong> (<em>bool</em>) – Return a binary vector with flags for fixed (1) vs free (0) atoms.</p></li>
-<li><p><strong>True</strong> (<em>Default is</em>) – </p></li>
-<li><p><strong>returned.</strong> – </p></li>
+<li><p><strong>True</strong> (<em>Default is</em>)</p></li>
+<li><p><strong>returned.</strong></p></li>
 <li><p><strong>r_pbc</strong> (<em>bool</em>) – Return the periodic boundary conditions with other properties.</p></li>
-<li><p><strong>False</strong> – </p></li>
-<li><p><strong>returned.</strong> – </p></li>
+<li><p><strong>False</strong></p></li>
+<li><p><strong>returned.</strong></p></li>
 <li><p><strong>r_data_keys</strong> (<em>sequence</em><em> of </em><em>str</em><em>, </em><em>optional</em>) – Return values corresponding to given keys in atoms.info data with other</p></li>
-<li><p><strong>None</strong> (<em>properties. Default is</em>) – </p></li>
-<li><p><strong>properties.</strong> (<em>so no data will be returned as</em>) – </p></li>
+<li><p><strong>None</strong> (<em>properties. Default is</em>)</p></li>
+<li><p><strong>properties.</strong> (<em>so no data will be returned as</em>)</p></li>
 </ul>
 </dd>
 </dl>
@@ -803,7 +803,7 @@ takes in np.arrays and returns torch tensors</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>atoms</strong> (<em>ase.atoms.Atoms</em>) – An ASE atoms object.</p></li>
 <li><p><strong>sid</strong> (<em>uniquely identifying object</em>) – An identifier that can be used to track the structure in downstream</p></li>
-<li><p><strong>integers.</strong> (<em>tasks. Common sids used in OCP datasets include unique strings or</em>) – </p></li>
+<li><p><strong>integers.</strong> (<em>tasks. Common sids used in OCP datasets include unique strings or</em>)</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -824,10 +824,10 @@ Optional properties can included by setting r_property=True when constructing th
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>atoms_collection</strong> (<em>list</em><em> of </em><em>ase.atoms.Atoms</em><em> or </em><em>ase.db.sqlite.SQLite3Database</em>) – </p></li>
-<li><p><strong>database.</strong> (<em>Either a list</em><em> of </em><em>ASE atoms objects</em><em> or </em><em>an ASE</em>) – </p></li>
-<li><p><strong>processed_file_path</strong> (<em>str</em>) – </p></li>
-<li><p><strong>None.</strong> (<em>A string</em><em> of </em><em>the path to where the processed file will be written. Default is</em>) – </p></li>
+<li><p><strong>atoms_collection</strong> (<em>list</em><em> of </em><em>ase.atoms.Atoms</em><em> or </em><em>ase.db.sqlite.SQLite3Database</em>)</p></li>
+<li><p><strong>database.</strong> (<em>Either a list</em><em> of </em><em>ASE atoms objects</em><em> or </em><em>an ASE</em>)</p></li>
+<li><p><strong>processed_file_path</strong> (<em>str</em>)</p></li>
+<li><p><strong>None.</strong> (<em>A string</em><em> of </em><em>the path to where the processed file will be written. Default is</em>)</p></li>
 <li><p><strong>collate_and_save</strong> (<em>bool</em>) – A boolean to collate and save or not. Default is False, so will not write a file.</p></li>
 </ul>
 </dd>
