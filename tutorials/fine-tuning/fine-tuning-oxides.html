@@ -1,0 +1,1055 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Fine tuning a model &#8212; Open Catalyst Project Documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=fd3f3429" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/fine-tuning/fine-tuning-oxides';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Advanced example: Fine-tuning" href="../advanced/fine-tuning-toc.html" />
+    <link rel="prev" title="Simple simulations using the OCP ASE calculator" href="../OCP-introduction.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Open Catalyst Project Documentation - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Open Catalyst Project Documentation - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../index.html">
+                    ocp by Open Catalyst Project
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Installation &amp; License</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../core/INSTALL.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../core/LICENSE.html">License</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Released Datasets &amp; Models</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../core/datasets/oc20.html">Open Catalyst 2020 (OC20)</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../../core/datasets/oc22.html">Open Catalyst 2022 (OC22)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../core/datasets/odac.html">Open Direct Air Capture 2023 (ODAC23)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../core/MODELS.html">Pretrained OCP model checkpoints</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Training your own models</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../core/TRAIN.html">Training and evaluating models on OCP datasets</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../../core/FAQ.html">Frequently Asked Questions</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Videos and Talks</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../videos/intro_series.html">Open Catalyst Intro Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../videos/technical_talks.html">Technical presentations</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Catalysis Tutorials</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Intro and background on OCP and DFT</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../OCP-introduction.html">Simple simulations using the OCP ASE calculator</a></li>
+
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Fine tuning a model</a></li>
+
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="../advanced/fine-tuning-toc.html">Advanced example: Fine-tuning</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/fine-tuning-in-python.html">Fine-tuning with Python</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../advanced/embeddings.html">Working with embeddings</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../advanced/mass-inference.html">Mass inference</a></li>
+
+
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../NRR/NRR_toc.html">Screening catalysts with OCP</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../NRR/NRR_example.html">Using OCP to enumerate adsorbates on catalyst surfaces</a></li>
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../NRR/NRR_example-gemnet.html">Using OCP to enumerate adsorbates on alloy catalyst surfaces</a></li>
+
+
+
+
+
+
+
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../legacy_tutorials/legacy_tutorials.html">Legacy [deprecated] Tutorials</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../legacy_tutorials/OCP_Tutorial.html">Open Catalyst Project Tutorial Notebook</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../legacy_tutorials/data_preprocessing.html">OCP Data Preprocessing Tutorial</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../legacy_tutorials/data_visualization.html">OCP Data Visualization</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../../legacy_tutorials/lmdb_dataset_creation.html">OCP LMDB Dataset Tutorial</a></li>
+
+
+
+
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">ocpmodels documentation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../autoapi/index.html">API Reference</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../autoapi/ocpmodels/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../autoapi/ocpmodels/common/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.common</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/ocpmodels/common/relaxation/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.common.relaxation</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/ocpmodels/common/data_parallel/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.common.data_parallel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/ocpmodels/common/distutils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.common.distutils</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/ocpmodels/common/flags/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.common.flags</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/ocpmodels/common/gp_utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.common.gp_utils</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/ocpmodels/common/hpo_utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.common.hpo_utils</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/ocpmodels/common/logger/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.common.logger</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/ocpmodels/common/model_registry/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.common.model_registry</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/ocpmodels/common/registry/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.common.registry</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/ocpmodels/common/transforms/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.common.transforms</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/ocpmodels/common/tutorial_utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.common.tutorial_utils</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/ocpmodels/common/typing/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.common.typing</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/ocpmodels/common/utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.common.utils</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../autoapi/ocpmodels/datasets/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.datasets</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/ocpmodels/datasets/embeddings/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.datasets.embeddings</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/ocpmodels/datasets/_utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.datasets._utils</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/ocpmodels/datasets/ase_datasets/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.datasets.ase_datasets</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/ocpmodels/datasets/lmdb_database/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.datasets.lmdb_database</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/ocpmodels/datasets/lmdb_dataset/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.datasets.lmdb_dataset</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/ocpmodels/datasets/oc22_lmdb_dataset/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.datasets.oc22_lmdb_dataset</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/ocpmodels/datasets/target_metadata_guesser/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.datasets.target_metadata_guesser</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../autoapi/ocpmodels/models/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.models</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/ocpmodels/models/equiformer_v2/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.models.equiformer_v2</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/ocpmodels/models/escn/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.models.escn</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/ocpmodels/models/gemnet/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.models.gemnet</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/ocpmodels/models/gemnet_gp/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.models.gemnet_gp</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/ocpmodels/models/gemnet_oc/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.models.gemnet_oc</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/ocpmodels/models/painn/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.models.painn</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/ocpmodels/models/scn/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.models.scn</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/ocpmodels/models/utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.models.utils</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/ocpmodels/models/base/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.models.base</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/ocpmodels/models/dimenet_plus_plus/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.models.dimenet_plus_plus</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/ocpmodels/models/schnet/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.models.schnet</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../autoapi/ocpmodels/modules/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.modules</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/ocpmodels/modules/scaling/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.modules.scaling</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/ocpmodels/modules/evaluator/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.modules.evaluator</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/ocpmodels/modules/exponential_moving_average/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.modules.exponential_moving_average</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/ocpmodels/modules/loss/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.modules.loss</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/ocpmodels/modules/normalizer/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.modules.normalizer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/ocpmodels/modules/scheduler/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.modules.scheduler</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/ocpmodels/modules/transforms/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.modules.transforms</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../autoapi/ocpmodels/preprocessing/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.preprocessing</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/ocpmodels/preprocessing/atoms_to_graphs/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.preprocessing.atoms_to_graphs</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../autoapi/ocpmodels/tasks/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.tasks</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/ocpmodels/tasks/task/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.tasks.task</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../autoapi/ocpmodels/trainers/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.trainers</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/ocpmodels/trainers/base_trainer/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.trainers.base_trainer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/ocpmodels/trainers/ocp_trainer/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.trainers.ocp_trainer</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Notebook execution times</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../execution_time.html">Notebook execution times</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/Open-Catalyst-Project/ocp" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/Open-Catalyst-Project/ocp/issues/new?title=Issue%20on%20page%20%2Ftutorials/fine-tuning/fine-tuning-oxides.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/tutorials/fine-tuning/fine-tuning-oxides.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Fine tuning a model</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Fine tuning a model</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#fine-tuning-the-checkpoint">Fine tuning the checkpoint</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#make-the-train-test-val-splits">Make the train, test, val splits</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-the-configuration-yaml-file">Setting up the configuration yaml file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-the-training-job">Running the training job</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#next-steps">Next steps</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="fine-tuning-a-model">
+<h1>Fine tuning a model<a class="headerlink" href="#fine-tuning-a-model" title="Link to this heading">#</a></h1>
+<p>In this section we look at how to improve a model. We start by using a pre-trained model to predict the energies of several oxide polymorphs. The data here comes from this paper:</p>
+<p>Identifying Potential BO<sub>2</sub> Oxide Polymorphs for Epitaxial Growth Candidates
+Mehta, P., Salvador, P. A., &amp; Kitchin, J. R. (2015). Identifying potential BO2 oxide polymorphs for epitaxial growth candidates. ACS Appl. Mater. Interfaces, 6(5), 3630–3639. http://dx.doi.org/10.1021/am4059149.</p>
+<p>This data set shows equations of state for several oxide/polymorph combinations. I use this dataset to compare with predictions from OCP</p>
+<p>First we get the checkpoint that we want. According to the <a class="reference internal" href="../../core/MODELS.html"><span class="std std-doc">MODELS</span></a> the GemNet-OC	OC20+OC22 combination has an energy MAE of 0.483 which seems like a good place to start. This model was trained on oxides.</p>
+<p>We get this checkpoint here.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ocpmodels.common.model_registry</span> <span class="kn">import</span> <span class="n">model_name_to_local_file</span>
+
+<span class="n">checkpoint_path</span> <span class="o">=</span> <span class="n">model_name_to_local_file</span><span class="p">(</span><span class="s1">&#39;GemNet-OC OC20+OC22&#39;</span><span class="p">,</span> <span class="n">local_cache</span><span class="o">=</span><span class="s1">&#39;/tmp/ocp_checkpoints/&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The data we need is provided in <code class="docutils literal notranslate"><span class="pre">supporting-information.json</span></code>. That file is embedded in the supporting information for the article, and is provided here in the tutorial. We load this data and explore it a little. The json file provides a dictionary with the structure:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[oxide][polymorph][xc][EOS][configurations]
+</pre></div>
+</div>
+<p>The first key is a composition, the second is a string for the polymorph structure, the third indicates which XC functional was used (we focus on PBE here), the fourth key is for the Equation of State calculations, and the last key is a list of results for the EOS.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">ase</span> <span class="kn">import</span> <span class="n">Atoms</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;supporting-information.json&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+     <span class="n">d</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+        
+
+<span class="n">oxides</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<span class="n">polymorphs</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;TiO2&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<span class="n">oxides</span><span class="p">,</span> <span class="n">polymorphs</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>A specific calculation has a lot of details in it. You can use this to recreate the calculations. Shortly we will use these to compare the DFT results to OCP.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;TiO2&#39;</span><span class="p">][</span><span class="s1">&#39;rutile&#39;</span><span class="p">][</span><span class="s1">&#39;PBE&#39;</span><span class="p">][</span><span class="s1">&#39;EOS&#39;</span><span class="p">][</span><span class="s1">&#39;calculations&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>For each result we can retrieve the atomic geometry, energy and forces from the json file. We use these to recreate an Atoms object. Here is an example.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;TiO2&#39;</span><span class="p">][</span><span class="s1">&#39;rutile&#39;</span><span class="p">][</span><span class="s1">&#39;PBE&#39;</span><span class="p">][</span><span class="s1">&#39;EOS&#39;</span><span class="p">][</span><span class="s1">&#39;calculations&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">atoms</span> <span class="o">=</span> <span class="n">Atoms</span><span class="p">(</span><span class="n">symbols</span><span class="o">=</span><span class="n">c</span><span class="p">[</span><span class="s1">&#39;atoms&#39;</span><span class="p">][</span><span class="s1">&#39;symbols&#39;</span><span class="p">],</span>
+              <span class="n">positions</span><span class="o">=</span><span class="n">c</span><span class="p">[</span><span class="s1">&#39;atoms&#39;</span><span class="p">][</span><span class="s1">&#39;positions&#39;</span><span class="p">],</span>
+              <span class="n">cell</span><span class="o">=</span><span class="n">c</span><span class="p">[</span><span class="s1">&#39;atoms&#39;</span><span class="p">][</span><span class="s1">&#39;cell&#39;</span><span class="p">],</span>
+              <span class="n">pbc</span><span class="o">=</span><span class="n">c</span><span class="p">[</span><span class="s1">&#39;atoms&#39;</span><span class="p">][</span><span class="s1">&#39;pbc&#39;</span><span class="p">])</span>
+<span class="n">atoms</span><span class="o">.</span><span class="n">set_tags</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">atoms</span><span class="p">)))</span>
+<span class="n">atoms</span><span class="p">,</span> <span class="n">c</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="s1">&#39;total_energy&#39;</span><span class="p">],</span> <span class="n">c</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="s1">&#39;forces&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next, we will create an OCP calculator that we can use to get predictions from.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ocpmodels.common.relaxation.ase_utils</span> <span class="kn">import</span> <span class="n">OCPCalculator</span>
+<span class="n">calc</span> <span class="o">=</span> <span class="n">OCPCalculator</span><span class="p">(</span><span class="n">checkpoint</span><span class="o">=</span><span class="n">checkpoint_path</span><span class="p">,</span> <span class="n">trainer</span><span class="o">=</span><span class="s1">&#39;forces&#39;</span><span class="p">,</span> <span class="n">cpu</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, we loop through each structure and accumulate the OCP predictions. Then, we plot the parity results.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="n">t0</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+
+<span class="n">eos_data</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">oxide</span> <span class="ow">in</span> <span class="n">oxides</span><span class="p">:</span>
+    <span class="n">eos_data</span><span class="p">[</span><span class="n">oxide</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">polymorph</span> <span class="ow">in</span> <span class="n">polymorphs</span><span class="p">:</span>
+        <span class="n">dft</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">ocp</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">vols</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">calculations</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="n">oxide</span><span class="p">][</span><span class="n">polymorph</span><span class="p">][</span><span class="s1">&#39;PBE&#39;</span><span class="p">][</span><span class="s1">&#39;EOS&#39;</span><span class="p">][</span><span class="s1">&#39;calculations&#39;</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">calculations</span><span class="p">:</span>
+                        
+            <span class="n">atoms</span> <span class="o">=</span> <span class="n">Atoms</span><span class="p">(</span><span class="n">symbols</span><span class="o">=</span><span class="n">c</span><span class="p">[</span><span class="s1">&#39;atoms&#39;</span><span class="p">][</span><span class="s1">&#39;symbols&#39;</span><span class="p">],</span>
+                          <span class="n">positions</span><span class="o">=</span><span class="n">c</span><span class="p">[</span><span class="s1">&#39;atoms&#39;</span><span class="p">][</span><span class="s1">&#39;positions&#39;</span><span class="p">],</span>
+                          <span class="n">cell</span><span class="o">=</span><span class="n">c</span><span class="p">[</span><span class="s1">&#39;atoms&#39;</span><span class="p">][</span><span class="s1">&#39;cell&#39;</span><span class="p">],</span>
+                          <span class="n">pbc</span><span class="o">=</span><span class="n">c</span><span class="p">[</span><span class="s1">&#39;atoms&#39;</span><span class="p">][</span><span class="s1">&#39;pbc&#39;</span><span class="p">])</span>
+            <span class="n">atoms</span><span class="o">.</span><span class="n">set_tags</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">atoms</span><span class="p">)))</span>
+            
+            <span class="n">atoms</span><span class="o">.</span><span class="n">calc</span> <span class="o">=</span> <span class="n">calc</span>
+            <span class="n">ocp</span> <span class="o">+=</span> <span class="p">[</span><span class="n">atoms</span><span class="o">.</span><span class="n">get_potential_energy</span><span class="p">()</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">atoms</span><span class="p">)]</span>
+            <span class="n">dft</span> <span class="o">+=</span> <span class="p">[</span><span class="n">c</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="s1">&#39;total_energy&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">atoms</span><span class="p">)]</span>
+            <span class="n">vols</span> <span class="o">+=</span> <span class="p">[</span><span class="n">atoms</span><span class="o">.</span><span class="n">get_volume</span><span class="p">()]</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">dft</span><span class="p">,</span> <span class="n">ocp</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;s&#39;</span> <span class="k">if</span> <span class="n">oxide</span> <span class="o">==</span> <span class="s1">&#39;VO2&#39;</span> <span class="k">else</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span>
+                 <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">oxide</span><span class="si">}</span><span class="s1">-</span><span class="si">{</span><span class="n">polymorph</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="n">eos_data</span><span class="p">[</span><span class="n">oxide</span><span class="p">][</span><span class="n">polymorph</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">vols</span><span class="p">,</span> <span class="n">dft</span><span class="p">,</span> <span class="n">ocp</span><span class="p">)</span>
+        
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;DFT (eV/atom)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;OCP (eV/atom)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;center left&#39;</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span> <span class="n">ncol</span><span class="o">=</span><span class="mi">3</span><span class="p">);</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Elapsed time </span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">t0</span><span class="si">:</span><span class="s1">1.1f</span><span class="si">}</span><span class="s1"> seconds.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mae</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">dft</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ocp</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;MAE = </span><span class="si">{</span><span class="n">mae</span><span class="si">:</span><span class="s1">1.3f</span><span class="si">}</span><span class="s1"> eV/atom&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The MAE is somewhat high compared to the reported value of 0.458 eV. That is not too surprising; although OC22 was trained on oxides, it was not trained on all of these structures. It is also evident on inspection that the main issues are all the VO2 structures, and these skew the MAE. Next we look at the EOS for each material. Here you can see offsets, and qualitative issues in the shapes. The offset is largely a PBE/RPBE difference.</p>
+<p>Some notable issues are with fluorite structures. We show one here for VO2.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">oxide</span><span class="p">,</span> <span class="n">polymorph</span> <span class="o">=</span> <span class="s1">&#39;VO2&#39;</span><span class="p">,</span> <span class="s1">&#39;fluorite&#39;</span>
+<span class="n">V</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">O</span> <span class="o">=</span> <span class="n">eos_data</span><span class="p">[</span><span class="n">oxide</span><span class="p">][</span><span class="n">polymorph</span><span class="p">]</span>
+        
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;dft&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">O</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;ocp&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;pretrained </span><span class="si">{</span><span class="n">oxide</span><span class="si">}</span><span class="s1"> - </span><span class="si">{</span><span class="n">polymorph</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can improve this by fine-tuning the model.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="fine-tuning-the-checkpoint">
+<h1>Fine tuning the checkpoint<a class="headerlink" href="#fine-tuning-the-checkpoint" title="Link to this heading">#</a></h1>
+<p>There are severeal steps in fine-tuning:</p>
+<ol class="arabic simple">
+<li><p>Create train, test, val datasets</p></li>
+<li><p>Create a configuration yml file</p></li>
+<li><p>Run the training</p></li>
+<li><p>Check the results</p></li>
+</ol>
+<p>First we create the training databases. OCP supports ase databases, so we use those here. The first step is to make a database containing the data. We need to write an atoms object with an attached SinglePointCalculator for each structure.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ase.db</span> <span class="kn">import</span> <span class="n">connect</span>
+<span class="kn">from</span> <span class="nn">ase.calculators.singlepoint</span> <span class="kn">import</span> <span class="n">SinglePointCalculator</span>
+
+<span class="err">!</span> <span class="n">rm</span> <span class="o">-</span><span class="n">fr</span> <span class="n">oxides</span><span class="o">.</span><span class="n">db</span>  <span class="c1"># start clean when you run this cell</span>
+<span class="n">db</span> <span class="o">=</span> <span class="n">connect</span><span class="p">(</span><span class="s1">&#39;oxides.db&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">oxide</span> <span class="ow">in</span> <span class="n">oxides</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">polymorph</span> <span class="ow">in</span> <span class="n">polymorphs</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">d</span><span class="p">[</span><span class="n">oxide</span><span class="p">][</span><span class="n">polymorph</span><span class="p">][</span><span class="s1">&#39;PBE&#39;</span><span class="p">][</span><span class="s1">&#39;EOS&#39;</span><span class="p">][</span><span class="s1">&#39;calculations&#39;</span><span class="p">]:</span>
+            <span class="n">atoms</span> <span class="o">=</span> <span class="n">Atoms</span><span class="p">(</span><span class="n">symbols</span><span class="o">=</span><span class="n">c</span><span class="p">[</span><span class="s1">&#39;atoms&#39;</span><span class="p">][</span><span class="s1">&#39;symbols&#39;</span><span class="p">],</span>
+                          <span class="n">positions</span><span class="o">=</span><span class="n">c</span><span class="p">[</span><span class="s1">&#39;atoms&#39;</span><span class="p">][</span><span class="s1">&#39;positions&#39;</span><span class="p">],</span>
+                          <span class="n">cell</span><span class="o">=</span><span class="n">c</span><span class="p">[</span><span class="s1">&#39;atoms&#39;</span><span class="p">][</span><span class="s1">&#39;cell&#39;</span><span class="p">],</span>
+                          <span class="n">pbc</span><span class="o">=</span><span class="n">c</span><span class="p">[</span><span class="s1">&#39;atoms&#39;</span><span class="p">][</span><span class="s1">&#39;pbc&#39;</span><span class="p">])</span>
+            <span class="n">atoms</span><span class="o">.</span><span class="n">set_tags</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">atoms</span><span class="p">)))</span>
+            <span class="n">calc</span> <span class="o">=</span> <span class="n">SinglePointCalculator</span><span class="p">(</span><span class="n">atoms</span><span class="p">,</span> 
+                                         <span class="n">energy</span><span class="o">=</span><span class="n">c</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="s1">&#39;total_energy&#39;</span><span class="p">],</span>
+                                         <span class="n">forces</span><span class="o">=</span><span class="n">c</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="s1">&#39;forces&#39;</span><span class="p">])</span>
+            <span class="n">atoms</span><span class="o">.</span><span class="n">set_calculator</span><span class="p">(</span><span class="n">calc</span><span class="p">)</span>
+            <span class="n">db</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">atoms</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s see what we made.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="err">!</span> <span class="n">ase</span> <span class="n">db</span> <span class="n">oxides</span><span class="o">.</span><span class="n">db</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="make-the-train-test-val-splits">
+<h2>Make the train, test, val splits<a class="headerlink" href="#make-the-train-test-val-splits" title="Link to this heading">#</a></h2>
+<p>We need to split the ase-db into three separate databases, one for training (80%), one for testing (10%) and one for validation. We generate a list of ids and then shuffle them. Then we write the first 80% into <code class="docutils literal notranslate"><span class="pre">train.db</span></code>, the next 10% into <code class="docutils literal notranslate"><span class="pre">test.db</span></code>, and the remaining into <code class="docutils literal notranslate"><span class="pre">val.db</span></code>.</p>
+<p>The train set is used for training. The test and val sets are used to check for overfitting.</p>
+<p>You choose the splits you want, 80:10:10 is common. We take a simple approach to split the database here. We make an array of integers that correspond to the ids, randomly shuffle them, and then get each row in the randomized order and write them to a new db.</p>
+<p>We provide some helper functions in <a class="reference internal" href="#../ocp-tutorial"><span class="xref myst">../ocp-tutorial.ipynb</span></a> to streamline this process.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="err">!</span> <span class="n">rm</span> <span class="o">-</span><span class="n">fr</span> <span class="n">train</span><span class="o">.</span><span class="n">db</span> <span class="n">test</span><span class="o">.</span><span class="n">db</span> <span class="n">val</span><span class="o">.</span><span class="n">db</span>
+
+<span class="n">train</span><span class="p">,</span> <span class="n">test</span><span class="p">,</span> <span class="n">val</span> <span class="o">=</span> <span class="n">train_test_val_split</span><span class="p">(</span><span class="s1">&#39;oxides.db&#39;</span><span class="p">)</span>
+<span class="n">train</span><span class="p">,</span> <span class="n">test</span><span class="p">,</span> <span class="n">val</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="setting-up-the-configuration-yaml-file">
+<h2>Setting up the configuration yaml file<a class="headerlink" href="#setting-up-the-configuration-yaml-file" title="Link to this heading">#</a></h2>
+<p>We have to create a yaml configuration file for the model we are using. The pre-trained checkpoints contain their config data, so we use this to get the base configuration, and then remove pieces we don’t need, and update pieces we do need.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">yml</span> <span class="o">=</span> <span class="n">generate_yml_config</span><span class="p">(</span><span class="n">checkpoint</span><span class="p">,</span> <span class="s1">&#39;config.yml&#39;</span><span class="p">,</span>
+                   <span class="n">delete</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;slurm&#39;</span><span class="p">,</span> <span class="s1">&#39;cmd&#39;</span><span class="p">,</span> <span class="s1">&#39;logger&#39;</span><span class="p">,</span> <span class="s1">&#39;task&#39;</span><span class="p">,</span> <span class="s1">&#39;model_attributes&#39;</span><span class="p">,</span>
+                           <span class="s1">&#39;optim.loss_force&#39;</span><span class="p">,</span> <span class="c1"># the checkpoint setting causes an error</span>
+                           <span class="s1">&#39;dataset&#39;</span><span class="p">,</span> <span class="s1">&#39;test_dataset&#39;</span><span class="p">,</span> <span class="s1">&#39;val_dataset&#39;</span><span class="p">],</span>
+                   <span class="n">update</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;gpus&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                           <span class="s1">&#39;task.dataset&#39;</span><span class="p">:</span> <span class="s1">&#39;ase_db&#39;</span><span class="p">,</span>
+                           <span class="s1">&#39;optim.eval_every&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                           <span class="s1">&#39;optim.max_epochs&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+                           <span class="c1"># Train data</span>
+                           <span class="s1">&#39;dataset.train.src&#39;</span><span class="p">:</span> <span class="s1">&#39;train.db&#39;</span><span class="p">,</span>
+                           <span class="s1">&#39;dataset.train.a2g_args.r_energy&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+                           <span class="s1">&#39;dataset.train.a2g_args.r_forces&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+                            <span class="c1"># Test data - prediction only so no regression</span>
+                           <span class="s1">&#39;dataset.test.src&#39;</span><span class="p">:</span> <span class="s1">&#39;test.db&#39;</span><span class="p">,</span>
+                           <span class="s1">&#39;dataset.test.a2g_args.r_energy&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+                           <span class="s1">&#39;dataset.test.a2g_args.r_forces&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+                           <span class="c1"># val data</span>
+                           <span class="s1">&#39;dataset.val.src&#39;</span><span class="p">:</span> <span class="s1">&#39;val.db&#39;</span><span class="p">,</span>
+                           <span class="s1">&#39;dataset.val.a2g_args.r_energy&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+                           <span class="s1">&#39;dataset.val.a2g_args.r_forces&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+                          <span class="p">})</span>
+
+<span class="n">yml</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="err">!</span> <span class="n">cat</span> <span class="n">config</span><span class="o">.</span><span class="n">yml</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="running-the-training-job">
+<h2>Running the training job<a class="headerlink" href="#running-the-training-job" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">ocp</span></code> provides a <code class="docutils literal notranslate"><span class="pre">main.py</span></code> file that is used for training. Here we construct the Python command you need to run, and run it. <code class="docutils literal notranslate"><span class="pre">main.py</span></code> is not executable, so we have to run it with python, and you need the absolute path to it, which we get from the <code class="docutils literal notranslate"><span class="pre">ocp_main()</span></code> that is defined in the <a class="reference internal" href="#../ocp-tutorial"><span class="xref myst">utilities</span></a>.</p>
+<p>you must set a <code class="docutils literal notranslate"><span class="pre">mode</span></code> and provide a <code class="docutils literal notranslate"><span class="pre">config-yml</span></code>. We provide a checkpoint for a starting point, if you don’t do this, it will start from scratch.</p>
+<p>By default the files that are created go in a directories called <code class="docutils literal notranslate"><span class="pre">checkpoints</span></code>, <code class="docutils literal notranslate"><span class="pre">logs</span></code> and <code class="docutils literal notranslate"><span class="pre">results</span></code>. You can change that with a <code class="docutils literal notranslate"><span class="pre">--run-dir</span> <span class="pre">preferred-place</span></code> option.</p>
+<p>You can also add an identifier tag to the end of the timestamps with <code class="docutils literal notranslate"><span class="pre">--identifier</span> <span class="pre">tag</span></code>. This can make it easier to find them later.</p>
+<p>The cell below uses some IPython magic to put Python variables in the shell command.</p>
+<p>This command takes some time to run even on a GPU, e.g. about 30 minutes.</p>
+<p>It is advisable to redirect the outputs to files. The reason is that if the outputs are very large, the notebook may not be able to be saved. This also makes your notebooks more reproducible. The checkpoints are stored in time-stamped directories that change everytime you run them. Below we show how to reproducibly retrieve this directory name in a way that allows you to run the notebook again later, while automatically updating the directory name.</p>
+<p>You can follow how the training is going by opening a terminal and running</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>tail -f train.txt
+</pre></div>
+</div>
+<p>You can also visit it in a browser at <a class="reference internal" href="#./train.txt"><span class="xref myst">train.txt</span></a>. You have to periodically refresh the view to see updates though.</p>
+<p>This can take up to 30 minutes for 80 epochs, so we only do a few here to see what happens.</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="n">t0</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="err">!</span> <span class="n">python</span> <span class="p">{</span><span class="n">ocp_main</span><span class="p">()}</span> <span class="o">--</span><span class="n">mode</span> <span class="n">train</span> <span class="o">--</span><span class="n">config</span><span class="o">-</span><span class="n">yml</span> <span class="err">$</span><span class="n">yml</span> <span class="o">--</span><span class="n">checkpoint</span> <span class="err">$</span><span class="n">checkpoint</span> \
+  <span class="o">--</span><span class="n">run</span><span class="o">-</span><span class="nb">dir</span> <span class="n">fine</span><span class="o">-</span><span class="n">tuning</span> <span class="o">--</span><span class="n">identifier</span> <span class="n">ft</span><span class="o">-</span><span class="n">oxides</span> <span class="o">--</span><span class="n">amp</span> <span class="o">&gt;</span> <span class="n">train</span><span class="o">.</span><span class="n">txt</span> <span class="mi">2</span><span class="o">&gt;&amp;</span><span class="mi">1</span> 
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Elapsed time = </span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">t0</span><span class="si">:</span><span class="s1">1.1f</span><span class="si">}</span><span class="s1"> seconds&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now since we have a file, we can find the training results in it. See <a class="reference internal" href="#./train.txt"><span class="xref myst">train.txt</span></a>. At the top, the config is printed, so we can get the checkpoint directory. I use shell commands and Python to get the line, split and strip it here.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cpline</span> <span class="o">=</span> <span class="err">!</span><span class="n">grep</span> <span class="s2">&quot;checkpoint_dir:&quot;</span> <span class="n">train</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">cpdir</span> <span class="o">=</span> <span class="n">cpline</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<span class="n">cpdir</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>There will be two files in there: <code class="docutils literal notranslate"><span class="pre">checkpoint.pt</span></code> and <code class="docutils literal notranslate"><span class="pre">best_checkpoint.pt</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">best_checkpoint.pt</span></code> is the one that performs best on the validation dataset. The <code class="docutils literal notranslate"><span class="pre">checkpoint.pt</span></code> is the most recently saved one. Probably it has the lowest loss in training, but this could be an indication of overfitting. You have to use some judgement in determining which one to use, and if it is sufficiently accurate for your needs. It may need additional training to further improve it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">newckpt</span> <span class="o">=</span> <span class="n">cpdir</span> <span class="o">+</span> <span class="s1">&#39;/checkpoint.pt&#39;</span>
+<span class="n">newcalc</span> <span class="o">=</span> <span class="n">OCPCalculator</span><span class="p">(</span><span class="n">checkpoint</span><span class="o">=</span><span class="n">newckpt</span><span class="p">,</span> <span class="n">cpu</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">eos_data</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">oxide</span> <span class="ow">in</span> <span class="n">oxides</span><span class="p">:</span>
+    <span class="n">eos_data</span><span class="p">[</span><span class="n">oxide</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">polymorph</span> <span class="ow">in</span> <span class="n">polymorphs</span><span class="p">:</span>
+        <span class="n">dft</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">ocp</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">vols</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">calculations</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="n">oxide</span><span class="p">][</span><span class="n">polymorph</span><span class="p">][</span><span class="s1">&#39;PBE&#39;</span><span class="p">][</span><span class="s1">&#39;EOS&#39;</span><span class="p">][</span><span class="s1">&#39;calculations&#39;</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">calculations</span><span class="p">:</span>
+                        
+            <span class="n">atoms</span> <span class="o">=</span> <span class="n">Atoms</span><span class="p">(</span><span class="n">symbols</span><span class="o">=</span><span class="n">c</span><span class="p">[</span><span class="s1">&#39;atoms&#39;</span><span class="p">][</span><span class="s1">&#39;symbols&#39;</span><span class="p">],</span>
+                          <span class="n">positions</span><span class="o">=</span><span class="n">c</span><span class="p">[</span><span class="s1">&#39;atoms&#39;</span><span class="p">][</span><span class="s1">&#39;positions&#39;</span><span class="p">],</span>
+                          <span class="n">cell</span><span class="o">=</span><span class="n">c</span><span class="p">[</span><span class="s1">&#39;atoms&#39;</span><span class="p">][</span><span class="s1">&#39;cell&#39;</span><span class="p">],</span>
+                          <span class="n">pbc</span><span class="o">=</span><span class="n">c</span><span class="p">[</span><span class="s1">&#39;atoms&#39;</span><span class="p">][</span><span class="s1">&#39;pbc&#39;</span><span class="p">])</span>
+            <span class="n">atoms</span><span class="o">.</span><span class="n">set_tags</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">atoms</span><span class="p">)))</span>
+            
+            <span class="n">atoms</span><span class="o">.</span><span class="n">calc</span> <span class="o">=</span> <span class="n">newcalc</span>
+            <span class="n">ocp</span> <span class="o">+=</span> <span class="p">[</span><span class="n">atoms</span><span class="o">.</span><span class="n">get_potential_energy</span><span class="p">()</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">atoms</span><span class="p">)]</span>
+            <span class="n">dft</span> <span class="o">+=</span> <span class="p">[</span><span class="n">c</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="s1">&#39;total_energy&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">atoms</span><span class="p">)]</span>
+            <span class="n">vols</span> <span class="o">+=</span> <span class="p">[</span><span class="n">atoms</span><span class="o">.</span><span class="n">get_volume</span><span class="p">()]</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">dft</span><span class="p">,</span> <span class="n">ocp</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;s&#39;</span> <span class="k">if</span> <span class="n">oxide</span> <span class="o">==</span> <span class="s1">&#39;VO2&#39;</span> <span class="k">else</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span>
+                 <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">oxide</span><span class="si">}</span><span class="s1">-</span><span class="si">{</span><span class="n">polymorph</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="n">eos_data</span><span class="p">[</span><span class="n">oxide</span><span class="p">][</span><span class="n">polymorph</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">vols</span><span class="p">,</span> <span class="n">dft</span><span class="p">,</span> <span class="n">ocp</span><span class="p">)</span>
+        
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;DFT (eV/atom)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;OCP (eV/atom)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;center left&#39;</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span> <span class="n">ncol</span><span class="o">=</span><span class="mi">3</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mae</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">dft</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ocp</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;New MAE = </span><span class="si">{</span><span class="n">mae</span><span class="si">:</span><span class="s1">1.3f</span><span class="si">}</span><span class="s1"> eV/atom&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is a substantial improvement! We can see what it means in terms of the Equations of State. There is still not perfect agreement, but the curves are closer together. Additional fine tuning, or a better model could probably still improve this.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">oxide</span><span class="p">,</span> <span class="n">polymorph</span> <span class="o">=</span> <span class="s1">&#39;VO2&#39;</span><span class="p">,</span> <span class="s1">&#39;fluorite&#39;</span>
+<span class="n">V</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">O</span> <span class="o">=</span> <span class="n">eos_data</span><span class="p">[</span><span class="n">oxide</span><span class="p">][</span><span class="n">polymorph</span><span class="p">]</span>
+        
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;dft&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">O</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;ocp&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;fine-tuned </span><span class="si">{</span><span class="n">oxide</span><span class="si">}</span><span class="s1"> - </span><span class="si">{</span><span class="n">polymorph</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>It is possible to continue refining the fit. The simple things to do are to use more epochs of training. Eventually the MAE will stabilize, and then it may be necessary to adjust other optimization parameters like the learning rate (usually you decrease it).</p>
+<p>Depending on what is important to you, you may consider changing the relative importances of energy and forces; you can often trade off accuracy of one for the other. It may be necessary to add additional data to cover the composition and configuration space more thoroughly.</p>
+<p>There are also other models you could consider. Newer models tend to be more accurate, but they may also be more expensive to run. These are all compromises you can consider.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="next-steps">
+<h1>Next steps<a class="headerlink" href="#next-steps" title="Link to this heading">#</a></h1>
+<p>You might want to check out the <a class="reference internal" href="../gotchas.html"><span class="doc std std-doc">gotchas</span></a> notebook. It has some examples of things we have seen go wrong before.</p>
+<p>The <a class="reference internal" href="#../advanced"><span class="xref myst">advanced</span></a> folder contains several concepts that are more advanced. These include:</p>
+<ol class="arabic simple">
+<li><p><a class="reference internal" href="../advanced/mass-inference.html"><span class="doc std std-doc">Mass inference</span></a> which is more efficient than the ASE calculator</p></li>
+<li><p><a class="reference internal" href="../advanced/embeddings.html"><span class="doc std std-doc">Working with embeddings</span></a> which shows some ways to use the embeddings from OCP</p></li>
+<li><p><a class="reference internal" href="../advanced/fine-tuning-in-python.html"><span class="doc std std-doc">Fine-tuning in python</span></a></p></li>
+</ol>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./tutorials/fine-tuning"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../OCP-introduction.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Simple simulations using the OCP ASE calculator</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../advanced/fine-tuning-toc.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Advanced example: Fine-tuning</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Fine tuning a model</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#fine-tuning-the-checkpoint">Fine tuning the checkpoint</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#make-the-train-test-val-splits">Make the train, test, val splits</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-the-configuration-yaml-file">Setting up the configuration yaml file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-the-training-job">Running the training job</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#next-steps">Next steps</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Open Catalyst Project
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
