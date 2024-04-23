@@ -581,17 +581,17 @@ document.write(`
 <p>You can retrieve the dataset below. In this notebook we learn how to do “mass inference” without an ASE calculator. You do this by creating a config.yml file, and running the <code class="docutils literal notranslate"><span class="pre">main.py</span></code> command line utility.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>wget<span class="w"> </span>https://figshare.com/ndownloader/files/11948267<span class="w"> </span>-O<span class="w"> </span>data.db<span class="w"> </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>wget<span class="w"> </span>https://figshare.com/ndownloader/files/11948267<span class="w"> </span>-O<span class="w"> </span>data.db
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2024-04-23 22:36:40--  https://figshare.com/ndownloader/files/11948267
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2024-04-23 22:53:46--  https://figshare.com/ndownloader/files/11948267
 Resolving figshare.com (figshare.com)... 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>34.253.100.243, 52.215.154.10, 2a05:d018:1f4:d000:2ae9:c0cf:501a:e771, ...
-Connecting to figshare.com (figshare.com)|34.253.100.243|:443... 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>52.215.154.10, 34.253.100.243, 2a05:d018:1f4:d000:2ae9:c0cf:501a:e771, ...
+Connecting to figshare.com (figshare.com)|52.215.154.10|:443... 
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>connected.
@@ -601,12 +601,13 @@ Connecting to figshare.com (figshare.com)|34.253.100.243|:443...
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>302 Found
+Location: https://s3-eu-west-1.amazonaws.com/pstorage-cmu-348901238291901/11948267/data.db?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAI266R7V6O36O5JUA/20240423/eu-west-1/s3/aws4_request&amp;X-Amz-Date=20240423T225346Z&amp;X-Amz-Expires=10&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=7409f1087ff7639f03cf4d12dad1d5a73fd71dcd0ec89f99be51c6e66c8884ff [following]
+--2024-04-23 22:53:46--  https://s3-eu-west-1.amazonaws.com/pstorage-cmu-348901238291901/11948267/data.db?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAI266R7V6O36O5JUA/20240423/eu-west-1/s3/aws4_request&amp;X-Amz-Date=20240423T225346Z&amp;X-Amz-Expires=10&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=7409f1087ff7639f03cf4d12dad1d5a73fd71dcd0ec89f99be51c6e66c8884ff
+Resolving s3-eu-west-1.amazonaws.com (s3-eu-west-1.amazonaws.com)... 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Location: https://s3-eu-west-1.amazonaws.com/pstorage-cmu-348901238291901/11948267/data.db?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAI266R7V6O36O5JUA/20240423/eu-west-1/s3/aws4_request&amp;X-Amz-Date=20240423T223641Z&amp;X-Amz-Expires=10&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=1ef23ce60a70303085dc8879800ce9c6c49f6431e95e5d8cb5db7deea00ec624 [following]
---2024-04-23 22:36:41--  https://s3-eu-west-1.amazonaws.com/pstorage-cmu-348901238291901/11948267/data.db?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAI266R7V6O36O5JUA/20240423/eu-west-1/s3/aws4_request&amp;X-Amz-Date=20240423T223641Z&amp;X-Amz-Expires=10&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=1ef23ce60a70303085dc8879800ce9c6c49f6431e95e5d8cb5db7deea00ec624
-Resolving s3-eu-west-1.amazonaws.com (s3-eu-west-1.amazonaws.com)... 52.218.91.123, 52.218.63.19, 52.92.17.8, ...
-Connecting to s3-eu-west-1.amazonaws.com (s3-eu-west-1.amazonaws.com)|52.218.91.123|:443... 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>52.218.62.131, 52.92.4.72, 52.218.29.195, ...
+Connecting to s3-eu-west-1.amazonaws.com (s3-eu-west-1.amazonaws.com)|52.218.62.131|:443... 
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>connected.
@@ -623,30 +624,543 @@ Saving to: ‘data.db’
 data.db               0%[                    ]       0  --.-KB/s               
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db               0%[                    ] 109.38K   419KB/s               
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db               0%[                    ]  58.38K   213KB/s               
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db               2%[                    ]   1.04M  1.99MB/s               
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db               0%[                    ] 177.38K   324KB/s               
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              16%[==&gt;                 ]   6.91M  8.83MB/s               
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db               0%[                    ] 398.38K   486KB/s               
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              36%[======&gt;             ]  15.10M  14.5MB/s               
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db               1%[                    ] 670.38K   614KB/s               
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              57%[==========&gt;         ]  23.49M  18.0MB/s               
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db               2%[                    ] 942.38K   690KB/s               
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              77%[==============&gt;     ]  31.96M  20.4MB/s               
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db               2%[                    ]   1.20M   752KB/s               
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              98%[==================&gt; ]  40.46M  22.1MB/s               
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db               3%[                    ]   1.50M   803KB/s               
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db             100%[===================&gt;]  41.13M  22.4MB/s    in 1.8s    
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db               4%[                    ]   1.80M   842KB/s               
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db               5%[&gt;                   ]   2.12M   880KB/s               
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db               5%[&gt;                   ]   2.43M   911KB/s               
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db               6%[&gt;                   ]   2.75M   936KB/s    eta 42s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db               7%[&gt;                   ]   3.08M   922KB/s    eta 42s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db               8%[&gt;                   ]   3.46M   960KB/s    eta 42s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db               8%[&gt;                   ]   3.61M   932KB/s    eta 42s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db               9%[&gt;                   ]   3.88M   937KB/s    eta 41s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db               9%[&gt;                   ]   4.06M   922KB/s    eta 41s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              10%[=&gt;                  ]   4.24M   908KB/s    eta 41s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              10%[=&gt;                  ]   4.44M   899KB/s    eta 41s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              11%[=&gt;                  ]   4.64M   893KB/s    eta 42s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              11%[=&gt;                  ]   4.85M   888KB/s    eta 42s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              12%[=&gt;                  ]   5.05M   914KB/s    eta 42s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              12%[=&gt;                  ]   5.25M   938KB/s    eta 42s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              13%[=&gt;                  ]   5.47M   929KB/s    eta 42s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              13%[=&gt;                  ]   5.67M   926KB/s    eta 42s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              14%[=&gt;                  ]   5.88M   901KB/s    eta 42s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              14%[=&gt;                  ]   6.10M   885KB/s    eta 42s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              15%[==&gt;                 ]   6.30M   874KB/s    eta 41s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              15%[==&gt;                 ]   6.51M   846KB/s    eta 41s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              16%[==&gt;                 ]   6.71M   833KB/s    eta 41s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              16%[==&gt;                 ]   6.93M   804KB/s    eta 41s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              17%[==&gt;                 ]   7.15M   770KB/s    eta 41s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              17%[==&gt;                 ]   7.36M   790KB/s    eta 41s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              18%[==&gt;                 ]   7.58M   780KB/s    eta 41s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              18%[==&gt;                 ]   7.79M   795KB/s    eta 41s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              19%[==&gt;                 ]   7.93M   790KB/s    eta 41s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              19%[==&gt;                 ]   8.14M   802KB/s    eta 40s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              20%[===&gt;                ]   8.36M   801KB/s    eta 40s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              20%[===&gt;                ]   8.51M   808KB/s    eta 40s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              21%[===&gt;                ]   8.69M   812KB/s    eta 40s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              21%[===&gt;                ]   8.84M   806KB/s    eta 40s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              21%[===&gt;                ]   8.97M   795KB/s    eta 39s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              22%[===&gt;                ]   9.14M   795KB/s    eta 39s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              22%[===&gt;                ]   9.34M   802KB/s    eta 39s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              23%[===&gt;                ]   9.47M   783KB/s    eta 39s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              23%[===&gt;                ]   9.67M   801KB/s    eta 39s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              23%[===&gt;                ]   9.87M   791KB/s    eta 38s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              24%[===&gt;                ]  10.02M   800KB/s    eta 38s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              24%[===&gt;                ]  10.22M   803KB/s    eta 38s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              25%[====&gt;               ]  10.44M   816KB/s    eta 38s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              25%[====&gt;               ]  10.60M   791KB/s    eta 38s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              26%[====&gt;               ]  10.81M   817KB/s    eta 37s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              26%[====&gt;               ]  11.03M   816KB/s    eta 37s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              27%[====&gt;               ]  11.20M   800KB/s    eta 37s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              27%[====&gt;               ]  11.41M   812KB/s    eta 37s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              28%[====&gt;               ]  11.63M   850KB/s    eta 37s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              28%[====&gt;               ]  11.79M   840KB/s    eta 36s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              29%[====&gt;               ]  11.94M   825KB/s    eta 36s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              29%[====&gt;               ]  12.18M   849KB/s    eta 36s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              30%[=====&gt;              ]  12.34M   848KB/s    eta 36s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              30%[=====&gt;              ]  12.47M   829KB/s    eta 36s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              30%[=====&gt;              ]  12.64M   834KB/s    eta 35s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              31%[=====&gt;              ]  12.84M   825KB/s    eta 35s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              31%[=====&gt;              ]  12.98M   819KB/s    eta 35s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              32%[=====&gt;              ]  13.17M   809KB/s    eta 35s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              32%[=====&gt;              ]  13.34M   812KB/s    eta 35s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              32%[=====&gt;              ]  13.52M   819KB/s    eta 34s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              33%[=====&gt;              ]  13.69M   806KB/s    eta 34s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              33%[=====&gt;              ]  13.87M   815KB/s    eta 34s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              34%[=====&gt;              ]  14.04M   810KB/s    eta 34s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              34%[=====&gt;              ]  14.22M   802KB/s    eta 34s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              34%[=====&gt;              ]  14.30M   777KB/s    eta 33s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              35%[======&gt;             ]  14.52M   785KB/s    eta 33s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              35%[======&gt;             ]  14.70M   775KB/s    eta 33s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              36%[======&gt;             ]  14.88M   782KB/s    eta 33s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              36%[======&gt;             ]  15.03M   790KB/s    eta 33s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              36%[======&gt;             ]  15.16M   770KB/s    eta 32s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              37%[======&gt;             ]  15.36M   777KB/s    eta 32s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              37%[======&gt;             ]  15.51M   761KB/s    eta 32s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              38%[======&gt;             ]  15.68M   744KB/s    eta 32s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              38%[======&gt;             ]  15.84M   735KB/s    eta 32s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              38%[======&gt;             ]  16.01M   716KB/s    eta 32s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              39%[======&gt;             ]  16.19M   703KB/s    eta 32s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              39%[======&gt;             ]  16.36M   695KB/s    eta 32s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              40%[=======&gt;            ]  16.49M   683KB/s    eta 32s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              40%[=======&gt;            ]  16.62M   670KB/s    eta 31s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              40%[=======&gt;            ]  16.76M   688KB/s    eta 31s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              41%[=======&gt;            ]  16.89M   668KB/s    eta 31s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              41%[=======&gt;            ]  17.02M   660KB/s    eta 31s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              41%[=======&gt;            ]  17.17M   660KB/s    eta 31s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              42%[=======&gt;            ]  17.29M   657KB/s    eta 30s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              42%[=======&gt;            ]  17.44M   646KB/s    eta 30s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              42%[=======&gt;            ]  17.62M   635KB/s    eta 30s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              43%[=======&gt;            ]  17.79M   645KB/s    eta 30s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              43%[=======&gt;            ]  17.90M   630KB/s    eta 30s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              43%[=======&gt;            ]  18.05M   631KB/s    eta 30s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              44%[=======&gt;            ]  18.20M   629KB/s    eta 30s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              44%[=======&gt;            ]  18.30M   633KB/s    eta 30s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              44%[=======&gt;            ]  18.45M   630KB/s    eta 30s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              45%[========&gt;           ]  18.55M   621KB/s    eta 30s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              45%[========&gt;           ]  18.70M   631KB/s    eta 30s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              45%[========&gt;           ]  18.82M   620KB/s    eta 30s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              46%[========&gt;           ]  18.98M   617KB/s    eta 30s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              46%[========&gt;           ]  19.17M   622KB/s    eta 30s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              47%[========&gt;           ]  19.35M   622KB/s    eta 29s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              47%[========&gt;           ]  19.53M   632KB/s    eta 29s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              47%[========&gt;           ]  19.71M   635KB/s    eta 29s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              48%[========&gt;           ]  19.83M   627KB/s    eta 29s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              48%[========&gt;           ]  19.98M   656KB/s    eta 29s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              48%[========&gt;           ]  20.09M   648KB/s    eta 28s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              49%[========&gt;           ]  20.26M   658KB/s    eta 28s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              49%[========&gt;           ]  20.38M   667KB/s    eta 28s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              49%[========&gt;           ]  20.54M   674KB/s    eta 28s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              50%[=========&gt;          ]  20.63M   644KB/s    eta 28s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              50%[=========&gt;          ]  20.79M   644KB/s    eta 27s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              50%[=========&gt;          ]  20.89M   628KB/s    eta 27s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              51%[=========&gt;          ]  21.00M   612KB/s    eta 27s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              51%[=========&gt;          ]  21.06M   597KB/s    eta 27s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              51%[=========&gt;          ]  21.11M   567KB/s    eta 27s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              51%[=========&gt;          ]  21.19M   539KB/s    eta 27s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              51%[=========&gt;          ]  21.26M   521KB/s    eta 27s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              51%[=========&gt;          ]  21.34M   492KB/s    eta 27s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              52%[=========&gt;          ]  21.42M   481KB/s    eta 27s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              52%[=========&gt;          ]  21.47M   457KB/s    eta 27s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              52%[=========&gt;          ]  21.55M   427KB/s    eta 27s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              52%[=========&gt;          ]  21.62M   415KB/s    eta 27s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              52%[=========&gt;          ]  21.69M   398KB/s    eta 27s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              52%[=========&gt;          ]  21.77M   378KB/s    eta 27s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              53%[=========&gt;          ]  21.83M   365KB/s    eta 27s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              53%[=========&gt;          ]  21.91M   357KB/s    eta 27s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              53%[=========&gt;          ]  21.97M   331KB/s    eta 27s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              53%[=========&gt;          ]  22.06M   351KB/s    eta 27s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              53%[=========&gt;          ]  22.14M   336KB/s    eta 27s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              54%[=========&gt;          ]  22.22M   326KB/s    eta 27s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              54%[=========&gt;          ]  22.29M   333KB/s    eta 27s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              54%[=========&gt;          ]  22.39M   343KB/s    eta 27s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              54%[=========&gt;          ]  22.45M   346KB/s    eta 27s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              54%[=========&gt;          ]  22.55M   358KB/s    eta 27s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              55%[==========&gt;         ]  22.63M   363KB/s    eta 27s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              55%[==========&gt;         ]  22.72M   371KB/s    eta 27s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              55%[==========&gt;         ]  22.80M   372KB/s    eta 27s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              55%[==========&gt;         ]  22.90M   385KB/s    eta 27s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              55%[==========&gt;         ]  22.99M   395KB/s    eta 27s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              56%[==========&gt;         ]  23.10M   408KB/s    eta 27s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              56%[==========&gt;         ]  23.20M   418KB/s    eta 27s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              56%[==========&gt;         ]  23.32M   430KB/s    eta 27s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              56%[==========&gt;         ]  23.43M   439KB/s    eta 27s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              57%[==========&gt;         ]  23.56M   459KB/s    eta 27s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              57%[==========&gt;         ]  23.70M   478KB/s    eta 27s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              57%[==========&gt;         ]  23.85M   501KB/s    eta 26s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              58%[==========&gt;         ]  24.05M   527KB/s    eta 26s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              58%[==========&gt;         ]  24.21M   559KB/s    eta 26s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              59%[==========&gt;         ]  24.44M   591KB/s    eta 26s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              59%[==========&gt;         ]  24.66M   631KB/s    eta 26s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              60%[===========&gt;        ]  24.88M   670KB/s    eta 24s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              61%[===========&gt;        ]  25.12M   711KB/s    eta 24s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              61%[===========&gt;        ]  25.39M   778KB/s    eta 24s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              62%[===========&gt;        ]  25.74M   840KB/s    eta 24s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              63%[===========&gt;        ]  26.02M   888KB/s    eta 24s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              64%[===========&gt;        ]  26.42M   969KB/s    eta 21s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              65%[============&gt;       ]  26.88M  1.06MB/s    eta 21s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              66%[============&gt;       ]  27.23M  1.12MB/s    eta 21s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              67%[============&gt;       ]  27.75M  1.21MB/s    eta 21s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              68%[============&gt;       ]  28.33M  1.32MB/s    eta 21s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              69%[============&gt;       ]  28.78M  1.44MB/s    eta 17s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              71%[=============&gt;      ]  29.41M  1.55MB/s    eta 17s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              72%[=============&gt;      ]  30.02M  1.66MB/s    eta 17s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              74%[=============&gt;      ]  30.59M  1.77MB/s    eta 17s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              76%[==============&gt;     ]  31.28M  1.95MB/s    eta 17s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              77%[==============&gt;     ]  31.92M  2.05MB/s    eta 11s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              79%[==============&gt;     ]  32.71M  2.21MB/s    eta 11s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              81%[===============&gt;    ]  33.43M  2.34MB/s    eta 11s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              83%[===============&gt;    ]  34.42M  2.52MB/s    eta 11s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              85%[================&gt;   ]  35.13M  2.72MB/s    eta 11s    
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              87%[================&gt;   ]  36.18M  2.90MB/s    eta 6s     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              90%[=================&gt;  ]  37.02M  3.05MB/s    eta 6s     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              92%[=================&gt;  ]  38.24M  3.30MB/s    eta 6s     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              95%[==================&gt; ]  39.14M  3.40MB/s    eta 6s     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db              98%[==================&gt; ]  40.36M  3.62MB/s    eta 6s     
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data.db             100%[===================&gt;]  41.13M  3.74MB/s    in 42s     
 
-2024-04-23 22:36:43 (22.4 MB/s) - ‘data.db’ saved [43125760/43125760]
+2024-04-23 22:54:29 (1007 KB/s) - ‘data.db’ saved [43125760/43125760]
 </pre></div>
 </div>
 </div>
@@ -669,7 +1183,7 @@ Comment or skip this block to use the whole dataset!</p>
 
       <span class="k">if</span> <span class="s1">&#39;tag&#39;</span> <span class="ow">in</span> <span class="n">atoms</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;key_value_pairs&#39;</span><span class="p">]:</span>
         <span class="n">atoms</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;key_value_pairs&#39;</span><span class="p">][</span><span class="s1">&#39;tag&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">atoms</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;key_value_pairs&#39;</span><span class="p">][</span><span class="s1">&#39;tag&#39;</span><span class="p">])</span>
-        
+
       <span class="n">subset_db</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">atoms</span><span class="p">,</span> <span class="o">**</span><span class="n">atoms</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;key_value_pairs&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
@@ -682,29 +1196,29 @@ Comment or skip this block to use the whole dataset!</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>id|age|user  |formula|calculator|  energy|natoms| fmax|pbc|  volume|charge|     mass
- 1| 0s|runner|Au2    |unknown   |  -5.882|     2|0.000|TTT|  44.472| 0.000|  393.933
- 2| 0s|runner|Au13   |unknown   | -29.207|    13|0.137|TTT|3635.026| 0.000| 2560.565
- 3| 0s|runner|Au4    |unknown   | -11.570|     4|0.061|TTT| 156.940| 0.000|  787.866
- 4| 0s|runner|Au39   |unknown   | -96.493|    39|0.790|TTT|5893.874| 0.000| 7681.696
- 5| 0s|runner|Au4    |unknown   | -11.413|     4|0.768|TTT| 156.940| 0.000|  787.866
- 6| 0s|runner|Au15   |unknown   | -35.483|    15|0.506|TTT|3295.090| 0.000| 2954.499
- 7| 0s|runner|Au4    |unknown   | -11.646|     4|0.105|TTT| 156.940| 0.000|  787.866
- 8| 0s|runner|Au8    |unknown   |  -7.864|     8|0.000|TTT| 640.702| 0.000| 1575.733
- 9| 0s|runner|Au4    |unknown   | -12.076|     4|0.266|TTT| 143.096| 0.000|  787.866
-10| 0s|runner|Au4    |unknown   |  -6.938|     4|0.081|TTT|2911.104| 0.000|  787.866
-11| 0s|runner|Au26   |unknown   | -60.445|    26|1.271|TTT|4932.626| 0.000| 5121.131
-12| 0s|runner|Au25   |unknown   | -60.992|    25|0.308|TTT|4771.343| 0.000| 4924.164
-13| 0s|runner|Au41   |unknown   | -95.713|    41|1.891|TTT|6012.425| 0.000| 8075.629
-14| 0s|runner|Au23   |unknown   | -44.951|    23|1.935|TTT|4621.982| 0.000| 4530.231
-15| 0s|runner|Au46   |unknown   |-112.111|    46|1.209|TTT|6322.757| 0.000| 9060.462
-16| 0s|runner|Au8    |unknown   | -16.093|     8|0.253|TTT|3511.808| 0.000| 1575.733
-17| 0s|runner|Au52   |unknown   |-133.328|    52|1.771|TTT|6744.510| 0.000|10242.262
-18| 0s|runner|Au8    |unknown   | -16.955|     8|0.096|TTT|2863.348| 0.000| 1575.733
-19| 0s|runner|Au25   |unknown   | -62.284|    25|0.208|TTT|4771.343| 0.000| 4924.164
-20| 0s|runner|Au3    |unknown   |  -4.069|     3|0.210|TTT|2310.400| 0.000|  590.900
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>id|age|user  |formula|calculator|  energy|natoms| fmax|pbc|  volume|charge|    mass
+ 1| 0s|runner|Au21   |unknown   | -52.214|    21|0.268|TTT|4395.170| 0.000|4136.298
+ 2| 0s|runner|Au20   |unknown   | -48.168|    20|0.190|TTT|4413.396| 0.000|3939.331
+ 3| 0s|runner|Au48   |unknown   |-124.294|    48|0.238|TTT|6440.631| 0.000|9454.395
+ 4| 0s|runner|Au20   |unknown   | -48.836|    20|0.234|TTT|4413.396| 0.000|3939.331
+ 5| 0s|runner|Au15   |unknown   | -35.012|    15|0.177|TTT|3809.068| 0.000|2954.499
+ 6| 0s|runner|Au16   |unknown   | -37.549|    16|0.062|TTT|3923.762| 0.000|3151.465
+ 7| 0s|runner|Au13   |unknown   | -29.257|    13|0.196|TTT|3635.026| 0.000|2560.565
+ 8| 0s|runner|Au48   |unknown   |-125.460|    48|0.286|TTT|6440.631| 0.000|9454.395
+ 9| 0s|runner|Au6    |unknown   | -11.748|     6|1.493|TTT|3206.563| 0.000|1181.799
+10| 0s|runner|Au29   |unknown   | -73.179|    29|0.450|TTT|5184.740| 0.000|5712.031
+11| 0s|runner|Au49   |unknown   |-129.832|    49|0.336|TTT|6534.501| 0.000|9651.362
+12| 0s|runner|Au45   |unknown   |-116.708|    45|0.540|TTT|6185.400| 0.000|8863.496
+13| 0s|runner|Au8    |unknown   | -16.815|     8|0.254|TTT|3511.808| 0.000|1575.733
+14| 0s|runner|Au25   |unknown   | -61.912|    25|0.082|TTT|4771.343| 0.000|4924.164
+15| 0s|runner|Au9    |unknown   | -19.259|     9|1.343|TTT|4112.512| 0.000|1772.699
+16| 0s|runner|Au4    |unknown   | -11.603|     4|0.123|TTT| 156.940| 0.000| 787.866
+17| 0s|runner|Au4    |unknown   |  -5.334|     4|1.006|TTT|1633.426| 0.000| 787.866
+18| 0s|runner|Au28   |unknown   | -68.395|    28|0.354|TTT|5068.935| 0.000|5515.064
+19| 0s|runner|Au38   |unknown   | -99.766|    38|0.430|TTT|5846.048| 0.000|7484.730
+20| 0s|runner|Au35   |unknown   | -89.662|    35|0.146|TTT|5504.869| 0.000|6893.830
 Rows: 50 (showing first 20)
-Keys: NEB, bulk, calc_time, cluster, config, diffusion, ediff, ediffg, encut, factor, fermi, gga, group, image, kpt1, kpt2, kpt3, miller, neural_energy, reax_energy, strain, structure, surf, train_set, traj, vacuum, volume, xc
+Keys: NEB, calc_time, cluster, config, converged, diffusion, ediffg, encut, fermi, fit, gga, group, ibrion, ibz_kpts, image, kpt1, kpt2, kpt3, miller, nbands, neural_energy, path, post, reax_energy, structure, surf, train_set, traj, vacuum, volume, xc
 </pre></div>
 </div>
 </div>
@@ -802,7 +1316,7 @@ Keys: NEB, bulk, calc_time, cluster, config, diffusion, ediff, ediffg, encut, fa
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;mass-inference.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">inference</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span> 
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">inference</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -846,7 +1360,7 @@ Keys: NEB, bulk, calc_time, cluster, config, diffusion, ediff, ediffg, encut, fa
 <span class="g g-Whitespace">    </span><span class="mi">406</span>     <span class="n">own_fid</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="g g-Whitespace">    </span><span class="mi">408</span> <span class="c1"># Code to distinguish from NumPy binary files and pickles.</span>
 
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;./results/2024-04-23-22-36-48/ocp_predictions.npz&#39;
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;./results/2024-04-23-22-53-52/ocp_predictions.npz&#39;
 </pre></div>
 </div>
 </div>
@@ -873,7 +1387,7 @@ Keys: NEB, bulk, calc_time, cluster, config, diffusion, ediff, ediffg, encut, fa
 </div>
 </div>
 </div>
-<p>Now, we can see the predictions. The are only ok here; that is not surprising, the data set has lots of Au configurations that have never been seen by this model. Fine-tuning would certainly help improve this.</p>
+<p>Now, we can see the predictions. They are only ok here; that is not surprising, the data set has lots of Au configurations that have never been seen by this model. Fine-tuning would certainly help improve this.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>

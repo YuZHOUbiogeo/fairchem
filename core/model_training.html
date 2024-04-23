@@ -627,11 +627,11 @@ parameters to the script. The <code class="docutils literal notranslate"><span c
 </div>
 <p>If you have multiple
 GPUs, you can use distributed data parallel training by running:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">u</span> <span class="o">-</span><span class="n">m</span> <span class="n">torch</span><span class="o">.</span><span class="n">distributed</span><span class="o">.</span><span class="n">launch</span> <span class="o">--</span><span class="n">nproc_per_node</span><span class="o">=</span><span class="mi">8</span> <span class="n">main</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">distributed</span> <span class="o">--</span><span class="n">num</span><span class="o">-</span><span class="n">gpus</span> <span class="mi">8</span> <span class="p">[</span><span class="o">...</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">torchrun</span> <span class="o">--</span><span class="n">standalone</span> <span class="o">--</span><span class="n">nproc_per_node</span><span class="o">=</span><span class="mi">8</span> <span class="n">main</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">distributed</span> <span class="o">--</span><span class="n">num</span><span class="o">-</span><span class="n">gpus</span> <span class="mi">8</span> <span class="p">[</span><span class="o">...</span><span class="p">]</span>
 </pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">torch.distributed.launch</span></code> launches multiple processes for distributed training. For more details, refer to
-https://pytorch.org/docs/stable/distributed.html#launch-utility</p>
+<p><code class="docutils literal notranslate"><span class="pre">torchrun</span></code> launches multiple processes for distributed training. For more details, refer to the
+<a class="reference external" href="https://pytorch.org/docs/stable/elastic/run.html">official documentation</a></p>
 <p>If training with multiple GPUs, GPU load balancing may be used to evenly distribute a batch of variable system sizes across GPUs. Load balancing may either balance by number of atoms or number of neighbors. A <code class="docutils literal notranslate"><span class="pre">metadata.npz</span></code> file must be available in the dataset directory to take advantage of this feature. The following command will generate a  <code class="docutils literal notranslate"><span class="pre">metadata.npz</span></code> file and place it in the corresponding directory.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">scripts</span><span class="o">/</span><span class="n">make_lmdb_sizes</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">data</span><span class="o">-</span><span class="n">path</span> <span class="n">data</span><span class="o">/</span><span class="n">s2ef</span><span class="o">/</span><span class="n">train</span><span class="o">/</span><span class="mi">2</span><span class="n">M</span> <span class="o">--</span><span class="n">num</span><span class="o">-</span><span class="n">workers</span> <span class="mi">8</span>
 </pre></div>
@@ -641,7 +641,7 @@ https://pytorch.org/docs/stable/distributed.html#launch-utility</p>
   <span class="n">load_balancing</span><span class="p">:</span> <span class="n">neighbors</span>
 </pre></div>
 </div>
-<p>For more details, refer to https://github.com/Open-Catalyst-Project/ocp/pull/267.</p>
+<p>For more details, refer to <a class="reference external" href="https://github.com/Open-Catalyst-Project/ocp/pull/267">PR 267</a>.</p>
 <p>If you have access to a slurm cluster, we use the <a class="reference external" href="https://github.com/facebookincubator/submitit">submitit</a> package to simplify multi-node distributed training:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">main</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">distributed</span> <span class="o">--</span><span class="n">num</span><span class="o">-</span><span class="n">gpus</span> <span class="mi">8</span> <span class="o">--</span><span class="n">num</span><span class="o">-</span><span class="n">nodes</span> <span class="mi">6</span> <span class="o">--</span><span class="n">submit</span> <span class="p">[</span><span class="o">...</span><span class="p">]</span>
 </pre></div>
@@ -654,9 +654,8 @@ https://pytorch.org/docs/stable/distributed.html#launch-utility</p>
 <section id="initial-structure-to-relaxed-energy-prediction-is2re">
 <h2>Initial Structure to Relaxed Energy prediction (IS2RE)<a class="headerlink" href="#initial-structure-to-relaxed-energy-prediction-is2re" title="Link to this heading">#</a></h2>
 <p>In the IS2RE tasks, the model takes the initial structure as an input and predicts the structure’s adsorption energy
-in the relaxed state. To train a model for the IS2RE task, you can use the <code class="docutils literal notranslate"><span class="pre">EnergyTrainer</span></code>
-Trainer and <code class="docutils literal notranslate"><span class="pre">SinglePointLmdb</span></code> dataset by specifying the following in your configuration file:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">trainer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">energy</span><span class="w"> </span><span class="c1"># Use the EnergyTrainer</span>
+in the relaxed state. To train a model for the IS2RE task, you can use the following in your configuration file:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">trainer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ocp</span>
 
 <span class="nt">dataset</span><span class="p">:</span>
 <span class="w">  </span><span class="c1"># Train data</span>
@@ -737,9 +736,9 @@ the starting time-stamp of the run. You can monitor the training process by runn
 <section id="structure-to-energy-and-forces-s2ef">
 <h2>Structure to Energy and Forces (S2EF)<a class="headerlink" href="#structure-to-energy-and-forces-s2ef" title="Link to this heading">#</a></h2>
 <p>In the S2EF task, the model takes the positions of the atoms as input and predicts the adsorption energy and per-atom
-forces as calculated by DFT. To train a model for the S2EF task, you can use the <code class="docutils literal notranslate"><span class="pre">ForcesTrainer</span></code> Trainer
+forces as calculated by DFT. To train a model for the S2EF task, you can use the <code class="docutils literal notranslate"><span class="pre">OCPTrainer</span></code>
 and <code class="docutils literal notranslate"><span class="pre">TrajectoryLmdb</span></code> dataset by specifying the following in your configuration file:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">trainer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">forces</span><span class="w">  </span><span class="c1"># Use the ForcesTrainer</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">trainer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ocp</span>
 
 <span class="nt">dataset</span><span class="p">:</span>
 <span class="w">  </span><span class="c1"># Training data</span>
@@ -762,7 +761,7 @@ and <code class="docutils literal notranslate"><span class="pre">TrajectoryLmdb<
 </div>
 <p>You can find examples configuration files in <a class="reference external" href="https://github.com/Open-Catalyst-Project/ocp/tree/master/configs/s2ef"><code class="docutils literal notranslate"><span class="pre">configs/s2ef</span></code></a>.</p>
 <p>To train a SchNet model for the S2EF task on the 2M split using 2 GPUs, run:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-u<span class="w"> </span>-m<span class="w"> </span>torch.distributed.launch<span class="w"> </span>--nproc_per_node<span class="o">=</span><span class="m">2</span><span class="w"> </span>main.py<span class="w"> </span><span class="se">\</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>torchrun<span class="w"> </span>--standalone<span class="w"> </span>--nproc_per_node<span class="o">=</span><span class="m">2</span><span class="w"> </span>main.py<span class="w"> </span><span class="se">\</span>
 <span class="w">        </span>--mode<span class="w"> </span>train<span class="w"> </span>--config-yml<span class="w"> </span>configs/s2ef/2M/schnet/schnet.yml<span class="w"> </span>--num-gpus<span class="w"> </span><span class="m">2</span><span class="w"> </span>--distributed
 </pre></div>
 </div>
@@ -777,7 +776,10 @@ checkpoint is stored in <code class="docutils literal notranslate"><span class="
 </section>
 <section id="training-oc20-models-with-total-energies-is2re-s2ef">
 <h2>Training OC20 models with total energies (IS2RE/S2EF)<a class="headerlink" href="#training-oc20-models-with-total-energies-is2re-s2ef" title="Link to this heading">#</a></h2>
-<p>To train and validate an OC20 IS2RE/S2EF model on total energies instead of adsorption energies there are a number of required changes to the config. They include setting: <code class="docutils literal notranslate"><span class="pre">dataset:</span> <span class="pre">oc22_lmdb</span></code>, <code class="docutils literal notranslate"><span class="pre">prediction_dtype:</span> <span class="pre">float32</span></code>, <code class="docutils literal notranslate"><span class="pre">train_on_oc20_total_energies:</span> <span class="pre">True</span></code>, and <code class="docutils literal notranslate"><span class="pre">oc20_ref:</span> <span class="pre">path/to/oc20_ref.pkl</span></code> (see example below). Also, please note that our evaluation server does not currently support OC20 total energy models.</p>
+<p>To train and validate an OC20 IS2RE/S2EF model on total energies instead of adsorption energies there are a number of
+required changes to the config. They include setting: <code class="docutils literal notranslate"><span class="pre">dataset:</span> <span class="pre">oc22_lmdb</span></code>, <code class="docutils literal notranslate"><span class="pre">prediction_dtype:</span> <span class="pre">float32</span></code>,
+<code class="docutils literal notranslate"><span class="pre">train_on_oc20_total_energies:</span> <span class="pre">True</span></code>, and <code class="docutils literal notranslate"><span class="pre">oc20_ref:</span> <span class="pre">path/to/oc20_ref.pkl</span></code> (see example below).
+Also, please note that our evaluation server does not currently support OC20 total energy models.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">task</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">prediction_dtype</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">float32</span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">...</span>
@@ -881,10 +883,9 @@ task and then running an iterative relaxation. Although we present an iterative 
 <h1>OC22<a class="headerlink" href="#oc22" title="Link to this heading">#</a></h1>
 <section id="initial-structure-to-total-relaxed-energy-is2re-total">
 <h2>Initial Structure to Total Relaxed Energy (IS2RE-Total)<a class="headerlink" href="#initial-structure-to-total-relaxed-energy-is2re-total" title="Link to this heading">#</a></h2>
-<p>For the IS2RE-Total task, the model takes the initial structure as input and predicts the total DFT energy of the relaxed structure. This task is more general and more challenging than the original OC20 IS2RE task that predicts adsorption energy. To train an OC22 IS2RE-Total model use the <code class="docutils literal notranslate"><span class="pre">EnergyTrainer</span></code> with the <code class="docutils literal notranslate"><span class="pre">OC22LmdbDataset</span></code> by including these lines in your configuration file:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">trainer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">energy</span><span class="w"> </span><span class="c1"># Use the EnergyTrainer</span>
-
-<span class="nt">dataset</span><span class="p">:</span>
+<p>For the IS2RE-Total task, the model takes the initial structure as input and predicts the total DFT energy of the relaxed structure. This task is more general and more challenging than the original OC20 IS2RE task that predicts adsorption energy.
+To train an OC22 IS2RE-Total model use the <code class="docutils literal notranslate"><span class="pre">OC22LmdbDataset</span></code> by including these lines in your configuration file:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">dataset</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">oc22_lmdb</span><span class="w"> </span><span class="c1"># Use the OC22LmdbDataset</span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">...</span>
 </pre></div>
@@ -893,10 +894,10 @@ task and then running an iterative relaxation. Although we present an iterative 
 </section>
 <section id="structure-to-total-energy-and-forces-s2ef-total">
 <h2>Structure to Total Energy and Forces (S2EF-Total)<a class="headerlink" href="#structure-to-total-energy-and-forces-s2ef-total" title="Link to this heading">#</a></h2>
-<p>The S2EF-Total task takes a structure and predicts the total DFT energy and per-atom forces. This differs from the original OC20 S2EF task because it predicts total energy instead of adsorption energy. To train an OC22 S2EF-Total model use the ForcesTrainer with the OC22LmdbDataset by including these lines in your configuration file:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">trainer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">forces</span><span class="w">  </span><span class="c1"># Use the ForcesTrainer</span>
-
-<span class="nt">dataset</span><span class="p">:</span>
+<p>The S2EF-Total task takes a structure and predicts the total DFT energy and per-atom forces. This differs from the
+original OC20 S2EF task because it predicts total energy instead of adsorption energy.
+To train an OC22 S2EF-Total model the OC22LmdbDataset by including these lines in your configuration file:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">dataset</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">oc22_lmdb</span><span class="w"> </span><span class="c1"># Use the OC22LmdbDataset</span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">...</span>
 </pre></div>
