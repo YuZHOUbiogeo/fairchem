@@ -62,7 +62,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Working with embeddings" href="embeddings.html" />
-    <link rel="prev" title="Advanced example: Fine-tuning" href="fine-tuning-toc.html" />
+    <link rel="prev" title="Advanced OCP usage" href="advanced_toc.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -177,10 +177,27 @@
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Installation &amp; License</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Quickstart &amp; Installation</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../core/INSTALL.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../core/LICENSE.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../core/intro_series.html">Why model atoms for climate?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../core/install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../core/quickstart.html">Using pre-trained models in ASE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../core/gotchas.html">Common gotchas with OCP</a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../../core/license.html">License</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">OCP API &amp; Demo</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="https://open-catalyst.metademolab.com/">OCP Demo (no install required!)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../core/ocpapi.html">ocpapi</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Released Datasets &amp; Models</span></p>
 <ul class="nav bd-sidenav">
@@ -188,24 +205,35 @@
 
 <li class="toctree-l1"><a class="reference internal" href="../../core/datasets/oc22.html">Open Catalyst 2022 (OC22)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../core/datasets/odac.html">Open Direct Air Capture 2023 (ODAC23)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../core/MODELS.html">Pretrained OCP model checkpoints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../core/model_checkpoints.html">Pretrained model checkpoints</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Training your own models</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Making your own datasets</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../core/TRAIN.html">Training and evaluating models on OCP datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../core/ase_dataset_creation.html">Making and using ASE datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../core/lmdb_dataset_creation.html">Making LMDB Datasets (original format)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Model development, training, inference, finetuning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../core/model_training.html">Training and evaluating custom models on OCP datasets</a></li>
 
 
+<li class="toctree-l1"><a class="reference internal" href="../../core/inference.html">Fast batched inference</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="../../core/FAQ.html">Frequently Asked Questions</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../../core/fine-tuning/fine-tuning-oxides.html">Fine tuning a model</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../../core/model_faq.html">Model FAQ</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Videos and Talks</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../videos/intro_series.html">Open Catalyst Intro Series</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../videos/technical_talks.html">Technical presentations</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Catalysis Tutorials</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Case Studies &amp; Tutorials</span></p>
 <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../adsorbml_walkthrough.html">AdsorbML tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../core/papers_using_models.html">Studies that have leveraged OCP models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../intro.html">Intro and background on OCP and DFT</a></li>
+
 
 
 
@@ -215,36 +243,22 @@
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="../fine-tuning/fine-tuning-oxides.html">Fine tuning a model</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../NRR/NRR_toc.html">Screening catalysts with OCP</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../NRR/NRR_example.html">Using OCP to enumerate adsorbates on alloy catalyst surfaces</a></li>
 
 
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="fine-tuning-toc.html">Advanced example: Fine-tuning</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+
+
+
+
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="advanced_toc.html">Advanced OCP usage</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Fine-tuning with Python</a></li>
 
 
 
 <li class="toctree-l2"><a class="reference internal" href="embeddings.html">Working with embeddings</a></li>
-
-
-
-<li class="toctree-l2"><a class="reference internal" href="mass-inference.html">Mass inference</a></li>
-
-
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../NRR/NRR_toc.html">Screening catalysts with OCP</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../NRR/NRR_example.html">Using OCP to enumerate adsorbates on catalyst surfaces</a></li>
-
-
-
-
-
-
-<li class="toctree-l2"><a class="reference internal" href="../NRR/NRR_example-gemnet.html">Using OCP to enumerate adsorbates on alloy catalyst surfaces</a></li>
-
-
-
-
 
 
 
@@ -271,11 +285,6 @@
 
 <li class="toctree-l2"><a class="reference internal" href="../../legacy_tutorials/data_visualization.html">OCP Data Visualization</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="../../legacy_tutorials/lmdb_dataset_creation.html">OCP LMDB Dataset Tutorial</a></li>
-
-
-
-
 </ul>
 </li>
 </ul>
@@ -291,7 +300,6 @@
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/ocpmodels/common/gp_utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.common.gp_utils</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/ocpmodels/common/hpo_utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.common.hpo_utils</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/ocpmodels/common/logger/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.common.logger</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../autoapi/ocpmodels/common/model_registry/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.common.model_registry</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/ocpmodels/common/registry/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.common.registry</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/ocpmodels/common/transforms/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.common.transforms</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/ocpmodels/common/tutorial_utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.common.tutorial_utils</span></code></a></li>
@@ -320,6 +328,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/ocpmodels/models/utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.models.utils</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/ocpmodels/models/base/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.models.base</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/ocpmodels/models/dimenet_plus_plus/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.models.dimenet_plus_plus</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/ocpmodels/models/model_registry/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.models.model_registry</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/ocpmodels/models/schnet/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.models.schnet</span></code></a></li>
 </ul>
 </li>
@@ -573,14 +582,7 @@ document.write(`
 <p>The recommended way to do training is with the <code class="docutils literal notranslate"><span class="pre">main.py</span></code> script in ocp. One of the reasons for that is training often takes a long time and is better suited for queue systems like slurm. However, you can submit Python scripts too, and it is possible to run notebooks in Slurm too. Here we work out a proof of concept in training from Python and a Jupyter notebook.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">run</span> <span class="o">../</span><span class="n">ocp</span><span class="o">-</span><span class="n">tutorial</span><span class="o">.</span><span class="n">ipynb</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
 <span class="kn">from</span> <span class="nn">ocpmodels.common.utils</span> <span class="kn">import</span> <span class="n">SeverityLevelBetween</span>
 
 <span class="n">root</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span>
@@ -611,16 +613,50 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="err">!</span> <span class="n">ase</span> <span class="n">db</span> <span class="o">../</span><span class="n">fine</span><span class="o">-</span><span class="n">tuning</span><span class="o">/</span><span class="n">oxides</span><span class="o">.</span><span class="n">db</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>ase<span class="w"> </span>db<span class="w"> </span>../../core/fine-tuning/oxides.db
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>id|age|user  |formula|calculator| energy|natoms| fmax|pbc| volume|charge|   mass
+ 1|53m|runner|Sn2O4  |unknown   |-41.359|     6|0.045|TTT| 64.258| 0.000|301.416
+ 2|53m|runner|Sn2O4  |unknown   |-41.853|     6|0.025|TTT| 66.526| 0.000|301.416
+ 3|53m|runner|Sn2O4  |unknown   |-42.199|     6|0.010|TTT| 68.794| 0.000|301.416
+ 4|53m|runner|Sn2O4  |unknown   |-42.419|     6|0.006|TTT| 71.062| 0.000|301.416
+ 5|53m|runner|Sn2O4  |unknown   |-42.534|     6|0.011|TTT| 73.330| 0.000|301.416
+ 6|53m|runner|Sn2O4  |unknown   |-42.562|     6|0.029|TTT| 75.598| 0.000|301.416
+ 7|53m|runner|Sn2O4  |unknown   |-42.518|     6|0.033|TTT| 77.866| 0.000|301.416
+ 8|53m|runner|Sn2O4  |unknown   |-42.415|     6|0.010|TTT| 80.134| 0.000|301.416
+ 9|53m|runner|Sn2O4  |unknown   |-42.266|     6|0.006|TTT| 82.402| 0.000|301.416
+10|53m|runner|Sn2O4  |unknown   |-42.083|     6|0.017|TTT| 84.670| 0.000|301.416
+11|53m|runner|Sn4O8  |unknown   |-81.424|    12|0.012|TTT|117.473| 0.000|602.832
+12|53m|runner|Sn4O8  |unknown   |-82.437|    12|0.005|TTT|121.620| 0.000|602.832
+13|53m|runner|Sn4O8  |unknown   |-83.147|    12|0.015|TTT|125.766| 0.000|602.832
+14|53m|runner|Sn4O8  |unknown   |-83.599|    12|0.047|TTT|129.912| 0.000|602.832
+15|53m|runner|Sn4O8  |unknown   |-83.831|    12|0.081|TTT|134.058| 0.000|602.832
+16|53m|runner|Sn4O8  |unknown   |-83.898|    12|0.001|TTT|138.204| 0.000|602.832
+17|53m|runner|Sn4O8  |unknown   |-83.805|    12|0.001|TTT|142.350| 0.000|602.832
+18|53m|runner|Sn4O8  |unknown   |-83.586|    12|0.002|TTT|146.496| 0.000|602.832
+19|53m|runner|Sn4O8  |unknown   |-83.262|    12|0.002|TTT|150.642| 0.000|602.832
+20|53m|runner|Sn4O8  |unknown   |-82.851|    12|0.013|TTT|154.788| 0.000|602.832
+Rows: 295 (showing first 20)
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">checkpoint</span> <span class="o">=</span> <span class="n">get_checkpoint</span><span class="p">(</span><span class="s1">&#39;GemNet-OC OC20+OC22&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ocpmodels.models.model_registry</span> <span class="kn">import</span> <span class="n">model_name_to_local_file</span>
+
+<span class="n">checkpoint_path</span> <span class="o">=</span> <span class="n">model_name_to_local_file</span><span class="p">(</span><span class="s1">&#39;GemNet-OCOC20+OC22&#39;</span><span class="p">,</span> <span class="n">local_cache</span><span class="o">=</span><span class="s1">&#39;/tmp/ocp_checkpoints/&#39;</span><span class="p">)</span>
 <span class="kn">from</span> <span class="nn">ocpmodels.common.relaxation.ase_utils</span> <span class="kn">import</span> <span class="n">OCPCalculator</span>
-<span class="n">calc</span> <span class="o">=</span> <span class="n">OCPCalculator</span><span class="p">(</span><span class="n">checkpoint</span><span class="o">=</span><span class="n">checkpoint</span><span class="p">,</span> <span class="n">trainer</span><span class="o">=</span><span class="s1">&#39;forces&#39;</span><span class="p">,</span> <span class="n">cpu</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">calc</span> <span class="o">=</span> <span class="n">OCPCalculator</span><span class="p">(</span><span class="n">checkpoint_path</span><span class="o">=</span><span class="n">checkpoint_path</span><span class="p">,</span> <span class="n">trainer</span><span class="o">=</span><span class="s1">&#39;forces&#39;</span><span class="p">,</span> <span class="n">cpu</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/cuda/amp/grad_scaler.py:126: UserWarning: torch.cuda.amp.GradScaler is enabled, but CUDA is not available.  Disabling.
+  warnings.warn(
 </pre></div>
 </div>
 </div>
@@ -630,12 +666,19 @@ document.write(`
 <h1>Split the data into train, test, val sets<a class="headerlink" href="#split-the-data-into-train-test-val-sets" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="err">!</span> <span class="n">rm</span> <span class="o">-</span><span class="n">fr</span> <span class="n">train</span><span class="o">.</span><span class="n">db</span> <span class="n">test</span><span class="o">.</span><span class="n">db</span> <span class="n">val</span><span class="o">.</span><span class="n">db</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>rm<span class="w"> </span>-fr<span class="w"> </span>train.db<span class="w"> </span>test.db<span class="w"> </span>val.db
 
 <span class="kn">from</span> <span class="nn">ocpmodels.common.tutorial_utils</span> <span class="kn">import</span> <span class="n">train_test_val_split</span>
 
-<span class="n">train</span><span class="p">,</span> <span class="n">test</span><span class="p">,</span> <span class="n">val</span> <span class="o">=</span> <span class="n">train_test_val_split</span><span class="p">(</span><span class="s1">&#39;../fine-tuning/oxides.db&#39;</span><span class="p">)</span>
+<span class="n">train</span><span class="p">,</span> <span class="n">test</span><span class="p">,</span> <span class="n">val</span> <span class="o">=</span> <span class="n">train_test_val_split</span><span class="p">(</span><span class="s1">&#39;../../core/fine-tuning/oxides.db&#39;</span><span class="p">)</span>
 <span class="n">train</span><span class="p">,</span> <span class="n">test</span><span class="p">,</span> <span class="n">val</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(PosixPath(&#39;/home/runner/work/ocp/ocp/docs/tutorials/advanced/train.db&#39;),
+ PosixPath(&#39;/home/runner/work/ocp/ocp/docs/tutorials/advanced/test.db&#39;),
+ PosixPath(&#39;/home/runner/work/ocp/ocp/docs/tutorials/advanced/val.db&#39;))
 </pre></div>
 </div>
 </div>
@@ -646,16 +689,18 @@ document.write(`
 <p>We start by making the config.yml. We build this from the calculator checkpoint.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ocpmodels.common.tutorial_utils</span> <span class="kn">import</span> <span class="n">generate_yml_config</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ocpmodels.common.tutorial_utils</span> <span class="kn">import</span> <span class="n">generate_yml_config</span>
 
-<span class="n">yml</span> <span class="o">=</span> <span class="n">generate_yml_config</span><span class="p">(</span><span class="n">checkpoint</span><span class="p">,</span> <span class="s1">&#39;config.yml&#39;</span><span class="p">,</span>
+<span class="n">yml</span> <span class="o">=</span> <span class="n">generate_yml_config</span><span class="p">(</span><span class="n">checkpoint_path</span><span class="p">,</span> <span class="s1">&#39;config.yml&#39;</span><span class="p">,</span>
                    <span class="n">delete</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;slurm&#39;</span><span class="p">,</span> <span class="s1">&#39;cmd&#39;</span><span class="p">,</span> <span class="s1">&#39;logger&#39;</span><span class="p">,</span> <span class="s1">&#39;task&#39;</span><span class="p">,</span> <span class="s1">&#39;model_attributes&#39;</span><span class="p">,</span>
                            <span class="s1">&#39;optim.loss_force&#39;</span><span class="p">,</span> <span class="c1"># the checkpoint setting causes an error</span>
                            <span class="s1">&#39;dataset&#39;</span><span class="p">,</span> <span class="s1">&#39;test_dataset&#39;</span><span class="p">,</span> <span class="s1">&#39;val_dataset&#39;</span><span class="p">],</span>
                    <span class="n">update</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;gpus&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
                            <span class="s1">&#39;task.dataset&#39;</span><span class="p">:</span> <span class="s1">&#39;ase_db&#39;</span><span class="p">,</span>
-                           <span class="s1">&#39;optim.eval_every&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-                           <span class="s1">&#39;optim.max_epochs&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+                           <span class="s1">&#39;optim.eval_every&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+                           <span class="s1">&#39;optim.max_epochs&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                           <span class="s1">&#39;optim.batch_size&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+                           <span class="s1">&#39;logger&#39;</span><span class="p">:</span> <span class="s1">&#39;tensorboard&#39;</span><span class="p">,</span> <span class="c1"># don&#39;t use wandb unless you already are logged in </span>
                            <span class="c1"># Train data</span>
                            <span class="s1">&#39;dataset.train.src&#39;</span><span class="p">:</span> <span class="s1">&#39;train.db&#39;</span><span class="p">,</span>
                            <span class="s1">&#39;dataset.train.a2g_args.r_energy&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
@@ -674,6 +719,15 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/cuda/amp/grad_scaler.py:126: UserWarning: torch.cuda.amp.GradScaler is enabled, but CUDA is not available.  Disabling.
+  warnings.warn(
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PosixPath(&#39;/home/runner/work/ocp/ocp/docs/tutorials/advanced/config.yml&#39;)
+</pre></div>
+</div>
+</div>
 </div>
 <section id="setup-the-training-task">
 <h2>Setup the training task<a class="headerlink" href="#setup-the-training-task" title="Link to this heading">#</a></h2>
@@ -682,13 +736,19 @@ document.write(`
 <p>We have to mimic the <code class="docutils literal notranslate"><span class="pre">main.py</span></code> setup to get the arguments and config setup. Here is a minimal way to do this.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ocpmodels.common.flags</span> <span class="kn">import</span> <span class="n">flags</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ocpmodels.common.flags</span> <span class="kn">import</span> <span class="n">flags</span>
 <span class="n">parser</span> <span class="o">=</span> <span class="n">flags</span><span class="o">.</span><span class="n">get_parser</span><span class="p">()</span>
 <span class="n">args</span><span class="p">,</span> <span class="n">args_override</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_known_args</span><span class="p">([</span><span class="s2">&quot;--mode=train&quot;</span><span class="p">,</span>                                            
                                                <span class="s2">&quot;--config-yml=config.yml&quot;</span><span class="p">,</span> 
-                                               <span class="sa">f</span><span class="s2">&quot;--checkpoint=</span><span class="si">{</span><span class="n">checkpoint</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+                                               <span class="sa">f</span><span class="s2">&quot;--checkpoint=</span><span class="si">{</span><span class="n">checkpoint_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
                                                <span class="s2">&quot;--amp&quot;</span><span class="p">])</span>
 <span class="n">args</span><span class="p">,</span> <span class="n">args_override</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(Namespace(mode=&#39;train&#39;, config_yml=PosixPath(&#39;config.yml&#39;), identifier=&#39;&#39;, debug=False, run_dir=&#39;./&#39;, print_every=10, seed=0, amp=True, checkpoint=&#39;/tmp/ocp_checkpoints/gnoc_oc22_oc20_all_s2ef.pt&#39;, timestamp_id=None, sweep_yml=None, submit=False, summit=False, logdir=PosixPath(&#39;logs&#39;), slurm_partition=&#39;ocp&#39;, slurm_mem=80, slurm_timeout=72, num_gpus=1, distributed=False, cpu=False, num_nodes=1, distributed_port=13356, distributed_backend=&#39;nccl&#39;, local_rank=0, no_ddp=False, gp_gpus=None),
+ [])
 </pre></div>
 </div>
 </div>
@@ -696,10 +756,122 @@ document.write(`
 <p>Next, we build the first stage in our config. This starts with the file config.yml, then updates it with the args</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ocpmodels.common.utils</span> <span class="kn">import</span> <span class="n">build_config</span><span class="p">,</span> <span class="n">new_trainer_context</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ocpmodels.common.utils</span> <span class="kn">import</span> <span class="n">build_config</span><span class="p">,</span> <span class="n">new_trainer_context</span>
 
 <span class="n">config</span> <span class="o">=</span> <span class="n">build_config</span><span class="p">(</span><span class="n">args</span><span class="o">=</span><span class="n">args</span><span class="p">,</span> <span class="n">args_override</span><span class="o">=</span><span class="p">{})</span>
 <span class="n">config</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;amp&#39;: True,
+ &#39;checkpoint&#39;: &#39;/tmp/ocp_checkpoints/gnoc_oc22_oc20_all_s2ef.pt&#39;,
+ &#39;dataset&#39;: {&#39;test&#39;: {&#39;a2g_args&#39;: {&#39;r_energy&#39;: False, &#39;r_forces&#39;: False},
+   &#39;src&#39;: &#39;test.db&#39;},
+  &#39;train&#39;: {&#39;a2g_args&#39;: {&#39;r_energy&#39;: True, &#39;r_forces&#39;: True},
+   &#39;src&#39;: &#39;train.db&#39;},
+  &#39;val&#39;: {&#39;a2g_args&#39;: {&#39;r_energy&#39;: True, &#39;r_forces&#39;: True}, &#39;src&#39;: &#39;val.db&#39;}},
+ &#39;eval_metrics&#39;: {&#39;metrics&#39;: {&#39;energy&#39;: [&#39;mae&#39;],
+   &#39;forces&#39;: [&#39;forcesx_mae&#39;,
+    &#39;forcesy_mae&#39;,
+    &#39;forcesz_mae&#39;,
+    &#39;mae&#39;,
+    &#39;cosine_similarity&#39;,
+    &#39;magnitude_error&#39;],
+   &#39;misc&#39;: [&#39;energy_forces_within_threshold&#39;]},
+  &#39;primary_metric&#39;: &#39;forces_mae&#39;},
+ &#39;gpus&#39;: 1,
+ &#39;logger&#39;: &#39;tensorboard&#39;,
+ &#39;loss_fns&#39;: [{&#39;energy&#39;: {&#39;coefficient&#39;: 1, &#39;fn&#39;: &#39;mae&#39;}},
+  {&#39;forces&#39;: {&#39;coefficient&#39;: 1, &#39;fn&#39;: &#39;l2mae&#39;}}],
+ &#39;model&#39;: {&#39;activation&#39;: &#39;silu&#39;,
+  &#39;atom_edge_interaction&#39;: True,
+  &#39;atom_interaction&#39;: True,
+  &#39;cbf&#39;: {&#39;name&#39;: &#39;spherical_harmonics&#39;},
+  &#39;cutoff&#39;: 12.0,
+  &#39;cutoff_aeaint&#39;: 12.0,
+  &#39;cutoff_aint&#39;: 12.0,
+  &#39;cutoff_qint&#39;: 12.0,
+  &#39;direct_forces&#39;: True,
+  &#39;edge_atom_interaction&#39;: True,
+  &#39;emb_size_aint_in&#39;: 64,
+  &#39;emb_size_aint_out&#39;: 64,
+  &#39;emb_size_atom&#39;: 256,
+  &#39;emb_size_cbf&#39;: 16,
+  &#39;emb_size_edge&#39;: 512,
+  &#39;emb_size_quad_in&#39;: 32,
+  &#39;emb_size_quad_out&#39;: 32,
+  &#39;emb_size_rbf&#39;: 16,
+  &#39;emb_size_sbf&#39;: 32,
+  &#39;emb_size_trip_in&#39;: 64,
+  &#39;emb_size_trip_out&#39;: 64,
+  &#39;envelope&#39;: {&#39;exponent&#39;: 5, &#39;name&#39;: &#39;polynomial&#39;},
+  &#39;extensive&#39;: True,
+  &#39;forces_coupled&#39;: False,
+  &#39;max_neighbors&#39;: 30,
+  &#39;max_neighbors_aeaint&#39;: 20,
+  &#39;max_neighbors_aint&#39;: 1000,
+  &#39;max_neighbors_qint&#39;: 8,
+  &#39;name&#39;: &#39;gemnet_oc&#39;,
+  &#39;num_after_skip&#39;: 2,
+  &#39;num_atom&#39;: 3,
+  &#39;num_atom_emb_layers&#39;: 2,
+  &#39;num_before_skip&#39;: 2,
+  &#39;num_blocks&#39;: 4,
+  &#39;num_concat&#39;: 1,
+  &#39;num_global_out_layers&#39;: 2,
+  &#39;num_output_afteratom&#39;: 3,
+  &#39;num_radial&#39;: 128,
+  &#39;num_spherical&#39;: 7,
+  &#39;otf_graph&#39;: True,
+  &#39;output_init&#39;: &#39;HeOrthogonal&#39;,
+  &#39;qint_tags&#39;: [1, 2],
+  &#39;quad_interaction&#39;: True,
+  &#39;rbf&#39;: {&#39;name&#39;: &#39;gaussian&#39;},
+  &#39;regress_forces&#39;: True,
+  &#39;sbf&#39;: {&#39;name&#39;: &#39;legendre_outer&#39;},
+  &#39;symmetric_edge_symmetrization&#39;: False},
+ &#39;noddp&#39;: False,
+ &#39;optim&#39;: {&#39;batch_size&#39;: 4,
+  &#39;clip_grad_norm&#39;: 10,
+  &#39;ema_decay&#39;: 0.999,
+  &#39;energy_coefficient&#39;: 1,
+  &#39;eval_batch_size&#39;: 16,
+  &#39;eval_every&#39;: 10,
+  &#39;factor&#39;: 0.8,
+  &#39;force_coefficient&#39;: 1,
+  &#39;load_balancing&#39;: &#39;atoms&#39;,
+  &#39;loss_energy&#39;: &#39;mae&#39;,
+  &#39;lr_initial&#39;: 0.0005,
+  &#39;max_epochs&#39;: 1,
+  &#39;mode&#39;: &#39;min&#39;,
+  &#39;num_workers&#39;: 2,
+  &#39;optimizer&#39;: &#39;AdamW&#39;,
+  &#39;optimizer_params&#39;: {&#39;amsgrad&#39;: True},
+  &#39;patience&#39;: 3,
+  &#39;scheduler&#39;: &#39;ReduceLROnPlateau&#39;,
+  &#39;weight_decay&#39;: 0},
+ &#39;outputs&#39;: {&#39;energy&#39;: {&#39;level&#39;: &#39;system&#39;},
+  &#39;forces&#39;: {&#39;eval_on_free_atoms&#39;: True,
+   &#39;level&#39;: &#39;atom&#39;,
+   &#39;train_on_free_atoms&#39;: True}},
+ &#39;task&#39;: {&#39;dataset&#39;: &#39;ase_db&#39;},
+ &#39;trainer&#39;: &#39;ocp&#39;,
+ &#39;mode&#39;: &#39;train&#39;,
+ &#39;identifier&#39;: &#39;&#39;,
+ &#39;timestamp_id&#39;: None,
+ &#39;seed&#39;: 0,
+ &#39;is_debug&#39;: False,
+ &#39;run_dir&#39;: &#39;./&#39;,
+ &#39;print_every&#39;: 10,
+ &#39;cpu&#39;: False,
+ &#39;submit&#39;: False,
+ &#39;summit&#39;: False,
+ &#39;local_rank&#39;: 0,
+ &#39;distributed_port&#39;: 13356,
+ &#39;world_size&#39;: 1,
+ &#39;distributed_backend&#39;: &#39;nccl&#39;,
+ &#39;gp_gpus&#39;: None}
 </pre></div>
 </div>
 </div>
@@ -713,15 +885,17 @@ document.write(`
 <p>Alternatively, you can open a Terminal and use <code class="docutils literal notranslate"><span class="pre">tail</span> <span class="pre">-f</span> <span class="pre">out.txt</span></code> to see the progress.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">FileLink</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">FileLink</span>
 <span class="n">display</span><span class="p">(</span><span class="n">FileLink</span><span class="p">(</span><span class="s1">&#39;out.txt&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><a href='out.txt' target='_blank'>out.txt</a><br></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">new_trainer_context</span><span class="p">(</span><span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="n">args</span><span class="p">)</span> <span class="k">as</span> <span class="n">ctx</span><span class="p">:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">new_trainer_context</span><span class="p">(</span><span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="n">args</span><span class="p">)</span> <span class="k">as</span> <span class="n">ctx</span><span class="p">:</span>
     <span class="n">config</span> <span class="o">=</span> <span class="n">ctx</span><span class="o">.</span><span class="n">config</span>
     <span class="n">task</span> <span class="o">=</span> <span class="n">ctx</span><span class="o">.</span><span class="n">task</span>
     <span class="n">trainer</span> <span class="o">=</span> <span class="n">ctx</span><span class="o">.</span><span class="n">trainer</span>
@@ -730,11 +904,137 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/cuda/amp/grad_scaler.py:126: UserWarning: torch.cuda.amp.GradScaler is enabled, but CUDA is not available.  Disabling.
+  warnings.warn(
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">InvalidError</span><span class="g g-Whitespace">                              </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="k">with</span> <span class="n">new_trainer_context</span><span class="p">(</span><span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="n">args</span><span class="p">)</span> <span class="k">as</span> <span class="n">ctx</span><span class="p">:</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="n">config</span> <span class="o">=</span> <span class="n">ctx</span><span class="o">.</span><span class="n">config</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">task</span> <span class="o">=</span> <span class="n">ctx</span><span class="o">.</span><span class="n">task</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/contextlib.py:137,</span> in <span class="ni">_GeneratorContextManager.__enter__</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">135</span> <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">kwds</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">func</span>
+<span class="g g-Whitespace">    </span><span class="mi">136</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">137</span>     <span class="k">return</span> <span class="nb">next</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">gen</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">138</span> <span class="k">except</span> <span class="ne">StopIteration</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">139</span>     <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;generator didn&#39;t yield&quot;</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
+
+<span class="nn">File ~/work/ocp/ocp/ocpmodels/common/utils.py:977,</span> in <span class="ni">new_trainer_context</span><span class="nt">(config, args)</span>
+<span class="g g-Whitespace">    </span><span class="mi">975</span> <span class="n">trainer_cls</span> <span class="o">=</span> <span class="n">registry</span><span class="o">.</span><span class="n">get_trainer_class</span><span class="p">(</span><span class="n">trainer_name</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">976</span> <span class="k">assert</span> <span class="n">trainer_cls</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;Trainer not found&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">977</span> <span class="n">trainer</span> <span class="o">=</span> <span class="n">trainer_cls</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">978</span>     <span class="n">task</span><span class="o">=</span><span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;task&quot;</span><span class="p">,</span> <span class="p">{}),</span>
+<span class="g g-Whitespace">    </span><span class="mi">979</span>     <span class="n">model</span><span class="o">=</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;model&quot;</span><span class="p">],</span>
+<span class="g g-Whitespace">    </span><span class="mi">980</span>     <span class="n">outputs</span><span class="o">=</span><span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;outputs&quot;</span><span class="p">,</span> <span class="p">{}),</span>
+<span class="g g-Whitespace">    </span><span class="mi">981</span>     <span class="n">dataset</span><span class="o">=</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;dataset&quot;</span><span class="p">],</span>
+<span class="g g-Whitespace">    </span><span class="mi">982</span>     <span class="n">optimizer</span><span class="o">=</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;optim&quot;</span><span class="p">],</span>
+<span class="g g-Whitespace">    </span><span class="mi">983</span>     <span class="n">loss_fns</span><span class="o">=</span><span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;loss_fns&quot;</span><span class="p">,</span> <span class="p">{}),</span>
+<span class="g g-Whitespace">    </span><span class="mi">984</span>     <span class="n">eval_metrics</span><span class="o">=</span><span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;eval_metrics&quot;</span><span class="p">,</span> <span class="p">{}),</span>
+<span class="g g-Whitespace">    </span><span class="mi">985</span>     <span class="n">identifier</span><span class="o">=</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;identifier&quot;</span><span class="p">],</span>
+<span class="g g-Whitespace">    </span><span class="mi">986</span>     <span class="n">timestamp_id</span><span class="o">=</span><span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;timestamp_id&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">987</span>     <span class="n">run_dir</span><span class="o">=</span><span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;run_dir&quot;</span><span class="p">,</span> <span class="s2">&quot;./&quot;</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">988</span>     <span class="n">is_debug</span><span class="o">=</span><span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;is_debug&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">989</span>     <span class="n">print_every</span><span class="o">=</span><span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;print_every&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">990</span>     <span class="n">seed</span><span class="o">=</span><span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;seed&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">991</span>     <span class="n">logger</span><span class="o">=</span><span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;logger&quot;</span><span class="p">,</span> <span class="s2">&quot;wandb&quot;</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">992</span>     <span class="n">local_rank</span><span class="o">=</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;local_rank&quot;</span><span class="p">],</span>
+<span class="g g-Whitespace">    </span><span class="mi">993</span>     <span class="n">amp</span><span class="o">=</span><span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;amp&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">994</span>     <span class="n">cpu</span><span class="o">=</span><span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;cpu&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">995</span>     <span class="n">slurm</span><span class="o">=</span><span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;slurm&quot;</span><span class="p">,</span> <span class="p">{}),</span>
+<span class="g g-Whitespace">    </span><span class="mi">996</span>     <span class="n">noddp</span><span class="o">=</span><span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;noddp&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">997</span>     <span class="n">name</span><span class="o">=</span><span class="n">task_name</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">998</span> <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1000</span> <span class="n">task_cls</span> <span class="o">=</span> <span class="n">registry</span><span class="o">.</span><span class="n">get_task_class</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;mode&quot;</span><span class="p">])</span>
+<span class="g g-Whitespace">   </span><span class="mi">1001</span> <span class="k">assert</span> <span class="n">task_cls</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;Task not found&quot;</span>
+
+<span class="nn">File ~/work/ocp/ocp/ocpmodels/trainers/ocp_trainer.py:95,</span> in <span class="ni">OCPTrainer.__init__</span><span class="nt">(self, task, model, outputs, dataset, optimizer, loss_fns, eval_metrics, identifier, timestamp_id, run_dir, is_debug, print_every, seed, logger, local_rank, amp, cpu, slurm, noddp, name)</span>
+<span class="g g-Whitespace">     </span><span class="mi">93</span> <span class="k">if</span> <span class="n">slurm</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">94</span>     <span class="n">slurm</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="ne">---&gt; </span><span class="mi">95</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">96</span>     <span class="n">task</span><span class="o">=</span><span class="n">task</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">97</span>     <span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">98</span>     <span class="n">outputs</span><span class="o">=</span><span class="n">outputs</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">99</span>     <span class="n">dataset</span><span class="o">=</span><span class="n">dataset</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">100</span>     <span class="n">optimizer</span><span class="o">=</span><span class="n">optimizer</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">101</span>     <span class="n">loss_fns</span><span class="o">=</span><span class="n">loss_fns</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">102</span>     <span class="n">eval_metrics</span><span class="o">=</span><span class="n">eval_metrics</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">103</span>     <span class="n">identifier</span><span class="o">=</span><span class="n">identifier</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">104</span>     <span class="n">timestamp_id</span><span class="o">=</span><span class="n">timestamp_id</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">105</span>     <span class="n">run_dir</span><span class="o">=</span><span class="n">run_dir</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">106</span>     <span class="n">is_debug</span><span class="o">=</span><span class="n">is_debug</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">107</span>     <span class="n">print_every</span><span class="o">=</span><span class="n">print_every</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">108</span>     <span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">109</span>     <span class="n">logger</span><span class="o">=</span><span class="n">logger</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">110</span>     <span class="n">local_rank</span><span class="o">=</span><span class="n">local_rank</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">111</span>     <span class="n">amp</span><span class="o">=</span><span class="n">amp</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">112</span>     <span class="n">cpu</span><span class="o">=</span><span class="n">cpu</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">113</span>     <span class="n">slurm</span><span class="o">=</span><span class="n">slurm</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">114</span>     <span class="n">noddp</span><span class="o">=</span><span class="n">noddp</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">115</span>     <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">116</span> <span class="p">)</span>
+
+<span class="nn">File ~/work/ocp/ocp/ocpmodels/trainers/base_trainer.py:176,</span> in <span class="ni">BaseTrainer.__init__</span><span class="nt">(self, task, model, outputs, dataset, optimizer, loss_fns, eval_metrics, identifier, timestamp_id, run_dir, is_debug, print_every, seed, logger, local_rank, amp, cpu, name, slurm, noddp)</span>
+<span class="g g-Whitespace">    </span><span class="mi">173</span> <span class="k">if</span> <span class="n">distutils</span><span class="o">.</span><span class="n">is_master</span><span class="p">():</span>
+<span class="g g-Whitespace">    </span><span class="mi">174</span>     <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">yaml</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">,</span> <span class="n">default_flow_style</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+<span class="ne">--&gt; </span><span class="mi">176</span> <span class="bp">self</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
+
+<span class="nn">File ~/work/ocp/ocp/ocpmodels/trainers/base_trainer.py:198,</span> in <span class="ni">BaseTrainer.load</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">196</span> <span class="bp">self</span><span class="o">.</span><span class="n">load_seed_from_config</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">197</span> <span class="bp">self</span><span class="o">.</span><span class="n">load_logger</span><span class="p">()</span>
+<span class="ne">--&gt; </span><span class="mi">198</span> <span class="bp">self</span><span class="o">.</span><span class="n">load_datasets</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">199</span> <span class="bp">self</span><span class="o">.</span><span class="n">load_task</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">200</span> <span class="bp">self</span><span class="o">.</span><span class="n">load_model</span><span class="p">()</span>
+
+<span class="nn">File ~/work/ocp/ocp/ocpmodels/trainers/base_trainer.py:281,</span> in <span class="ni">BaseTrainer.load_datasets</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">276</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;dataset&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;src&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">277</span>     <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">278</span>         <span class="sa">f</span><span class="s2">&quot;Loading dataset: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;dataset&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;format&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;lmdb&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">279</span>     <span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">281</span>     <span class="bp">self</span><span class="o">.</span><span class="n">train_dataset</span> <span class="o">=</span> <span class="n">registry</span><span class="o">.</span><span class="n">get_dataset_class</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">282</span>         <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;dataset&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;format&quot;</span><span class="p">,</span> <span class="s2">&quot;lmdb&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">283</span>     <span class="p">)(</span><span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;dataset&quot;</span><span class="p">])</span>
+<span class="g g-Whitespace">    </span><span class="mi">284</span>     <span class="bp">self</span><span class="o">.</span><span class="n">train_sampler</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_sampler</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">285</span>         <span class="bp">self</span><span class="o">.</span><span class="n">train_dataset</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">286</span>         <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;optim&quot;</span><span class="p">][</span><span class="s2">&quot;batch_size&quot;</span><span class="p">],</span>
+<span class="g g-Whitespace">    </span><span class="mi">287</span>         <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">288</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">289</span>     <span class="bp">self</span><span class="o">.</span><span class="n">train_loader</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_dataloader</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">290</span>         <span class="bp">self</span><span class="o">.</span><span class="n">train_dataset</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">291</span>         <span class="bp">self</span><span class="o">.</span><span class="n">train_sampler</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">292</span>     <span class="p">)</span>
+
+<span class="nn">File ~/work/ocp/ocp/ocpmodels/datasets/lmdb_dataset.py:90,</span> in <span class="ni">LmdbDataset.__init__</span><span class="nt">(self, config)</span>
+<span class="g g-Whitespace">     </span><span class="mi">88</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">89</span>     <span class="bp">self</span><span class="o">.</span><span class="n">metadata_path</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="s2">&quot;metadata.npz&quot;</span>
+<span class="ne">---&gt; </span><span class="mi">90</span>     <span class="bp">self</span><span class="o">.</span><span class="n">env</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">connect_db</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">path</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">92</span>     <span class="c1"># If &quot;length&quot; encoded as ascii is present, use that</span>
+<span class="g g-Whitespace">     </span><span class="mi">93</span>     <span class="n">length_entry</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">begin</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;length&quot;</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;ascii&quot;</span><span class="p">))</span>
+
+<span class="nn">File ~/work/ocp/ocp/ocpmodels/datasets/lmdb_dataset.py:158,</span> in <span class="ni">LmdbDataset.connect_db</span><span class="nt">(self, lmdb_path)</span>
+<span class="g g-Whitespace">    </span><span class="mi">157</span> <span class="k">def</span> <span class="nf">connect_db</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lmdb_path</span><span class="p">:</span> <span class="n">Path</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">lmdb</span><span class="o">.</span><span class="n">Environment</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">158</span>     <span class="k">return</span> <span class="n">lmdb</span><span class="o">.</span><span class="n">open</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">159</span>         <span class="nb">str</span><span class="p">(</span><span class="n">lmdb_path</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">160</span>         <span class="n">subdir</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">161</span>         <span class="n">readonly</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">162</span>         <span class="n">lock</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">163</span>         <span class="n">readahead</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">164</span>         <span class="n">meminit</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">165</span>         <span class="n">max_readers</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">166</span>     <span class="p">)</span>
+
+<span class="ne">InvalidError</span>: train.db: MDB_INVALID: File is not an LMDB file
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="err">!</span> <span class="n">head</span> <span class="n">out</span><span class="o">.</span><span class="n">txt</span>
-<span class="err">!</span> <span class="n">tail</span> <span class="n">out</span><span class="o">.</span><span class="n">txt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>head<span class="w"> </span>out.txt
+<span class="o">!</span><span class="w"> </span>tail<span class="w"> </span>out.txt
 </pre></div>
 </div>
 </div>
@@ -773,12 +1073,12 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="fine-tuning-toc.html"
+       href="advanced_toc.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Advanced example: Fine-tuning</p>
+        <p class="prev-next-title">Advanced OCP usage</p>
       </div>
     </a>
     <a class="right-next"

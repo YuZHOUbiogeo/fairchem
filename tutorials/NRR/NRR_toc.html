@@ -61,8 +61,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/NRR/NRR_toc';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Using OCP to enumerate adsorbates on catalyst surfaces" href="NRR_example.html" />
-    <link rel="prev" title="Mass inference" href="../advanced/mass-inference.html" />
+    <link rel="next" title="Using OCP to enumerate adsorbates on alloy catalyst surfaces" href="NRR_example.html" />
+    <link rel="prev" title="Simple simulations using the OCP ASE calculator" href="../OCP-introduction.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -177,10 +177,27 @@
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Installation &amp; License</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Quickstart &amp; Installation</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../core/INSTALL.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../core/LICENSE.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../core/intro_series.html">Why model atoms for climate?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../core/install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../core/quickstart.html">Using pre-trained models in ASE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../core/gotchas.html">Common gotchas with OCP</a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../../core/license.html">License</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">OCP API &amp; Demo</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="https://open-catalyst.metademolab.com/">OCP Demo (no install required!)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../core/ocpapi.html">ocpapi</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Released Datasets &amp; Models</span></p>
 <ul class="nav bd-sidenav">
@@ -188,24 +205,35 @@
 
 <li class="toctree-l1"><a class="reference internal" href="../../core/datasets/oc22.html">Open Catalyst 2022 (OC22)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../core/datasets/odac.html">Open Direct Air Capture 2023 (ODAC23)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../core/MODELS.html">Pretrained OCP model checkpoints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../core/model_checkpoints.html">Pretrained model checkpoints</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Training your own models</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Making your own datasets</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../core/TRAIN.html">Training and evaluating models on OCP datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../core/ase_dataset_creation.html">Making and using ASE datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../core/lmdb_dataset_creation.html">Making LMDB Datasets (original format)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Model development, training, inference, finetuning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../core/model_training.html">Training and evaluating custom models on OCP datasets</a></li>
 
 
+<li class="toctree-l1"><a class="reference internal" href="../../core/inference.html">Fast batched inference</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="../../core/FAQ.html">Frequently Asked Questions</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../../core/fine-tuning/fine-tuning-oxides.html">Fine tuning a model</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../../core/model_faq.html">Model FAQ</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Videos and Talks</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../videos/intro_series.html">Open Catalyst Intro Series</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../videos/technical_talks.html">Technical presentations</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Catalysis Tutorials</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Case Studies &amp; Tutorials</span></p>
 <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../adsorbml_walkthrough.html">AdsorbML tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../core/papers_using_models.html">Studies that have leveraged OCP models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../intro.html">Intro and background on OCP and DFT</a></li>
+
 
 
 
@@ -215,36 +243,22 @@
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="../fine-tuning/fine-tuning-oxides.html">Fine tuning a model</a></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Screening catalysts with OCP</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="NRR_example.html">Using OCP to enumerate adsorbates on alloy catalyst surfaces</a></li>
 
 
-<li class="toctree-l1 has-children"><a class="reference internal" href="../advanced/fine-tuning-toc.html">Advanced example: Fine-tuning</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+
+
+
+
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../advanced/advanced_toc.html">Advanced OCP usage</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../advanced/fine-tuning-in-python.html">Fine-tuning with Python</a></li>
 
 
 
 <li class="toctree-l2"><a class="reference internal" href="../advanced/embeddings.html">Working with embeddings</a></li>
-
-
-
-<li class="toctree-l2"><a class="reference internal" href="../advanced/mass-inference.html">Mass inference</a></li>
-
-
-</ul>
-</li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Screening catalysts with OCP</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="NRR_example.html">Using OCP to enumerate adsorbates on catalyst surfaces</a></li>
-
-
-
-
-
-
-<li class="toctree-l2"><a class="reference internal" href="NRR_example-gemnet.html">Using OCP to enumerate adsorbates on alloy catalyst surfaces</a></li>
-
-
-
-
 
 
 
@@ -271,11 +285,6 @@
 
 <li class="toctree-l2"><a class="reference internal" href="../../legacy_tutorials/data_visualization.html">OCP Data Visualization</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="../../legacy_tutorials/lmdb_dataset_creation.html">OCP LMDB Dataset Tutorial</a></li>
-
-
-
-
 </ul>
 </li>
 </ul>
@@ -291,7 +300,6 @@
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/ocpmodels/common/gp_utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.common.gp_utils</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/ocpmodels/common/hpo_utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.common.hpo_utils</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/ocpmodels/common/logger/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.common.logger</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../autoapi/ocpmodels/common/model_registry/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.common.model_registry</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/ocpmodels/common/registry/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.common.registry</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/ocpmodels/common/transforms/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.common.transforms</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/ocpmodels/common/tutorial_utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.common.tutorial_utils</span></code></a></li>
@@ -320,6 +328,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/ocpmodels/models/utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.models.utils</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/ocpmodels/models/base/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.models.base</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/ocpmodels/models/dimenet_plus_plus/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.models.dimenet_plus_plus</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../autoapi/ocpmodels/models/model_registry/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.models.model_registry</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../autoapi/ocpmodels/models/schnet/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.models.schnet</span></code></a></li>
 </ul>
 </li>
@@ -556,21 +565,13 @@ document.write(`
 <p>See the sections of this tutorial to the left to get started!</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="NRR_example.html">Using OCP to enumerate adsorbates on catalyst surfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="NRR_example.html">Using OCP to enumerate adsorbates on alloy catalyst surfaces</a></li>
 <li class="toctree-l1"><a class="reference internal" href="NRR_example.html#introduction">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="NRR_example.html#enumerate-the-adsorbate-slab-configurations-to-run-relaxations-on">Enumerate the adsorbate-slab configurations to run relaxations on</a></li>
 <li class="toctree-l1"><a class="reference internal" href="NRR_example.html#run-all-the-systems">Run all the systems</a></li>
 <li class="toctree-l1"><a class="reference internal" href="NRR_example.html#parse-the-trajectories-and-post-process">Parse the trajectories and post-process</a></li>
 <li class="toctree-l1"><a class="reference internal" href="NRR_example.html#make-parity-plots-for-values-obtained-by-ml-v-reported-in-the-paper">Make parity plots for values obtained by ML v. reported in the paper</a></li>
 <li class="toctree-l1"><a class="reference internal" href="NRR_example.html#make-figure-6b-and-compare-to-literature-results">Make figure 6b and compare to literature results</a></li>
-<li class="toctree-l1"><a class="reference internal" href="NRR_example-gemnet.html">Using OCP to enumerate adsorbates on alloy catalyst surfaces</a></li>
-<li class="toctree-l1"><a class="reference internal" href="NRR_example-gemnet.html#introduction">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="NRR_example-gemnet.html#enumerate-the-adsorbate-slab-configurations-to-run-relaxations-on">Enumerate the adsorbate-slab configurations to run relaxations on</a></li>
-<li class="toctree-l1"><a class="reference internal" href="NRR_example-gemnet.html#run-all-the-systems">Run all the systems</a></li>
-<li class="toctree-l1"><a class="reference internal" href="NRR_example-gemnet.html#parse-the-trajectories-and-post-process">Parse the trajectories and post-process</a></li>
-<li class="toctree-l1"><a class="reference internal" href="NRR_example-gemnet.html#make-parity-plots-for-values-obtained-by-ml-v-reported-in-the-paper">Make parity plots for values obtained by ML v. reported in the paper</a></li>
-<li class="toctree-l1"><a class="reference internal" href="NRR_example-gemnet.html#make-figure-6b-and-compare-to-literature-results">Make figure 6b and compare to literature results</a></li>
-<li class="toctree-l1"><a class="reference internal" href="NRR_example-gemnet.html#next-steps">Next steps</a></li>
 </ul>
 </div>
 </section>
@@ -606,12 +607,12 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../advanced/mass-inference.html"
+       href="../OCP-introduction.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Mass inference</p>
+        <p class="prev-next-title">Simple simulations using the OCP ASE calculator</p>
       </div>
     </a>
     <a class="right-next"
@@ -619,7 +620,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Using OCP to enumerate adsorbates on catalyst surfaces</p>
+        <p class="prev-next-title">Using OCP to enumerate adsorbates on alloy catalyst surfaces</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

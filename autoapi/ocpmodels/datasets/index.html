@@ -177,10 +177,27 @@
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Installation &amp; License</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Quickstart &amp; Installation</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../../core/INSTALL.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../core/LICENSE.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../core/intro_series.html">Why model atoms for climate?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../core/install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../core/quickstart.html">Using pre-trained models in ASE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../core/gotchas.html">Common gotchas with OCP</a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../../../core/license.html">License</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">OCP API &amp; Demo</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="https://open-catalyst.metademolab.com/">OCP Demo (no install required!)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../core/ocpapi.html">ocpapi</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Released Datasets &amp; Models</span></p>
 <ul class="nav bd-sidenav">
@@ -188,24 +205,35 @@
 
 <li class="toctree-l1"><a class="reference internal" href="../../../core/datasets/oc22.html">Open Catalyst 2022 (OC22)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../core/datasets/odac.html">Open Direct Air Capture 2023 (ODAC23)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../core/MODELS.html">Pretrained OCP model checkpoints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../core/model_checkpoints.html">Pretrained model checkpoints</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Training your own models</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Making your own datasets</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../../core/TRAIN.html">Training and evaluating models on OCP datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../core/ase_dataset_creation.html">Making and using ASE datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../core/lmdb_dataset_creation.html">Making LMDB Datasets (original format)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Model development, training, inference, finetuning</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../core/model_training.html">Training and evaluating custom models on OCP datasets</a></li>
 
 
+<li class="toctree-l1"><a class="reference internal" href="../../../core/inference.html">Fast batched inference</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="../../../core/FAQ.html">Frequently Asked Questions</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../../../core/fine-tuning/fine-tuning-oxides.html">Fine tuning a model</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../../../core/model_faq.html">Model FAQ</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Videos and Talks</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../../videos/intro_series.html">Open Catalyst Intro Series</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../videos/technical_talks.html">Technical presentations</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Catalysis Tutorials</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Case Studies &amp; Tutorials</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials/adsorbml_walkthrough.html">AdsorbML tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../core/papers_using_models.html">Studies that have leveraged OCP models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../tutorials/intro.html">Intro and background on OCP and DFT</a></li>
+
 
 
 
@@ -215,36 +243,22 @@
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="../../../tutorials/fine-tuning/fine-tuning-oxides.html">Fine tuning a model</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../tutorials/NRR/NRR_toc.html">Screening catalysts with OCP</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../tutorials/NRR/NRR_example.html">Using OCP to enumerate adsorbates on alloy catalyst surfaces</a></li>
 
 
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../tutorials/advanced/fine-tuning-toc.html">Advanced example: Fine-tuning</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+
+
+
+
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../tutorials/advanced/advanced_toc.html">Advanced OCP usage</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../tutorials/advanced/fine-tuning-in-python.html">Fine-tuning with Python</a></li>
 
 
 
 <li class="toctree-l2"><a class="reference internal" href="../../../tutorials/advanced/embeddings.html">Working with embeddings</a></li>
-
-
-
-<li class="toctree-l2"><a class="reference internal" href="../../../tutorials/advanced/mass-inference.html">Mass inference</a></li>
-
-
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../tutorials/NRR/NRR_toc.html">Screening catalysts with OCP</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../tutorials/NRR/NRR_example.html">Using OCP to enumerate adsorbates on catalyst surfaces</a></li>
-
-
-
-
-
-
-<li class="toctree-l2"><a class="reference internal" href="../../../tutorials/NRR/NRR_example-gemnet.html">Using OCP to enumerate adsorbates on alloy catalyst surfaces</a></li>
-
-
-
-
 
 
 
@@ -271,11 +285,6 @@
 
 <li class="toctree-l2"><a class="reference internal" href="../../../legacy_tutorials/data_visualization.html">OCP Data Visualization</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="../../../legacy_tutorials/lmdb_dataset_creation.html">OCP LMDB Dataset Tutorial</a></li>
-
-
-
-
 </ul>
 </li>
 </ul>
@@ -291,7 +300,6 @@
 <li class="toctree-l4"><a class="reference internal" href="../common/gp_utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.common.gp_utils</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../common/hpo_utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.common.hpo_utils</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../common/logger/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.common.logger</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../common/model_registry/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.common.model_registry</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../common/registry/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.common.registry</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../common/transforms/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.common.transforms</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../common/tutorial_utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.common.tutorial_utils</span></code></a></li>
@@ -320,6 +328,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../models/utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.models.utils</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../models/base/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.models.base</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../models/dimenet_plus_plus/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.models.dimenet_plus_plus</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../models/model_registry/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.models.model_registry</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../models/schnet/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.models.schnet</span></code></a></li>
 </ul>
 </li>
@@ -576,6 +585,23 @@ document.write(`
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.datasets.AseReadMultiStructureDataset.get_relaxed_energy"><code class="docutils literal notranslate"><span class="pre">AseReadMultiStructureDataset.get_relaxed_energy()</span></code></a></li>
 </ul>
 </li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.datasets.LMDBDatabase"><code class="docutils literal notranslate"><span class="pre">LMDBDatabase</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.datasets.LMDBDatabase.metadata"><code class="docutils literal notranslate"><span class="pre">LMDBDatabase.metadata</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.datasets.LMDBDatabase._nextid"><code class="docutils literal notranslate"><span class="pre">LMDBDatabase._nextid</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.datasets.LMDBDatabase.__enter__"><code class="docutils literal notranslate"><span class="pre">LMDBDatabase.__enter__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.datasets.LMDBDatabase.__exit__"><code class="docutils literal notranslate"><span class="pre">LMDBDatabase.__exit__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.datasets.LMDBDatabase.close"><code class="docutils literal notranslate"><span class="pre">LMDBDatabase.close()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.datasets.LMDBDatabase._write"><code class="docutils literal notranslate"><span class="pre">LMDBDatabase._write()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.datasets.LMDBDatabase._update"><code class="docutils literal notranslate"><span class="pre">LMDBDatabase._update()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.datasets.LMDBDatabase._write_deleted_ids"><code class="docutils literal notranslate"><span class="pre">LMDBDatabase._write_deleted_ids()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.datasets.LMDBDatabase.delete"><code class="docutils literal notranslate"><span class="pre">LMDBDatabase.delete()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.datasets.LMDBDatabase._get_row"><code class="docutils literal notranslate"><span class="pre">LMDBDatabase._get_row()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.datasets.LMDBDatabase._get_row_by_index"><code class="docutils literal notranslate"><span class="pre">LMDBDatabase._get_row_by_index()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.datasets.LMDBDatabase._select"><code class="docutils literal notranslate"><span class="pre">LMDBDatabase._select()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.datasets.LMDBDatabase.count"><code class="docutils literal notranslate"><span class="pre">LMDBDatabase.count()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.datasets.LMDBDatabase._load_ids"><code class="docutils literal notranslate"><span class="pre">LMDBDatabase._load_ids()</span></code></a></li>
+</ul>
+</li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.datasets.LmdbDataset"><code class="docutils literal notranslate"><span class="pre">LmdbDataset</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.datasets.LmdbDataset.metadata_path"><code class="docutils literal notranslate"><span class="pre">LmdbDataset.metadata_path</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.datasets.LmdbDataset.sharded"><code class="docutils literal notranslate"><span class="pre">LmdbDataset.sharded</span></code></a></li>
@@ -655,16 +681,19 @@ document.write(`
 <tr class="row-odd"><td><p><a class="reference internal" href="#ocpmodels.datasets.AseReadMultiStructureDataset" title="ocpmodels.datasets.AseReadMultiStructureDataset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AseReadMultiStructureDataset</span></code></a></p></td>
 <td><p>This Dataset can read multiple structures from each file using ase.io.read.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#ocpmodels.datasets.LmdbDataset" title="ocpmodels.datasets.LmdbDataset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LmdbDataset</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#ocpmodels.datasets.LMDBDatabase" title="ocpmodels.datasets.LMDBDatabase"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LMDBDatabase</span></code></a></p></td>
+<td><p>Base class for all databases.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ocpmodels.datasets.LmdbDataset" title="ocpmodels.datasets.LmdbDataset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LmdbDataset</span></code></a></p></td>
 <td><p>An abstract class representing a <code class="xref py py-class docutils literal notranslate"><span class="pre">Dataset</span></code>.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#ocpmodels.datasets.SinglePointLmdbDataset" title="ocpmodels.datasets.SinglePointLmdbDataset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SinglePointLmdbDataset</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#ocpmodels.datasets.SinglePointLmdbDataset" title="ocpmodels.datasets.SinglePointLmdbDataset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SinglePointLmdbDataset</span></code></a></p></td>
 <td><p>An abstract class representing a <code class="xref py py-class docutils literal notranslate"><span class="pre">Dataset</span></code>.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#ocpmodels.datasets.TrajectoryLmdbDataset" title="ocpmodels.datasets.TrajectoryLmdbDataset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TrajectoryLmdbDataset</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ocpmodels.datasets.TrajectoryLmdbDataset" title="ocpmodels.datasets.TrajectoryLmdbDataset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TrajectoryLmdbDataset</span></code></a></p></td>
 <td><p>An abstract class representing a <code class="xref py py-class docutils literal notranslate"><span class="pre">Dataset</span></code>.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#ocpmodels.datasets.OC22LmdbDataset" title="ocpmodels.datasets.OC22LmdbDataset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">OC22LmdbDataset</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#ocpmodels.datasets.OC22LmdbDataset" title="ocpmodels.datasets.OC22LmdbDataset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">OC22LmdbDataset</span></code></a></p></td>
 <td><p>Dataset class to load from LMDB files containing relaxation</p></td>
 </tr>
 </tbody>
@@ -920,6 +949,95 @@ object. Useful for applying tags, for example.</p></li>
 </dd></dl>
 
 <dl class="py class">
+<dt class="sig sig-object py" id="ocpmodels.datasets.LMDBDatabase">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ocpmodels.datasets.</span></span><span class="sig-name descname"><span class="pre">LMDBDatabase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">pathlib.Path</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">create_indices</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_lock_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">serial</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">readonly</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ocpmodels.datasets.LMDBDatabase" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">ase.db.core.Database</span></code></p>
+<p>Base class for all databases.</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="ocpmodels.datasets.LMDBDatabase.metadata">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">metadata</span></span><a class="headerlink" href="#ocpmodels.datasets.LMDBDatabase.metadata" title="Link to this definition">#</a></dt>
+<dd><p>Load the metadata from the DB if present</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ocpmodels.datasets.LMDBDatabase._nextid">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_nextid</span></span><a class="headerlink" href="#ocpmodels.datasets.LMDBDatabase._nextid" title="Link to this definition">#</a></dt>
+<dd><p>Get the id of the next row to be written</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ocpmodels.datasets.LMDBDatabase.__enter__">
+<span class="sig-name descname"><span class="pre">__enter__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">typing_extensions.Self</span></span></span><a class="headerlink" href="#ocpmodels.datasets.LMDBDatabase.__enter__" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ocpmodels.datasets.LMDBDatabase.__exit__">
+<span class="sig-name descname"><span class="pre">__exit__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exc_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exc_value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#ocpmodels.datasets.LMDBDatabase.__exit__" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ocpmodels.datasets.LMDBDatabase.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#ocpmodels.datasets.LMDBDatabase.close" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ocpmodels.datasets.LMDBDatabase._write">
+<span class="sig-name descname"><span class="pre">_write</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">atoms</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ase.Atoms</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ase.db.row.AtomsRow</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key_value_pairs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idx</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#ocpmodels.datasets.LMDBDatabase._write" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ocpmodels.datasets.LMDBDatabase._update">
+<span class="sig-name descname"><span class="pre">_update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">idx</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key_value_pairs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ocpmodels.datasets.LMDBDatabase._update" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ocpmodels.datasets.LMDBDatabase._write_deleted_ids">
+<span class="sig-name descname"><span class="pre">_write_deleted_ids</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ocpmodels.datasets.LMDBDatabase._write_deleted_ids" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ocpmodels.datasets.LMDBDatabase.delete">
+<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ids</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#ocpmodels.datasets.LMDBDatabase.delete" title="Link to this definition">#</a></dt>
+<dd><p>Delete rows.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ocpmodels.datasets.LMDBDatabase._get_row">
+<span class="sig-name descname"><span class="pre">_get_row</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">idx</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ocpmodels.datasets.LMDBDatabase._get_row" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ocpmodels.datasets.LMDBDatabase._get_row_by_index">
+<span class="sig-name descname"><span class="pre">_get_row_by_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ocpmodels.datasets.LMDBDatabase._get_row_by_index" title="Link to this definition">#</a></dt>
+<dd><p>Auxiliary function to get the ith entry, rather than a specific id</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ocpmodels.datasets.LMDBDatabase._select">
+<span class="sig-name descname"><span class="pre">_select</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keys</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cmps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">explain</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbosity</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'all'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ocpmodels.datasets.LMDBDatabase._select" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ocpmodels.datasets.LMDBDatabase.count">
+<span class="sig-name descname"><span class="pre">count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">selection</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#ocpmodels.datasets.LMDBDatabase.count" title="Link to this definition">#</a></dt>
+<dd><p>Count rows.</p>
+<p>See the select() method for the selection syntax.  Use db.count() or
+len(db) to count all rows.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ocpmodels.datasets.LMDBDatabase._load_ids">
+<span class="sig-name descname"><span class="pre">_load_ids</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#ocpmodels.datasets.LMDBDatabase._load_ids" title="Link to this definition">#</a></dt>
+<dd><p>Load ids from the DB</p>
+<p>Since ASE db ids are mostly 1-N integers, but can be missing entries
+if ids have been deleted. To save space and operating under the assumption
+that there will probably not be many deletions in most OCP datasets,
+we just store the deleted ids.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
 <dt class="sig sig-object py" id="ocpmodels.datasets.LmdbDataset">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ocpmodels.datasets.</span></span><span class="sig-name descname"><span class="pre">LmdbDataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ocpmodels.datasets.LmdbDataset" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">torch.utils.data.Dataset</span></code>[<code class="xref py py-obj docutils literal notranslate"><span class="pre">T_co</span></code>]</p>
@@ -1032,7 +1150,7 @@ dataset with non-integral indices/keys, a custom sampler must be provided.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="ocpmodels.datasets.data_list_collater">
-<span class="sig-prename descclassname"><span class="pre">ocpmodels.datasets.</span></span><span class="sig-name descname"><span class="pre">data_list_collater</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">torch_geometric.data.data.BaseData</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">otf_graph</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">torch_geometric.data.data.BaseData</span></span></span><a class="headerlink" href="#ocpmodels.datasets.data_list_collater" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">ocpmodels.datasets.</span></span><span class="sig-name descname"><span class="pre">data_list_collater</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">torch_geometric.data.data.BaseData</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">otf_graph</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">torch_geometric.data.data.BaseData</span></span></span><a class="headerlink" href="#ocpmodels.datasets.data_list_collater" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py class">
@@ -1171,6 +1289,23 @@ folder, but lmdb lengths are now calculated directly from the number of keys.</p
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.datasets.AseReadMultiStructureDataset.get_atoms"><code class="docutils literal notranslate"><span class="pre">AseReadMultiStructureDataset.get_atoms()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.datasets.AseReadMultiStructureDataset.get_metadata"><code class="docutils literal notranslate"><span class="pre">AseReadMultiStructureDataset.get_metadata()</span></code></a></li>
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.datasets.AseReadMultiStructureDataset.get_relaxed_energy"><code class="docutils literal notranslate"><span class="pre">AseReadMultiStructureDataset.get_relaxed_energy()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.datasets.LMDBDatabase"><code class="docutils literal notranslate"><span class="pre">LMDBDatabase</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.datasets.LMDBDatabase.metadata"><code class="docutils literal notranslate"><span class="pre">LMDBDatabase.metadata</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.datasets.LMDBDatabase._nextid"><code class="docutils literal notranslate"><span class="pre">LMDBDatabase._nextid</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.datasets.LMDBDatabase.__enter__"><code class="docutils literal notranslate"><span class="pre">LMDBDatabase.__enter__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.datasets.LMDBDatabase.__exit__"><code class="docutils literal notranslate"><span class="pre">LMDBDatabase.__exit__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.datasets.LMDBDatabase.close"><code class="docutils literal notranslate"><span class="pre">LMDBDatabase.close()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.datasets.LMDBDatabase._write"><code class="docutils literal notranslate"><span class="pre">LMDBDatabase._write()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.datasets.LMDBDatabase._update"><code class="docutils literal notranslate"><span class="pre">LMDBDatabase._update()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.datasets.LMDBDatabase._write_deleted_ids"><code class="docutils literal notranslate"><span class="pre">LMDBDatabase._write_deleted_ids()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.datasets.LMDBDatabase.delete"><code class="docutils literal notranslate"><span class="pre">LMDBDatabase.delete()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.datasets.LMDBDatabase._get_row"><code class="docutils literal notranslate"><span class="pre">LMDBDatabase._get_row()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.datasets.LMDBDatabase._get_row_by_index"><code class="docutils literal notranslate"><span class="pre">LMDBDatabase._get_row_by_index()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.datasets.LMDBDatabase._select"><code class="docutils literal notranslate"><span class="pre">LMDBDatabase._select()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.datasets.LMDBDatabase.count"><code class="docutils literal notranslate"><span class="pre">LMDBDatabase.count()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.datasets.LMDBDatabase._load_ids"><code class="docutils literal notranslate"><span class="pre">LMDBDatabase._load_ids()</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.datasets.LmdbDataset"><code class="docutils literal notranslate"><span class="pre">LmdbDataset</span></code></a><ul class="nav section-nav flex-column">
