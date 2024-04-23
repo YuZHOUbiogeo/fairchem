@@ -583,8 +583,13 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="making-lmdb-datasets-original-format">
 <h1>Making LMDB Datasets (original format)<a class="headerlink" href="#making-lmdb-datasets-original-format" title="Link to this heading">#</a></h1>
-<p>Storing your data in an LMDB ensures very fast random read speeds for the fastest supported throughput. This is the recommended option for the majority of OCP use cases. For more information about writing your data to an LMDB, please see the <a class="reference external" href="https://github.com/Open-Catalyst-Project/ocp/blob/main/tutorials/lmdb_dataset_creation.ipynb">LMDB Dataset Tutorial</a>.</p>
-<p>This notebook provides an overview of how to create LMDB datasets to be used with the OCP repo. This tutorial is intended for those who wish to use OCP to train on their own datasets. Those interested in just using OCP data need not worry about these steps as they’ve been automated as part of the download script: https://github.com/Open-Catalyst-Project/ocp/blob/master/scripts/download_data.py.</p>
+<p>Storing your data in an LMDB ensures very fast random read speeds for the fastest supported throughput. This is the
+recommended option for the majority of OCP use cases. For more information about writing your data to an LMDB,
+please see the <a class="reference external" href="https://github.com/Open-Catalyst-Project/ocp/blob/main/tutorials/lmdb_dataset_creation.ipynb">LMDB Dataset Tutorial</a>.</p>
+<p>This notebook provides an overview of how to create LMDB datasets to be used with the OCP repo. This tutorial is intended
+for those who wish to use OCP to train on their own datasets. Those interested in just using OCP data need not worry
+about these steps as they’ve been automated as part of this
+<a class="reference external" href="https://github.com/Open-Catalyst-Project/ocp/blob/master/scripts/download_data.py">download script</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ocpmodels.preprocessing</span> <span class="kn">import</span> <span class="n">AtomsToGraphs</span>
@@ -644,7 +649,8 @@ document.write(`
 </section>
 <section id="initial-structure-to-relaxed-energy-structure-is2re-is2rs-lmdbs">
 <h2>Initial Structure to Relaxed Energy/Structure (IS2RE/IS2RS) LMDBs<a class="headerlink" href="#initial-structure-to-relaxed-energy-structure-is2re-is2rs-lmdbs" title="Link to this heading">#</a></h2>
-<p>IS2RE/IS2RS LMDBs utilize the SinglePointLmdb dataset. This dataset expects the data to be contained in a SINGLE LMDB file. In addition to the attributes defined by AtomsToGraph, the following attributes must be added for the IS2RE/IS2RS tasks:</p>
+<p>IS2RE/IS2RS LMDBs utilize the SinglePointLmdb dataset. This dataset expects the data to be contained in a SINGLE LMDB file.
+In addition to the attributes defined by AtomsToGraph, the following attributes must be added for the IS2RE/IS2RS tasks:</p>
 <ul class="simple">
 <li><p>pos_relaxed: Relaxed adslab positions</p></li>
 <li><p>sid: Unique system identifier, arbitrary</p></li>
@@ -712,22 +718,22 @@ document.write(`
     <span class="n">data_objects</span> <span class="o">=</span> <span class="n">read_trajectory_extract_features</span><span class="p">(</span><span class="n">a2g</span><span class="p">,</span> <span class="n">system</span><span class="p">)</span>
     <span class="n">initial_struc</span> <span class="o">=</span> <span class="n">data_objects</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
     <span class="n">relaxed_struc</span> <span class="o">=</span> <span class="n">data_objects</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-    
+
     <span class="n">initial_struc</span><span class="o">.</span><span class="n">y_init</span> <span class="o">=</span> <span class="n">initial_struc</span><span class="o">.</span><span class="n">y</span> <span class="c1"># subtract off reference energy, if applicable</span>
     <span class="k">del</span> <span class="n">initial_struc</span><span class="o">.</span><span class="n">y</span>
     <span class="n">initial_struc</span><span class="o">.</span><span class="n">y_relaxed</span> <span class="o">=</span> <span class="n">relaxed_struc</span><span class="o">.</span><span class="n">y</span> <span class="c1"># subtract off reference energy, if applicable</span>
     <span class="n">initial_struc</span><span class="o">.</span><span class="n">pos_relaxed</span> <span class="o">=</span> <span class="n">relaxed_struc</span><span class="o">.</span><span class="n">pos</span>
-    
+
     <span class="c1"># Filter data if necessary</span>
     <span class="c1"># OCP filters adsorption energies &gt; |10| eV</span>
-    
-    <span class="n">initial_struc</span><span class="o">.</span><span class="n">sid</span> <span class="o">=</span> <span class="n">idx</span>  <span class="c1"># arbitrary unique identifier </span>
-    
+
+    <span class="n">initial_struc</span><span class="o">.</span><span class="n">sid</span> <span class="o">=</span> <span class="n">idx</span>  <span class="c1"># arbitrary unique identifier</span>
+
     <span class="c1"># no neighbor edge case check</span>
     <span class="k">if</span> <span class="n">initial_struc</span><span class="o">.</span><span class="n">edge_index</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;no neighbors&quot;</span><span class="p">,</span> <span class="n">traj_path</span><span class="p">)</span>
         <span class="k">continue</span>
-    
+
     <span class="c1"># Write to LMDB</span>
     <span class="n">txn</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">begin</span><span class="p">(</span><span class="n">write</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="n">txn</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">idx</span><span class="si">}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;ascii&quot;</span><span class="p">),</span> <span class="n">pickle</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">initial_struc</span><span class="p">,</span> <span class="n">protocol</span><span class="o">=-</span><span class="mi">1</span><span class="p">))</span>
@@ -804,13 +810,13 @@ document.write(`
 <span class="k">for</span> <span class="n">fid</span><span class="p">,</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">enumerate</span><span class="p">(</span><span class="n">data_objects</span><span class="p">),</span> <span class="n">total</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">data_objects</span><span class="p">)):</span>
     <span class="c1">#assign sid</span>
     <span class="n">data</span><span class="o">.</span><span class="n">sid</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">LongTensor</span><span class="p">([</span><span class="mi">0</span><span class="p">])</span>
-    
+
     <span class="c1">#assign fid</span>
     <span class="n">data</span><span class="o">.</span><span class="n">fid</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">LongTensor</span><span class="p">([</span><span class="n">fid</span><span class="p">])</span>
-    
+
     <span class="c1">#assign tags, if available</span>
     <span class="n">data</span><span class="o">.</span><span class="n">tags</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">LongTensor</span><span class="p">(</span><span class="n">tags</span><span class="p">)</span>
-    
+
     <span class="c1"># Filter data if necessary</span>
     <span class="c1"># OCP filters adsorption energies &gt; |10| eV and forces &gt; |50| eV/A</span>
 
@@ -822,7 +828,7 @@ document.write(`
     <span class="n">txn</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">begin</span><span class="p">(</span><span class="n">write</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="n">txn</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">fid</span><span class="si">}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;ascii&quot;</span><span class="p">),</span> <span class="n">pickle</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">protocol</span><span class="o">=-</span><span class="mi">1</span><span class="p">))</span>
     <span class="n">txn</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
-    
+
 <span class="n">txn</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">begin</span><span class="p">(</span><span class="n">write</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">txn</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;length&quot;</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;ascii&quot;</span><span class="p">),</span> <span class="n">pickle</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data_objects</span><span class="p">),</span> <span class="n">protocol</span><span class="o">=-</span><span class="mi">1</span><span class="p">))</span>
 <span class="n">txn</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
@@ -837,46 +843,49 @@ document.write(`
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|          | 0/1001 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  7%|▋         | 66/1001 [00:00&lt;00:01, 659.91it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  6%|▋         | 65/1001 [00:00&lt;00:01, 641.80it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 14%|█▍        | 141/1001 [00:00&lt;00:01, 711.10it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 14%|█▍        | 138/1001 [00:00&lt;00:01, 690.19it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 21%|██▏       | 213/1001 [00:00&lt;00:01, 714.43it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 21%|██        | 208/1001 [00:00&lt;00:01, 681.23it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 28%|██▊       | 285/1001 [00:00&lt;00:01, 707.53it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 28%|██▊       | 277/1001 [00:00&lt;00:01, 648.70it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 36%|███▌      | 356/1001 [00:00&lt;00:00, 705.20it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 35%|███▍      | 347/1001 [00:00&lt;00:00, 666.04it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 43%|████▎     | 427/1001 [00:00&lt;00:00, 702.64it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 41%|████▏     | 415/1001 [00:00&lt;00:00, 670.56it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 50%|████▉     | 498/1001 [00:00&lt;00:00, 695.15it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 49%|████▊     | 486/1001 [00:00&lt;00:00, 682.34it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 57%|█████▋    | 570/1001 [00:00&lt;00:00, 701.66it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 56%|█████▌    | 563/1001 [00:00&lt;00:00, 700.90it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 64%|██████▍   | 643/1001 [00:00&lt;00:00, 707.89it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 64%|██████▎   | 638/1001 [00:00&lt;00:00, 714.50it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 71%|███████▏  | 715/1001 [00:01&lt;00:00, 711.33it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 71%|███████   | 712/1001 [00:01&lt;00:00, 721.56it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 79%|███████▉  | 794/1001 [00:01&lt;00:00, 733.48it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 78%|███████▊  | 785/1001 [00:01&lt;00:00, 718.82it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 87%|████████▋ | 868/1001 [00:01&lt;00:00, 729.21it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 86%|████████▌ | 857/1001 [00:01&lt;00:00, 702.32it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 94%|█████████▍| 942/1001 [00:01&lt;00:00, 731.54it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 93%|█████████▎| 928/1001 [00:01&lt;00:00, 691.94it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 1001/1001 [00:01&lt;00:00, 712.79it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|█████████▉| 998/1001 [00:01&lt;00:00, 673.19it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 1001/1001 [00:01&lt;00:00, 685.68it/s]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>

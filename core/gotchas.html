@@ -843,7 +843,7 @@ WARNING:root:Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
 
 <span class="k">with</span> <span class="n">contextlib</span><span class="o">.</span><span class="n">redirect_stdout</span><span class="p">(</span><span class="n">StringIO</span><span class="p">())</span> <span class="k">as</span> <span class="n">_</span><span class="p">:</span>
     <span class="n">calc</span> <span class="o">=</span> <span class="n">OCPCalculator</span><span class="p">(</span><span class="n">checkpoint_path</span><span class="o">=</span><span class="n">checkpoint_path</span><span class="p">,</span> <span class="n">cpu</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-    
+
 
 
 <span class="n">slab</span><span class="o">.</span><span class="n">set_calculator</span><span class="p">(</span><span class="n">calc</span><span class="p">)</span>
@@ -882,7 +882,7 @@ WARNING:root:Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
 
 <span class="k">with</span> <span class="n">contextlib</span><span class="o">.</span><span class="n">redirect_stdout</span><span class="p">(</span><span class="n">StringIO</span><span class="p">())</span> <span class="k">as</span> <span class="n">_</span><span class="p">:</span>
     <span class="n">calc</span> <span class="o">=</span> <span class="n">OCPCalculator</span><span class="p">(</span><span class="n">checkpoint_path</span><span class="o">=</span><span class="n">checkpoint_path</span><span class="p">,</span> <span class="n">cpu</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-    
+
 
 
 <span class="n">slab</span><span class="o">.</span><span class="n">set_calculator</span><span class="p">(</span><span class="n">calc</span><span class="p">)</span>
@@ -942,7 +942,7 @@ WARNING:root:Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
   warnings.warn(
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.6659085750579834
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.6770455837249756
 </pre></div>
 </div>
 </div>
@@ -1463,7 +1463,9 @@ WARNING:root:Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="stochastic-simulation-results">
 <h1>Stochastic simulation results<a class="headerlink" href="#stochastic-simulation-results" title="Link to this heading">#</a></h1>
-<p>Some models are not deterministic (SCN/eSCN/EqV2), i.e. you can get slightly different answers each time you run it. An example is shown below. See https://github.com/Open-Catalyst-Project/ocp/issues/563 for more discussion. This happens because a random selection of is made to sample edges, and a different selection is made each time you run it.</p>
+<p>Some models are not deterministic (SCN/eSCN/EqV2), i.e. you can get slightly different answers each time you run it.
+An example is shown below. See <a class="reference external" href="https://github.com/Open-Catalyst-Project/ocp/issues/563">Issue 563</a> for more discussion.
+This happens because a random selection of is made to sample edges, and a different selection is made each time you run it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ocpmodels.models.model_registry</span> <span class="kn">import</span> <span class="n">model_name_to_local_file</span>
@@ -1482,7 +1484,7 @@ WARNING:root:Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
     <span class="n">calc</span><span class="o">.</span><span class="n">calculate</span><span class="p">(</span><span class="n">slab</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;energy&#39;</span><span class="p">],</span> <span class="kc">None</span><span class="p">)</span>
     <span class="n">results</span> <span class="o">+=</span> <span class="p">[</span><span class="n">slab</span><span class="o">.</span><span class="n">get_potential_energy</span><span class="p">()]</span>
-    
+
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">results</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">results</span><span class="p">))</span>
 <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
@@ -1508,17 +1510,17 @@ WARNING:root:Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
   warnings.warn(
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.2139863967895508 1.2388592774168568e-06
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.213987946510315 1.736531995261206e-06
+1.2139885425567627
 1.2139854431152344
-1.2139873504638672
-1.2139863967895508
-1.213984489440918
+1.2139911651611328
+1.2139866352081299
 1.2139880657196045
+1.2139892578125
+1.2139883041381836
+1.2139897346496582
 1.2139861583709717
-1.2139878273010254
-1.2139849662780762
-1.2139854431152344
-1.2139878273010254
+1.2139861583709717
 </pre></div>
 </div>
 </div>
@@ -1564,7 +1566,7 @@ WARNING:root:Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
   warnings.warn(
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.00847941,  0.01409839, -0.05882812], dtype=float32)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.0084815 ,  0.01409597, -0.05882752], dtype=float32)
 </pre></div>
 </div>
 </div>
@@ -1577,7 +1579,7 @@ WARNING:root:Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 1.1717202e-07, -6.1467290e-08,  1.1920929e-07], dtype=float32)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-5.8207661e-09,  1.0011718e-08, -3.5762787e-07], dtype=float32)
 </pre></div>
 </div>
 </div>
