@@ -561,10 +561,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-data">Download data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#train-and-evaluate-models">Train and evaluate models</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pretrained-model-weights">Pretrained model weights</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ocp-documentation">OCP Documentation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion">Discussion</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgements">Acknowledgements</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#license">License</a></li>
@@ -585,18 +582,26 @@ document.write(`
 <p><a class="reference external" href="https://circleci.com/gh/Open-Catalyst-Project/ocp"><img alt="CircleCI" src="https://circleci.com/gh/Open-Catalyst-Project/ocp.svg?style=shield" /></a>
 <a class="reference external" href="https://codecov.io/gh/Open-Catalyst-Project/ocp"><img alt="codecov" src="https://codecov.io/gh/Open-Catalyst-Project/ocp/graph/badge.svg?token=M606LH5LK6" /></a></p>
 <p><code class="docutils literal notranslate"><span class="pre">ocp</span></code> is the <a class="reference external" href="https://opencatalystproject.org/">Open Catalyst Project</a>’s
-library of state-of-the-art machine learning algorithms for chemistry. We’ve used it for catalysis and direct air capture (MOF) applications, and we hope it’s useful for your projects too!</p>
+library of state-of-the-art machine learning algorithms for catalysis.</p>
 <div align="left">
     <img src="https://user-images.githubusercontent.com/1156489/170388229-642c6619-dece-4c88-85ef-b46f4d5f1031.gif">
 </div>
-<p>It provides training and evaluation code for tasks and models that take arbitrary
+<section id="ocp-documentation">
+<h2><a class="reference external" href="https://open-catalyst-project.github.io/ocp/">OCP Documentation</a><a class="headerlink" href="#ocp-documentation" title="Link to this heading">#</a></h2>
+<p>Full documentation, released data/checkpoints, and tutorials are now available.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://open-catalyst-project.github.io/ocp/core/install.html">Installation</a></p></li>
+<li><p><a class="reference external" href="https://open-catalyst-project.github.io/ocp/core/models.html">Pretrained models</a></p></li>
+<li><p><a class="reference external" href="https://open-catalyst-project.github.io/ocp/core/model_faq.html">FAQ</a></p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">ocp</span></code> provides training and evaluation code for tasks and models that take arbitrary
 chemical structures as input to predict energies / forces / positions / stresses,
 and can be used as a base scaffold for research projects. For an overview of
-tasks, data, and metrics, please read our papers:</p>
+tasks, data, and metrics, please read the documentations and respective papers:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://arxiv.org/abs/2010.09990">OC20</a></p></li>
-<li><p><a class="reference external" href="https://arxiv.org/abs/2206.08917">OC22</a></p></li>
-<li><p><a class="reference external" href="https://arxiv.org/abs/2311.00341">ODAC23</a></p></li>
+<li><p><a class="reference external" href="https://open-catalyst-project.github.io/ocp/core/datasets/oc20.html">OC20</a></p></li>
+<li><p><a class="reference external" href="https://open-catalyst-project.github.io/ocp/core/datasets/oc22.html">OC22</a></p></li>
+<li><p><a class="reference external" href="https://open-catalyst-project.github.io/ocp/core/datasets/odac.html">ODAC23</a></p></li>
 </ul>
 <p>Projects and models built on <code class="docutils literal notranslate"><span class="pre">ocp</span></code>:</p>
 <ul class="simple">
@@ -618,29 +623,6 @@ tasks, data, and metrics, please read our papers:</p>
 <li><p>SpinConv [<a class="reference external" href="https://arxiv.org/abs/2106.09575"><code class="docutils literal notranslate"><span class="pre">arXiv</span></code></a>] [<a class="reference external" href="https://github.com/Open-Catalyst-Project/ocp/blob/e7a8745eb307e8a681a1aa9d30c36e8c41e9457e/ocpmodels/models/spinconv.py"><code class="docutils literal notranslate"><span class="pre">code</span></code></a>]</p></li>
 <li><p>ForceNet [<a class="reference external" href="https://arxiv.org/abs/2103.01436"><code class="docutils literal notranslate"><span class="pre">arXiv</span></code></a>] [<a class="reference external" href="https://github.com/Open-Catalyst-Project/ocp/blob/e7a8745eb307e8a681a1aa9d30c36e8c41e9457e/ocpmodels/models/forcenet.py"><code class="docutils literal notranslate"><span class="pre">code</span></code></a>]</p></li>
 </ul>
-<section id="installation">
-<h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h2>
-<p>See <a class="reference external" href="https://github.com/Open-Catalyst-Project/ocp/blob/main/INSTALL.md">installation instructions</a>.</p>
-</section>
-<section id="download-data">
-<h2>Download data<a class="headerlink" href="#download-data" title="Link to this heading">#</a></h2>
-<p>Dataset download links and instructions are in <a class="reference external" href="https://github.com/Open-Catalyst-Project/ocp/blob/main/DATASET.md">DATASET.md</a>.</p>
-</section>
-<section id="train-and-evaluate-models">
-<h2>Train and evaluate models<a class="headerlink" href="#train-and-evaluate-models" title="Link to this heading">#</a></h2>
-<p>A detailed description of how to train and evaluate models, run ML-based
-relaxations, and generate EvalAI submission files can be found in
-<a class="reference external" href="https://github.com/Open-Catalyst-Project/ocp/blob/main/TRAIN.md">TRAIN.md</a>.</p>
-<p>Our evaluation server is <a class="reference external" href="https://eval.ai/web/challenges/challenge-page/712/overview">hosted on EvalAI</a>.
-Numbers (in papers, etc.) should be reported from the evaluation server.</p>
-<p>Interactive tutorial notebooks can be found
-<a class="reference external" href="https://github.com/Open-Catalyst-Project/ocp/tree/main/tutorials">here</a> to
-get familiar with various components of the codebase.</p>
-</section>
-<section id="pretrained-model-weights">
-<h2>Pretrained model weights<a class="headerlink" href="#pretrained-model-weights" title="Link to this heading">#</a></h2>
-<p>We provide several pretrained model weights for download
-<a class="reference external" href="https://github.com/Open-Catalyst-Project/ocp/blob/main/MODELS.md">here</a>.</p>
 </section>
 <section id="discussion">
 <h2>Discussion<a class="headerlink" href="#discussion" title="Link to this heading">#</a></h2>
@@ -752,10 +734,7 @@ by <a class="reference external" href="http://txie.me">Tian Xie</a>, but has und
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-data">Download data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#train-and-evaluate-models">Train and evaluate models</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pretrained-model-weights">Pretrained model weights</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ocp-documentation">OCP Documentation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion">Discussion</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgements">Acknowledgements</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#license">License</a></li>
