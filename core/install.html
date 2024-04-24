@@ -558,16 +558,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pip-fast-easy-to-get-started">pip (fast, easy to get started)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gpu-enabled-machines">GPU enabled machines</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cpu-only-install-slower-training-inference">CPU-only install (slower training/inference!)</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conda-preferred-for-model-training-development">Conda (preferred for model training &amp; development)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gpu-machines">GPU machines</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cpu-only-machines">CPU-only machines</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conda-or-better-yet-mamba-easy">conda or better yet mamba - easy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pypi-flexible">PyPi - flexible</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dev-install">Dev install</a></li>
 </ul>
             </nav>
         </div>
@@ -581,84 +574,66 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="installation">
 <h1>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h1>
-<section id="pip-fast-easy-to-get-started">
-<h2>pip (fast, easy to get started)<a class="headerlink" href="#pip-fast-easy-to-get-started" title="Link to this heading">#</a></h2>
-<p>Installing the OCP package and necessary dependencies is now as easy as:</p>
-<section id="gpu-enabled-machines">
-<h3>GPU enabled machines<a class="headerlink" href="#gpu-enabled-machines" title="Link to this heading">#</a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">torch</span><span class="o">==</span><span class="mf">1.13.1</span><span class="o">+</span><span class="n">cu117</span> <span class="n">torchvision</span><span class="o">==</span><span class="mf">0.14.1</span><span class="o">+</span><span class="n">cu117</span> <span class="n">torchaudio</span><span class="o">==</span><span class="mf">0.13.1</span> <span class="o">--</span><span class="n">extra</span><span class="o">-</span><span class="n">index</span><span class="o">-</span><span class="n">url</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">download</span><span class="o">.</span><span class="n">pytorch</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">whl</span><span class="o">/</span><span class="n">cu117</span>
-<span class="n">pip</span> <span class="n">install</span> <span class="n">pyg_lib</span> <span class="n">torch_scatter</span> <span class="n">torch_sparse</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">index</span> <span class="o">-</span><span class="n">f</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">data</span><span class="o">.</span><span class="n">pyg</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">whl</span><span class="o">/</span><span class="n">torch</span><span class="o">-</span><span class="mf">1.13.1</span><span class="o">+</span><span class="n">cu117</span><span class="o">.</span><span class="n">html</span>
-<span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">i</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">test</span><span class="o">.</span><span class="n">pypi</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">simple</span><span class="o">/</span> <span class="n">ocp</span><span class="o">-</span><span class="n">models</span>
-</pre></div>
-</div>
-<p>Note the <code class="docutils literal notranslate"><span class="pre">--no-index</span></code> in the second line - it seems unnecessary, but is important to make sure the versions come from that file and not the main pip index!</p>
-</section>
-<section id="cpu-only-install-slower-training-inference">
-<h3>CPU-only install (slower training/inference!)<a class="headerlink" href="#cpu-only-install-slower-training-inference" title="Link to this heading">#</a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">torch</span><span class="o">==</span><span class="mf">1.13.1</span> <span class="n">torchvision</span> <span class="n">torchaudio</span> <span class="o">--</span><span class="n">index</span><span class="o">-</span><span class="n">url</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">download</span><span class="o">.</span><span class="n">pytorch</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">whl</span><span class="o">/</span><span class="n">cpu</span> <span class="c1"># install CPU torch</span>
-<span class="n">pip</span> <span class="n">install</span> <span class="n">pyg_lib</span> <span class="n">torch_scatter</span> <span class="n">torch_sparse</span> <span class="o">-</span><span class="n">f</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">data</span><span class="o">.</span><span class="n">pyg</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">whl</span><span class="o">/</span><span class="n">torch</span><span class="o">-</span><span class="mf">1.13.1</span><span class="o">+</span><span class="n">cpu</span><span class="o">.</span><span class="n">html</span>
-<span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">i</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">test</span><span class="o">.</span><span class="n">pypi</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">simple</span><span class="o">/</span> <span class="n">ocp</span><span class="o">-</span><span class="n">models</span>
-</pre></div>
-</div>
-</section>
-</section>
-<section id="conda-preferred-for-model-training-development">
-<h2>Conda (preferred for model training &amp; development)<a class="headerlink" href="#conda-preferred-for-model-training-development" title="Link to this heading">#</a></h2>
-<ul>
-<li><p>We’ll use <code class="docutils literal notranslate"><span class="pre">conda</span></code> to install dependencies and set up the environment.
-We recommend using the <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html#linux-installers">Python 3.9 Miniconda installer</a>.</p></li>
-<li><p>After installing <code class="docutils literal notranslate"><span class="pre">conda</span></code>, install <a class="reference external" href="https://mamba.readthedocs.io/en/latest/"><code class="docutils literal notranslate"><span class="pre">mamba</span></code></a> to the base environment. <code class="docutils literal notranslate"><span class="pre">mamba</span></code> is a faster, drop-in replacement for <code class="docutils literal notranslate"><span class="pre">conda</span></code>:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>install<span class="w"> </span>mamba<span class="w"> </span>-n<span class="w"> </span>base<span class="w"> </span>-c<span class="w"> </span>conda-forge
+<section id="conda-or-better-yet-mamba-easy">
+<h2>conda or better yet <a class="reference external" href="https://mamba.readthedocs.io/en/latest/user_guide/mamba.html">mamba</a> - easy<a class="headerlink" href="#conda-or-better-yet-mamba-easy" title="Link to this heading">#</a></h2>
+<p>We do not have official conda recipes (yet!), so install with conda or mamba you will need to clone the
+<a class="reference external" href="https://github.com/Open-Catalyst-Project/ocp">ocp repo</a> and run the following from inside the repo directory to
+create an environment with all dependencies.</p>
+<ol class="arabic">
+<li><p>Create an <em>ocp-models</em> environment</p>
+<ol class="arabic">
+<li><p><strong>GPU</strong></p>
+<p>The default environment uses cuda 11.8, if you need a different version you will have to edit <em>pytorch-cuda</em> version
+accordingly.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>env.gpu.yml
 </pre></div>
 </div>
 </li>
-<li><p>Also install <code class="docutils literal notranslate"><span class="pre">conda-merge</span></code> to the base environment:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>install<span class="w"> </span>conda-merge<span class="w"> </span>-n<span class="w"> </span>base<span class="w"> </span>-c<span class="w"> </span>conda-forge
+<li><p><strong>CPU</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>env.cpu.yml
 </pre></div>
 </div>
 </li>
-</ul>
-<p>Next, follow the instructions for <a class="reference internal" href="#gpu-machines"><span class="xref myst">GPU</span></a> or <a class="reference internal" href="#cpu-only-machines"><span class="xref myst">CPU</span></a> machines depending on your hardware to create a new environment named <code class="docutils literal notranslate"><span class="pre">ocp-models</span></code> and install dependencies.</p>
-<section id="gpu-machines">
-<h3>GPU machines<a class="headerlink" href="#gpu-machines" title="Link to this heading">#</a></h3>
-<p>Instructions are for PyTorch 1.13.1, CUDA 11.6 specifically.</p>
-<ul>
-<li><p>First, check that CUDA is in your <code class="docutils literal notranslate"><span class="pre">PATH</span></code> and <code class="docutils literal notranslate"><span class="pre">LD_LIBRARY_PATH</span></code>, e.g.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$PATH</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tr<span class="w"> </span><span class="s1">&#39;:&#39;</span><span class="w"> </span><span class="s1">&#39;\n&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>cuda
-/public/apps/cuda/11.6/bin
-
-$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$LD_LIBRARY_PATH</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tr<span class="w"> </span><span class="s1">&#39;:&#39;</span><span class="w"> </span><span class="s1">&#39;\n&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>cuda
-/public/apps/cuda/11.6/lib64
-</pre></div>
-</div>
-<p>The exact paths may differ on your system.</p>
+</ol>
 </li>
-<li><p>Then install the dependencies:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda-merge<span class="w"> </span>env.common.yml<span class="w"> </span>env.gpu.yml<span class="w"> </span>&gt;<span class="w"> </span>env.yml
-mamba<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>env.yml
-</pre></div>
-</div>
-<p>Activate the conda environment with <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">ocp-models</span></code>.</p>
-</li>
-<li><p>Install the <code class="docutils literal notranslate"><span class="pre">ocp</span></code> package with <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span> <span class="pre">.</span></code>.</p></li>
-<li><p>Finally, install the pre-commit hooks:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pre-commit<span class="w"> </span>install
+<li><p>Activate the environment and install <code class="docutils literal notranslate"><span class="pre">ocpmodels</span></code></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>activate<span class="w"> </span>ocp-models
+pip<span class="w"> </span>install<span class="w"> </span>.
 </pre></div>
 </div>
 </li>
-</ul>
+</ol>
 </section>
-<section id="cpu-only-machines">
-<h3>CPU-only machines<a class="headerlink" href="#cpu-only-machines" title="Link to this heading">#</a></h3>
-<p>Please skip the following if you completed the with-GPU installation from above.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda-merge<span class="w"> </span>env.common.yml<span class="w"> </span>env.cpu.yml<span class="w"> </span>&gt;<span class="w"> </span>env.yml
-mamba<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>env.yml
-conda<span class="w"> </span>activate<span class="w"> </span>ocp-models
-pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
-pre-commit<span class="w"> </span>install
+<section id="pypi-flexible">
+<h2>PyPi - flexible<a class="headerlink" href="#pypi-flexible" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><p>Install <code class="docutils literal notranslate"><span class="pre">pytorch</span></code> by selecting your installer, OS and CPU or CUDA version follow the official
+<a class="reference external" href="https://pytorch.org/get-started/locally/">Pytorch docs</a></p></li>
+<li><p>Install <code class="docutils literal notranslate"><span class="pre">torch_geometric</span></code> and the <code class="docutils literal notranslate"><span class="pre">torch_scatter</span></code>, <code class="docutils literal notranslate"><span class="pre">torch_sparse</span></code>, and <code class="docutils literal notranslate"><span class="pre">torch_cluster</span></code> optional dependencies
+similarly by selecting the appropriate versions in the official
+<a class="reference external" href="https://pytorch-geometric.readthedocs.io/en/latest/notes/installation.html">PyG docs</a></p></li>
+<li><p>Install <code class="docutils literal notranslate"><span class="pre">ocpmodels</span></code></p>
+<ol class="arabic">
+<li><p>From test-PyPi (until we have our official release on PyPi soon!)</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-i<span class="w"> </span>https://test.pypi.org/simple/<span class="w"> </span>ocp-models
 </pre></div>
 </div>
+</li>
+<li><p>Or by cloning the repo and then using pip</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>.
+</pre></div>
+</div>
+</li>
+</ol>
+</li>
+</ol>
 </section>
+<section id="dev-install">
+<h2>Dev install<a class="headerlink" href="#dev-install" title="Link to this heading">#</a></h2>
+<p>If you plan to make contributions you will need to clone the repo and install <code class="docutils literal notranslate"><span class="pre">ocp-models</span></code> with dev dependencies,</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.<span class="o">[</span>dev<span class="o">]</span>
+</pre></div>
+</div>
 </section>
 </section>
 
@@ -726,16 +701,9 @@ pre-commit<span class="w"> </span>install
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pip-fast-easy-to-get-started">pip (fast, easy to get started)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gpu-enabled-machines">GPU enabled machines</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cpu-only-install-slower-training-inference">CPU-only install (slower training/inference!)</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conda-preferred-for-model-training-development">Conda (preferred for model training &amp; development)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gpu-machines">GPU machines</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cpu-only-machines">CPU-only machines</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conda-or-better-yet-mamba-easy">conda or better yet mamba - easy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pypi-flexible">PyPi - flexible</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dev-install">Dev install</a></li>
 </ul>
   </nav></div>
 

@@ -1,16 +1,16 @@
-2024-04-24 17:39:53 (INFO): Project root: /home/runner/work/ocp/ocp
+2024-04-24 19:04:07 (INFO): Project root: /home/runner/work/ocp/ocp
 /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/cuda/amp/grad_scaler.py:126: UserWarning: torch.cuda.amp.GradScaler is enabled, but CUDA is not available.  Disabling.
   warnings.warn(
-2024-04-24 17:39:55 (INFO): amp: true
+2024-04-24 19:04:09 (INFO): amp: true
 cmd:
-  checkpoint_dir: ./checkpoints/2024-04-24-17-40-16
-  commit: 2eb8287
+  checkpoint_dir: ./checkpoints/2024-04-24-19-03-28
+  commit: 7bf8dc1
   identifier: ''
-  logs_dir: ./logs/tensorboard/2024-04-24-17-40-16
+  logs_dir: ./logs/tensorboard/2024-04-24-19-03-28
   print_every: 10
-  results_dir: ./results/2024-04-24-17-40-16
+  results_dir: ./results/2024-04-24-19-03-28
   seed: 0
-  timestamp_id: 2024-04-24-17-40-16
+  timestamp_id: 2024-04-24-19-03-28
 dataset:
   a2g_args:
     r_energy: false
@@ -117,7 +117,7 @@ test_dataset:
 trainer: ocp
 val_dataset: null
 
-2024-04-24 17:39:55 (INFO): Loading dataset: lmdb
+2024-04-24 19:04:09 (INFO): Loading dataset: lmdb
 Traceback (most recent call last):
   File "/home/runner/work/ocp/ocp/main.py", line 89, in <module>
     Runner()(config)
@@ -145,4 +145,4 @@ Traceback (most recent call last):
     return lmdb.open(
            ^^^^^^^^^^
 lmdb.InvalidError: data.db: MDB_INVALID: File is not an LMDB file
-Elapsed time = 4.1 seconds
+Elapsed time = 4.2 seconds
