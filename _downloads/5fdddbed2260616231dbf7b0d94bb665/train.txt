@@ -1,16 +1,16 @@
-2024-04-23 23:07:25 (INFO): Project root: /home/runner/work/ocp/ocp
+2024-04-23 23:28:14 (INFO): Project root: /home/runner/work/ocp/ocp
 /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/cuda/amp/grad_scaler.py:126: UserWarning: torch.cuda.amp.GradScaler is enabled, but CUDA is not available.  Disabling.
   warnings.warn(
-2024-04-23 23:07:26 (INFO): amp: true
+2024-04-23 23:28:16 (INFO): amp: true
 cmd:
-  checkpoint_dir: fine-tuning/checkpoints/2024-04-23-23-06-40-ft-oxides
-  commit: 61bb725
+  checkpoint_dir: fine-tuning/checkpoints/2024-04-23-23-28-00-ft-oxides
+  commit: a3bf034
   identifier: ft-oxides
-  logs_dir: fine-tuning/logs/tensorboard/2024-04-23-23-06-40-ft-oxides
+  logs_dir: fine-tuning/logs/tensorboard/2024-04-23-23-28-00-ft-oxides
   print_every: 10
-  results_dir: fine-tuning/results/2024-04-23-23-06-40-ft-oxides
+  results_dir: fine-tuning/results/2024-04-23-23-28-00-ft-oxides
   seed: 0
-  timestamp_id: 2024-04-23-23-06-40-ft-oxides
+  timestamp_id: 2024-04-23-23-28-00-ft-oxides
 dataset:
   a2g_args:
     r_energy: true
@@ -138,7 +138,7 @@ val_dataset:
     r_forces: true
   src: val.db
 
-2024-04-23 23:07:26 (INFO): Loading dataset: lmdb
+2024-04-23 23:28:16 (INFO): Loading dataset: lmdb
 Traceback (most recent call last):
   File "/home/runner/work/ocp/ocp/main.py", line 89, in <module>
     Runner()(config)
