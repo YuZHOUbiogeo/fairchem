@@ -773,7 +773,7 @@ WARNING:root:Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
   warnings.warn(
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Elapsed time 67.6 seconds.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Elapsed time 67.4 seconds.
 </pre></div>
 </div>
 <img alt="../../_images/92bd7f94dd548c8cfc2744eb5890cd23fada1ff98e8dc907657e2eb109af0402.png" src="../../_images/92bd7f94dd548c8cfc2744eb5890cd23fada1ff98e8dc907657e2eb109af0402.png" />
@@ -1138,7 +1138,7 @@ trainer: ocp
 <span class="expanded">Hide code cell output</span>
 </summary>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Elapsed time = 3.9 seconds
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Elapsed time = 38.2 seconds
 </pre></div>
 </div>
 </div>
@@ -1154,7 +1154,7 @@ trainer: ocp
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;fine-tuning/checkpoints/2024-04-25-00-25-36-ft-oxides&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;fine-tuning/checkpoints/2024-05-01-23-19-28-ft-oxides&#39;
 </pre></div>
 </div>
 </div>
@@ -1169,42 +1169,15 @@ trainer: ocp
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">17</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">newckpt</span> <span class="o">=</span> <span class="n">cpdir</span> <span class="o">+</span> <span class="s1">&#39;/checkpoint.pt&#39;</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">newcalc</span> <span class="o">=</span> <span class="n">OCPCalculator</span><span class="p">(</span><span class="n">checkpoint_path</span><span class="o">=</span><span class="n">newckpt</span><span class="p">,</span> <span class="n">cpu</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-
-<span class="nn">File ~/work/ocp/ocp/ocpmodels/common/relaxation/ase_utils.py:140,</span> in <span class="ni">OCPCalculator.__init__</span><span class="nt">(self, config_yml, checkpoint_path, model_name, local_cache, trainer, cutoff, max_neighbors, cpu, seed)</span>
-<span class="g g-Whitespace">    </span><span class="mi">137</span>         <span class="n">config</span><span class="p">[</span><span class="s2">&quot;dataset&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s2">&quot;dataset&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;train&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">138</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">139</span>     <span class="c1"># Loads the config from the checkpoint directly (always on CPU).</span>
-<span class="ne">--&gt; </span><span class="mi">140</span>     <span class="n">checkpoint</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">checkpoint_path</span><span class="p">,</span> <span class="n">map_location</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">&quot;cpu&quot;</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">141</span>     <span class="n">config</span> <span class="o">=</span> <span class="n">checkpoint</span><span class="p">[</span><span class="s2">&quot;config&quot;</span><span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">143</span> <span class="k">if</span> <span class="n">trainer</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/serialization.py:998,</span> in <span class="ni">load</span><span class="nt">(f, map_location, pickle_module, weights_only, mmap, **pickle_load_args)</span>
-<span class="g g-Whitespace">    </span><span class="mi">995</span> <span class="k">if</span> <span class="s1">&#39;encoding&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">pickle_load_args</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
-<span class="g g-Whitespace">    </span><span class="mi">996</span>     <span class="n">pickle_load_args</span><span class="p">[</span><span class="s1">&#39;encoding&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;utf-8&#39;</span>
-<span class="ne">--&gt; </span><span class="mi">998</span> <span class="k">with</span> <span class="n">_open_file_like</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">opened_file</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">999</span>     <span class="k">if</span> <span class="n">_is_zipfile</span><span class="p">(</span><span class="n">opened_file</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1000</span>         <span class="c1"># The zipfile reader is going to advance the current file position.</span>
-<span class="g g-Whitespace">   </span><span class="mi">1001</span>         <span class="c1"># If we want to actually tail call to torch.jit.load, we need to</span>
-<span class="g g-Whitespace">   </span><span class="mi">1002</span>         <span class="c1"># reset back to the original position.</span>
-<span class="g g-Whitespace">   </span><span class="mi">1003</span>         <span class="n">orig_position</span> <span class="o">=</span> <span class="n">opened_file</span><span class="o">.</span><span class="n">tell</span><span class="p">()</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/serialization.py:445,</span> in <span class="ni">_open_file_like</span><span class="nt">(name_or_buffer, mode)</span>
-<span class="g g-Whitespace">    </span><span class="mi">443</span> <span class="k">def</span> <span class="nf">_open_file_like</span><span class="p">(</span><span class="n">name_or_buffer</span><span class="p">,</span> <span class="n">mode</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">444</span>     <span class="k">if</span> <span class="n">_is_path</span><span class="p">(</span><span class="n">name_or_buffer</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">445</span>         <span class="k">return</span> <span class="n">_open_file</span><span class="p">(</span><span class="n">name_or_buffer</span><span class="p">,</span> <span class="n">mode</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">446</span>     <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">447</span>         <span class="k">if</span> <span class="s1">&#39;w&#39;</span> <span class="ow">in</span> <span class="n">mode</span><span class="p">:</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/serialization.py:426,</span> in <span class="ni">_open_file.__init__</span><span class="nt">(self, name, mode)</span>
-<span class="g g-Whitespace">    </span><span class="mi">425</span> <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">mode</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">426</span>     <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">mode</span><span class="p">))</span>
-
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;fine-tuning/checkpoints/2024-04-25-00-25-36-ft-oxides/checkpoint.pt&#39;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/cuda/amp/grad_scaler.py:126: UserWarning: torch.cuda.amp.GradScaler is enabled, but CUDA is not available.  Disabling.
+  warnings.warn(
+WARNING:root:Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Using `weight_decay` from `optim` instead of `optim.optimizer_params`.Please update your config to use `optim.optimizer_params.weight_decay`.`optim.weight_decay` will soon be deprecated.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:No seed has been set in modelcheckpoint or OCPCalculator! Results may not be reproducible on re-run
 </pre></div>
 </div>
 </div>
@@ -1241,11 +1214,23 @@ trainer: ocp
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/amp/autocast_mode.py:250: UserWarning: User provided device_type of &#39;cuda&#39;, but CUDA is not available. Disabling
+  warnings.warn(
+</pre></div>
+</div>
+<img alt="../../_images/32e5846c38fd7063f3e1b67ea0b1754f53dd7c002c403bdcaf03ccf3b88331b0.png" src="../../_images/32e5846c38fd7063f3e1b67ea0b1754f53dd7c002c403bdcaf03ccf3b88331b0.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mae</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">dft</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ocp</span><span class="p">)))</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;New MAE = </span><span class="si">{</span><span class="n">mae</span><span class="si">:</span><span class="s1">1.3f</span><span class="si">}</span><span class="s1"> eV/atom&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>New MAE = 0.686 eV/atom
 </pre></div>
 </div>
 </div>
@@ -1262,6 +1247,9 @@ trainer: ocp
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/f5e011835d1f1deaeb3f938bf288a9c2d92229e28acdfa16c9675c3a25cc8b35.png" src="../../_images/f5e011835d1f1deaeb3f938bf288a9c2d92229e28acdfa16c9675c3a25cc8b35.png" />
 </div>
 </div>
 <p>It is possible to continue refining the fit. The simple things to do are to use more epochs of training. Eventually the MAE will stabilize, and then it may be necessary to adjust other optimization parameters like the learning rate (usually you decrease it).</p>
