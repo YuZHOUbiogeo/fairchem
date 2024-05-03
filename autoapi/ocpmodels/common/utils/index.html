@@ -561,6 +561,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.common.utils.UniqueKeyLoader"><code class="docutils literal notranslate"><span class="pre">UniqueKeyLoader</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.common.utils.UniqueKeyLoader.construct_mapping"><code class="docutils literal notranslate"><span class="pre">UniqueKeyLoader.construct_mapping()</span></code></a></li>
+</ul>
+</li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.common.utils.pyg2_data_transform"><code class="docutils literal notranslate"><span class="pre">pyg2_data_transform()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.common.utils.save_checkpoint"><code class="docutils literal notranslate"><span class="pre">save_checkpoint()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.common.utils.Complete"><code class="docutils literal notranslate"><span class="pre">Complete</span></code></a><ul class="nav section-nav flex-column">
@@ -623,7 +627,7 @@ document.write(`
                   
   <section id="module-ocpmodels.common.utils">
 <span id="ocpmodels-common-utils"></span><h1><a class="reference internal" href="#module-ocpmodels.common.utils" title="ocpmodels.common.utils"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.common.utils</span></code></a><a class="headerlink" href="#module-ocpmodels.common.utils" title="Link to this heading">#</a></h1>
-<p>Copyright (c) Facebook, Inc. and its affiliates.</p>
+<p>Copyright (c) Meta, Inc. and its affiliates.</p>
 <p>This source code is licensed under the MIT license found in the
 LICENSE file in the root directory of this source tree.</p>
 <section id="module-contents">
@@ -632,10 +636,13 @@ LICENSE file in the root directory of this source tree.</p>
 <h3>Classes<a class="headerlink" href="#classes" title="Link to this heading">#</a></h3>
 <table class="autosummary longtable table autosummary">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#ocpmodels.common.utils.Complete" title="ocpmodels.common.utils.Complete"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Complete</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ocpmodels.common.utils.UniqueKeyLoader" title="ocpmodels.common.utils.UniqueKeyLoader"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UniqueKeyLoader</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#ocpmodels.common.utils.SeverityLevelBetween" title="ocpmodels.common.utils.SeverityLevelBetween"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SeverityLevelBetween</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#ocpmodels.common.utils.Complete" title="ocpmodels.common.utils.Complete"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Complete</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ocpmodels.common.utils.SeverityLevelBetween" title="ocpmodels.common.utils.SeverityLevelBetween"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SeverityLevelBetween</span></code></a></p></td>
 <td><p>Filter instances are used to perform arbitrary filtering of LogRecords.</p></td>
 </tr>
 </tbody>
@@ -758,6 +765,17 @@ LICENSE file in the root directory of this source tree.</p>
 </tr>
 </tbody>
 </table>
+<dl class="py class">
+<dt class="sig sig-object py" id="ocpmodels.common.utils.UniqueKeyLoader">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ocpmodels.common.utils.</span></span><span class="sig-name descname"><span class="pre">UniqueKeyLoader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stream</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ocpmodels.common.utils.UniqueKeyLoader" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">yaml.SafeLoader</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ocpmodels.common.utils.UniqueKeyLoader.construct_mapping">
+<span class="sig-name descname"><span class="pre">construct_mapping</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ocpmodels.common.utils.UniqueKeyLoader.construct_mapping" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 <dl class="py function">
 <dt class="sig sig-object py" id="ocpmodels.common.utils.pyg2_data_transform">
 <span class="sig-prename descclassname"><span class="pre">ocpmodels.common.utils.</span></span><span class="sig-name descname"><span class="pre">pyg2_data_transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">torch_geometric.data.Data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ocpmodels.common.utils.pyg2_data_transform" title="Link to this definition">#</a></dt>
@@ -1112,6 +1130,10 @@ are now. Update old configs to fit the new expected structure.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.common.utils.UniqueKeyLoader"><code class="docutils literal notranslate"><span class="pre">UniqueKeyLoader</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.common.utils.UniqueKeyLoader.construct_mapping"><code class="docutils literal notranslate"><span class="pre">UniqueKeyLoader.construct_mapping()</span></code></a></li>
+</ul>
+</li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.common.utils.pyg2_data_transform"><code class="docutils literal notranslate"><span class="pre">pyg2_data_transform()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.common.utils.save_checkpoint"><code class="docutils literal notranslate"><span class="pre">save_checkpoint()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ocpmodels.common.utils.Complete"><code class="docutils literal notranslate"><span class="pre">Complete</span></code></a><ul class="nav section-nav flex-column">

@@ -581,6 +581,9 @@ document.write(`
                   
   <section id="module-ocpmodels.models.model_registry">
 <span id="ocpmodels-models-model-registry"></span><h1><a class="reference internal" href="#module-ocpmodels.models.model_registry" title="ocpmodels.models.model_registry"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ocpmodels.models.model_registry</span></code></a><a class="headerlink" href="#module-ocpmodels.models.model_registry" title="Link to this heading">#</a></h1>
+<p>Copyright (c) Meta, Inc. and its affiliates.</p>
+<p>This source code is licensed under the MIT license found in the
+LICENSE file in the root directory of this source tree.</p>
 <section id="module-contents">
 <h2>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading">#</a></h2>
 <section id="functions">
@@ -623,11 +626,16 @@ document.write(`
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>model_name</strong> (<em>str</em>) – the model name. See available_pretrained_checkpoints.</p></li>
-<li><p><strong>local_cache</strong> (<em>str</em>)</p></li>
+<li><p><strong>local_cache</strong> (<em>str</em><em> or </em><em>Path</em>) – path to local cache directory</p></li>
 </ul>
 </dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>local path to checkpoint file</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
 </dl>
-<p>Returns:</p>
 </dd></dl>
 
 </section>

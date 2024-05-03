@@ -616,7 +616,26 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/tmp/ocp_checkpoints/eq2_31M_ec4_allmd.pt&#39;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ERROR:root:Not a valid model name &#39;EquiformerV2 (31M) All+MD&#39;
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">ocpmodels.models.model_registry</span> <span class="kn">import</span> <span class="n">model_name_to_local_file</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">checkpoint_path</span> <span class="o">=</span> <span class="n">model_name_to_local_file</span><span class="p">(</span><span class="s1">&#39;EquiformerV2 (31M) All+MD&#39;</span><span class="p">,</span> <span class="n">local_cache</span><span class="o">=</span><span class="s1">&#39;/tmp/ocp_checkpoints/&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">checkpoint_path</span>
+
+<span class="nn">File ~/work/ocp/ocp/ocpmodels/models/model_registry.py:45,</span> in <span class="ni">model_name_to_local_file</span><span class="nt">(model_name, local_cache)</span>
+<span class="g g-Whitespace">     </span><span class="mi">43</span> <span class="k">if</span> <span class="n">model_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">MODEL_REGISTRY</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">44</span>     <span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Not a valid model name &#39;</span><span class="si">{</span><span class="n">model_name</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">45</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">46</span>         <span class="sa">f</span><span class="s2">&quot;Not a valid model name &#39;</span><span class="si">{</span><span class="n">model_name</span><span class="si">}</span><span class="s2">&#39;. Model name must be one of </span><span class="si">{</span><span class="n">available_pretrained_models</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">47</span>     <span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">48</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">local_cache</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">49</span>     <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">local_cache</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="ne">ValueError</span>: Not a valid model name &#39;EquiformerV2 (31M) All+MD&#39;. Model name must be one of (&#39;CGCNN-S2EF-OC20-200k&#39;, &#39;CGCNN-S2EF-OC20-2M&#39;, &#39;CGCNN-S2EF-OC20-20M&#39;, &#39;CGCNN-S2EF-OC20-All&#39;, &#39;DimeNet-S2EF-OC20-200k&#39;, &#39;DimeNet-S2EF-OC20-2M&#39;, &#39;SchNet-S2EF-OC20-200k&#39;, &#39;SchNet-S2EF-OC20-2M&#39;, &#39;SchNet-S2EF-OC20-20M&#39;, &#39;SchNet-S2EF-OC20-All&#39;, &#39;DimeNet++-S2EF-OC20-200k&#39;, &#39;DimeNet++-S2EF-OC20-2M&#39;, &#39;DimeNet++-S2EF-OC20-20M&#39;, &#39;DimeNet++-S2EF-OC20-All&#39;, &#39;SpinConv-S2EF-OC20-2M&#39;, &#39;SpinConv-S2EF-OC20-All&#39;, &#39;GemNet-dT-S2EF-OC20-2M&#39;, &#39;GemNet-dT-S2EF-OC20-All&#39;, &#39;PaiNN-S2EF-OC20-All&#39;, &#39;GemNet-OC-S2EF-OC20-2M&#39;, &#39;GemNet-OC-S2EF-OC20-All&#39;, &#39;GemNet-OC-S2EF-OC20-All+MD&#39;, &#39;GemNet-OC-Large-S2EF-OC20-All+MD&#39;, &#39;SCN-S2EF-OC20-2M&#39;, &#39;SCN-t4-b2-S2EF-OC20-2M&#39;, &#39;SCN-S2EF-OC20-All+MD&#39;, &#39;eSCN-L4-M2-Lay12-S2EF-OC20-2M&#39;, &#39;eSCN-L6-M2-Lay12-S2EF-OC20-2M&#39;, &#39;eSCN-L6-M2-Lay12-S2EF-OC20-All+MD&#39;, &#39;eSCN-L6-M3-Lay20-S2EF-OC20-All+MD&#39;, &#39;EquiformerV2-83M-S2EF-OC20-2M&#39;, &#39;EquiformerV2-31M-S2EF-OC20-All+MD&#39;, &#39;EquiformerV2-153M-S2EF-OC20-All+MD&#39;, &#39;SchNet-S2EF-force-only-OC20-All&#39;, &#39;DimeNet++-force-only-OC20-All&#39;, &#39;DimeNet++-Large-S2EF-force-only-OC20-All&#39;, &#39;DimeNet++-S2EF-force-only-OC20-20M+Rattled&#39;, &#39;DimeNet++-S2EF-force-only-OC20-20M+MD&#39;, &#39;CGCNN-IS2RE-OC20-10k&#39;, &#39;CGCNN-IS2RE-OC20-100k&#39;, &#39;CGCNN-IS2RE-OC20-All&#39;, &#39;DimeNet-IS2RE-OC20-10k&#39;, &#39;DimeNet-IS2RE-OC20-100k&#39;, &#39;DimeNet-IS2RE-OC20-all&#39;, &#39;SchNet-IS2RE-OC20-10k&#39;, &#39;SchNet-IS2RE-OC20-100k&#39;, &#39;SchNet-IS2RE-OC20-All&#39;, &#39;DimeNet++-IS2RE-OC20-10k&#39;, &#39;DimeNet++-IS2RE-OC20-100k&#39;, &#39;DimeNet++-IS2RE-OC20-All&#39;, &#39;PaiNN-IS2RE-OC20-All&#39;, &#39;GemNet-dT-S2EFS-OC22&#39;, &#39;GemNet-OC-S2EFS-OC22&#39;, &#39;GemNet-OC-S2EFS-OC20+OC22&#39;, &#39;GemNet-OC-S2EFS-nsn-OC20+OC22&#39;, &#39;GemNet-OC-S2EFS-OC20-&gt;OC22&#39;, &#39;EquiformerV2-lE4-lF100-S2EFS-OC22&#39;, &#39;SchNet-S2EF-ODAC&#39;, &#39;DimeNet++-S2EF-ODAC&#39;, &#39;PaiNN-S2EF-ODAC&#39;, &#39;GemNet-OC-S2EF-ODAC&#39;, &#39;eSCN-S2EF-ODAC&#39;, &#39;EquiformerV2-S2EF-ODAC&#39;, &#39;EquiformerV2-Large-S2EF-ODAC&#39;, &#39;Gemnet-OC-IS2RE-ODAC&#39;, &#39;eSCN-IS2RE-ODAC&#39;, &#39;EquiformerV2-IS2RE-ODAC&#39;)
 </pre></div>
 </div>
 </div>
@@ -640,11 +659,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PosixPath(&#39;/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/ocdata/databases/pkls/adsorbates.pkl&#39;)
-</pre></div>
-</div>
-</div>
 </div>
 <section id="work-out-a-single-example">
 <h2>Work out a single example<a class="headerlink" href="#work-out-a-single-example" title="Link to this heading">#</a></h2>
@@ -663,11 +677,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Slab: (Ag36Pd12, (1, 1, 1), 0.16666666666666669, True)]
-</pre></div>
-</div>
-</div>
 </div>
 <p>We now need to generate potential placements. We use two kinds of guesses, a heuristic and a random approach. This cell generates 13 potential adsorption geometries.</p>
 <div class="cell docutils container">
@@ -681,11 +690,6 @@ document.write(`
 
 <span class="n">adslabs</span> <span class="o">=</span> <span class="p">[</span><span class="o">*</span><span class="n">heuristic_adslabs</span><span class="o">.</span><span class="n">atoms_list</span><span class="p">,</span> <span class="o">*</span><span class="n">random_adslabs</span><span class="o">.</span><span class="n">atoms_list</span><span class="p">]</span>
 <span class="nb">len</span><span class="p">(</span><span class="n">adslabs</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>13
 </pre></div>
 </div>
 </div>
@@ -709,9 +713,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../../_images/c4bd07ae74ecb7f80731ccb962bb27c434da8ce3eb263de57015bcfd94268dea.png" src="../../_images/c4bd07ae74ecb7f80731ccb962bb27c434da8ce3eb263de57015bcfd94268dea.png" />
-</div>
 </div>
 <section id="run-an-ml-relaxation">
 <h3>Run an ML relaxation<a class="headerlink" href="#run-an-ml-relaxation" title="Link to this heading">#</a></h3>
@@ -724,21 +725,6 @@ document.write(`
 <span class="c1"># Define the calculator</span>
 <span class="n">calc</span> <span class="o">=</span> <span class="n">OCPCalculator</span><span class="p">(</span><span class="n">checkpoint_path</span><span class="o">=</span><span class="n">checkpoint_path</span><span class="p">,</span> <span class="n">cpu</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>   <span class="c1"># if you have a GPU</span>
 <span class="c1"># calc = OCPCalculator(checkpoint_path=checkpoint_path, cpu=True)  # If you have CPU only</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Detected old config, converting to new format. Consider updating to avoid potential incompatibilities.
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/cuda/amp/grad_scaler.py:126: UserWarning: torch.cuda.amp.GradScaler is enabled, but CUDA is not available.  Disabling.
-  warnings.warn(
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Skipping scheduler setup. No training set found.
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:No seed has been set in modelcheckpoint or OCPCalculator! Results may not be reproducible on re-run
 </pre></div>
 </div>
 </div>
@@ -757,34 +743,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/amp/autocast_mode.py:250: UserWarning: User provided device_type of &#39;cuda&#39;, but CUDA is not available. Disabling
-  warnings.warn(
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      Step     Time          Energy         fmax
-BFGS:    0 23:50:17        0.448873        0.4072
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    1 23:50:18        0.441974        0.3868
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    2 23:50:20        0.360472        0.1447
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    3 23:50:21        0.357210        0.1074
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    4 23:50:23        0.355165        0.0667
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    5 23:50:24        0.351798        0.0292
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Elapsed time 8.4 seconds
-</pre></div>
-</div>
-</div>
 </div>
 <p>With a GPU this runs pretty quickly. It is much slower on a CPU.</p>
 </section>
@@ -799,48 +757,6 @@ BFGS:    0 23:50:17        0.448873        0.4072
     <span class="n">bulks</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
     
 <span class="n">bulks</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;atoms&#39;: Atoms(symbols=&#39;CuPd3&#39;, pbc=True, cell=[3.91276645, 3.91276645, 3.91276645], calculator=SinglePointDFTCalculator(...)),
-  &#39;src_id&#39;: &#39;oqmd-349719&#39;},
- {&#39;atoms&#39;: Atoms(symbols=&#39;Pd3Ag&#39;, pbc=True, cell=[4.02885979, 4.02885979, 4.02885979], calculator=SinglePointDFTCalculator(...)),
-  &#39;src_id&#39;: &#39;oqmd-345911&#39;},
- {&#39;atoms&#39;: Atoms(symbols=&#39;ScPd3&#39;, pbc=True, cell=[4.04684963, 4.04684963, 4.04684963], initial_charges=..., initial_magmoms=..., momenta=..., tags=..., calculator=SinglePointCalculator(...)),
-  &#39;src_id&#39;: &#39;mp-2677&#39;},
- {&#39;atoms&#39;: Atoms(symbols=&#39;Mo3Pd&#39;, pbc=True, cell=[3.96898192, 3.96898192, 3.96898192], initial_charges=..., initial_magmoms=..., momenta=..., tags=..., calculator=SinglePointCalculator(...)),
-  &#39;src_id&#39;: &#39;mp-1186014&#39;},
- {&#39;atoms&#39;: Atoms(symbols=&#39;Ag3Pd&#39;, pbc=True, cell=[4.14093081, 4.14093081, 4.14093081], calculator=SinglePointCalculator(...)),
-  &#39;src_id&#39;: &#39;oqmd-343039&#39;},
- {&#39;src_id&#39;: &#39;oqmd-348629&#39;,
-  &#39;atoms&#39;: Atoms(symbols=&#39;Ag3Cu&#39;, pbc=True, cell=[4.09439099, 4.09439099, 4.09439099], calculator=SinglePointDFTCalculator(...))},
- {&#39;src_id&#39;: &#39;oqmd-343006&#39;,
-  &#39;atoms&#39;: Atoms(symbols=&#39;Ag3Mo&#39;, pbc=True, cell=[4.1665424, 4.1665424, 4.1665424], calculator=SinglePointDFTCalculator(...))},
- {&#39;src_id&#39;: &#39;oqmd-349813&#39;,
-  &#39;atoms&#39;: Atoms(symbols=&#39;AgCu3&#39;, pbc=True, cell=[3.82618693, 3.82618693, 3.82618693], calculator=SinglePointDFTCalculator(...))},
- {&#39;src_id&#39;: &#39;oqmd-347528&#39;,
-  &#39;atoms&#39;: Atoms(symbols=&#39;Cu3Ru&#39;, pbc=True, cell=[3.72399424, 3.72399424, 3.72399424], calculator=SinglePointDFTCalculator(...))},
- {&#39;src_id&#39;: &#39;oqmd-344251&#39;,
-  &#39;atoms&#39;: Atoms(symbols=&#39;PdTa3&#39;, pbc=True, cell=[4.13568646, 4.13568646, 4.13568646], calculator=SinglePointDFTCalculator(...))},
- {&#39;src_id&#39;: &#39;oqmd-343394&#39;,
-  &#39;atoms&#39;: Atoms(symbols=&#39;AgMo3&#39;, pbc=True, cell=[4.00594441, 4.00594441, 4.00594441], calculator=SinglePointDFTCalculator(...))},
- {&#39;src_id&#39;: &#39;oqmd-344635&#39;,
-  &#39;atoms&#39;: Atoms(symbols=&#39;Mo3Ru&#39;, pbc=True, cell=[3.95617571, 3.95617571, 3.95617571], calculator=SinglePointDFTCalculator(...))},
- {&#39;src_id&#39;: &#39;oqmd-344237&#39;,
-  &#39;atoms&#39;: Atoms(symbols=&#39;MoPd3&#39;, pbc=True, cell=[3.96059535, 3.96059535, 3.96059535], calculator=SinglePointDFTCalculator(...))},
- {&#39;src_id&#39;: &#39;oqmd-346818&#39;,
-  &#39;atoms&#39;: Atoms(symbols=&#39;Pd3Ru&#39;, pbc=True, cell=[3.93112559, 3.93112559, 3.93112559], calculator=SinglePointDFTCalculator(...))},
- {&#39;src_id&#39;: &#39;oqmd-349496&#39;,
-  &#39;atoms&#39;: Atoms(symbols=&#39;Pd3Ta&#39;, pbc=True, cell=[3.9907085, 3.9907085, 3.9907085], calculator=SinglePointDFTCalculator(...))},
- {&#39;src_id&#39;: &#39;oqmd-343615&#39;,
-  &#39;atoms&#39;: Atoms(symbols=&#39;MoRu3&#39;, pbc=True, cell=[3.85915122, 3.85915122, 3.85915122], calculator=SinglePointDFTCalculator(...))},
- {&#39;src_id&#39;: &#39;oqmd-348366&#39;,
-  &#39;atoms&#39;: Atoms(symbols=&#39;AgTa3&#39;, pbc=True, cell=[4.1730103, 4.1730103, 4.1730103], calculator=SinglePointDFTCalculator(...))},
- {&#39;src_id&#39;: &#39;oqmd-345352&#39;,
-  &#39;atoms&#39;: Atoms(symbols=&#39;AuHf3&#39;, pbc=True, cell=[4.36653536, 4.36653536, 4.36653536], calculator=SinglePointDFTCalculator(...))},
- {&#39;src_id&#39;: &#39;oqmd-346653&#39;,
-  &#39;atoms&#39;: Atoms(symbols=&#39;AgHf3&#39;, pbc=True, cell=[4.39618436, 4.39618436, 4.39618436], calculator=SinglePointDFTCalculator(...))}]
 </pre></div>
 </div>
 </div>
@@ -899,57 +815,6 @@ BFGS:    0 23:50:17        0.448873        0.4072
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;  Elapsed time: </span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">t0</span><span class="si">:</span><span class="s1">1.1f</span><span class="si">}</span><span class="s1"> seconds for data/</span><span class="si">{</span><span class="n">bulk_src_id</span><span class="si">}</span><span class="s1">_NNH/</span><span class="si">{</span><span class="n">idx</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Elapsed time: </span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">tinit</span><span class="si">:</span><span class="s1">1.1f</span><span class="si">}</span><span class="s1"> seconds&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|          | 0/1 [00:00&lt;?, ?it/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9 H slabs to compute for oqmd-349719
-9 NNH slabs to compute for oqmd-349719
-Running data/oqmd-349719_H/0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 55.4 seconds for data/oqmd-349719_H/0
-Running data/oqmd-349719_H/1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 13.4 seconds for data/oqmd-349719_H/1
-Running data/oqmd-349719_H/2
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 56.4 seconds for data/oqmd-349719_H/2
-Running data/oqmd-349719_H/3
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 40.1 seconds for data/oqmd-349719_H/3
-Running data/oqmd-349719_NNH/0
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 138.5 seconds for data/oqmd-349719_NNH/0
-Running data/oqmd-349719_NNH/1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 138.3 seconds for data/oqmd-349719_NNH/1
-Running data/oqmd-349719_NNH/2
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 138.5 seconds for data/oqmd-349719_NNH/2
-Running data/oqmd-349719_NNH/3
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 1/1 [12:02&lt;00:00, 722.02s/it]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 1/1 [12:02&lt;00:00, 722.02s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Elapsed time: 139.9 seconds for data/oqmd-349719_NNH/3
-Elapsed time: 722.0 seconds
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
@@ -1044,20 +909,6 @@ Elapsed time: 722.0 seconds
 <span class="n">df_h</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">adsorbate</span> <span class="o">==</span> <span class="s2">&quot;H&quot;</span><span class="p">]</span>
 <span class="n">df_nnh</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">adsorbate</span> <span class="o">==</span> <span class="s2">&quot;NNH&quot;</span><span class="p">]</span>
 <span class="n">df_flat</span> <span class="o">=</span> <span class="n">df_h</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_nnh</span><span class="p">,</span> <span class="n">on</span> <span class="o">=</span> <span class="s2">&quot;bulk_id&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="n">line</span> <span class="mi">25</span>
-<span class="g g-Whitespace">     </span><span class="mi">22</span>     <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">24</span>     <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="o">~</span><span class="n">df</span><span class="o">.</span><span class="n">anomolous</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
-<span class="ne">---&gt; </span><span class="mi">25</span>     <span class="n">min_e</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">relaxed_energy_ml</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
-<span class="g g-Whitespace">     </span><span class="mi">26</span>     <span class="n">min_E</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">&quot;adsorbate&quot;</span><span class="p">:</span><span class="n">ads</span><span class="p">,</span> <span class="s2">&quot;bulk_id&quot;</span><span class="p">:</span><span class="n">bulk</span><span class="p">,</span> <span class="s2">&quot;min_E_ml&quot;</span><span class="p">:</span> <span class="n">min_e</span><span class="p">})</span>
-<span class="g g-Whitespace">     </span><span class="mi">28</span> <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">min_E</span><span class="p">)</span>
-
-<span class="ne">ValueError</span>: min() arg is an empty sequence
 </pre></div>
 </div>
 </div>

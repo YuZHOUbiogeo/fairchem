@@ -593,6 +593,29 @@ Mehta, P., Salvador, P. A., &amp; Kitchin, J. R. (2015). Identifying potential B
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ERROR:root:Not a valid model name &#39;GemNet-OCOC20+OC22&#39;
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">ocpmodels.models.model_registry</span> <span class="kn">import</span> <span class="n">model_name_to_local_file</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">checkpoint_path</span> <span class="o">=</span> <span class="n">model_name_to_local_file</span><span class="p">(</span><span class="s1">&#39;GemNet-OCOC20+OC22&#39;</span><span class="p">,</span> <span class="n">local_cache</span><span class="o">=</span><span class="s1">&#39;/tmp/ocp_checkpoints/&#39;</span><span class="p">)</span>
+
+<span class="nn">File ~/work/ocp/ocp/ocpmodels/models/model_registry.py:45,</span> in <span class="ni">model_name_to_local_file</span><span class="nt">(model_name, local_cache)</span>
+<span class="g g-Whitespace">     </span><span class="mi">43</span> <span class="k">if</span> <span class="n">model_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">MODEL_REGISTRY</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">44</span>     <span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Not a valid model name &#39;</span><span class="si">{</span><span class="n">model_name</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">45</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">46</span>         <span class="sa">f</span><span class="s2">&quot;Not a valid model name &#39;</span><span class="si">{</span><span class="n">model_name</span><span class="si">}</span><span class="s2">&#39;. Model name must be one of </span><span class="si">{</span><span class="n">available_pretrained_models</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">47</span>     <span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">48</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">local_cache</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">49</span>     <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">local_cache</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="ne">ValueError</span>: Not a valid model name &#39;GemNet-OCOC20+OC22&#39;. Model name must be one of (&#39;CGCNN-S2EF-OC20-200k&#39;, &#39;CGCNN-S2EF-OC20-2M&#39;, &#39;CGCNN-S2EF-OC20-20M&#39;, &#39;CGCNN-S2EF-OC20-All&#39;, &#39;DimeNet-S2EF-OC20-200k&#39;, &#39;DimeNet-S2EF-OC20-2M&#39;, &#39;SchNet-S2EF-OC20-200k&#39;, &#39;SchNet-S2EF-OC20-2M&#39;, &#39;SchNet-S2EF-OC20-20M&#39;, &#39;SchNet-S2EF-OC20-All&#39;, &#39;DimeNet++-S2EF-OC20-200k&#39;, &#39;DimeNet++-S2EF-OC20-2M&#39;, &#39;DimeNet++-S2EF-OC20-20M&#39;, &#39;DimeNet++-S2EF-OC20-All&#39;, &#39;SpinConv-S2EF-OC20-2M&#39;, &#39;SpinConv-S2EF-OC20-All&#39;, &#39;GemNet-dT-S2EF-OC20-2M&#39;, &#39;GemNet-dT-S2EF-OC20-All&#39;, &#39;PaiNN-S2EF-OC20-All&#39;, &#39;GemNet-OC-S2EF-OC20-2M&#39;, &#39;GemNet-OC-S2EF-OC20-All&#39;, &#39;GemNet-OC-S2EF-OC20-All+MD&#39;, &#39;GemNet-OC-Large-S2EF-OC20-All+MD&#39;, &#39;SCN-S2EF-OC20-2M&#39;, &#39;SCN-t4-b2-S2EF-OC20-2M&#39;, &#39;SCN-S2EF-OC20-All+MD&#39;, &#39;eSCN-L4-M2-Lay12-S2EF-OC20-2M&#39;, &#39;eSCN-L6-M2-Lay12-S2EF-OC20-2M&#39;, &#39;eSCN-L6-M2-Lay12-S2EF-OC20-All+MD&#39;, &#39;eSCN-L6-M3-Lay20-S2EF-OC20-All+MD&#39;, &#39;EquiformerV2-83M-S2EF-OC20-2M&#39;, &#39;EquiformerV2-31M-S2EF-OC20-All+MD&#39;, &#39;EquiformerV2-153M-S2EF-OC20-All+MD&#39;, &#39;SchNet-S2EF-force-only-OC20-All&#39;, &#39;DimeNet++-force-only-OC20-All&#39;, &#39;DimeNet++-Large-S2EF-force-only-OC20-All&#39;, &#39;DimeNet++-S2EF-force-only-OC20-20M+Rattled&#39;, &#39;DimeNet++-S2EF-force-only-OC20-20M+MD&#39;, &#39;CGCNN-IS2RE-OC20-10k&#39;, &#39;CGCNN-IS2RE-OC20-100k&#39;, &#39;CGCNN-IS2RE-OC20-All&#39;, &#39;DimeNet-IS2RE-OC20-10k&#39;, &#39;DimeNet-IS2RE-OC20-100k&#39;, &#39;DimeNet-IS2RE-OC20-all&#39;, &#39;SchNet-IS2RE-OC20-10k&#39;, &#39;SchNet-IS2RE-OC20-100k&#39;, &#39;SchNet-IS2RE-OC20-All&#39;, &#39;DimeNet++-IS2RE-OC20-10k&#39;, &#39;DimeNet++-IS2RE-OC20-100k&#39;, &#39;DimeNet++-IS2RE-OC20-All&#39;, &#39;PaiNN-IS2RE-OC20-All&#39;, &#39;GemNet-dT-S2EFS-OC22&#39;, &#39;GemNet-OC-S2EFS-OC22&#39;, &#39;GemNet-OC-S2EFS-OC20+OC22&#39;, &#39;GemNet-OC-S2EFS-nsn-OC20+OC22&#39;, &#39;GemNet-OC-S2EFS-OC20-&gt;OC22&#39;, &#39;EquiformerV2-lE4-lF100-S2EFS-OC22&#39;, &#39;SchNet-S2EF-ODAC&#39;, &#39;DimeNet++-S2EF-ODAC&#39;, &#39;PaiNN-S2EF-ODAC&#39;, &#39;GemNet-OC-S2EF-ODAC&#39;, &#39;eSCN-S2EF-ODAC&#39;, &#39;EquiformerV2-S2EF-ODAC&#39;, &#39;EquiformerV2-Large-S2EF-ODAC&#39;, &#39;Gemnet-OC-IS2RE-ODAC&#39;, &#39;eSCN-IS2RE-ODAC&#39;, &#39;EquiformerV2-IS2RE-ODAC&#39;)
+</pre></div>
+</div>
+</div>
 </div>
 <p>The data we need is provided in <code class="docutils literal notranslate"><span class="pre">supporting-information.json</span></code>. That file is embedded in the supporting information for the article, and is provided here in the tutorial. We load this data and explore it a little. The json file provides a dictionary with the structure:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[oxide][polymorph][xc][EOS][configurations]
@@ -616,66 +639,11 @@ Mehta, P., Salvador, P. A., &amp; Kitchin, J. R. (2015). Identifying potential B
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>([&#39;SnO2&#39;, &#39;IrO2&#39;, &#39;RuO2&#39;, &#39;TiO2&#39;, &#39;VO2&#39;],
- [&#39;rutile&#39;, &#39;pyrite&#39;, &#39;columbite&#39;, &#39;brookite&#39;, &#39;fluorite&#39;, &#39;anatase&#39;])
-</pre></div>
-</div>
-</div>
 </div>
 <p>A specific calculation has a lot of details in it. You can use this to recreate the calculations. Shortly we will use these to compare the DFT results to OCP.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;TiO2&#39;</span><span class="p">][</span><span class="s1">&#39;rutile&#39;</span><span class="p">][</span><span class="s1">&#39;PBE&#39;</span><span class="p">][</span><span class="s1">&#39;EOS&#39;</span><span class="p">][</span><span class="s1">&#39;calculations&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;incar&#39;: {&#39;doc&#39;: &#39;INCAR parameters&#39;,
-  &#39;prec&#39;: &#39;Normal&#39;,
-  &#39;isif&#39;: 4,
-  &#39;nbands&#39;: 20,
-  &#39;ibrion&#39;: 2,
-  &#39;gga&#39;: &#39;PE&#39;,
-  &#39;encut&#39;: 520.0,
-  &#39;ismear&#39;: 0,
-  &#39;sigma&#39;: 0.001,
-  &#39;nsw&#39;: 50},
- &#39;doc&#39;: &#39;JSON representation of a VASP calculation.\n\nenergy is in eV\nforces are in eV/\\AA\nstress is in GPa (sxx, syy, szz,  syz, sxz, sxy)\nmagnetic moments are in Bohr-magneton\nThe density of states is reported with E_f at 0 eV.\nVolume is reported in \\AA^3\nCoordinates and cell parameters are reported in \\AA\n\nIf atom-projected dos are included they are in the form:\n{ados:{energy:data, {atom index: {orbital : dos}}}\n&#39;,
- &#39;potcar&#39;: [[&#39;O&#39;,
-   &#39;potpaw/O/POTCAR&#39;,
-   &#39;0cf2ce56049ca395c567026b700ed66c94a85161&#39;],
-  [&#39;Ti&#39;, &#39;potpaw/Ti/POTCAR&#39;, &#39;51f7f05982d6b4052becc160375a8b8b670177a7&#39;]],
- &#39;input&#39;: {&#39;kpts&#39;: [6, 6, 6],
-  &#39;reciprocal&#39;: False,
-  &#39;xc&#39;: &#39;LDA&#39;,
-  &#39;kpts_nintersections&#39;: None,
-  &#39;setups&#39;: None,
-  &#39;txt&#39;: &#39;-&#39;,
-  &#39;gamma&#39;: False},
- &#39;atoms&#39;: {&#39;cell&#39;: [[4.3789762519649225, 0.0, 0.0],
-   [0.0, 4.3789762519649225, 0.0],
-   [0.0, 0.0, 2.864091775985314]],
-  &#39;symbols&#39;: [&#39;Ti&#39;, &#39;Ti&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;, &#39;O&#39;],
-  &#39;tags&#39;: [0, 0, 0, 0, 0, 0],
-  &#39;pbc&#39;: [True, True, True],
-  &#39;positions&#39;: [[0.0, 0.0, 0.0],
-   [2.1894881259824612, 2.1894881259824612, 1.432045887992657],
-   [1.3181554154438013, 1.3181554154438013, 0.0],
-   [3.0608208365211214, 3.0608208365211214, 0.0],
-   [3.5076435414262623, 0.87133271053866, 1.432045887992657],
-   [0.87133271053866, 3.5076435414262623, 1.432045887992657]]},
- &#39;data&#39;: {&#39;stress&#39;: [496.18519999, 496.18519999, 502.82679392, 0.0, 0.0, 0.0],
-  &#39;doc&#39;: &#39;Data from the output of the calculation&#39;,
-  &#39;volume&#39;: 54.92019999999996,
-  &#39;total_energy&#39;: -56.230672,
-  &#39;forces&#39;: [[0.0, 0.0, 0.0],
-   [0.0, 0.0, 0.0],
-   [-0.001264, -0.001264, 0.0],
-   [0.001264, 0.001264, 0.0],
-   [-0.001264, 0.001264, 0.0],
-   [0.001264, -0.001264, 0.0]],
-  &#39;fermi_level&#39;: 3.153}}
 </pre></div>
 </div>
 </div>
@@ -693,40 +661,12 @@ Mehta, P., Salvador, P. A., &amp; Kitchin, J. R. (2015). Identifying potential B
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(Atoms(symbols=&#39;Ti2O4&#39;, pbc=True, cell=[4.3789762519649225, 4.3789762519649225, 2.864091775985314], tags=...),
- -56.230672,
- [[0.0, 0.0, 0.0],
-  [0.0, 0.0, 0.0],
-  [-0.001264, -0.001264, 0.0],
-  [0.001264, 0.001264, 0.0],
-  [-0.001264, 0.001264, 0.0],
-  [0.001264, -0.001264, 0.0]])
-</pre></div>
-</div>
-</div>
 </div>
 <p>Next, we will create an OCP calculator that we can use to get predictions from.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ocpmodels.common.relaxation.ase_utils</span> <span class="kn">import</span> <span class="n">OCPCalculator</span>
 <span class="n">calc</span> <span class="o">=</span> <span class="n">OCPCalculator</span><span class="p">(</span><span class="n">checkpoint_path</span><span class="o">=</span><span class="n">checkpoint_path</span><span class="p">,</span> <span class="n">trainer</span><span class="o">=</span><span class="s1">&#39;forces&#39;</span><span class="p">,</span> <span class="n">cpu</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Detected old config, converting to new format. Consider updating to avoid potential incompatibilities.
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/cuda/amp/grad_scaler.py:126: UserWarning: torch.cuda.amp.GradScaler is enabled, but CUDA is not available.  Disabling.
-  warnings.warn(
-WARNING:root:Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Using `weight_decay` from `optim` instead of `optim.optimizer_params`.Please update your config to use `optim.optimizer_params.weight_decay`.`optim.weight_decay` will soon be deprecated.
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:No seed has been set in modelcheckpoint or OCPCalculator! Results may not be reproducible on re-run
 </pre></div>
 </div>
 </div>
@@ -768,26 +708,11 @@ WARNING:root:Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/amp/autocast_mode.py:250: UserWarning: User provided device_type of &#39;cuda&#39;, but CUDA is not available. Disabling
-  warnings.warn(
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Elapsed time 67.4 seconds.
-</pre></div>
-</div>
-<img alt="../../_images/92bd7f94dd548c8cfc2744eb5890cd23fada1ff98e8dc907657e2eb109af0402.png" src="../../_images/92bd7f94dd548c8cfc2744eb5890cd23fada1ff98e8dc907657e2eb109af0402.png" />
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mae</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">dft</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ocp</span><span class="p">)))</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;MAE = </span><span class="si">{</span><span class="n">mae</span><span class="si">:</span><span class="s1">1.3f</span><span class="si">}</span><span class="s1"> eV/atom&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MAE = 1.669 eV/atom
 </pre></div>
 </div>
 </div>
@@ -805,9 +730,6 @@ WARNING:root:Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/a48e3424d76817240816a0b914502025691c6a130c88e07728e1797c128651fb.png" src="../../_images/a48e3424d76817240816a0b914502025691c6a130c88e07728e1797c128651fb.png" />
 </div>
 </div>
 <p>We can improve this by fine-tuning the model.</p>
@@ -859,32 +781,6 @@ WARNING:root:Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>id|age|user  |formula|calculator| energy|natoms| fmax|pbc| volume|charge|   mass
- 1| 1s|runner|Sn2O4  |unknown   |-41.359|     6|0.045|TTT| 64.258| 0.000|301.416
- 2| 1s|runner|Sn2O4  |unknown   |-41.853|     6|0.025|TTT| 66.526| 0.000|301.416
- 3| 1s|runner|Sn2O4  |unknown   |-42.199|     6|0.010|TTT| 68.794| 0.000|301.416
- 4| 1s|runner|Sn2O4  |unknown   |-42.419|     6|0.006|TTT| 71.062| 0.000|301.416
- 5| 1s|runner|Sn2O4  |unknown   |-42.534|     6|0.011|TTT| 73.330| 0.000|301.416
- 6| 1s|runner|Sn2O4  |unknown   |-42.562|     6|0.029|TTT| 75.598| 0.000|301.416
- 7| 1s|runner|Sn2O4  |unknown   |-42.518|     6|0.033|TTT| 77.866| 0.000|301.416
- 8| 1s|runner|Sn2O4  |unknown   |-42.415|     6|0.010|TTT| 80.134| 0.000|301.416
- 9| 1s|runner|Sn2O4  |unknown   |-42.266|     6|0.006|TTT| 82.402| 0.000|301.416
-10| 1s|runner|Sn2O4  |unknown   |-42.083|     6|0.017|TTT| 84.670| 0.000|301.416
-11| 1s|runner|Sn4O8  |unknown   |-81.424|    12|0.012|TTT|117.473| 0.000|602.832
-12| 1s|runner|Sn4O8  |unknown   |-82.437|    12|0.005|TTT|121.620| 0.000|602.832
-13| 1s|runner|Sn4O8  |unknown   |-83.147|    12|0.015|TTT|125.766| 0.000|602.832
-14| 1s|runner|Sn4O8  |unknown   |-83.599|    12|0.047|TTT|129.912| 0.000|602.832
-15| 1s|runner|Sn4O8  |unknown   |-83.831|    12|0.081|TTT|134.058| 0.000|602.832
-16| 1s|runner|Sn4O8  |unknown   |-83.898|    12|0.001|TTT|138.204| 0.000|602.832
-17| 1s|runner|Sn4O8  |unknown   |-83.805|    12|0.001|TTT|142.350| 0.000|602.832
-18| 1s|runner|Sn4O8  |unknown   |-83.586|    12|0.002|TTT|146.496| 0.000|602.832
-19| 1s|runner|Sn4O8  |unknown   |-83.262|    12|0.002|TTT|150.642| 0.000|602.832
-20| 1s|runner|Sn4O8  |unknown   |-82.851|    12|0.013|TTT|154.788| 0.000|602.832
-Rows: 295 (showing first 20)
-</pre></div>
-</div>
-</div>
 </div>
 <section id="make-the-train-test-val-splits">
 <h2>Make the train, test, val splits<a class="headerlink" href="#make-the-train-test-val-splits" title="Link to this heading">#</a></h2>
@@ -899,13 +795,6 @@ Rows: 295 (showing first 20)
 
 <span class="n">train</span><span class="p">,</span> <span class="n">test</span><span class="p">,</span> <span class="n">val</span> <span class="o">=</span> <span class="n">train_test_val_split</span><span class="p">(</span><span class="s1">&#39;oxides.db&#39;</span><span class="p">)</span>
 <span class="n">train</span><span class="p">,</span> <span class="n">test</span><span class="p">,</span> <span class="n">val</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(PosixPath(&#39;/home/runner/work/ocp/ocp/docs/core/fine-tuning/train.db&#39;),
- PosixPath(&#39;/home/runner/work/ocp/ocp/docs/core/fine-tuning/test.db&#39;),
- PosixPath(&#39;/home/runner/work/ocp/ocp/docs/core/fine-tuning/val.db&#39;))
 </pre></div>
 </div>
 </div>
@@ -946,161 +835,10 @@ Rows: 295 (showing first 20)
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Detected old config, converting to new format. Consider updating to avoid potential incompatibilities.
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/cuda/amp/grad_scaler.py:126: UserWarning: torch.cuda.amp.GradScaler is enabled, but CUDA is not available.  Disabling.
-  warnings.warn(
-WARNING:root:Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Using `weight_decay` from `optim` instead of `optim.optimizer_params`.Please update your config to use `optim.optimizer_params.weight_decay`.`optim.weight_decay` will soon be deprecated.
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:No seed has been set in modelcheckpoint or OCPCalculator! Results may not be reproducible on re-run
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PosixPath(&#39;/home/runner/work/ocp/ocp/docs/core/fine-tuning/config.yml&#39;)
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>cat<span class="w"> </span>config.yml
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>amp: true
-checkpoint: /tmp/ocp_checkpoints/gnoc_oc22_oc20_all_s2ef.pt
-dataset:
-  test:
-    a2g_args:
-      r_energy: false
-      r_forces: false
-    src: test.db
-  train:
-    a2g_args:
-      r_energy: true
-      r_forces: true
-    src: train.db
-  val:
-    a2g_args:
-      r_energy: true
-      r_forces: true
-    src: val.db
-eval_metrics:
-  metrics:
-    energy:
-    - mae
-    forces:
-    - forcesx_mae
-    - forcesy_mae
-    - forcesz_mae
-    - mae
-    - cosine_similarity
-    - magnitude_error
-    misc:
-    - energy_forces_within_threshold
-  primary_metric: forces_mae
-gpus: 1
-logger: tensorboard
-loss_fns:
-- energy:
-    coefficient: 1
-    fn: mae
-- forces:
-    coefficient: 1
-    fn: l2mae
-model:
-  activation: silu
-  atom_edge_interaction: true
-  atom_interaction: true
-  cbf:
-    name: spherical_harmonics
-  cutoff: 12.0
-  cutoff_aeaint: 12.0
-  cutoff_aint: 12.0
-  cutoff_qint: 12.0
-  direct_forces: true
-  edge_atom_interaction: true
-  emb_size_aint_in: 64
-  emb_size_aint_out: 64
-  emb_size_atom: 256
-  emb_size_cbf: 16
-  emb_size_edge: 512
-  emb_size_quad_in: 32
-  emb_size_quad_out: 32
-  emb_size_rbf: 16
-  emb_size_sbf: 32
-  emb_size_trip_in: 64
-  emb_size_trip_out: 64
-  envelope:
-    exponent: 5
-    name: polynomial
-  extensive: true
-  forces_coupled: false
-  max_neighbors: 30
-  max_neighbors_aeaint: 20
-  max_neighbors_aint: 1000
-  max_neighbors_qint: 8
-  name: gemnet_oc
-  num_after_skip: 2
-  num_atom: 3
-  num_atom_emb_layers: 2
-  num_before_skip: 2
-  num_blocks: 4
-  num_concat: 1
-  num_global_out_layers: 2
-  num_output_afteratom: 3
-  num_radial: 128
-  num_spherical: 7
-  otf_graph: true
-  output_init: HeOrthogonal
-  qint_tags:
-  - 1
-  - 2
-  quad_interaction: true
-  rbf:
-    name: gaussian
-  regress_forces: true
-  sbf:
-    name: legendre_outer
-  symmetric_edge_symmetrization: false
-noddp: false
-optim:
-  batch_size: 4
-  clip_grad_norm: 10
-  ema_decay: 0.999
-  energy_coefficient: 1
-  eval_batch_size: 16
-  eval_every: 10
-  factor: 0.8
-  force_coefficient: 1
-  load_balancing: atoms
-  loss_energy: mae
-  lr_initial: 0.0005
-  max_epochs: 1
-  mode: min
-  num_workers: 2
-  optimizer: AdamW
-  optimizer_params:
-    amsgrad: true
-  patience: 3
-  scheduler: ReduceLROnPlateau
-  weight_decay: 0
-outputs:
-  energy:
-    level: system
-  forces:
-    eval_on_free_atoms: true
-    level: atom
-    train_on_free_atoms: true
-task:
-  dataset: ase_db
-trainer: ocp
 </pre></div>
 </div>
 </div>
@@ -1119,10 +857,10 @@ trainer: ocp
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>tail -f train.txt
 </pre></div>
 </div>
-<p>You can also visit it in a browser at <a class="reference download internal" download="" href="../../_downloads/5fdddbed2260616231dbf7b0d94bb665/train.txt"><span class="xref download myst">train.txt</span></a>. You have to periodically refresh the view to see updates though.</p>
+<p>You can also visit it in a browser at <a class="reference internal" href="#./train.txt"><span class="xref myst">train.txt</span></a>. You have to periodically refresh the view to see updates though.</p>
 <p>This can take up to 30 minutes for 80 epochs, so we only do a few here to see what happens.</p>
 <div class="cell tag_hide-output docutils container">
-<div class="cell_input above-output-prompt docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">from</span> <span class="nn">ocpmodels.common.tutorial_utils</span> <span class="kn">import</span> <span class="n">ocp_main</span>
 
@@ -1132,29 +870,13 @@ trainer: ocp
 </pre></div>
 </div>
 </div>
-<details class="hide below-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell output</span>
-<span class="expanded">Hide code cell output</span>
-</summary>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Elapsed time = 38.2 seconds
-</pre></div>
 </div>
-</div>
-</details>
-</div>
-<p>Now since we have a file, we can find the training results in it. See <a class="reference download internal" download="" href="../../_downloads/5fdddbed2260616231dbf7b0d94bb665/train.txt"><span class="xref download myst">train.txt</span></a>. At the top, the config is printed, so we can get the checkpoint directory. I use shell commands and Python to get the line, split and strip it here.</p>
+<p>Now since we have a file, we can find the training results in it. See <a class="reference internal" href="#./train.txt"><span class="xref myst">train.txt</span></a>. At the top, the config is printed, so we can get the checkpoint directory. I use shell commands and Python to get the line, split and strip it here.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cpline</span> <span class="o">=</span> <span class="o">!</span>grep<span class="w"> </span><span class="s2">&quot;checkpoint_dir:&quot;</span><span class="w"> </span>train.txt
 <span class="n">cpdir</span> <span class="o">=</span> <span class="n">cpline</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
 <span class="n">cpdir</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;fine-tuning/checkpoints/2024-05-01-23-19-28-ft-oxides&#39;
 </pre></div>
 </div>
 </div>
@@ -1165,19 +887,6 @@ trainer: ocp
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">newckpt</span> <span class="o">=</span> <span class="n">cpdir</span> <span class="o">+</span> <span class="s1">&#39;/checkpoint.pt&#39;</span>
 <span class="n">newcalc</span> <span class="o">=</span> <span class="n">OCPCalculator</span><span class="p">(</span><span class="n">checkpoint_path</span><span class="o">=</span><span class="n">newckpt</span><span class="p">,</span> <span class="n">cpu</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/cuda/amp/grad_scaler.py:126: UserWarning: torch.cuda.amp.GradScaler is enabled, but CUDA is not available.  Disabling.
-  warnings.warn(
-WARNING:root:Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Using `weight_decay` from `optim` instead of `optim.optimizer_params`.Please update your config to use `optim.optimizer_params.weight_decay`.`optim.weight_decay` will soon be deprecated.
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:No seed has been set in modelcheckpoint or OCPCalculator! Results may not be reproducible on re-run
 </pre></div>
 </div>
 </div>
@@ -1214,23 +923,11 @@ WARNING:root:Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/amp/autocast_mode.py:250: UserWarning: User provided device_type of &#39;cuda&#39;, but CUDA is not available. Disabling
-  warnings.warn(
-</pre></div>
-</div>
-<img alt="../../_images/32e5846c38fd7063f3e1b67ea0b1754f53dd7c002c403bdcaf03ccf3b88331b0.png" src="../../_images/32e5846c38fd7063f3e1b67ea0b1754f53dd7c002c403bdcaf03ccf3b88331b0.png" />
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mae</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">dft</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ocp</span><span class="p">)))</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;New MAE = </span><span class="si">{</span><span class="n">mae</span><span class="si">:</span><span class="s1">1.3f</span><span class="si">}</span><span class="s1"> eV/atom&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>New MAE = 0.686 eV/atom
 </pre></div>
 </div>
 </div>
@@ -1247,9 +944,6 @@ WARNING:root:Unrecognized arguments: [&#39;symmetric_edge_symmetrization&#39;]
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/f5e011835d1f1deaeb3f938bf288a9c2d92229e28acdfa16c9675c3a25cc8b35.png" src="../../_images/f5e011835d1f1deaeb3f938bf288a9c2d92229e28acdfa16c9675c3a25cc8b35.png" />
 </div>
 </div>
 <p>It is possible to continue refining the fit. The simple things to do are to use more epochs of training. Eventually the MAE will stabilize, and then it may be necessary to adjust other optimization parameters like the learning rate (usually you decrease it).</p>
