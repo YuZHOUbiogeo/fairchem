@@ -576,9 +576,9 @@ document.write(`
 <h1>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h1>
 <section id="conda-or-better-yet-mamba-easy">
 <h2>conda or better yet <a class="reference external" href="https://mamba.readthedocs.io/en/latest/user_guide/mamba.html">mamba</a> - easy<a class="headerlink" href="#conda-or-better-yet-mamba-easy" title="Link to this heading">#</a></h2>
-<p>We do not have official conda recipes (yet!), so install with conda or mamba you will need to clone the
-<a class="reference external" href="https://github.com/Open-Catalyst-Project/ocp">ocp repo</a> and run the following from inside the repo directory to
-create an environment with all dependencies.</p>
+<p>We do not have official conda recipes (yet!), so to install with conda or mamba you will need to clone the
+<a class="reference external" href="https://github.com/Open-Catalyst-Project/ocp">ocp repo</a> and run the following from inside the repo directory to create an environment with all the
+necessary dependencies.</p>
 <ol class="arabic">
 <li><p>Create an <em>ocp-models</em> environment</p>
 <ol class="arabic">
@@ -607,7 +607,7 @@ pip<span class="w"> </span>install<span class="w"> </span>.
 <section id="pypi-flexible">
 <h2>PyPi - flexible<a class="headerlink" href="#pypi-flexible" title="Link to this heading">#</a></h2>
 <ol class="arabic">
-<li><p>Install <code class="docutils literal notranslate"><span class="pre">pytorch</span></code> by selecting your installer, OS and CPU or CUDA version follow the official
+<li><p>Install <code class="docutils literal notranslate"><span class="pre">pytorch</span></code> by selecting your installer, OS and CPU or CUDA version following the official
 <a class="reference external" href="https://pytorch.org/get-started/locally/">Pytorch docs</a></p></li>
 <li><p>Install <code class="docutils literal notranslate"><span class="pre">torch_geometric</span></code> and the <code class="docutils literal notranslate"><span class="pre">torch_scatter</span></code>, <code class="docutils literal notranslate"><span class="pre">torch_sparse</span></code>, and <code class="docutils literal notranslate"><span class="pre">torch_cluster</span></code> optional dependencies
 similarly by selecting the appropriate versions in the official
@@ -630,7 +630,8 @@ similarly by selecting the appropriate versions in the official
 </section>
 <section id="dev-install">
 <h2>Dev install<a class="headerlink" href="#dev-install" title="Link to this heading">#</a></h2>
-<p>If you plan to make contributions you will need to clone the repo and install <code class="docutils literal notranslate"><span class="pre">ocp-models</span></code> with dev dependencies,</p>
+<p>If you plan to make contributions you will need to clone the repo and install <code class="docutils literal notranslate"><span class="pre">ocp-models</span></code> in editable mode with dev
+dependencies,</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.<span class="o">[</span>dev<span class="o">]</span>
 </pre></div>
 </div>
