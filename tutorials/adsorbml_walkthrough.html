@@ -61,7 +61,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/adsorbml_walkthrough';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Studies that have leveraged OCP models" href="../core/papers_using_models.html" />
+    <link rel="next" title="Intro and background on OCP and DFT" href="intro.html" />
     <link rel="prev" title="CatTSunami tutorial" href="cattsunami_walkthrough.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -173,13 +173,12 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../index.html">
-                    ocp by Open Catalyst Project
+                    fairchem repository for atomistic AI/ML models in chemistry
                 </a>
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Quickstart &amp; Installation</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../core/intro_series.html">Why model atoms for climate?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../core/install.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../core/quickstart.html">Using pre-trained models in ASE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../core/gotchas.html">Common gotchas with OCP</a></li>
@@ -193,6 +192,12 @@
 
 
 <li class="toctree-l1"><a class="reference internal" href="../core/license.html">License</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Learn More</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../core/intro_series.html">Why model atoms for climate?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../videos/technical_talks.html">Technical presentations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../core/papers_using_models.html">Studies that have leveraged OCP models</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">OCP API &amp; Demo</span></p>
 <ul class="nav bd-sidenav">
@@ -210,7 +215,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Making your own datasets</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../core/ase_dataset_creation.html">Making and using ASE datasets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../core/lmdb_dataset_creation.html">Making LMDB Datasets (original format)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../core/lmdb_dataset_creation.html">Making LMDB Datasets (original format, deprecated for ASE LMDBs)</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Model development, training, inference, finetuning</span></p>
 <ul class="nav bd-sidenav">
@@ -224,15 +229,10 @@
 
 <li class="toctree-l1"><a class="reference internal" href="../core/model_faq.html">Model FAQ</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Videos and Talks</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../videos/technical_talks.html">Technical presentations</a></li>
-</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Catalysis Case Studies &amp; Tutorials</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="cattsunami_walkthrough.html">CatTSunami tutorial</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">AdsorbML tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../core/papers_using_models.html">Studies that have leveraged OCP models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Intro and background on OCP and DFT</a></li>
 
 
@@ -291,91 +291,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">fairchem documentation</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../autoapi/index.html">API Reference</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../autoapi/core/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../autoapi/core/common/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.common</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/relaxation/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.common.relaxation</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/data_parallel/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.common.data_parallel</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/distutils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.common.distutils</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/flags/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.common.flags</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/gp_utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.common.gp_utils</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/hpo_utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.common.hpo_utils</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/logger/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.common.logger</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/registry/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.common.registry</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/transforms/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.common.transforms</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/tutorial_utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.common.tutorial_utils</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/typing/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.common.typing</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/common/utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.common.utils</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../autoapi/core/datasets/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.datasets</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/datasets/embeddings/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.datasets.embeddings</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/datasets/_utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.datasets._utils</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/datasets/ase_datasets/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.datasets.ase_datasets</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/datasets/lmdb_database/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.datasets.lmdb_database</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/datasets/lmdb_dataset/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.datasets.lmdb_dataset</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/datasets/oc22_lmdb_dataset/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.datasets.oc22_lmdb_dataset</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/datasets/target_metadata_guesser/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.datasets.target_metadata_guesser</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../autoapi/core/models/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.models</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/models/equiformer_v2/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.models.equiformer_v2</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/models/escn/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.models.escn</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/models/gemnet/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.models.gemnet</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/models/gemnet_gp/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.models.gemnet_gp</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/models/gemnet_oc/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.models.gemnet_oc</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/models/painn/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.models.painn</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/models/scn/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.models.scn</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/models/utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.models.utils</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/models/base/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.models.base</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/models/dimenet_plus_plus/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.models.dimenet_plus_plus</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/models/model_registry/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.models.model_registry</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/models/schnet/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.models.schnet</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../autoapi/core/modules/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.modules</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/modules/scaling/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.modules.scaling</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/modules/evaluator/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.modules.evaluator</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/modules/exponential_moving_average/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.modules.exponential_moving_average</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/modules/loss/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.modules.loss</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/modules/normalizer/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.modules.normalizer</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/modules/scheduler/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.modules.scheduler</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/modules/transforms/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.modules.transforms</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../autoapi/core/preprocessing/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.preprocessing</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/preprocessing/atoms_to_graphs/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.preprocessing.atoms_to_graphs</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../autoapi/core/scripts/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.scripts</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/scripts/hpo/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.scripts.hpo</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/scripts/download_data/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.scripts.download_data</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/scripts/gif_maker_parallelized/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.scripts.gif_maker_parallelized</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/scripts/make_challenge_submission_file/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.scripts.make_challenge_submission_file</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/scripts/make_lmdb_sizes/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.scripts.make_lmdb_sizes</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/scripts/make_submission_file/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.scripts.make_submission_file</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/scripts/preprocess_ef/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.scripts.preprocess_ef</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/scripts/preprocess_relaxed/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.scripts.preprocess_relaxed</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/scripts/uncompress/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.scripts.uncompress</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../autoapi/core/tasks/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.tasks</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/tasks/task/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.tasks.task</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../autoapi/core/tests/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.tests</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/tests/preprocessing/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.tests.preprocessing</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/tests/conftest/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.tests.conftest</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../autoapi/core/trainers/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.trainers</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/trainers/base_trainer/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.trainers.base_trainer</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../autoapi/core/trainers/ocp_trainer/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.trainers.ocp_trainer</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../autoapi/core/_cli/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core._cli</span></code></a></li>
-</ul>
-</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../autoapi/index.html">API Reference</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
 </ul>
 </li>
 </ul>
@@ -656,7 +572,7 @@ document.write(`
 <li><p>Using <code class="docutils literal notranslate"><span class="pre">OCPCalculator</span></code> as the calculator within the ASE framework</p></li>
 <li><p>By writing objects to lmdb and relaxing them using <code class="docutils literal notranslate"><span class="pre">main.py</span></code> in the ocp repo</p></li>
 </ol>
-<p>(1) is really only adequate for small stuff and it is what I will show here, but if you plan to run many relaxations, you should definitely use (2). More details about writing lmdbs has been provided <a class="reference external" href="https://github.com/Open-Catalyst-Project/ocp/blob/main/tutorials/lmdb_dataset_creation.ipynb">here</a> - follow the IS2RS/IS2RE instructions. And more information about running relaxations once the lmdb has been written is <a class="reference external" href="https://github.com/Open-Catalyst-Project/ocp/blob/main/TRAIN.md#initial-structure-to-relaxed-structure-is2rs">here</a>.</p>
+<p>(1) is really only adequate for small stuff and it is what I will show here, but if you plan to run many relaxations, you should definitely use (2). More details about writing lmdbs has been provided <a class="reference internal" href="../core/lmdb_dataset_creation.html"><span class="std std-doc">here</span></a> - follow the IS2RS/IS2RE instructions. And more information about running relaxations once the lmdb has been written is <a class="reference internal" href="../core/model_training.html"><span class="std std-doc">here</span></a>.</p>
 <p>You need to provide the calculator with a path to a model checkpoint file. That can be downloaded <a class="reference external" href="https://github.com/Open-Catalyst-Project/ocp/blob/main/MODELS.md">here</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -664,7 +580,7 @@ document.write(`
 <span class="kn">from</span> <span class="nn">fairchem.core.models.model_registry</span> <span class="kn">import</span> <span class="n">model_name_to_local_file</span>
 <span class="kn">import</span> <span class="nn">os</span>
 
-<span class="n">checkpoint_path</span> <span class="o">=</span> <span class="n">model_name_to_local_file</span><span class="p">(</span><span class="s1">&#39;EquiformerV2 (31M) All+MD&#39;</span><span class="p">,</span> <span class="n">local_cache</span><span class="o">=</span><span class="s1">&#39;/tmp/ocp_checkpoints/&#39;</span><span class="p">)</span>
+<span class="n">checkpoint_path</span> <span class="o">=</span> <span class="n">model_name_to_local_file</span><span class="p">(</span><span class="s1">&#39;EquiformerV2-31M-S2EF-OC20-All+MD&#39;</span><span class="p">,</span> <span class="n">local_cache</span><span class="o">=</span><span class="s1">&#39;/tmp/ocp_checkpoints/&#39;</span><span class="p">)</span>
 
 <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;data/</span><span class="si">{</span><span class="n">bulk</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">adsorbate</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
@@ -681,28 +597,590 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ERROR:root:Not a valid model name &#39;EquiformerV2 (31M) All+MD&#39;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Detected old config, converting to new format. Consider updating to avoid potential incompatibilities.
 </pre></div>
 </div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">fairchem.core.models.model_registry</span> <span class="kn">import</span> <span class="n">model_name_to_local_file</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">os</span>
-<span class="ne">----&gt; </span><span class="mi">5</span> <span class="n">checkpoint_path</span> <span class="o">=</span> <span class="n">model_name_to_local_file</span><span class="p">(</span><span class="s1">&#39;EquiformerV2 (31M) All+MD&#39;</span><span class="p">,</span> <span class="n">local_cache</span><span class="o">=</span><span class="s1">&#39;/tmp/ocp_checkpoints/&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;data/</span><span class="si">{</span><span class="n">bulk</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">adsorbate</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="c1"># Define the calculator</span>
-
-<span class="nn">File ~/work/fairchem/fairchem/src/fairchem/core/models/model_registry.py:45,</span> in <span class="ni">model_name_to_local_file</span><span class="nt">(model_name, local_cache)</span>
-<span class="g g-Whitespace">     </span><span class="mi">43</span> <span class="k">if</span> <span class="n">model_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">MODEL_REGISTRY</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">44</span>     <span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Not a valid model name &#39;</span><span class="si">{</span><span class="n">model_name</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">45</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">46</span>         <span class="sa">f</span><span class="s2">&quot;Not a valid model name &#39;</span><span class="si">{</span><span class="n">model_name</span><span class="si">}</span><span class="s2">&#39;. Model name must be one of </span><span class="si">{</span><span class="n">available_pretrained_models</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">47</span>     <span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">48</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">local_cache</span><span class="p">):</span>
-<span class="g g-Whitespace">     </span><span class="mi">49</span>     <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">local_cache</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="ne">ValueError</span>: Not a valid model name &#39;EquiformerV2 (31M) All+MD&#39;. Model name must be one of (&#39;CGCNN-S2EF-OC20-200k&#39;, &#39;CGCNN-S2EF-OC20-2M&#39;, &#39;CGCNN-S2EF-OC20-20M&#39;, &#39;CGCNN-S2EF-OC20-All&#39;, &#39;DimeNet-S2EF-OC20-200k&#39;, &#39;DimeNet-S2EF-OC20-2M&#39;, &#39;SchNet-S2EF-OC20-200k&#39;, &#39;SchNet-S2EF-OC20-2M&#39;, &#39;SchNet-S2EF-OC20-20M&#39;, &#39;SchNet-S2EF-OC20-All&#39;, &#39;DimeNet++-S2EF-OC20-200k&#39;, &#39;DimeNet++-S2EF-OC20-2M&#39;, &#39;DimeNet++-S2EF-OC20-20M&#39;, &#39;DimeNet++-S2EF-OC20-All&#39;, &#39;SpinConv-S2EF-OC20-2M&#39;, &#39;SpinConv-S2EF-OC20-All&#39;, &#39;GemNet-dT-S2EF-OC20-2M&#39;, &#39;GemNet-dT-S2EF-OC20-All&#39;, &#39;PaiNN-S2EF-OC20-All&#39;, &#39;GemNet-OC-S2EF-OC20-2M&#39;, &#39;GemNet-OC-S2EF-OC20-All&#39;, &#39;GemNet-OC-S2EF-OC20-All+MD&#39;, &#39;GemNet-OC-Large-S2EF-OC20-All+MD&#39;, &#39;SCN-S2EF-OC20-2M&#39;, &#39;SCN-t4-b2-S2EF-OC20-2M&#39;, &#39;SCN-S2EF-OC20-All+MD&#39;, &#39;eSCN-L4-M2-Lay12-S2EF-OC20-2M&#39;, &#39;eSCN-L6-M2-Lay12-S2EF-OC20-2M&#39;, &#39;eSCN-L6-M2-Lay12-S2EF-OC20-All+MD&#39;, &#39;eSCN-L6-M3-Lay20-S2EF-OC20-All+MD&#39;, &#39;EquiformerV2-83M-S2EF-OC20-2M&#39;, &#39;EquiformerV2-31M-S2EF-OC20-All+MD&#39;, &#39;EquiformerV2-153M-S2EF-OC20-All+MD&#39;, &#39;SchNet-S2EF-force-only-OC20-All&#39;, &#39;DimeNet++-force-only-OC20-All&#39;, &#39;DimeNet++-Large-S2EF-force-only-OC20-All&#39;, &#39;DimeNet++-S2EF-force-only-OC20-20M+Rattled&#39;, &#39;DimeNet++-S2EF-force-only-OC20-20M+MD&#39;, &#39;CGCNN-IS2RE-OC20-10k&#39;, &#39;CGCNN-IS2RE-OC20-100k&#39;, &#39;CGCNN-IS2RE-OC20-All&#39;, &#39;DimeNet-IS2RE-OC20-10k&#39;, &#39;DimeNet-IS2RE-OC20-100k&#39;, &#39;DimeNet-IS2RE-OC20-all&#39;, &#39;SchNet-IS2RE-OC20-10k&#39;, &#39;SchNet-IS2RE-OC20-100k&#39;, &#39;SchNet-IS2RE-OC20-All&#39;, &#39;DimeNet++-IS2RE-OC20-10k&#39;, &#39;DimeNet++-IS2RE-OC20-100k&#39;, &#39;DimeNet++-IS2RE-OC20-All&#39;, &#39;PaiNN-IS2RE-OC20-All&#39;, &#39;GemNet-dT-S2EFS-OC22&#39;, &#39;GemNet-OC-S2EFS-OC22&#39;, &#39;GemNet-OC-S2EFS-OC20+OC22&#39;, &#39;GemNet-OC-S2EFS-nsn-OC20+OC22&#39;, &#39;GemNet-OC-S2EFS-OC20-&gt;OC22&#39;, &#39;EquiformerV2-lE4-lF100-S2EFS-OC22&#39;, &#39;SchNet-S2EF-ODAC&#39;, &#39;DimeNet++-S2EF-ODAC&#39;, &#39;PaiNN-S2EF-ODAC&#39;, &#39;GemNet-OC-S2EF-ODAC&#39;, &#39;eSCN-S2EF-ODAC&#39;, &#39;EquiformerV2-S2EF-ODAC&#39;, &#39;EquiformerV2-Large-S2EF-ODAC&#39;, &#39;Gemnet-OC-IS2RE-ODAC&#39;, &#39;eSCN-IS2RE-ODAC&#39;, &#39;EquiformerV2-IS2RE-ODAC&#39;)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/cuda/amp/grad_scaler.py:126: UserWarning: torch.cuda.amp.GradScaler is enabled, but CUDA is not available.  Disabling.
+  warnings.warn(
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:Skipping scheduler setup. No training set found.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:No seed has been set in modelcheckpoint or OCPCalculator! Results may not be reproducible on re-run
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/torch/amp/autocast_mode.py:250: UserWarning: User provided device_type of &#39;cuda&#39;, but CUDA is not available. Disabling
+  warnings.warn(
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      Step     Time          Energy         fmax
+BFGS:    0 17:42:03       -0.445950        1.8519
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    1 17:42:06       -0.441157        2.2705
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    2 17:42:08       -0.472583        0.7097
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    3 17:42:11       -0.491273        0.6631
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    4 17:42:13       -0.527333        1.1946
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    5 17:42:16       -0.550942        0.6613
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    6 17:42:19       -0.555185        0.1887
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    7 17:42:21       -0.556603        0.1197
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    8 17:42:24       -0.556659        0.2108
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    9 17:42:26       -0.557984        0.2304
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   10 17:42:29       -0.560777        0.1613
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   11 17:42:31       -0.563761        0.0663
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   12 17:42:34       -0.563902        0.0560
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   13 17:42:37       -0.564160        0.1836
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   14 17:42:39       -0.564684        0.1984
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   15 17:42:42       -0.566335        0.1105
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   16 17:42:44       -0.567444        0.0391
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      Step     Time          Energy         fmax
+BFGS:    0 17:42:47       -0.236720        1.1183
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    1 17:42:49       -0.268787        1.4820
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    2 17:42:52       -0.368010        1.8385
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    3 17:42:54       -0.439591        1.4672
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    4 17:42:57       -0.478169        0.6179
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    5 17:43:00       -0.496072        0.2822
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    6 17:43:02       -0.501946        0.1543
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    7 17:43:05       -0.502692        0.1402
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    8 17:43:07       -0.516190        0.1536
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    9 17:43:10       -0.520641        0.1672
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   10 17:43:12       -0.522163        0.0843
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   11 17:43:15       -0.525303        0.2026
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   12 17:43:18       -0.527852        0.2776
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   13 17:43:20       -0.529473        0.2152
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   14 17:43:23       -0.528765        0.1254
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   15 17:43:25       -0.527362        0.0565
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   16 17:43:28       -0.528178        0.0932
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   17 17:43:31       -0.531401        0.1612
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   18 17:43:33       -0.533125        0.1003
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   19 17:43:36       -0.534866        0.0165
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      Step     Time          Energy         fmax
+BFGS:    0 17:43:38       -0.443229        1.8743
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    1 17:43:41       -0.441609        2.2917
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    2 17:43:43       -0.473694        0.7158
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    3 17:43:46       -0.492381        0.6624
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    4 17:43:49       -0.530305        1.1574
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    5 17:43:51       -0.553911        0.5915
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    6 17:43:54       -0.556922        0.1810
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    7 17:43:56       -0.557100        0.1470
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    8 17:43:59       -0.557006        0.2407
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    9 17:44:01       -0.558775        0.2455
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   10 17:44:04       -0.561453        0.1572
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   11 17:44:07       -0.563361        0.0634
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   12 17:44:09       -0.564697        0.0698
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   13 17:44:12       -0.565214        0.1919
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   14 17:44:14       -0.565930        0.2082
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   15 17:44:17       -0.566698        0.1184
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   16 17:44:19       -0.567047        0.0550
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   17 17:44:22       -0.567829        0.0209
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      Step     Time          Energy         fmax
+BFGS:    0 17:44:25       -0.329146        1.3258
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    1 17:44:27       -0.340649        1.6541
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    2 17:44:30       -0.374161        1.0945
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    3 17:44:33       -0.494977        0.5116
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    4 17:44:35       -0.495499        0.2076
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    5 17:44:38       -0.497082        0.3804
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    6 17:44:40       -0.499577        0.5650
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    7 17:44:43       -0.506121        0.5189
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    8 17:44:46       -0.510062        0.2834
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    9 17:44:48       -0.512580        0.1268
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   10 17:44:51       -0.514370        0.2175
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   11 17:44:53       -0.515728        0.3133
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   12 17:44:56       -0.516149        0.2314
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   13 17:44:58       -0.517389        0.1972
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   14 17:45:01       -0.518618        0.0661
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   15 17:45:03       -0.520052        0.0885
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   16 17:45:06       -0.520158        0.1349
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   17 17:45:09       -0.521375        0.1405
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   18 17:45:11       -0.522418        0.0994
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   19 17:45:14       -0.522648        0.0365
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      Step     Time          Energy         fmax
+BFGS:    0 17:45:16       -0.213538        0.9697
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    1 17:45:19       -0.243664        0.9332
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    2 17:45:22       -0.454402        0.6194
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    3 17:45:24       -0.448935        0.5635
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    4 17:45:27       -0.459042        0.3015
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    5 17:45:29       -0.464532        0.2706
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    6 17:45:32       -0.473393        0.3662
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    7 17:45:34       -0.482588        0.5069
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    8 17:45:37       -0.487326        0.3015
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    9 17:45:40       -0.489804        0.0728
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   10 17:45:42       -0.490256        0.1434
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   11 17:45:45       -0.491771        0.2507
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   12 17:45:47       -0.493235        0.2301
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   13 17:45:50       -0.494703        0.1511
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   14 17:45:53       -0.497117        0.0769
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   15 17:45:55       -0.498281        0.0988
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   16 17:45:58       -0.500051        0.2054
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   17 17:46:00       -0.501584        0.2655
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   18 17:46:03       -0.503887        0.1875
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   19 17:46:06       -0.505731        0.0587
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   20 17:46:08       -0.506649        0.0816
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   21 17:46:11       -0.508711        0.1519
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   22 17:46:13       -0.510191        0.1586
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   23 17:46:16       -0.511346        0.0965
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   24 17:46:18       -0.511573        0.0543
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   25 17:46:21       -0.512170        0.0712
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   26 17:46:24       -0.512776        0.0855
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   27 17:46:26       -0.512593        0.0953
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   28 17:46:29       -0.513141        0.0756
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   29 17:46:31       -0.511672        0.1305
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   30 17:46:34       -0.513480        0.0866
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   31 17:46:36       -0.513749        0.0521
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   32 17:46:39       -0.513498        0.0773
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   33 17:46:42       -0.514840        0.1893
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   34 17:46:44       -0.514996        0.2882
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   35 17:46:47       -0.515985        0.4284
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   36 17:46:49       -0.520268        0.1415
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   37 17:46:52       -0.522331        0.1267
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   38 17:46:54       -0.523627        0.1367
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   39 17:46:57       -0.524232        0.1291
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   40 17:47:00       -0.528144        0.2743
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   41 17:47:02       -0.525891        0.1182
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   42 17:47:05       -0.530709        0.0731
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   43 17:47:08       -0.532450        0.0869
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   44 17:47:10       -0.532962        0.0743
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   45 17:47:13       -0.533711        0.0400
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      Step     Time          Energy         fmax
+BFGS:    0 17:47:15       -0.216297        1.0454
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    1 17:47:18       -0.228072        1.1969
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    2 17:47:20       -0.281077        1.4886
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    3 17:47:23       -0.284840        4.1181
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    4 17:47:25       -0.412022        0.4676
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    5 17:47:28       -0.436802        0.4320
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    6 17:47:31       -0.452986        0.4868
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    7 17:47:33       -0.459348        0.4462
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    8 17:47:36       -0.481719        0.3261
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    9 17:47:38       -0.484106        0.2637
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   10 17:47:41       -0.486507        0.1685
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   11 17:47:43       -0.490322        0.3077
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   12 17:47:46       -0.495130        0.4892
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   13 17:47:49       -0.498507        0.4909
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   14 17:47:51       -0.502153        0.2857
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   15 17:47:54       -0.505617        0.1312
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   16 17:47:57       -0.507307        0.2207
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   17 17:47:59       -0.509972        0.4094
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   18 17:48:02       -0.512438        0.3723
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   19 17:48:04       -0.515023        0.1923
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   20 17:48:07       -0.518147        0.0542
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   21 17:48:09       -0.518972        0.0993
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   22 17:48:12       -0.519183        0.1578
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   23 17:48:15       -0.520033        0.1352
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   24 17:48:17       -0.519664        0.0857
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   25 17:48:20       -0.519322        0.0453
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      Step     Time          Energy         fmax
+BFGS:    0 17:48:22       -0.135067        0.7440
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    1 17:48:25       -0.160521        0.9731
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    2 17:48:27       -0.395635        1.1897
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    3 17:48:30       -0.394964        0.8825
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    4 17:48:32       -0.418636        0.5387
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    5 17:48:35       -0.436383        1.0829
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    6 17:48:37       -0.455279        1.2572
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    7 17:48:40       -0.489151        1.2886
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    8 17:48:43       -0.500221        0.2527
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    9 17:48:45       -0.503637        0.1651
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   10 17:48:48       -0.507067        0.0870
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   11 17:48:50       -0.508537        0.0778
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   12 17:48:53       -0.509069        0.1200
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   13 17:48:55       -0.510764        0.1345
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   14 17:48:58       -0.513040        0.0895
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   15 17:49:00       -0.514409        0.0485
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      Step     Time          Energy         fmax
+BFGS:    0 17:49:03       -0.218125        1.0118
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    1 17:49:05       -0.247640        0.9695
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    2 17:49:08       -0.461115        1.2504
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    3 17:49:11       -0.461665        0.5285
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    4 17:49:13       -0.467705        0.3104
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    5 17:49:16       -0.471388        0.2750
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    6 17:49:18       -0.488506        0.2562
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    7 17:49:21       -0.493966        0.1455
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    8 17:49:23       -0.494183        0.0788
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:    9 17:49:26       -0.494644        0.1196
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   10 17:49:29       -0.496047        0.1995
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   11 17:49:31       -0.497363        0.1796
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   12 17:49:34       -0.499434        0.1169
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   13 17:49:36       -0.500824        0.0740
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   14 17:49:39       -0.501989        0.0930
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   15 17:49:41       -0.505094        0.1572
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   16 17:49:44       -0.508087        0.2206
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   17 17:49:47       -0.510736        0.1182
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   18 17:49:49       -0.511986        0.0507
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   19 17:49:52       -0.513057        0.0550
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   20 17:49:54       -0.514757        0.0603
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   21 17:49:57       -0.515907        0.0550
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   22 17:49:59       -0.515633        0.0629
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS:   23 17:50:02       -0.516081        0.0383
 </pre></div>
 </div>
 </div>
@@ -751,6 +1229,91 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>relaxation_idx</th>
+      <th>relaxed_atoms</th>
+      <th>relaxed_energy_ml</th>
+      <th>anomolous</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>6</td>
+      <td>(Atom('Cu', [1.3000465215529733, 2.25174662753...</td>
+      <td>-0.514409</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>3</td>
+      <td>(Atom('Cu', [1.3000465215529733, 2.25174662753...</td>
+      <td>-0.522648</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>(Atom('Cu', [1.3000465215529733, 2.25174662753...</td>
+      <td>-0.534866</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>(Atom('Cu', [1.3000465215529733, 2.25174662753...</td>
+      <td>-0.533711</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2</td>
+      <td>(Atom('Cu', [1.3000465215529733, 2.25174662753...</td>
+      <td>-0.567829</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>7</td>
+      <td>(Atom('Cu', [1.3000465215529733, 2.25174662753...</td>
+      <td>-0.516081</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>0</td>
+      <td>(Atom('Cu', [1.3000465215529733, 2.25174662753...</td>
+      <td>-0.567444</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>5</td>
+      <td>(Atom('Cu', [1.3000465215529733, 2.25174662753...</td>
+      <td>-0.519322</td>
+      <td>False</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -861,6 +1424,63 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The lowest 5 energies are: [-0.568 -0.535 -0.523]
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>index</th>
+      <th>relaxation_idx</th>
+      <th>relaxed_atoms</th>
+      <th>relaxed_energy_ml</th>
+      <th>anomolous</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>1</td>
+      <td>(Atom('Cu', [1.3000465215529733, 2.25174662753...</td>
+      <td>-0.534866</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>3</td>
+      <td>(Atom('Cu', [1.3000465215529733, 2.25174662753...</td>
+      <td>-0.522648</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>2</td>
+      <td>(Atom('Cu', [1.3000465215529733, 2.25174662753...</td>
+      <td>-0.567829</td>
+      <td>False</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </section>
 <section id="write-vasp-input-files">
@@ -923,11 +1543,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="../core/papers_using_models.html"
+       href="intro.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Studies that have leveraged OCP models</p>
+        <p class="prev-next-title">Intro and background on OCP and DFT</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
