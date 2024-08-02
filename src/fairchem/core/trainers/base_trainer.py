@@ -7,6 +7,7 @@ LICENSE file in the root directory of this source tree.
 
 from __future__ import annotations
 
+import copy
 import datetime
 import errno
 import logging
@@ -481,19 +482,7 @@ class BaseTrainer(ABC):
         if distutils.is_master():
             logging.info(f"Loading model: {self.config['model']}")
 
-        # TODO: depreicated, remove.
-        bond_feat_dim = None
-        bond_feat_dim = self.config["model_attributes"].get("num_gaussians", 50)
-
-        loader = self.train_loader or self.val_loader or self.test_loader
         self.model = registry.get_model_class(self.config["model"])(
-            loader.dataset[0].x.shape[-1]
-            if loader
-            and hasattr(loader.dataset[0], "x")
-            and loader.dataset[0].x is not None
-            else None,
-            bond_feat_dim,
-            1,
             **self.config["model_attributes"],
         ).to(self.device)
 
