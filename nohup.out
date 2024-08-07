@@ -1,0 +1,38 @@
+[I 2024-07-15 20:12:41.774 ServerApp] Package notebook took 0.0000s to import
+[I 2024-07-15 20:12:41.789 ServerApp] Package jupyter_lsp took 0.0138s to import
+[I 2024-07-15 20:12:41.804 ServerApp] Package jupyter_server_terminals took 0.0145s to import
+[I 2024-07-15 20:12:41.804 ServerApp] Package jupyterlab took 0.0000s to import
+[I 2024-07-15 20:12:42.120 ServerApp] Package jupyterlab_jupytext took 0.0533s to import
+[I 2024-07-15 20:12:42.120 ServerApp] Package notebook_shim took 0.0000s to import
+[W 2024-07-15 20:12:42.120 ServerApp] A `_jupyter_server_extension_points` function was not found in notebook_shim. Instead, a `_jupyter_server_extension_paths` function was found and will be used for now. This function name will be deprecated in future releases of Jupyter Server.
+[I 2024-07-15 20:12:43.475 ServerApp] Package panel.io.jupyter_server_extension took 1.3496s to import
+[I 2024-07-15 20:12:43.475 ServerApp] jupyter_lsp | extension was successfully linked.
+[I 2024-07-15 20:12:43.478 ServerApp] jupyter_server_terminals | extension was successfully linked.
+[W 2024-07-15 20:12:43.480 LabApp] 'token' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2024-07-15 20:12:43.482 ServerApp] ServerApp.token config is deprecated in 2.0. Use IdentityProvider.token.
+[I 2024-07-15 20:12:43.482 ServerApp] jupyterlab | extension was successfully linked.
+[I 2024-07-15 20:12:43.482 ServerApp] jupyterlab_jupytext | extension was successfully linked.
+[I 2024-07-15 20:12:43.486 ServerApp] notebook | extension was successfully linked.
+[I 2024-07-15 20:12:43.487 ServerApp] Writing Jupyter server cookie secret to /home/vscode/.local/share/jupyter/runtime/jupyter_cookie_secret
+[I 2024-07-15 20:12:44.435 ServerApp] notebook_shim | extension was successfully linked.
+[I 2024-07-15 20:12:44.436 ServerApp] panel.io.jupyter_server_extension | extension was successfully linked.
+[W 2024-07-15 20:12:44.453 ServerApp] All authentication is disabled.  Anyone who can connect to this server will be able to run code.
+[I 2024-07-15 20:12:44.453 ServerApp] notebook_shim | extension was successfully loaded.
+[I 2024-07-15 20:12:44.455 ServerApp] jupyter_lsp | extension was successfully loaded.
+[I 2024-07-15 20:12:44.456 ServerApp] jupyter_server_terminals | extension was successfully loaded.
+[I 2024-07-15 20:12:44.459 LabApp] JupyterLab extension loaded from /opt/conda/lib/python3.11/site-packages/jupyterlab
+[I 2024-07-15 20:12:44.459 LabApp] JupyterLab application directory is /opt/conda/share/jupyter/lab
+[I 2024-07-15 20:12:44.460 LabApp] Extension Manager is 'pypi'.
+[I 2024-07-15 20:12:44.462 ServerApp] jupyterlab | extension was successfully loaded.
+[W 2024-07-15 20:12:44.462 ServerApp] [Jupytext Server Extension] Async contents managers like AsyncContentsManager are not supported at the moment (https://github.com/mwouts/jupytext/issues/1020). We will derive a contents manager from LargeFileManager instead.
+[I 2024-07-15 20:12:44.462 ServerApp] [Jupytext Server Extension] Deriving a JupytextContentsManager from LargeFileManager
+[I 2024-07-15 20:12:44.463 ServerApp] jupyterlab_jupytext | extension was successfully loaded.
+[I 2024-07-15 20:12:44.467 ServerApp] notebook | extension was successfully loaded.
+[I 2024-07-15 20:12:44.467 ServerApp] panel.io.jupyter_server_extension | extension was successfully loaded.
+[I 2024-07-15 20:12:44.467 ServerApp] Serving notebooks from local directory: /workspaces/fairchem
+[I 2024-07-15 20:12:44.468 ServerApp] Jupyter Server 2.7.2 is running at:
+[I 2024-07-15 20:12:44.468 ServerApp] http://codespaces-9f83fe:8888/tree
+[I 2024-07-15 20:12:44.468 ServerApp]     http://127.0.0.1:8888/tree
+[I 2024-07-15 20:12:44.468 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[W 2024-07-15 20:12:44.471 ServerApp] No web browser found: Error('could not locate runnable browser').
+[I 2024-07-15 20:12:44.501 ServerApp] Skipped non-installed server(s): bash-language-server, dockerfile-language-server-nodejs, javascript-typescript-langserver, jedi-language-server, julia-language-server, pyright, python-language-server, r-languageserver, sql-language-server, texlab, typescript-language-server, unified-language-server, vscode-css-languageserver-bin, vscode-html-languageserver-bin, vscode-json-languageserver-bin, yaml-language-server
